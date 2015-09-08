@@ -31,7 +31,7 @@ public class M3Example extends Application {
         lblscene2=new Label("Select Your Credentials");
 
         ChoiceBox cb = new ChoiceBox(FXCollections.observableArrayList(
-                "Easy", "Medium", "Hard"));
+                "Beginner", "Standard", "Tournament"));
 
         Label playerLbl = new Label("Choose how many players");
 
