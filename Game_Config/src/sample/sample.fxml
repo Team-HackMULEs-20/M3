@@ -9,13 +9,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 
-<GridPane alignment="CENTER" hgap="10.0" prefHeight="226.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="326.0" prefWidth="288.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
   <children>
-    <TitledPane animated="false" text="M.U.L.E. Game Setup" GridPane.columnIndex="0" GridPane.rowIndex="0">
-      <content>
-        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-      </content>
-    </TitledPane>
+    <TitledPane animated="false" content="$null" prefHeight="68.0" prefWidth="288.0" text="M.U.L.E. Game Setup" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0" />
     <ChoiceBox GridPane.columnIndex="0" GridPane.rowIndex="1">
       <items>
         <FXCollections fx:factory="observableArrayList">
@@ -27,7 +23,8 @@
     </ChoiceBox>
   </children>
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="213.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="65.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
