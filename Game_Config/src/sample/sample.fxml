@@ -12,12 +12,12 @@
 
 <GridPane alignment="CENTER" hgap="10.0" prefHeight="340.6552734375" prefWidth="376.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
   <children>
-    <ChoiceBox GridPane.columnIndex="2" GridPane.rowIndex="1">
+    <ChoiceBox maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
       <items>
         <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Item 1" />
-          <String fx:value="Item 2" />
-          <String fx:value="Item 3" />
+          <String fx:value="Beginner" />
+          <String fx:value="Standard" />
+          <String fx:value="Tournament" />
         </FXCollections>
       </items>
     </ChoiceBox>
@@ -25,21 +25,20 @@
     <TitledPane animated="false" content="$null" prefHeight="68.0" prefWidth="288.0" text="M.U.L.E. Game Setup" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0" />
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Map Type" GridPane.columnIndex="1" GridPane.rowIndex="2" />
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Players" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-    <ChoiceBox GridPane.columnIndex="2" GridPane.rowIndex="2">
+    <ChoiceBox minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
       <items>
         <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Item 1" />
-          <String fx:value="Item 2" />
-          <String fx:value="Item 3" />
+          <String fx:value="Standard" />
+          <String fx:value="Random" />
         </FXCollections>
       </items>
     </ChoiceBox>
-    <ChoiceBox GridPane.columnIndex="2" GridPane.rowIndex="3">
+    <ChoiceBox minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
       <items>
         <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Item 1" />
-          <String fx:value="Item 2" />
-          <String fx:value="Item 3" />
+          <String fx:value="2" />
+          <String fx:value="3" />
+          <String fx:value="4" />
         </FXCollections>
       </items>
     </ChoiceBox>
