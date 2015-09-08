@@ -15,6 +15,8 @@ public class Main extends Application {
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("M.U.L.E Game Setup.fxml"));
+            Parent nextScreen = FXMLLoader.load(getClass().getResource("playerSetup.fxml"));
+            Scene scene = new Scene(nextScreen);
             primaryStage.setTitle("M.U.L.E. Game Setup");
             primaryStage.setScene(new Scene(root, 300, 275));
             primaryStage.show();
