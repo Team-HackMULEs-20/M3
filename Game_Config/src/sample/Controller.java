@@ -1,31 +1,13 @@
 package sample;
 
-import javafx.application.Application;
-import javafx.fxml.FXML;
-import javafx.event.ActionEvent;
-import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javafx.fxml.Initializable;
+import java.util.ResourceBundle;
+import java.net.URL;
 
-public class Controller extends Application {
+public class Controller implements Initializable {
 
-    public void start(Stage primarystage) {
-        try {
-            GridPane page = FXMLLoader.load(Controller.class.getResource("sample.fxml"));
-            Scene scene = new Scene(page);
-            primarystage.setScene(scene);
-            primarystage.show();
-        } catch (Exception ex) {
-            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
+
+
     }
-
-    @FXML
-    public void buttonClicked(ActionEvent event) {
-        System.out.println("Yoooo something worked");
-    }
-
 }
