@@ -1,15 +1,5 @@
 package sample;
 
-<<<<<<< HEAD
-import javafx.fxml.Initializable;
-import java.util.ResourceBundle;
-import java.net.URL;
-
-public class Controller implements Initializable {
-
-    public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-
-=======
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -45,7 +35,5 @@ public class Controller implements Initializable {
             System.out.println("Cancel Button was pressed");
         }
     }
->>>>>>> master
 
-    }
 }

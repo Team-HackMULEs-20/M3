@@ -10,20 +10,11 @@ import java.util.logging.Logger;
 
 public class Main extends Application {
 
-    @Override
-<<<<<<< HEAD
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample/M.U.L.E Game Setup.fxml"));
-        primaryStage.setTitle("M.U.L.E. Game Setup");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
-    }
-=======
     public void start(Stage primaryStage) throws Exception {
->>>>>>> master
-
         try {
             Parent root = FXMLLoader.load(getClass().getResource("M.U.L.E Game Setup.fxml"));
+            Parent child = FXMLLoader.load(getClass().getResource("playerSetup.fxml"));
+            Scene nextScreen = new Scene(child);
             primaryStage.setTitle("M.U.L.E. Game Setup");
             primaryStage.setScene(new Scene(root, 300, 275));
             primaryStage.show();
