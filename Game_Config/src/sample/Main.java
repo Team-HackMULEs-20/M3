@@ -5,17 +5,32 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main extends Application {
 
     @Override
+<<<<<<< HEAD
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample/M.U.L.E Game Setup.fxml"));
         primaryStage.setTitle("M.U.L.E. Game Setup");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
+=======
+    public void start(Stage primaryStage) throws Exception {
+>>>>>>> master
 
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("M.U.L.E Game Setup.fxml"));
+            primaryStage.setTitle("M.U.L.E. Game Setup");
+            primaryStage.setScene(new Scene(root, 300, 275));
+            primaryStage.show();
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public static void main(String[] args) {
         launch(args);
