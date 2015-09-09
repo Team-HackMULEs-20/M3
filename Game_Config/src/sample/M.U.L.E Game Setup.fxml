@@ -24,7 +24,7 @@
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty" GridPane.columnIndex="1" GridPane.rowIndex="0" />
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Map Type" GridPane.columnIndex="1" GridPane.rowIndex="1" />
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Players" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-    <ChoiceBox minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+    <ChoiceBox fx:id="mapType" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Standard" />
@@ -32,7 +32,7 @@
         </FXCollections>
       </items>
     </ChoiceBox>
-    <ChoiceBox minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+    <ChoiceBox fx:id="numPlayers" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="2" />
