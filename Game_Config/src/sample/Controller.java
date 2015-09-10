@@ -32,7 +32,6 @@ public class Controller implements Initializable {
     @FXML
     private ChoiceBox numPlayers;
 
-    //public static String players;
     public static Integer playerNum;
 
     @Override
