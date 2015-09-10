@@ -15,9 +15,11 @@
         <ChoiceBox fx:id="raceChoice" GridPane.columnIndex="1" GridPane.rowIndex="1">
           <items>
             <FXCollections fx:factory="observableArrayList">
-              <String fx:value="Flapper" />
-              <String fx:value="Human" />
-              <String fx:value="Alien" />
+              <String fx:value="Flapper (easiest)" />
+              <String fx:value="Bonzoid" />
+              <String fx:value="Ugaite" />
+              <String fx:value="Buzzite" />
+              <String fx:value="Human (hardest)" />
             </FXCollections>
           </items>
         </ChoiceBox>
