@@ -27,8 +27,8 @@ public class M3Example extends Application {
         //make things to put on panes
         btnscene1=new Button("Click to go to next screen");
         btnscene2=new Button("Play!");
-        btnscene1.setOnAction(e-> ButtonClicked(e));
-        btnscene2.setOnAction(e-> ButtonClicked(e));
+        //btnscene1.setOnAction(e-> ButtonClicked(e));
+        //btnscene2.setOnAction(e-> ButtonClicked(e));
         lblscene1=new Label("Choose a Difficulty");
         lblscene2=new Label("Select Your Credentials");
 

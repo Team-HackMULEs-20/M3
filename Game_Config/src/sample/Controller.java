@@ -32,7 +32,8 @@ public class Controller implements Initializable {
     @FXML
     private ChoiceBox numPlayers;
 
-    public static String players;
+    //public static String players;
+    public static Integer playerNum;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -44,47 +45,52 @@ public class Controller implements Initializable {
                 "check your FXML file 'playerSetup.fxml'.";
         assert nextButton2 != null : "fx:id=\"nextButton2\" was not injected: " +
                 "check your FXML file 'playerSetup.fxml'.";
-        assert numPlayers != null : "fx:id=\"numPlayers\" was not injected: " +
+        assert numPlayers != null : "fx:id=\"numPlayer\" was not injected: " +
                 "check your FXML file 'M.U.LE Game Setup.fxml'.";
     }
 
     @FXML
     private void buttonClicked(ActionEvent e) {
         if (e.getSource() == nextButton) {
-            players = numPlayers.getSelectionModel().getSelectedItem().toString();
+            //players = numPlayers.getSelectionModel().getSelectedItem().toString();
+            playerNum = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
+
             Main.primaryStage.setScene(Main.nextScene);
         } else if (e.getSource() == cancelButton) {
             Main.primaryStage.close();
         } else {
-            buttonClicked2(e, players);
+            buttonClicked2(e, playerNum);
         }
 
     }
 
-    private void buttonClicked2(ActionEvent e, String players) {
+    private void buttonClicked2(ActionEvent e, Integer playerNum) {
         Stage newStage = new Stage();
         Stage thirdStage = new Stage();
         Stage fourthStage = new Stage();
         if (e.getSource() == nextButton2) {
-            switch (players) {
-                case "2":
-                    Main.primaryStage.setScene(new Scene(new FlowPane(), 300, 300));
-                    Main.primaryStage.setTitle("Player 1 Screen");
-                    newStage.setScene(new Scene(new FlowPane(), 300, 300));
+            switch (playerNum) {
+                case 2:
+                    newStage.setScene(new Scene(new FlowPane(), 600, 400));
                     newStage.setTitle("Player 2 Screen");
                     newStage.show();
+                    Main.primaryStage.setScene(new Scene(new FlowPane(), 600, 400));
+                    Main.primaryStage.setTitle("Player 1 Screen");
                     break;
-                case "3":
-                    Main.primaryStage.setScene(new Scene(new FlowPane(), 300, 300));
-                    Main.primaryStage.setTitle("Player 1 Screen");
-                    newStage.setScene(new Scene(new FlowPane(), 300, 300));
-                    newStage.setTitle("Player 2 Screen");
-                    newStage.show();
-                    thirdStage.setScene(new Scene(new FlowPane(), 300, 300));
+                case 3:
+                    thirdStage.setScene(new Scene(new FlowPane(), 600, 400));
                     thirdStage.setTitle("Player 3 Screen");
                     thirdStage.show();
+                    newStage.setScene(new Scene(new FlowPane(), 600, 400));
+                    newStage.setTitle("Player 2 Screen");
+                    newStage.show();
+
+                    Main.primaryStage.setScene(new Scene(new FlowPane(), 600, 400));
+                    Main.primaryStage.setTitle("Player 1 Screen");
+
+
                     break;
-                case "4":
+                case 4:
                     Main.primaryStage.setScene(new Scene(new FlowPane(), 300, 300));
                     Main.primaryStage.setTitle("Player 1 Screen");
                     newStage.setScene(new Scene(new FlowPane(), 300, 300));
