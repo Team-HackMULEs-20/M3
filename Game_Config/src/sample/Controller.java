@@ -84,24 +84,23 @@ public class Controller implements Initializable {
                     newStage.setScene(new Scene(new FlowPane(), 600, 400));
                     newStage.setTitle("Player 2 Screen");
                     newStage.show();
-
                     Main.primaryStage.setScene(new Scene(new FlowPane(), 600, 400));
                     Main.primaryStage.setTitle("Player 1 Screen");
 
 
                     break;
                 case 4:
-                    Main.primaryStage.setScene(new Scene(new FlowPane(), 300, 300));
-                    Main.primaryStage.setTitle("Player 1 Screen");
-                    newStage.setScene(new Scene(new FlowPane(), 300, 300));
-                    newStage.setTitle("Player 2 Screen");
-                    newStage.show();
-                    thirdStage.setScene(new Scene(new FlowPane(), 300, 300));
-                    thirdStage.setTitle("Player 3 Screen");
-                    thirdStage.show();
-                    fourthStage.setScene(new Scene(new FlowPane(), 300, 300));
+                    fourthStage.setScene(new Scene(new FlowPane(), 600, 400));
                     fourthStage.setTitle("Player 4 Screen");
                     fourthStage.show();
+                    thirdStage.setScene(new Scene(new FlowPane(), 600, 400));
+                    thirdStage.setTitle("Player 3 Screen");
+                    thirdStage.show();
+                    newStage.setScene(new Scene(new FlowPane(), 600, 400));
+                    newStage.setTitle("Player 2 Screen");
+                    newStage.show();
+                    Main.primaryStage.setScene(new Scene(new FlowPane(), 600, 400));
+                    Main.primaryStage.setTitle("Player 1 Screen");
                     break;
             }
         } else if (e.getSource() == backButton) {
