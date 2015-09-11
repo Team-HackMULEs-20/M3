@@ -33,6 +33,10 @@ public class Controller implements Initializable {
     private ChoiceBox numPlayers;
 
     public static Integer playerNum;
+    private Stage secondStage;
+    private Stage thirdStage;
+    private Stage fourthStage;
+    private static int count;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -50,60 +54,63 @@ public class Controller implements Initializable {
 
     @FXML
     private void buttonClicked(ActionEvent e) {
+        secondStage = new Stage();
+        thirdStage = new Stage();
+        fourthStage = new Stage();
         if (e.getSource() == nextButton) {
-            //players = numPlayers.getSelectionModel().getSelectedItem().toString();
             playerNum = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
-
             Main.primaryStage.setScene(Main.nextScene);
+            Main.primaryStage.setTitle("Player 1 Configuration");
+            count = 1;
         } else if (e.getSource() == cancelButton) {
             Main.primaryStage.close();
-        } else {
-            buttonClicked2(e, playerNum);
         }
-
     }
 
-    private void buttonClicked2(ActionEvent e, Integer playerNum) {
+    @FXML
+    private void buttonClicked2(ActionEvent e) {
+        secondStage = new Stage();
+        thirdStage = new Stage();
+        fourthStage = new Stage();
         Stage newStage = new Stage();
-        Stage thirdStage = new Stage();
-        Stage fourthStage = new Stage();
         if (e.getSource() == nextButton2) {
-            switch (playerNum) {
-                case 2:
+            if (count == 1) {
+                Main.primaryStage.setTitle("Player 2 Configuration");
+                Main.primaryStage.toFront();
+                count = 2;
+            } else if (count == 2) {
+                if (count == playerNum) {
+                    Main.primaryStage.hide();
                     newStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    newStage.setTitle("Player 2 Screen");
+                    newStage.setTitle("Game Screen");
                     newStage.show();
-                    Main.primaryStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    Main.primaryStage.setTitle("Player 1 Screen");
-                    break;
-                case 3:
-                    thirdStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    thirdStage.setTitle("Player 3 Screen");
-                    thirdStage.show();
-                    newStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    newStage.setTitle("Player 2 Screen");
-                    newStage.show();
-                    Main.primaryStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    Main.primaryStage.setTitle("Player 1 Screen");
+                } else {
+                    Main.primaryStage.setTitle("Player 3 Configuration");
+                    Main.primaryStage.toFront();
+                }
+                count += 1;
+            } else if (count == 3) {
 
-
-                    break;
-                case 4:
-                    fourthStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    fourthStage.setTitle("Player 4 Screen");
-                    fourthStage.show();
-                    thirdStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    thirdStage.setTitle("Player 3 Screen");
-                    thirdStage.show();
+                if (count == playerNum) {
+                    Main.primaryStage.hide();
                     newStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    newStage.setTitle("Player 2 Screen");
+                    newStage.setTitle("Game Screen");
                     newStage.show();
-                    Main.primaryStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    Main.primaryStage.setTitle("Player 1 Screen");
-                    break;
+                } else {
+                    Main.primaryStage.setTitle("Player 4 Configuration");
+                    Main.primaryStage.toFront();
+                }
+                count += 1;
+            } else if (count == 4) {
+                Main.primaryStage.hide();
+                newStage.setScene(new Scene(new FlowPane(), 600, 400));
+                newStage.setTitle("Game Screen");
+                newStage.show();
             }
+
         } else if (e.getSource() == backButton) {
             Main.primaryStage.setScene(Main.rootScene);
+            Main.primaryStage.setTitle("M.U.L.E. Game Setup");
         }
     }
 
