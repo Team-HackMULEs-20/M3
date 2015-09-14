@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 
 import javafx.event.ActionEvent;
 
+import java.awt.*;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.net.URL;
@@ -12,8 +13,11 @@ import java.net.URL;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 public class Controller implements Initializable {
 
@@ -33,11 +37,36 @@ public class Controller implements Initializable {
     private ChoiceBox numPlayers;
 
     @FXML
+    private ChoiceBox raceChoice;
+
+    @FXML
     private Button okButton;
 
+    @FXML
+    private ChoiceBox mapType;
+
+    @FXML
+    private ChoiceBox difficulty;
+
+    @FXML
+    private TextField playerName;
+
+    @FXML
+    private ColorPicker colorPick;
+
     public static Integer playerNum;
+
+    public static String name;
+
+    public static String race;
+
+    public static String map;
+
+    public static String level;
     
     private static int count;
+
+    private static Color color;
 
     private Stage newStage;
 
@@ -63,66 +92,79 @@ public class Controller implements Initializable {
         try {
             if (e.getSource() == nextButton) {
                 playerNum = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
+                map = mapType.getSelectionModel().getSelectedItem().toString();
+                level = difficulty.getSelectionModel().getSelectedItem().toString();
                 Main.primaryStage.setScene(Main.nextScene);
                 Main.primaryStage.setTitle("Player 1 Configuration");
                 count = 1;
             } else if (e.getSource() == cancelButton) {
                 Main.primaryStage.close();
             }
-        } catch (NullPointerException error){
+        } catch (NullPointerException error) {
+            Main.primaryStage.setScene(Main.errorMessage);
+        }
+    }
+
+    @FXML
+    private void buttonClicked2(ActionEvent e) throws NullPointerException {
+        newStage = new Stage();
+        try {
+            if (e.getSource() == nextButton2) {
+                name = playerName.getText();
+                race = raceChoice.getSelectionModel().getSelectedItem().toString();
+                color = colorPick.getValue();
+                if (name.equals("")) {
+                    Main.primaryStage.setScene(Main.errorMessage);
+                }
+                if (count == 1) {
+                    Main.primaryStage.setTitle("Player 2 Configuration");
+                    Main.primaryStage.toFront();
+                    playerName.clear();
+                    count = 2;
+                } else if (count == 2) {
+                    if (count == playerNum) {
+                        Main.primaryStage.hide();
+                        newStage.setScene(new Scene(new FlowPane(), 600, 400));
+                        newStage.setTitle("Game Screen");
+                        newStage.show();
+                    } else {
+                        Main.primaryStage.setTitle("Player 3 Configuration");
+                        Main.primaryStage.toFront();
+                        playerName.clear();
+                    }
+                    count += 1;
+                } else if (count == 3) {
+                    if (count == playerNum) {
+                        Main.primaryStage.hide();
+                        newStage.setScene(new Scene(new FlowPane(), 600, 400));
+                        newStage.setTitle("Game Screen");
+                        newStage.show();
+                    } else {
+                        Main.primaryStage.setTitle("Player 4 Configuration");
+                        Main.primaryStage.toFront();
+                        playerName.clear();
+                    }
+                    count += 1;
+                } else if (count == 4) {
+                    Main.primaryStage.hide();
+                    newStage.setScene(new Scene(new FlowPane(), 600, 400));
+                    newStage.setTitle("Game Screen");
+                    newStage.show();
+                }
+
+            } else if (e.getSource() == backButton) {
+                Main.primaryStage.setScene(Main.rootScene);
+                Main.primaryStage.setTitle("M.U.L.E. Game Setup");
+            }
+        } catch (NullPointerException error) {
             Main.primaryStage.setScene(Main.errorMessage);
         }
 
     }
 
-    @FXML
-    private void buttonClicked2(ActionEvent e) {
-        newStage = new Stage();
-        if (e.getSource() == nextButton2) {
-            if (count == 1) {
-                Main.primaryStage.setTitle("Player 2 Configuration");
-                Main.primaryStage.toFront();
-                count = 2;
-            } else if (count == 2) {
-                if (count == playerNum) {
-                    Main.primaryStage.hide();
-                    newStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    newStage.setTitle("Game Screen");
-                    newStage.show();
-                } else {
-                    Main.primaryStage.setTitle("Player 3 Configuration");
-                    Main.primaryStage.toFront();
-                }
-                count += 1;
-            } else if (count == 3) {
-
-                if (count == playerNum) {
-                    Main.primaryStage.hide();
-                    newStage.setScene(new Scene(new FlowPane(), 600, 400));
-                    newStage.setTitle("Game Screen");
-                    newStage.show();
-                } else {
-                    Main.primaryStage.setTitle("Player 4 Configuration");
-                    Main.primaryStage.toFront();
-                }
-                count += 1;
-            } else if (count == 4) {
-                Main.primaryStage.hide();
-                newStage.setScene(new Scene(new FlowPane(), 600, 400));
-                newStage.setTitle("Game Screen");
-                newStage.show();
-            }
-
-        } else if (e.getSource() == backButton) {
-            Main.primaryStage.setScene(Main.rootScene);
-            Main.primaryStage.setTitle("M.U.L.E. Game Setup");
-        }
-    }
-
     public void errorBox(ActionEvent event) {
         if (event.getSource() == okButton) {
-                Main.primaryStage.setScene(Main.rootScene);
+            Main.primaryStage.setScene(Main.rootScene);
         }
     }
-
 }
