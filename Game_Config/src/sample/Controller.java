@@ -33,9 +33,7 @@ public class Controller implements Initializable {
     private ChoiceBox numPlayers;
 
     public static Integer playerNum;
-    private Stage secondStage;
-    private Stage thirdStage;
-    private Stage fourthStage;
+    
     private static int count;
 
     @Override
@@ -54,9 +52,6 @@ public class Controller implements Initializable {
 
     @FXML
     private void buttonClicked(ActionEvent e) {
-        secondStage = new Stage();
-        thirdStage = new Stage();
-        fourthStage = new Stage();
         if (e.getSource() == nextButton) {
             playerNum = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
             Main.primaryStage.setScene(Main.nextScene);
@@ -69,9 +64,6 @@ public class Controller implements Initializable {
 
     @FXML
     private void buttonClicked2(ActionEvent e) {
-        secondStage = new Stage();
-        thirdStage = new Stage();
-        fourthStage = new Stage();
         Stage newStage = new Stage();
         if (e.getSource() == nextButton2) {
             if (count == 1) {
