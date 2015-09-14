@@ -12,7 +12,7 @@
 
 <GridPane id="M.U.L.E. Game Setup" alignment="CENTER" hgap="10.0" prefHeight="400.00010681152344" prefWidth="600.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.Controller">
   <children>
-    <ChoiceBox maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+    <ChoiceBox fx:id="difficulty" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Beginner" />
