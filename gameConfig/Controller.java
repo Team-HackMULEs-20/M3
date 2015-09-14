@@ -1,4 +1,4 @@
-package sample;
+package gameConfig;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -59,11 +59,11 @@ public class Controller implements Initializable {
         fourthStage = new Stage();
         if (e.getSource() == nextButton) {
             playerNum = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
-            Main.primaryStage.setScene(Main.nextScene);
-            Main.primaryStage.setTitle("Player 1 Configuration");
+            Launcher.primaryStage.setScene(Launcher.nextScene);
+            Launcher.primaryStage.setTitle("Player 1 Configuration");
             count = 1;
         } else if (e.getSource() == cancelButton) {
-            Main.primaryStage.close();
+            Launcher.primaryStage.close();
         }
     }
 
@@ -75,42 +75,42 @@ public class Controller implements Initializable {
         Stage newStage = new Stage();
         if (e.getSource() == nextButton2) {
             if (count == 1) {
-                Main.primaryStage.setTitle("Player 2 Configuration");
-                Main.primaryStage.toFront();
+                Launcher.primaryStage.setTitle("Player 2 Configuration");
+                Launcher.primaryStage.toFront();
                 count = 2;
             } else if (count == 2) {
                 if (count == playerNum) {
-                    Main.primaryStage.hide();
+                    Launcher.primaryStage.hide();
                     newStage.setScene(new Scene(new FlowPane(), 600, 400));
                     newStage.setTitle("Game Screen");
                     newStage.show();
                 } else {
-                    Main.primaryStage.setTitle("Player 3 Configuration");
-                    Main.primaryStage.toFront();
+                    Launcher.primaryStage.setTitle("Player 3 Configuration");
+                    Launcher.primaryStage.toFront();
                 }
                 count += 1;
             } else if (count == 3) {
 
                 if (count == playerNum) {
-                    Main.primaryStage.hide();
+                    Launcher.primaryStage.hide();
                     newStage.setScene(new Scene(new FlowPane(), 600, 400));
                     newStage.setTitle("Game Screen");
                     newStage.show();
                 } else {
-                    Main.primaryStage.setTitle("Player 4 Configuration");
-                    Main.primaryStage.toFront();
+                    Launcher.primaryStage.setTitle("Player 4 Configuration");
+                    Launcher.primaryStage.toFront();
                 }
                 count += 1;
             } else if (count == 4) {
-                Main.primaryStage.hide();
+                Launcher.primaryStage.hide();
                 newStage.setScene(new Scene(new FlowPane(), 600, 400));
                 newStage.setTitle("Game Screen");
                 newStage.show();
             }
 
         } else if (e.getSource() == backButton) {
-            Main.primaryStage.setScene(Main.rootScene);
-            Main.primaryStage.setTitle("M.U.L.E. Game Setup");
+            Launcher.primaryStage.setScene(Launcher.rootScene);
+            Launcher.primaryStage.setTitle("M.U.L.E. Game Setup");
         }
     }
 
