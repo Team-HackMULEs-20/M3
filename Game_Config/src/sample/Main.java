@@ -16,11 +16,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         try {
             Parent root = FXMLLoader.load(getClass().getResource("M.U.L.E Game Setup.fxml"));
-            Parent nextScreen = FXMLLoader.load(getClass().getResource("playerSetup.fxml"));
-            nextScene = new Scene(nextScreen);
+            Parent child = FXMLLoader.load(getClass().getResource("playerSetup.fxml"));
+            nextScene = new Scene(child);
             rootScene = new Scene(root, 600, 400);
             Main.primaryStage = primaryStage;
             primaryStage.setTitle("M.U.L.E. Game Setup");
