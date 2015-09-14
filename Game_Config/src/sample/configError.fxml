@@ -8,9 +8,9 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
   <children>
-    <Button layoutX="105.0" layoutY="115.0" mnemonicParsing="false" text="OK" />
+    <Button fx:id="okButton" onAction="#errorBox" layoutX="105.0" layoutY="115.0" mnemonicParsing="false" text="OK" />
     <Text layoutX="64.0" layoutY="88.0" scaleX="1.000000744700174" scaleY="1.000005660585816" strokeType="OUTSIDE" strokeWidth="0.0" text="the game before continuing!">
       <font>
         <Font size="13.0" fx:id="x1" />

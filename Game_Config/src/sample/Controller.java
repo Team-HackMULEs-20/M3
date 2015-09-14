@@ -32,9 +32,14 @@ public class Controller implements Initializable {
     @FXML
     private ChoiceBox numPlayers;
 
+    @FXML
+    private Button okButton;
+
     public static Integer playerNum;
     
     private static int count;
+
+    private Stage newStage;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -48,23 +53,31 @@ public class Controller implements Initializable {
                 "check your FXML file 'playerSetup.fxml'.";
         assert numPlayers != null : "fx:id=\"numPlayer\" was not injected: " +
                 "check your FXML file 'M.U.LE Game Setup.fxml'.";
+        assert okButton != null : "fx:id=\"okButton\" was not injected: " +
+                "check your FXML file 'configError.fxml'.";
     }
 
+
     @FXML
-    private void buttonClicked(ActionEvent e) {
-        if (e.getSource() == nextButton) {
-            playerNum = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
-            Main.primaryStage.setScene(Main.nextScene);
-            Main.primaryStage.setTitle("Player 1 Configuration");
-            count = 1;
-        } else if (e.getSource() == cancelButton) {
-            Main.primaryStage.close();
+    private void buttonClicked(ActionEvent e) throws NullPointerException {
+        try {
+            if (e.getSource() == nextButton) {
+                playerNum = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
+                Main.primaryStage.setScene(Main.nextScene);
+                Main.primaryStage.setTitle("Player 1 Configuration");
+                count = 1;
+            } else if (e.getSource() == cancelButton) {
+                Main.primaryStage.close();
+            }
+        } catch (NullPointerException error){
+            Main.primaryStage.setScene(Main.errorMessage);
         }
+
     }
 
     @FXML
     private void buttonClicked2(ActionEvent e) {
-        Stage newStage = new Stage();
+        newStage = new Stage();
         if (e.getSource() == nextButton2) {
             if (count == 1) {
                 Main.primaryStage.setTitle("Player 2 Configuration");
@@ -103,6 +116,12 @@ public class Controller implements Initializable {
         } else if (e.getSource() == backButton) {
             Main.primaryStage.setScene(Main.rootScene);
             Main.primaryStage.setTitle("M.U.L.E. Game Setup");
+        }
+    }
+
+    public void errorBox(ActionEvent event) {
+        if (event.getSource() == okButton) {
+                Main.primaryStage.setScene(Main.rootScene);
         }
     }
 
