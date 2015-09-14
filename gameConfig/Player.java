@@ -1,4 +1,4 @@
-package sample;
+package gameConfig;
 
 public class Player {
 

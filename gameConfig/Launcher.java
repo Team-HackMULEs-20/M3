@@ -1,4 +1,4 @@
-package sample;
+package gameConfig;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Main extends Application {
+public class Launcher extends Application {
 
     public static Scene nextScene;
     public static Scene rootScene;
@@ -21,12 +21,12 @@ public class Main extends Application {
             Parent child = FXMLLoader.load(getClass().getResource("playerSetup.fxml"));
             nextScene = new Scene(child);
             rootScene = new Scene(root, 600, 400);
-            Main.primaryStage = primaryStage;
+            Launcher.primaryStage = primaryStage;
             primaryStage.setTitle("M.U.L.E. Game Setup");
             primaryStage.setScene(rootScene);
             primaryStage.show();
         } catch (Exception ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
