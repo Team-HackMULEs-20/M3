@@ -86,7 +86,6 @@ public class Controller implements Initializable {
                 "check your FXML file 'configError.fxml'.";
     }
 
-
     @FXML
     private void buttonClicked(ActionEvent e) throws NullPointerException {
         try {
@@ -159,7 +158,6 @@ public class Controller implements Initializable {
         } catch (NullPointerException error) {
             Main.primaryStage.setScene(Main.errorMessage);
         }
-
     }
 
     public void errorBox(ActionEvent event) {
