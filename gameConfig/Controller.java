@@ -63,6 +63,7 @@ public class Controller implements Initializable {
     private static Color color;
     private Stage newStage;
     private Player[] players;
+    private Turns gameTurns;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -114,9 +115,16 @@ public class Controller implements Initializable {
                 }
                 Player.Race r = Player.Race.valueOf(race);
                 color = colorPick.getValue();
+
                 //creating Player
                 Player p = new Player(count, name, r, color);
                 players[count-1] = p;
+                if (players[players.length-1] != null) {
+
+                    //when players array is full, begins game turns
+                    gameTurns = new Turns(players);
+                }
+
                 if (name.equals("")) {
                     Launcher.primaryStage.setScene(Launcher.errorMessage);
                 }
