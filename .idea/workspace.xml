@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="202b08d9-ff3b-422a-9063-43e221c44554" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameConfig/Turns.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Controller.java" afterPath="$PROJECT_DIR$/gameConfig/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Player.java" afterPath="$PROJECT_DIR$/gameConfig/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Timer.java" afterPath="$PROJECT_DIR$/gameConfig/Timer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -423,7 +421,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442429540516</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Player v. Controller functionality">
+      <created>1442430800070</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1442430800070</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -497,7 +501,8 @@
     <MESSAGE value="Map UI" />
     <MESSAGE value="Work on timer" />
     <MESSAGE value="Added saving functionality to Controller using Player, created Player array" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added saving functionality to Controller using Player, created Player array" />
+    <MESSAGE value="Player v. Controller functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Player v. Controller functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
