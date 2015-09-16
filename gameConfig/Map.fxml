@@ -8,34 +8,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
   <children>
-    <ImageView id="cobbleset-128" fitHeight="400.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
-      <image>
-        <Image url="@../../Media/cobbleset-128.png" preserveRatio="true" smooth="true" />
-      </image>
-    </ImageView>
-    <GridPane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0">
-      <children>
-        <ImageView id="normal" fitHeight="141.0" fitWidth="186.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
-          <image>
-            <Image url="@../../Media/Watermill/normal.png" preserveRatio="true" smooth="true" />
-          </image>
-        </ImageView>
-        <ImageView id="building_full" fitHeight="124.0" fitWidth="200.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
-          <image>
-            <Image url="@../../Media/Medieval_04/building_full.png" preserveRatio="true" smooth="true" />
-          </image>
-        </ImageView>
-        <ImageView id="sprite0" fitHeight="134.25001525878906" fitWidth="186.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
-          <image>
-            <Image url="@../../Media/Medieval_Building_02/Normal/sprite0.png" preserveRatio="true" smooth="true" />
-          </image>
-        </ImageView>
-        <ImageView id="store" fitHeight="160.0" fitWidth="199.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
-          <image>
-            <Image url="@../../Media/store.png" preserveRatio="true" smooth="true" />
-          </image>
-        </ImageView>
-      </children>
+    <GridPane layoutX="29.0" layoutY="0.0" prefHeight="400.0" prefWidth="593.0">
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -47,5 +20,30 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
+    <ImageView id="bg" fitHeight="400.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/bg.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <ImageView id="bldg1" fitHeight="146.0" fitWidth="144.0" layoutX="14.0" layoutY="0.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/bldg1.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <ImageView id="bldg2" fitHeight="136.0" fitWidth="252.0" layoutX="342.0" layoutY="10.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/bldg2.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <ImageView id="bldg3" fitHeight="136.0" fitWidth="205.0" layoutX="395.0" layoutY="250.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/bldg3.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <ImageView id="bldg4" fitHeight="122.0" fitWidth="213.0" layoutX="0.0" layoutY="264.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/bldg4.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
   </children>
 </AnchorPane>
