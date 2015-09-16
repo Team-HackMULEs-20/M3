@@ -8,7 +8,7 @@ public class Player {
     private String name;
     private Race race;
     private Color color;
-    //private int location; //figure out
+    //private int location;
 
     private int money;
     private int food;
@@ -25,7 +25,21 @@ public class Player {
 
         turnsTaken = 0;
 
-//say beginner/standard/tournament
+        if (Controller.level.equals("Beginner")){
+            food = 8;
+            energy = 4;
+        } else {
+            food = 4;
+            energy = 2;
+        }
+
+        if (this.race.equals(Race.FLAPPER)) {
+            money = 1600;
+        } else if (this.race.equals(Race.HUMAN)) {
+            money = 600;
+        } else {
+            money = 1000;
+        }
     }
 
     public enum Race {
@@ -41,7 +55,7 @@ public class Player {
     public Race getRace() {return race;}
 
     public Color getColor() {return color;}
-    
+
     public int getMoney() {return money;}
     public void addSubMoney(int amount) {money += amount;}
 

@@ -87,7 +87,7 @@ public class Controller implements Initializable {
                 //initializing players array
                 players = new Player[numPlayer];
                 map = mapType.getSelectionModel().getSelectedItem().toString();
-                level = difficulty.getSelectionModel().getSelectedItem().toString();
+                level = difficulty.getSelectionModel().getSelectedItem().toString(); //"Beginner", "Standard", or "Tournament"
                 Launcher.primaryStage.setScene(Launcher.nextScene);
                 Launcher.primaryStage.setTitle("Player 1 Configuration");
                 count = 1;
