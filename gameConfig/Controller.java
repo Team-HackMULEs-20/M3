@@ -54,21 +54,15 @@ public class Controller implements Initializable {
     @FXML
     private ColorPicker colorPick;
 
-    public static Integer playerNum;
-
+    public static Integer numPlayer;
     public static String name;
-
     public static String race;
-
     public static String map;
-
     public static String level;
-    
     private static int count;
-
     private static Color color;
-
     private Stage newStage;
+    private Player[] players;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -88,7 +82,9 @@ public class Controller implements Initializable {
     private void buttonClicked(ActionEvent e) throws NullPointerException {
         try {
             if (e.getSource() == nextButton) {
-                playerNum = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
+                numPlayer = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
+                //initializing players array
+                players = new Player[numPlayer];
                 map = mapType.getSelectionModel().getSelectedItem().toString();
                 level = difficulty.getSelectionModel().getSelectedItem().toString();
                 Launcher.primaryStage.setScene(Launcher.nextScene);
@@ -108,9 +104,19 @@ public class Controller implements Initializable {
         newStage = new Stage();
         try {
             if (e.getSource() == nextButton2) {
+
                 name = playerName.getText();
                 race = raceChoice.getSelectionModel().getSelectedItem().toString();
+                if (race.length() > 8) {
+                    race = race.toUpperCase().substring(0, race.indexOf(" "));
+                } else {
+                    race = race.toUpperCase();
+                }
+                Player.Race r = Player.Race.valueOf(race);
                 color = colorPick.getValue();
+                //creating Player
+                Player p = new Player(count, name, r, color);
+                players[count-1] = p;
                 if (name.equals("")) {
                     Launcher.primaryStage.setScene(Launcher.errorMessage);
                 }
@@ -120,7 +126,7 @@ public class Controller implements Initializable {
                     playerName.clear();
                     count = 2;
                 } else if (count == 2) {
-                    if (count == playerNum) {
+                    if (count == numPlayer) {
                         Launcher.primaryStage.hide();
                         newStage.setScene(new Scene(new FlowPane(), 600, 400));
                         newStage.setTitle("Game Screen");
@@ -132,7 +138,7 @@ public class Controller implements Initializable {
                     }
                     count += 1;
                 } else if (count == 3) {
-                    if (count == playerNum) {
+                    if (count == numPlayer) {
                         Launcher.primaryStage.hide();
                         newStage.setScene(new Scene(new FlowPane(), 600, 400));
                         newStage.setTitle("Game Screen");
