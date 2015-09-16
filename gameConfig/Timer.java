@@ -1,5 +1,4 @@
 package gameConfig;
-//package fxtimer;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -15,15 +14,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.layout.VBox;
 
 public class Timer extends Application{
-    private int beginTime = 50; //remove 50 and uncomment constructor
-    private Integer timeLeft = beginTime; //comment out
+    private int beginTime;// = 50;
+    private Integer timeLeft;// = beginTime;
     private Timeline timeline;
     private Label timerLabel = new Label();
 
-    //public Timer(int beginTime) {
-    //    this.beginTime = beginTime;
-    //      timeLeft = beginTime;
-    //}
+    public Timer(int beginTime) {
+        this.beginTime = beginTime;
+        timeLeft = beginTime;
+    }
 
     public static void main(String[] args) {
         Application.launch(args);
