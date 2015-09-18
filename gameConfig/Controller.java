@@ -56,6 +56,7 @@ public class Controller implements Initializable {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static Integer playerNum;
 
     public static String name;
@@ -74,6 +75,8 @@ public class Controller implements Initializable {
 =======
 =======
 >>>>>>> origin/kfindley7
+=======
+>>>>>>> origin/kfindley7
     public static Integer numPlayer;
     public static String name;
     public static String race;
@@ -85,6 +88,9 @@ public class Controller implements Initializable {
     private Player[] players;
     private Turns gameTurns;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> origin/kfindley7
+=======
 >>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
@@ -101,6 +107,7 @@ public class Controller implements Initializable {
                 "check your FXML file 'playerSetup.fxml'.";
         assert numPlayers != null : "fx:id=\"numPlayer\" was not injected: " +
                 "check your FXML file 'M.U.LE Game Setup.fxml'.";
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         assert okButton != null : "fx:id=\"okButton\" was not injected: " +
@@ -141,6 +148,8 @@ public class Controller implements Initializable {
 =======
 =======
 >>>>>>> origin/kfindley7
+=======
+>>>>>>> origin/kfindley7
     }
 
     @FXML
@@ -166,6 +175,9 @@ public class Controller implements Initializable {
 
     @FXML
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> origin/kfindley7
+=======
 >>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
@@ -173,6 +185,7 @@ public class Controller implements Initializable {
         newStage = new Stage();
         try {
             if (e.getSource() == nextButton2) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 name = playerName.getText();
@@ -190,6 +203,8 @@ public class Controller implements Initializable {
                     if (count == playerNum) {
                         Main.primaryStage.hide();
 =======
+=======
+>>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
 
@@ -224,6 +239,9 @@ public class Controller implements Initializable {
                     if (count == numPlayer) {
                         Launcher.primaryStage.hide();
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> origin/kfindley7
+=======
 >>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
@@ -233,8 +251,13 @@ public class Controller implements Initializable {
                     } else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         Main.primaryStage.setTitle("Player 3 Configuration");
                         Main.primaryStage.toFront();
+=======
+                        Launcher.primaryStage.setTitle("Player 3 Configuration");
+                        Launcher.primaryStage.toFront();
+>>>>>>> origin/kfindley7
 =======
                         Launcher.primaryStage.setTitle("Player 3 Configuration");
                         Launcher.primaryStage.toFront();
@@ -249,8 +272,13 @@ public class Controller implements Initializable {
                 } else if (count == 3) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if (count == playerNum) {
                         Main.primaryStage.hide();
+=======
+                    if (count == numPlayer) {
+                        Launcher.primaryStage.hide();
+>>>>>>> origin/kfindley7
 =======
                     if (count == numPlayer) {
                         Launcher.primaryStage.hide();
@@ -265,8 +293,13 @@ public class Controller implements Initializable {
                     } else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         Main.primaryStage.setTitle("Player 4 Configuration");
                         Main.primaryStage.toFront();
+=======
+                        Launcher.primaryStage.setTitle("Player 4 Configuration");
+                        Launcher.primaryStage.toFront();
+>>>>>>> origin/kfindley7
 =======
                         Launcher.primaryStage.setTitle("Player 4 Configuration");
                         Launcher.primaryStage.toFront();
@@ -279,6 +312,7 @@ public class Controller implements Initializable {
                     }
                     count += 1;
                 } else if (count == 4) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     Main.primaryStage.hide();
@@ -302,10 +336,13 @@ public class Controller implements Initializable {
                 if (count == playerNum) {
 =======
 >>>>>>> origin/kfindley7
+=======
+>>>>>>> origin/kfindley7
                     Launcher.primaryStage.hide();
                     newStage.setScene(new Scene(new FlowPane(), 600, 400));
                     newStage.setTitle("Game Screen");
                     newStage.show();
+<<<<<<< HEAD
 <<<<<<< HEAD
                 } else {
                     Launcher.primaryStage.setTitle("Player 3 Configuration");
@@ -354,6 +391,8 @@ public class Controller implements Initializable {
 =======
 =======
 >>>>>>> origin/kfindley7
+=======
+>>>>>>> origin/kfindley7
                 }
 
             } else if (e.getSource() == backButton) {
@@ -371,6 +410,10 @@ public class Controller implements Initializable {
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+}
+>>>>>>> origin/kfindley7
+=======
 }
 >>>>>>> origin/kfindley7
 =======

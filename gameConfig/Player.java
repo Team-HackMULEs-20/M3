@@ -2,6 +2,7 @@ package gameConfig;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class Player {
 
     int number;
@@ -15,6 +16,8 @@ public class Player {
         //this.race = race;
         this.color = color;
 =======
+=======
+>>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
 import javafx.scene.paint.Color;
@@ -58,6 +61,9 @@ public class Player {
             money = 1000;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> origin/kfindley7
+=======
 >>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
@@ -69,6 +75,7 @@ public class Player {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public String getName() {
         return name;
     }
@@ -78,6 +85,8 @@ public class Player {
     }
 
 =======
+=======
+>>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
     //public enum Location {}
@@ -105,6 +114,9 @@ public class Player {
     public int getTurnsTaken() {return turnsTaken;}
     public void incTurnsTaken() {turnsTaken++;}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> origin/kfindley7
+=======
 >>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
