@@ -163,6 +163,7 @@ public class Controller implements Initializable {
                     newStage.setTitle("Game Screen");
                     newStage.show();
                     //creates land array
+
                 }
 
             } else if (e.getSource() == backButton) {
