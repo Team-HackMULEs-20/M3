@@ -162,6 +162,7 @@ public class Controller implements Initializable {
                     newStage.setScene(new Scene(new FlowPane(), 600, 400));
                     newStage.setTitle("Game Screen");
                     newStage.show();
+                    //creates land array
                 }
 
             } else if (e.getSource() == backButton) {
