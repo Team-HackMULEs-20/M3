@@ -33,6 +33,9 @@ public class Controller implements Initializable {
     private Button backButton;
 
     @FXML
+    private Button townButton;
+
+    @FXML
     private ChoiceBox numPlayers;
 
     @FXML
@@ -75,6 +78,8 @@ public class Controller implements Initializable {
                 "check your FXML file 'playerSetup.fxml'.";
         assert nextButton2 != null : "fx:id=\"nextButton2\" was not injected: " +
                 "check your FXML file 'playerSetup.fxml'.";
+        assert townButton != null : "fx:id=\"townButton\" was not injected: " +
+                "check your FXML file 'M.U.L.E Game Setup.fxml'.";
         assert numPlayers != null : "fx:id=\"numPlayer\" was not injected: " +
                 "check your FXML file 'M.U.LE Game Setup.fxml'.";
     }
@@ -206,6 +211,16 @@ public class Controller implements Initializable {
         } catch (NullPointerException error) {
             Launcher.primaryStage.setScene(Launcher.errorMessage);
             Launcher.primaryStage.setTitle("Error!");
+        }
+    }
+
+    public void buttonClicked3(ActionEvent e) {
+        newStage = new Stage();
+        if (e.getSource() == townButton) {
+            Launcher.primaryStage.hide();
+            newStage.setScene(Launcher.townScene);
+            newStage.setTitle("Town");
+            newStage.show();
         }
     }
 
