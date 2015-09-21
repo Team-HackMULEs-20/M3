@@ -5,8 +5,6 @@ import javafx.fxml.Initializable;
 
 import javafx.event.ActionEvent;
 
-import java.awt.*;
-import java.util.Objects;
 import java.util.ResourceBundle;
 import java.net.URL;
 
@@ -85,6 +83,7 @@ public class Controller implements Initializable {
     private static int count;
     private static Color color;
     private Stage newStage;
+<<<<<<< HEAD
     private Player[] players;
     private Turns gameTurns;
 <<<<<<< HEAD
@@ -93,6 +92,11 @@ public class Controller implements Initializable {
 =======
 >>>>>>> origin/kfindley7
 =======
+>>>>>>> origin/kfindley7
+=======
+    private static Player[] players;
+    private static Land[][] landPlots;
+    private static Turns gameTurns;
 >>>>>>> origin/kfindley7
 
     @Override
@@ -157,11 +161,12 @@ public class Controller implements Initializable {
         try {
             if (e.getSource() == nextButton) {
                 numPlayer = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
+
                 //initializing players array
-                players = new Player[numPlayer];
+                players = new Player[numPlayer.intValue()];
                 map = mapType.getSelectionModel().getSelectedItem().toString();
                 level = difficulty.getSelectionModel().getSelectedItem().toString(); //"Beginner", "Standard", or "Tournament"
-                Launcher.primaryStage.setScene(Launcher.nextScene);
+                Launcher.primaryStage.setScene(Launcher.nextScene); // Show player config screen for player 1
                 Launcher.primaryStage.setTitle("Player 1 Configuration");
                 count = 1;
             } else if (e.getSource() == cancelButton) {
@@ -220,15 +225,16 @@ public class Controller implements Initializable {
 
                 //creating Player
                 Player p = new Player(count, name, r, color);
-                players[count-1] = p;
-                if (players[players.length-1] != null) {
+                players[count - 1] = p;
+                if (players[players.length - 1] != null) {
 
                     //when players array is full, begins game turns
                     gameTurns = new Turns(players);
                 }
 
-                if (name.equals("")) {
+                if (name.equals("")) { // check if player entered a name
                     Launcher.primaryStage.setScene(Launcher.errorMessage);
+<<<<<<< HEAD
                 }
                 if (count == 1) {
                     Launcher.primaryStage.setTitle("Player 2 Configuration");
@@ -264,9 +270,16 @@ public class Controller implements Initializable {
 >>>>>>> origin/kfindley7
 =======
                         Launcher.primaryStage.setTitle("Player 3 Configuration");
+=======
+                    Launcher.primaryStage.setTitle("Error!");
+                } else {
+                    if (count == 1) { // if only one player config screen has been shown go to player 2
+                        Launcher.primaryStage.setTitle("Player 2 Configuration");
+>>>>>>> origin/kfindley7
                         Launcher.primaryStage.toFront();
 >>>>>>> origin/kfindley7
                         playerName.clear();
+<<<<<<< HEAD
                     }
                     count += 1;
                 } else if (count == 3) {
@@ -393,20 +406,91 @@ public class Controller implements Initializable {
 >>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
-                }
+=======
+                        count += 1;
+                    } else if (count == 2) {
+                        if (count == numPlayer) { // if user selected only 2 players then show game screen
+                            Launcher.primaryStage.hide();
+                            newStage.setScene(Launcher.gameScene);
+                            newStage.setTitle("Game Screen");
+                            newStage.show();
+                            //creates land array
+                            landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
+                            for (int i = 0; i < landPlots.length; i++) {
+                                for (int j = 0; j < landPlots[0].length; j++) {
+                                    landPlots[i][j] = new Land(i,j);
+                                }
+                            }
+                        } else { // if user selected more than 2 players, go on to player 3 config
+                            Launcher.primaryStage.setTitle("Player 3 Configuration");
+                            Launcher.primaryStage.toFront();
+                            playerName.clear();
+                            count += 1;
+                        }
 
+                    } else if (count == 3) {
+                        if (count == numPlayer) {
+                            Launcher.primaryStage.hide();
+                            newStage.setScene(Launcher.gameScene);
+                            newStage.setTitle("Game Screen");
+                            newStage.show();
+                            //creates land array
+                            landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
+                            for (int i = 0; i < landPlots.length; i++) {
+                                for (int j = 0; j < landPlots[0].length; j++) {
+                                    landPlots[i][j] = new Land(i,j);
+                                }
+                            }
+                        } else {
+                            Launcher.primaryStage.setTitle("Player 4 Configuration");
+                            Launcher.primaryStage.toFront();
+                            playerName.clear();
+                            count += 1;
+                        }
+
+                    } else if (count == 4) {
+                        Launcher.primaryStage.hide();
+                        newStage.setScene(Launcher.gameScene);
+                        newStage.setTitle("Game Screen");
+                        newStage.show();
+                        //creates land array
+                        landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
+                        for (int i = 0; i < landPlots.length; i++) {
+                            for (int j = 0; j < landPlots[0].length; j++) {
+                                landPlots[i][j] = new Land(i,j);
+                            }
+                        }
+                    }
+>>>>>>> origin/kfindley7
+                }
             } else if (e.getSource() == backButton) {
                 Launcher.primaryStage.setScene(Launcher.rootScene);
                 Launcher.primaryStage.setTitle("M.U.L.E. Game Setup");
             }
         } catch (NullPointerException error) {
             Launcher.primaryStage.setScene(Launcher.errorMessage);
+            Launcher.primaryStage.setTitle("Error!");
         }
     }
 
     public void errorBox(ActionEvent event) {
         if (event.getSource() == okButton) {
-            Launcher.primaryStage.setScene(Launcher.rootScene);
+            if (count == 1) {
+                Launcher.primaryStage.setScene(Launcher.nextScene);
+                Launcher.primaryStage.setTitle("Player 1 Configuration");
+            } else if (count == 2) {
+                Launcher.primaryStage.setScene(Launcher.nextScene);
+                Launcher.primaryStage.setTitle("Player 2 Configuration");
+            } else if (count == 3) {
+                Launcher.primaryStage.setScene(Launcher.nextScene);
+                Launcher.primaryStage.setTitle("Player 3 Configuration");
+            } else if (count == 4) {
+                Launcher.primaryStage.setScene(Launcher.nextScene);
+                Launcher.primaryStage.setTitle("Player 4 Configuration");
+            } else {
+                Launcher.primaryStage.setScene(Launcher.rootScene);
+                Launcher.primaryStage.setTitle("M.U.L.E. Game Setup");
+            }
         }
     }
 <<<<<<< HEAD
