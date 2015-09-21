@@ -60,9 +60,9 @@ public class Controller implements Initializable {
     private static int count;
     private static Color color;
     private Stage newStage;
-    private Player[] players;
-    private Land[][] landPlots;
-    private Turns gameTurns;
+    private static Player[] players;
+    private static Land[][] landPlots;
+    private static Turns gameTurns;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -83,6 +83,7 @@ public class Controller implements Initializable {
         try {
             if (e.getSource() == nextButton) {
                 numPlayer = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
+
                 //initializing players array
                 players = new Player[numPlayer.intValue()];
                 map = mapType.getSelectionModel().getSelectedItem().toString();
