@@ -137,7 +137,7 @@ public class Controller implements Initializable {
                     } else if (count == 2) {
                         if (count == numPlayer) { // if user selected only 2 players then show game screen
                             Launcher.primaryStage.hide();
-                            newStage.setScene(new Scene(new FlowPane(), 600, 400));
+                            newStage.setScene(Launcher.gameScene);
                             newStage.setTitle("Game Screen");
                             newStage.show();
                             //creates land array
@@ -157,7 +157,7 @@ public class Controller implements Initializable {
                     } else if (count == 3) {
                         if (count == numPlayer) {
                             Launcher.primaryStage.hide();
-                            newStage.setScene(new Scene(new FlowPane(), 600, 400));
+                            newStage.setScene(Launcher.gameScene);
                             newStage.setTitle("Game Screen");
                             newStage.show();
                             //creates land array
@@ -176,7 +176,7 @@ public class Controller implements Initializable {
 
                     } else if (count == 4) {
                         Launcher.primaryStage.hide();
-                        newStage.setScene(new Scene(new FlowPane(), 600, 400));
+                        newStage.setScene(Launcher.gameScene);
                         newStage.setTitle("Game Screen");
                         newStage.show();
                         //creates land array

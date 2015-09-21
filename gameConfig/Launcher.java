@@ -14,6 +14,7 @@ public class Launcher extends Application {
     public static Scene rootScene;
     public static Stage primaryStage;
     public static Scene errorMessage;
+    public static Scene gameScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -21,9 +22,11 @@ public class Launcher extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("M.U.L.E Game Setup.fxml"));
             Parent child = FXMLLoader.load(getClass().getResource("playerSetup.fxml"));
             Parent error = FXMLLoader.load(getClass().getResource("configError.fxml"));
+            Parent gameRoot = FXMLLoader.load(getClass().getResource("MainMap.fxml"));
             errorMessage = new Scene(error);
             nextScene = new Scene(child);
             rootScene = new Scene(root, 600, 400);
+            gameScene = new Scene(gameRoot);
             Launcher.primaryStage = primaryStage;
             primaryStage.setTitle("M.U.L.E. Game Setup");
             primaryStage.setScene(rootScene);
@@ -36,4 +39,5 @@ public class Launcher extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }
