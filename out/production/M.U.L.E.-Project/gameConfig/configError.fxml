@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<<<<<<< HEAD:Game_Config/src/sample/configError.fxml
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+=======
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.Controller">
+>>>>>>> origin/master:out/production/M.U.L.E.-Project/gameConfig/configError.fxml
+  <children>
+    <Button fx:id="okButton" onAction="#errorBox" layoutX="105.0" layoutY="115.0" mnemonicParsing="false" text="OK" />
+    <Text layoutX="64.0" layoutY="88.0" scaleX="1.000000744700174" scaleY="1.000005660585816" strokeType="OUTSIDE" strokeWidth="0.0" text="the game before continuing!">
+      <font>
+        <Font size="13.0" fx:id="x1" />
+      </font>
+    </Text>
+    <Text font="$x1" layoutX="64.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please finish configuring" />
+    <Circle fill="RED" layoutX="30.0" layoutY="67.0" radius="19.642105102539062" stroke="BLACK" strokeType="INSIDE" />
+    <Text layoutX="26.0" layoutY="76.0" scaleX="1.2303426791277259" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="!">
+      <font>
+        <Font name="System Bold" size="25.0" />
+      </font>
+    </Text>
+  </children>
+</AnchorPane>
