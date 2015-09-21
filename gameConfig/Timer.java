@@ -16,8 +16,6 @@ import javafx.scene.layout.VBox;
 import javafx.animation.KeyFrame;
 import javafx.util.Duration;
 
-import javax.swing.*;
-
 public class Timer extends Application {
     private int beginTime;// = 50;
     private Integer timeLeft;// = beginTime;
@@ -80,3 +78,4 @@ public class Timer extends Application {
     }
 
 }
+
