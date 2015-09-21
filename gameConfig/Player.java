@@ -8,12 +8,16 @@ public class Player {
     private String name;
     private Race race;
     private Color color;
-    //private int location;
 
     private int money;
     private int food;
     private int energy;
     private int ore;
+
+    //array of Land owned?
+    private int landGrants;
+    private int numLand;
+    private int score;
 
     private int turnsTaken;
 
@@ -24,6 +28,7 @@ public class Player {
         this.color = color;
 
         turnsTaken = 0;
+        landGrants = 2;
 
         if (Controller.level.equals("Beginner")){
             food = 8;

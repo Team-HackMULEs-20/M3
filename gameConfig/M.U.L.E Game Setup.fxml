@@ -6,13 +6,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.text.*?>
 
-<GridPane id="M.U.L.E. Game Setup" alignment="CENTER" hgap="10.0" prefHeight="400.00010681152344" prefWidth="600.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.Controller">
+<GridPane id="M.U.L.E. Game Setup" alignment="CENTER" gridLinesVisible="false" hgap="10.0" prefHeight="400.00010681152344" prefWidth="600.0" vgap="10.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.Controller">
   <children>
-    <ChoiceBox fx:id="difficulty" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+    <ImageView fitHeight="155.85807019232936" fitWidth="465.9998779296875" opacity="1.0" pickOnBounds="true" preserveRatio="true" smooth="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP">
+      <image>
+        <Image url="@Media/Title_Mule.png" />
+      </image>
+    </ImageView>
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <font>
+        <Font size="15.0" fx:id="x1" />
+      </font>
+    </Text>
+    <ChoiceBox fx:id="difficulty" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Beginner" />
@@ -21,14 +32,8 @@
         </FXCollections>
       </items>
     </ChoiceBox>
-    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty" GridPane.columnIndex="1" GridPane.rowIndex="0">
-      <font>
-        <Font size="15.0" fx:id="x1" />
-      </font>
-    </Text>
-    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Map Type" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Players" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-    <ChoiceBox fx:id="mapType" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Map Type" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <ChoiceBox fx:id="mapType" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Standard" />
@@ -36,7 +41,8 @@
         </FXCollections>
       </items>
     </ChoiceBox>
-    <ChoiceBox fx:id="numPlayers" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Players" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <ChoiceBox fx:id="numPlayers" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="2" />
@@ -45,19 +51,23 @@
         </FXCollections>
       </items>
     </ChoiceBox>
-    <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#buttonClicked" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-    <Button fx:id="nextButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#buttonClicked" opacity="1.0" text="Next" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+    <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#buttonClicked" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+    <Button fx:id="nextButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#buttonClicked" opacity="1.0" text="Next" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+    <Text fill="#5200ff" scaleX="1.0" scaleY="1.1538329678357622" strokeType="OUTSIDE" strokeWidth="0.0" text="(Re)created by Team 20: HackMULEs" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
   </children>
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="157.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="126.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="130.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="157.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="124.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="131.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="55.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="156.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="94.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="147.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
   </rowConstraints>
 </GridPane>
