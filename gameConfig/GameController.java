@@ -1,5 +1,6 @@
 package gameConfig;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
@@ -14,5 +15,4 @@ public class GameController implements Initializable {
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
 
     }
-
 }
