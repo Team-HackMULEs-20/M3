@@ -19,6 +19,7 @@ public class Player {
     private int numLand;
     private int score;
 
+    private Location location;
     private int turnsTaken;
 
     public Player (int number, String name, Race race, Color color) {
@@ -45,13 +46,17 @@ public class Player {
         } else {
             money = 1000;
         }
+
+        location = Location.MAP;
     }
 
     public enum Race {
         FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN
     }
 
-    //public enum Location {}
+    public enum Location {
+        MAP, STORE, PUB, LANDOFFICE, ASSAYOFFICE
+    }
 
     public int getNumber() {return number;}
 
@@ -75,5 +80,7 @@ public class Player {
 
     public int getTurnsTaken() {return turnsTaken;}
     public void incTurnsTaken() {turnsTaken++;}
+
+    public Location getLocation() {return location;}
 
 }
