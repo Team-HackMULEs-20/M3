@@ -3,6 +3,7 @@ package gameConfig;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
@@ -12,8 +13,10 @@ import javafx.animation.Timeline;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.VBox;
+import javafx.animation.KeyFrame;
+import javafx.util.Duration;
 
-public class Timer extends Application{
+public class Timer extends Application {
     private int beginTime;// = 50;
     private Integer timeLeft;// = beginTime;
     private Timeline timeline;
@@ -24,12 +27,8 @@ public class Timer extends Application{
         timeLeft = beginTime;
     }
 
-    public static void main(String[] args) {
-        Application.launch(args);
-    }
-
     @Override
-    public void start (Stage stage) {
+    public void start(Stage stage) {
         stage.setTitle("Turn Timer");
         Group t = new Group();
         Scene scene = new Scene(t,150,150);
@@ -43,11 +42,40 @@ public class Timer extends Application{
         box.setPrefWidth(scene.getWidth());
         box.setLayoutY(30);
         box.getChildren().add(timerLabel);
+
+        Button endButton = new Button("End Turn");
+        box.getChildren().add(endButton);
+
         t.getChildren().add(box);
 
         stage.setScene(scene);
         stage.show();
+        stage.toFront();
+
+        timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.getKeyFrames().add(
+                new KeyFrame(Duration.seconds(1),
+                        event -> {
+                            timeLeft--;
+                            // update timerLabel
+                            timerLabel.setText(
+                                    timeLeft.toString());
+                            if (timeLeft <= 0) {
+                                timeline.stop();
+                            }
+                        }));
+        timeline.playFromStart();
+        endButton.setOnAction((ActionEvent e) -> {
+            timeline.stop();
+            stage.close();
+        });
 
     }
 
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+
 }
+
