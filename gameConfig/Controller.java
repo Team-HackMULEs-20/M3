@@ -63,6 +63,7 @@ public class Controller implements Initializable {
     private static Color color;
     private Stage newStage;
     private Player[] players;
+    private Land[][] landPlots;
     private Turns gameTurns;
 
     @Override
@@ -163,7 +164,12 @@ public class Controller implements Initializable {
                     newStage.setTitle("Game Screen");
                     newStage.show();
                     //creates land array
-
+                    landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
+                    for (int i = 0; i < landPlots.length; i++) {
+                        for (int j = 0; j < landPlots[0].length; j++) {
+                            landPlots[i][j] = new Land(i,j);
+                        }
+                    }
                 }
 
             } else if (e.getSource() == backButton) {
