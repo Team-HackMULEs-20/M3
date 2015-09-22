@@ -4,14 +4,16 @@ public class Turns {
     public static Player[] players;
     public static int rounds;
     public static int timeOfTurn;
+    public static int playerTurn;
 
     public Turns(Player[] players) {
-        this.players = players;
+        Turns.players = players;
         rounds = 1;
+        playerTurn = 1;
     }
 
     public static Player getNextTurn() {
-        return players[0];
+        return players[playerTurn - 1];
     }
 
     public static int timeForTurn(Player player) {

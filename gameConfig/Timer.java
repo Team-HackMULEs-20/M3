@@ -63,12 +63,15 @@ public class Timer extends Application {
                                     timeLeft.toString());
                             if (timeLeft <= 0) {
                                 timeline.stop();
+                                Turns.playerTurn++;
                             }
                         }));
         timeline.playFromStart();
         endButton.setOnAction((ActionEvent e) -> {
             timeline.stop();
             stage.close();
+            Turns.playerTurn++;
+            GameController.beginTurn();
         });
 
     }

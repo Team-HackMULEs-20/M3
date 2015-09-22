@@ -16,6 +16,7 @@ public class Launcher extends Application {
     public static Scene errorMessage;
     public static Scene gameScene;
     public static Scene townScene;
+    public static Scene startScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -25,6 +26,8 @@ public class Launcher extends Application {
             Parent error = FXMLLoader.load(getClass().getResource("configError.fxml"));
             Parent gameRoot = FXMLLoader.load(getClass().getResource("MainMap.fxml"));
             Parent town = FXMLLoader.load(getClass().getResource("TownMap.fxml"));
+            Parent startWindow = FXMLLoader.load(getClass().getResource("playerStart.fxml"));
+            startScene = new Scene(startWindow);
             errorMessage = new Scene(error);
             nextScene = new Scene(child);
             rootScene = new Scene(root, 600, 400);
