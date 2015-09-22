@@ -41,5 +41,4 @@ public class Turns {
         }
         return timeOfTurn;
     }
-
 }
