@@ -29,13 +29,13 @@ public class GameController implements Initializable {
     public static void beginTurn() {
         start = new Stage();
         start.setScene(Launcher.startScene);
-        start.setTitle(Turns.getNextTurn().getName() + "'s Turn");
+        start.setTitle(Turns.getTurn().getName() + "'s Turn");
         start.show();
     }
 
     public void startButtonClicked(ActionEvent event) {
         if (event.getSource() == startButton) {
-            Timer timer = new Timer(Turns.timeForTurn(Turns.getNextTurn()));
+            Timer timer = new Timer(Turns.timeForTurn(Turns.getTurn()));
             timer.start(new Stage());
             start.close();
         }

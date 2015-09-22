@@ -215,6 +215,8 @@ public class Controller implements Initializable {
             newStage.setScene(Launcher.townScene);
             newStage.setTitle("Town");
             newStage.show();
+            Player p = Turns.getTurn();
+            p.setLocation(Player.Location.TOWN);
         }
     }
 
