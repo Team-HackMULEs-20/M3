@@ -59,12 +59,15 @@ public class Player {
     }
 
     public int getNumber() {return number;}
-
     public String getName() {return name;}
-
     public Race getRace() {return race;}
-
+    public Location getLocation() {return location;}
     public Color getColor() {return color;}
+    
+    public int getScore() {
+        score = money + (500 * numLand) + (30 * food) + (25 * energy) + (50 * ore);
+        return score;
+    }
 
     public int getMoney() {return money;}
     public void addSubMoney(int amount) {money += amount;}
@@ -80,7 +83,5 @@ public class Player {
 
     public int getTurnsTaken() {return turnsTaken;}
     public void incTurnsTaken() {turnsTaken++;}
-
-    public Location getLocation() {return location;}
 
 }
