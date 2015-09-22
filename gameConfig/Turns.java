@@ -12,7 +12,7 @@ public class Turns {
         playerTurn = 1;
     }
 
-    public static Player getNextTurn() {
+    public static Player getTurn() {
         if (playerTurn > players.length) {
             rounds++;
             playerTurn = 1;
