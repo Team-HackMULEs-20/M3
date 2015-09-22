@@ -147,9 +147,7 @@ public class Controller implements Initializable {
                             newStage.setScene(Launcher.gameScene);
                             newStage.setTitle("Game Screen");
                             newStage.show();
-                            // create timer
-                            Timer timer = new Timer(Turns.timeForTurn(Turns.getNextTurn()));
-                            timer.start(new Stage());
+                            GameController.beginTurn();
                             //creates land array
                             landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
                             for (int i = 0; i < landPlots.length; i++) {
@@ -170,9 +168,7 @@ public class Controller implements Initializable {
                             newStage.setScene(Launcher.gameScene);
                             newStage.setTitle("Game Screen");
                             newStage.show();
-                            // create timer
-                            Timer timer = new Timer(Turns.timeForTurn(Turns.getNextTurn()));
-                            timer.start(new Stage());
+                            GameController.beginTurn();
                             //creates land array
                             landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
                             for (int i = 0; i < landPlots.length; i++) {
@@ -192,9 +188,7 @@ public class Controller implements Initializable {
                         newStage.setScene(Launcher.gameScene);
                         newStage.setTitle("Game Screen");
                         newStage.show();
-                        // create timer
-                        Timer timer = new Timer(Turns.timeForTurn(Turns.getNextTurn()));
-                        timer.start(new Stage());
+                        GameController.beginTurn();
                         //creates land array
                         landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
                         for (int i = 0; i < landPlots.length; i++) {

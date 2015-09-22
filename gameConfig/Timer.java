@@ -72,6 +72,7 @@ public class Timer extends Application {
             timeline.stop();
             stage.close();
         });
+        Turns.playerTurn++;
 
     }
 
