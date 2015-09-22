@@ -13,7 +13,24 @@ public class Turns {
     }
 
     public static Player getNextTurn() {
+        if (playerTurn > players.length) {
+            rounds++;
+            playerTurn = 1;
+            Turns.sortByScore();
+            System.out.println("Next Round");
+        }
         return players[playerTurn - 1];
+    }
+
+    public static void sortByScore() {
+        for (int i = 0; i < players.length - 1; i++) {
+            if (players[i].getScore() > players[i + 1].getScore()) {
+                Player temp = players[i + 1];
+                players[i + 1] = players[i];
+                players[i] = temp;
+            }
+        }
+
     }
 
     public static int timeForTurn(Player player) {
