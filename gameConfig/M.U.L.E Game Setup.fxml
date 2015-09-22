@@ -13,9 +13,6 @@
 
 <GridPane id="M.U.L.E. Game Setup" alignment="CENTER" gridLinesVisible="false" hgap="10.0" prefHeight="400.00010681152344" prefWidth="600.0" vgap="10.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.Controller">
   <children>
-<<<<<<< HEAD:Game_Config/src/sample/M.U.L.E Game Setup.fxml
-    <ChoiceBox fx:id="difficulty" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
-=======
     <ImageView fitHeight="155.85807019232936" fitWidth="465.9998779296875" opacity="1.0" pickOnBounds="true" preserveRatio="true" smooth="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP">
       <image>
         <Image url="@Media/Title_Mule.png" />
@@ -27,7 +24,6 @@
       </font>
     </Text>
     <ChoiceBox fx:id="difficulty" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
->>>>>>> origin/master:gameConfig/M.U.L.E Game Setup.fxml
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Beginner" />

@@ -39,7 +39,6 @@ public class Turns {
                 }
             }
         }
-        System.out.println(timeOfTurn);
         return timeOfTurn;
     }
 
