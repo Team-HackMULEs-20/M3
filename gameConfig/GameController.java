@@ -50,6 +50,9 @@ public class GameController implements Initializable {
     @FXML
     private Button bidPassButton;
 
+    @FXML
+    private Button gambleButton;
+
     public static int numPasses = 0;
 
     private static Stage start;
@@ -57,8 +60,6 @@ public class GameController implements Initializable {
     private Stage newStage;
 
     private static Stage auctionStage;
-
-    private static int currentBidAmount;
 
     private static int startingBid;
 
@@ -127,9 +128,10 @@ public class GameController implements Initializable {
         auctionStage.setTitle(Turns.getTurn().getName() + "'s Turn");
     }
 
+    @FXML
     public void bidButtonClicked(ActionEvent event) {
         if (event.getSource() == bidButton) {
-            currentBidAmount = Integer.parseInt(bidAmount.getText());
+            int currentBidAmount = Integer.parseInt(bidAmount.getText());
             Player p = Turns.getTurn();
             if (currentBidAmount > startingBid && p.getMoney() > currentBidAmount) {
                 startingBid = currentBidAmount;
@@ -174,6 +176,15 @@ public class GameController implements Initializable {
         }
         Stage stage = (Stage) pubButton.getScene().getWindow();
         stage.close();
+    }
+
+    @FXML
+    public void gambleButtonClicked(ActionEvent e) {
+        newStage = new Stage();
+        if (e.getSource() == gambleButton) {
+            int timeLeft = Timer.getTimeLeft();
+            System.out.println(timeLeft);
+        }
     }
 
     public void buttonClicked5(ActionEvent e) {

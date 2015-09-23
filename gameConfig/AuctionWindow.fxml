@@ -7,12 +7,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="474.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameConfig.GameController">
    <children>
-      <Button fx:id="bidButton" alignment="CENTER" layoutX="94.0" layoutY="255.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="134.0" text="Bid">
+      <Button fx:id="bidButton" onAction="#bidButtonClicked" alignment="CENTER" layoutX="94.0" layoutY="255.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="134.0" text="Bid">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="bidPassButton" alignment="CENTER" layoutX="246.0" layoutY="255.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="134.0" text="Pass">
+      <Button fx:id="bidPassButton" onAction="#bidButtonClicked" alignment="CENTER" layoutX="246.0" layoutY="255.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="134.0" text="Pass">
          <font>
             <Font size="20.0" />
          </font>
