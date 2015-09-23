@@ -21,7 +21,8 @@ public class Timer extends Application {
     private Integer timeLeft;// = beginTime;
     private Timeline timeline;
     private Label timerLabel = new Label();
-
+    private static Button endButton;
+    
     public Timer(int beginTime) {
         this.beginTime = beginTime;
         timeLeft = beginTime;
@@ -43,7 +44,7 @@ public class Timer extends Application {
         box.setLayoutY(30);
         box.getChildren().add(timerLabel);
 
-        Button endButton = new Button("End Turn");
+        endButton = new Button("End Turn");
         box.getChildren().add(endButton);
 
         t.getChildren().add(box);
@@ -76,6 +77,11 @@ public class Timer extends Application {
             GameController.beginTurn();
         });
 
+    }
+    
+    //simulates "End Turn" button pressed
+    public static void endTurn() {
+    	endButton.fire();
     }
 
     public static void main(String[] args) {

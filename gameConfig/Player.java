@@ -88,5 +88,14 @@ public class Player {
 
     public int getTurnsTaken() {return turnsTaken;}
     public void incTurnsTaken() {turnsTaken++;}
-
+    
+    public void buyInitialLand() {
+    	if (landGrants > 0) {
+    		landGrants--;
+    		numLand++;
+    	} else if (money >= 300) {
+    		money = money - 300;
+    		numLand++;
+    	}
+    }
 }

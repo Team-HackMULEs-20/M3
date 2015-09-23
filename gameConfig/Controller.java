@@ -37,6 +37,12 @@ public class Controller implements Initializable {
 
     @FXML
     private Button landOfficeButton;
+
+    @FXML
+    private Button landBuyButton;
+
+    @FXML
+    private Button passButton;
     
     @FXML
     private ChoiceBox numPlayers;
@@ -229,11 +235,19 @@ public class Controller implements Initializable {
     		newStage.setScene(Launcher.landBuyIntScene);
     		newStage.setTitle(Turns.getTurn().getName());
     		newStage.show();
-    	} else {
+    	}
     		Stage stage = (Stage) landOfficeButton.getScene().getWindow();
     		stage.close();
+    }
+    
+    public void buttonClicked5(ActionEvent e) {
+    	if (e.getSource() == landBuyButton) {
+    		
+    	} else if (e.getSource() == passButton) {
+    		Stage stage = (Stage) passButton.getScene().getWindow();
+    		stage.close();
+    		Timer.endTurn();
     	}
-    	
     }
 
     public void errorBox(ActionEvent event) {
