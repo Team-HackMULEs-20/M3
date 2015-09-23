@@ -1,5 +1,6 @@
 package gameConfig;
 
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -34,6 +35,9 @@ public class Controller implements Initializable {
     @FXML
     private Button townButton;
 
+    @FXML
+    private Button landOfficeButton;
+    
     @FXML
     private ChoiceBox numPlayers;
 
@@ -226,6 +230,7 @@ public class Controller implements Initializable {
                     race = race.toUpperCase();
                 }
                 Player.Race r = Player.Race.valueOf(race);
+
                 color = colorPick.getValue();
 
                 //creating Player
@@ -419,6 +424,7 @@ public class Controller implements Initializable {
                             newStage.setScene(Launcher.gameScene);
                             newStage.setTitle("Game Screen");
                             newStage.show();
+                            GameController.beginTurn();
                             //creates land array
                             landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
                             for (int i = 0; i < landPlots.length; i++) {
@@ -439,6 +445,7 @@ public class Controller implements Initializable {
                             newStage.setScene(Launcher.gameScene);
                             newStage.setTitle("Game Screen");
                             newStage.show();
+                            GameController.beginTurn();
                             //creates land array
                             landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
                             for (int i = 0; i < landPlots.length; i++) {
@@ -458,6 +465,7 @@ public class Controller implements Initializable {
                         newStage.setScene(Launcher.gameScene);
                         newStage.setTitle("Game Screen");
                         newStage.show();
+                        GameController.beginTurn();
                         //creates land array
                         landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
                         for (int i = 0; i < landPlots.length; i++) {
@@ -485,7 +493,22 @@ public class Controller implements Initializable {
             newStage.setScene(Launcher.townScene);
             newStage.setTitle("Town");
             newStage.show();
+            Player p = Turns.getTurn();
+            p.setLocation(Player.Location.TOWN);
         }
+    }
+    
+    public void buttonClicked4(ActionEvent e) {
+    	newStage = new Stage();
+    	if (e.getSource() == landOfficeButton) {
+    		newStage.setScene(Launcher.landBuyIntScene);
+    		newStage.setTitle(Turns.getTurn().getName());
+    		newStage.show();
+    	} else {
+    		Stage stage = (Stage) landOfficeButton.getScene().getWindow();
+    		stage.close();
+    	}
+    	
     }
 
     public void errorBox(ActionEvent event) {
@@ -510,6 +533,7 @@ public class Controller implements Initializable {
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 >>>>>>> origin/kfindley7
 =======
@@ -518,3 +542,6 @@ public class Controller implements Initializable {
 =======
 }
 >>>>>>> origin/kfindley7
+=======
+}
+>>>>>>> master

@@ -40,7 +40,7 @@ public class Player {
     private int score;
 
     private Location location;
-    private int turnsTaken;
+    private int turnsTaken; //TODO
 
     public Player (int number, String name, Race race, Color color) {
         this.number = number;
@@ -104,17 +104,25 @@ public class Player {
     //public enum Location {}
 =======
     public enum Location {
-        MAP, STORE, PUB, LANDOFFICE, ASSAYOFFICE
+        MAP, TOWN, STORE, PUB, LANDOFFICE
+        //assay office not needed in the game
     }
 >>>>>>> origin/kfindley7
 
     public int getNumber() {return number;}
-
     public String getName() {return name;}
-
     public Race getRace() {return race;}
+    public int getLandGrants() {return landGrants;}
+
+    public Location getLocation() {return location;}
+    public void setLocation(Location l) {this.location = l;}
 
     public Color getColor() {return color;}
+
+    public int getScore() {
+        score = money + (500 * numLand) + (30 * food) + (25 * energy) + (50 * ore);
+        return score;
+    }
 
     public int getMoney() {return money;}
     public void addSubMoney(int amount) {money += amount;}
@@ -137,7 +145,5 @@ public class Player {
 >>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
-
-    public Location getLocation() {return location;}
 
 }
