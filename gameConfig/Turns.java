@@ -21,6 +21,9 @@ public class Turns {
             playerTurn = 1;
             Turns.sortByScore();
             System.out.println("Next Round");
+            if (GameController.isAuctionTime()) {
+                GameController.startAuction();
+            }
         }
         return players[playerTurn - 1];
     }

@@ -78,9 +78,6 @@ public class GameController implements Initializable {
                 newStage.setScene(Launcher.landBuyIntScene);
                 newStage.setTitle(Turns.getTurn().getName());
                 newStage.show();
-                if (isAuctionTime()) {
-                    startAuction();
-                }
             }
         }
     }
@@ -104,7 +101,8 @@ public class GameController implements Initializable {
 
     @FXML
     public static void startAuction() {
-        System.out.println("Auction Begin");
+        Stage auctionStage = new Stage();
+        auctionStage.setScene(Launcher.auctionScene);
     }
 
     @FXML
