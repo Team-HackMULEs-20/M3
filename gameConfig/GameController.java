@@ -16,7 +16,7 @@ public class GameController implements Initializable {
 
     @FXML
     private Button startButton;
-
+    
     private static Stage start;
 
     @Override
@@ -32,6 +32,7 @@ public class GameController implements Initializable {
         start.setTitle(Turns.getTurn().getName() + "'s Turn");
         start.show();
     }
+    
 
     public void startButtonClicked(ActionEvent event) {
         if (event.getSource() == startButton) {

@@ -6,6 +6,8 @@ public class Land {
     private int row;
     private int col;
 
+    public static boolean landBuyEnable = false;
+    
     // private hasMule //TODO
     // private numMule //If a mule is on the property when sold, it is lost
     //randomNum = minimum + (int)(Math.random()*maximum);
