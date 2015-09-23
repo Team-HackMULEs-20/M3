@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import javax.naming.ldap.Control;
@@ -143,11 +144,10 @@ public class GameController implements Initializable {
                 currentP.addSubMoney(-300);
             Node landButton = (Node) e.getSource();
             GridPane grid = (GridPane) landButton.getParent();
-            ColorPicker color =  new ColorPicker();//setting up the color picker
-            color.setValue(currentP.getColor());
-            color.setStyle("-fx-color-label-visible: false ;");
-            color.setMaxSize(25, 25);
-            color.setDisable(true);
+            Rectangle color =  new Rectangle();
+            color.setFill(currentP.getColor());
+            color.setHeight(25);
+            color.setWidth(25);
             color.setOpacity(1);
             grid.add(color, GridPane.getColumnIndex(landButton), GridPane.getRowIndex(landButton));
             GridPane.setHalignment(color, HPos.LEFT);
