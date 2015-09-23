@@ -35,7 +35,7 @@ public class Player {
     private int ore;
 
     //array of Land owned?
-    private int landGrants;
+    public int landGrants;
     private int numLand;
     private int score;
 
@@ -140,10 +140,14 @@ public class Player {
     public void incTurnsTaken() {turnsTaken++;}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
 =======
 >>>>>>> origin/kfindley7
 
+=======
+    
+>>>>>>> master
 }
