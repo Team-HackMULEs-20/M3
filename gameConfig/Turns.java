@@ -15,6 +15,10 @@ public class Turns {
     public static Player getTurn() {
         if (playerTurn > players.length) {
             rounds++;
+            /*if (GameController.numBids == 1) {
+                Land.buyLand(players[playerTurn]);
+            }*/
+            GameController.numBids = 0;
             if (GameController.numPasses != players.length) {
                 GameController.numPasses = 0;
             }
@@ -40,7 +44,6 @@ public class Turns {
                 players[i] = temp;
             }
         }
-
     }
 
     public static int timeForTurn(Player player) {

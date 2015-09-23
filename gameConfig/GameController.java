@@ -8,6 +8,8 @@ import javafx.geometry.VPos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -36,23 +38,47 @@ public class GameController implements Initializable {
     @FXML
     private Button pubButton;
 
+    @FXML
+    private static TextField bidAmount;
+
+    @FXML
+    private static Label currentBidLabel;
+
+    @FXML
+    private Button bidButton;
+
+    @FXML
+    private Button bidPassButton;
+
     public static int numPasses = 0;
 
     private static Stage start;
 
     private Stage newStage;
 
+    private static Stage auctionStage;
+
+    private static int currentBidAmount;
+
+    private static int startingBid;
+
+    public static int landNotTaken;
+
+    public static int numBids;
+
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         assert startButton != null : "fx:id=\"startButton\" was not injected: " +
                 "check your FXML file 'playerStart.fxml'.";
-        assert landBuyButton != null : "fx:id=\"townButton\" was not injected: " +
-                "check your FXML file 'M.U.L.E Game Setup.fxml'.";
-        assert passButton != null : "fx:id=\"townButton\" was not injected: " +
-                "check your FXML file 'M.U.L.E Game Setup.fxml'.";
+        assert landBuyButton != null : "fx:id=\"landBuyButton\" was not injected: " +
+                "check your FXML file 'landBuyInterface.fxml'.";
+        assert passButton != null : "fx:id=\"passButton\" was not injected: " +
+                "check your FXML file 'landBuyInterface.fxml'.";
         assert townButton != null : "fx:id=\"townButton\" was not injected: " +
-                "check your FXML file 'M.U.L.E Game Setup.fxml'.";
+                "check your FXML file 'MainMap.fxml'.";
+        assert landOfficeButton != null : "fx:id=\"landOfficeButton\" was not injected: " +
+                "check your FXML file 'TownMap.fxml'.";
     }
 
     @FXML
@@ -80,23 +106,40 @@ public class GameController implements Initializable {
 
     public static boolean isAuctionTime() {
         boolean auctionTime = false;
-        int notTaken = 44;
+        landNotTaken = 44;
         for (Land[] item: Controller.landPlots) {
             for (Land plot: item) {
                 if (plot.isOwned()) {
-                    notTaken--;
+                    landNotTaken--;
                 }
             }
         }
-        if (notTaken < Controller.numPlayer) {
+        if (landNotTaken < Controller.numPlayer) {
             auctionTime = true;
         }
+        startingBid = Land.getBuyPrice() / 2;
         return auctionTime;
     }
 
     public static void startAuction() {
-        Stage auctionStage = new Stage();
+        auctionStage = new Stage();
         auctionStage.setScene(Launcher.auctionScene);
+        auctionStage.setTitle(Turns.getTurn().getName() + "'s Turn");
+    }
+
+    public void bidButtonClicked(ActionEvent event) {
+        if (event.getSource() == bidButton) {
+            currentBidAmount = Integer.parseInt(bidAmount.getText());
+            Player p = Turns.getTurn();
+            if (currentBidAmount > startingBid && p.getMoney() > currentBidAmount) {
+                startingBid = currentBidAmount;
+                currentBidLabel.setText("Current Bid is: " + startingBid);
+                GameController.numBids++;
+            }
+        } else if (event.getSource() == bidPassButton) {
+            Timer.endTurn();
+            auctionStage.close();
+        }
     }
 
     public void townButtonClicked(ActionEvent e) {

@@ -23,7 +23,7 @@ public class Land {
 
     public Player getOwner() {return owner;}
 
-    public int getBuyPrice() {
+    public static int getBuyPrice() {
         return 300 + Turns.rounds + (int)(Math.random() * 100);
     }
     public int getSellPrice() {
