@@ -15,6 +15,9 @@ public class Turns {
     public static Player getTurn() {
         if (playerTurn > players.length) {
             rounds++;
+            if (GameController.numPasses != players.length) {
+                GameController.numPasses = 0;
+            }
             playerTurn = 1;
             Turns.sortByScore();
             System.out.println("Next Round");
@@ -23,9 +26,9 @@ public class Turns {
     }
 
     public static int getRound() {
-    	return rounds;
+        return rounds;
     }
-    
+
     public static void sortByScore() {
         for (int i = 0; i < players.length - 1; i++) {
             if (players[i].getScore() > players[i + 1].getScore()) {

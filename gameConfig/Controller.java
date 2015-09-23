@@ -37,18 +37,6 @@ public class Controller implements Initializable {
 	private Button backButton;
 
 	@FXML
-	private Button townButton;
-
-	@FXML
-	private Button landOfficeButton;
-
-	@FXML
-	private Button landBuyButton;
-
-	@FXML
-	private Button passButton;
-
-	@FXML
 	private ChoiceBox numPlayers;
 
 	@FXML
@@ -78,7 +66,7 @@ public class Controller implements Initializable {
 	private static Color color;
 	private Stage newStage;
 	private static Player[] players;
-	private static Land[][] landPlots;
+	public static Land[][] landPlots;
 	private static Turns gameTurns;
 	//private boolean landBuyEnable = false;
 
@@ -92,8 +80,6 @@ public class Controller implements Initializable {
 				"check your FXML file 'playerSetup.fxml'.";
 		assert nextButton2 != null : "fx:id=\"nextButton2\" was not injected: " +
 				"check your FXML file 'playerSetup.fxml'.";
-		assert townButton != null : "fx:id=\"townButton\" was not injected: " +
-				"check your FXML file 'M.U.L.E Game Setup.fxml'.";
 		assert numPlayers != null : "fx:id=\"numPlayer\" was not injected: " +
 				"check your FXML file 'M.U.LE Game Setup.fxml'.";
 	}
@@ -219,67 +205,6 @@ public class Controller implements Initializable {
 		} catch (NullPointerException error) {
 			Launcher.primaryStage.setScene(Launcher.errorMessage);
 			Launcher.primaryStage.setTitle("Error!");
-		}
-	}
-
-	public void buttonClicked3(ActionEvent e) {
-		newStage = new Stage();
-		if (e.getSource() == townButton) {
-			Launcher.primaryStage.hide();
-			newStage.setScene(Launcher.townScene);
-			newStage.setTitle("Town");
-			newStage.show();
-			Player p = Turns.getTurn();
-			p.setLocation(Player.Location.TOWN);
-		}
-	}
-
-	public void buttonClicked4(ActionEvent e) {
-		newStage = new Stage();
-		if (e.getSource() == landOfficeButton) {
-			newStage.setScene(Launcher.landBuyIntScene);
-			newStage.setTitle(Turns.getTurn().getName());
-			newStage.show();
-		}
-		Stage stage = (Stage) landOfficeButton.getScene().getWindow();
-		stage.close();
-	}
-
-	public void buttonClicked5(ActionEvent e) {
-		if (e.getSource() == landBuyButton) {
-			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
-				Land.landBuyEnable = true;
-			Stage stage = (Stage) landBuyButton.getScene().getWindow();
-			stage.close();
-		} else if (e.getSource() == passButton) {
-			Stage stage = (Stage) passButton.getScene().getWindow();
-			stage.close();
-			Timer.endTurn();
-		}
-	}
-
-	public void landButtonClicked(ActionEvent e) {
-		if (Land.landBuyEnable) {
-			Player currentP = Turns.getTurn();
-			if (currentP.landGrants > 0)//check for land grants
-				currentP.landGrants--;
-			else//if not grants sub money
-				currentP.addSubMoney(-300);
-			Node landButton = (Node) e.getSource();
-			GridPane grid = (GridPane) landButton.getParent();
-			ColorPicker color =  new ColorPicker();//setting up the color picker
-			color.setValue(currentP.getColor());
-			color.setStyle("-fx-color-label-visible: false ;");
-			color.setMaxSize(25, 25);
-			color.setDisable(true);
-			color.setOpacity(1);
-			grid.add(color, GridPane.getColumnIndex(landButton), GridPane.getRowIndex(landButton));
-			GridPane.setHalignment(color, HPos.LEFT);
-			GridPane.setValignment(color, VPos.TOP);
-			landButton.setDisable(true);//disable the land button since land is purchased
-			Land.landBuyEnable = false;//disable land buying for next turn
-
-			Timer.endTurn();
 		}
 	}
 
