@@ -62,6 +62,7 @@ public class Player {
     public int getNumber() {return number;}
     public String getName() {return name;}
     public Race getRace() {return race;}
+    public int getLandGrants() {return landGrants;}
 
     public Location getLocation() {return location;}
     public void setLocation(Location l) {this.location = l;}

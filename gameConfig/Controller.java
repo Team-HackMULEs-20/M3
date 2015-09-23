@@ -36,6 +36,9 @@ public class Controller implements Initializable {
     private Button townButton;
 
     @FXML
+    private Button landOfficeButton;
+    
+    @FXML
     private ChoiceBox numPlayers;
 
     @FXML
@@ -218,6 +221,19 @@ public class Controller implements Initializable {
             Player p = Turns.getTurn();
             p.setLocation(Player.Location.TOWN);
         }
+    }
+    
+    public void buttonClicked4(ActionEvent e) {
+    	newStage = new Stage();
+    	if (e.getSource() == landOfficeButton) {
+    		newStage.setScene(Launcher.landBuyIntScene);
+    		newStage.setTitle(Turns.getTurn().getName());
+    		newStage.show();
+    	} else {
+    		Stage stage = (Stage) landOfficeButton.getScene().getWindow();
+    		stage.close();
+    	}
+    	
     }
 
     public void errorBox(ActionEvent event) {
