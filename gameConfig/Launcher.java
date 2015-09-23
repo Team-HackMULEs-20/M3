@@ -18,6 +18,7 @@ public class Launcher extends Application {
     public static Scene townScene;
     public static Scene startScene;
     public static Scene landBuyIntScene;
+    public static Scene pubGambleScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -29,6 +30,7 @@ public class Launcher extends Application {
             Parent town = FXMLLoader.load(getClass().getResource("TownMap.fxml"));
             Parent startWindow = FXMLLoader.load(getClass().getResource("playerStart.fxml"));
             Parent landBuy = FXMLLoader.load(getClass().getResource("LandBuyInterface.fxml"));
+            Parent pubGamble = FXMLLoader.load(getClass().getResource("PubGambleInterface.fxml"));
             startScene = new Scene(startWindow);
             errorMessage = new Scene(error);
             nextScene = new Scene(child);
@@ -36,6 +38,7 @@ public class Launcher extends Application {
             gameScene = new Scene(gameRoot);
             townScene = new Scene(town);
             landBuyIntScene = new Scene(landBuy);
+            pubGambleScene = new Scene(pubGamble);
             Launcher.primaryStage = primaryStage;
             primaryStage.setTitle("M.U.L.E. Game Setup");
             primaryStage.setScene(rootScene);
