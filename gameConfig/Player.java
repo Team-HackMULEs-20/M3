@@ -15,7 +15,7 @@ public class Player {
     private int ore;
 
     //array of Land owned?
-    private int landGrants;
+    public int landGrants;
     private int numLand;
     private int score;
 
@@ -89,13 +89,4 @@ public class Player {
     public int getTurnsTaken() {return turnsTaken;}
     public void incTurnsTaken() {turnsTaken++;}
     
-    public void buyInitialLand() {
-    	if (landGrants > 0) {
-    		landGrants--;
-    		numLand++;
-    	} else if (money >= 300) {
-    		money = money - 300;
-    		numLand++;
-    	}
-    }
 }
