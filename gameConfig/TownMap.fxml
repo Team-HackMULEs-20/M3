@@ -46,9 +46,9 @@
         <Image url="@Media/bldg4.png" preserveRatio="true" smooth="true" />
       </image>
     </ImageView>
-    <Button fx:id="pubButton" layoutX="158.0" layoutY="126.0" mnemonicParsing="false" onAction="#buttonClicked4" text="Pub" />
-    <Button fx:id="landOfficeButton" layoutX="375.0" layoutY="126.0" mnemonicParsing="false" onAction="#buttonClicked4" text="Land Office" />
-    <Button fx:id="assayOfficeButton" layoutX="158.0" layoutY="366.0" mnemonicParsing="false" onAction="#buttonClicked4" text="Assay Office" />
-    <Button fx:id="storeButton" layoutX="375.0" layoutY="365.0" mnemonicParsing="false" onAction="#buttonClicked4" text="Store" />
+    <Button fx:id="pubButton" layoutX="158.0" layoutY="126.0" mnemonicParsing="false" onAction="#pubButtonClicked" text="Pub" />
+    <Button fx:id="landOfficeButton" layoutX="375.0" layoutY="126.0" mnemonicParsing="false" onAction="#landOfficeButtonClicked" text="Land Office" />
+    <Button fx:id="assayOfficeButton" layoutX="158.0" layoutY="366.0" mnemonicParsing="false" onAction="#landOfficeButtonClicked" text="Assay Office" />
+    <Button fx:id="storeButton" layoutX="375.0" layoutY="365.0" mnemonicParsing="false" onAction="#landOfficeButtonClicked" text="Store" />
   </children>
 </AnchorPane>

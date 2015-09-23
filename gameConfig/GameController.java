@@ -33,6 +33,9 @@ public class GameController implements Initializable {
     @FXML
     private Button landOfficeButton;
 
+    @FXML
+    private Button pubButton;
+
     public static int numPasses = 0;
 
     private static Stage start;
@@ -98,7 +101,7 @@ public class GameController implements Initializable {
         System.out.println("Auction Begin");
     }
 
-    public void buttonClicked3(ActionEvent e) {
+    public void townButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == townButton) {
             Launcher.primaryStage.hide();
@@ -110,7 +113,7 @@ public class GameController implements Initializable {
         }
     }
 
-    public void buttonClicked4(ActionEvent e) {
+    public void landOfficeButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == landOfficeButton) {
             newStage.setScene(Launcher.landBuyIntScene);
@@ -118,6 +121,17 @@ public class GameController implements Initializable {
             newStage.show();
         }
         Stage stage = (Stage) landOfficeButton.getScene().getWindow();
+        stage.close();
+    }
+
+    public void pubButtonClicked(ActionEvent e) {
+        newStage = new Stage();
+        if (e.getSource() == pubButton) {
+            newStage.setScene(Launcher.pubGambleScene);
+            newStage.setTitle(Turns.getTurn().getName());
+            newStage.show();
+        }
+        Stage stage = (Stage) pubButton.getScene().getWindow();
         stage.close();
     }
 
@@ -135,7 +149,7 @@ public class GameController implements Initializable {
         }
     }
 
-    public void landButtonClicked(ActionEvent e) {
+    public void landBuyButtonClicked(ActionEvent e) {
         if (Land.landBuyEnable) {
             Player currentP = Turns.getTurn();
             if (currentP.landGrants > 0)//check for land grants
