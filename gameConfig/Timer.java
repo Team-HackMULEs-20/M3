@@ -18,7 +18,7 @@ import javafx.util.Duration;
 
 public class Timer extends Application {
     private int beginTime;// = 50;
-    private Integer timeLeft;// = beginTime;
+    private static Integer timeLeft;// beginTime;
     private Timeline timeline;
     private Label timerLabel = new Label();
     private static Button endButton;
@@ -83,6 +83,8 @@ public class Timer extends Application {
     public static void endTurn() {
     	endButton.fire();
     }
+
+    public static int getTimeLeft() {return timeLeft;}
 
     public static void main(String[] args) {
         Application.launch(args);

@@ -36,6 +36,9 @@ public class GameController implements Initializable {
     @FXML
     private Button pubButton;
 
+    @FXML
+    private Button gambleButton;
+
     public static int numPasses = 0;
 
     private static Stage start;
@@ -63,6 +66,7 @@ public class GameController implements Initializable {
         start.show();
     }
 
+    @FXML
     public void startButtonClicked(ActionEvent event) {
         newStage = new Stage();
         if (event.getSource() == startButton) {
@@ -81,6 +85,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public static boolean isAuctionTime() {
         boolean auctionTime = false;
         int notTaken = 44;
@@ -97,10 +102,12 @@ public class GameController implements Initializable {
         return auctionTime;
     }
 
+    @FXML
     public static void startAuction() {
         System.out.println("Auction Begin");
     }
 
+    @FXML
     public void townButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == townButton) {
@@ -113,6 +120,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public void landOfficeButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == landOfficeButton) {
@@ -124,6 +132,7 @@ public class GameController implements Initializable {
         stage.close();
     }
 
+    @FXML
     public void pubButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == pubButton) {
@@ -135,6 +144,16 @@ public class GameController implements Initializable {
         stage.close();
     }
 
+    @FXML
+    public void gambleButtonClicked(ActionEvent e) {
+        newStage = new Stage();
+        if (e.getSource() == gambleButton) {
+            int timeLeft = Timer.getTimeLeft();
+            System.out.println(timeLeft);
+        }
+    }
+
+    @FXML
     public void buttonClicked5(ActionEvent e) {
         if (e.getSource() == landBuyButton) {
             if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
@@ -149,6 +168,7 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
     public void landBuyButtonClicked(ActionEvent e) {
         if (Land.landBuyEnable) {
             Player currentP = Turns.getTurn();

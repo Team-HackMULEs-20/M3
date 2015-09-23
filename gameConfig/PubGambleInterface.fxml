@@ -7,11 +7,11 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
   <children>
     <Text layoutX="235.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Pub!" />
     <Button fx:id="cancelButton" layoutX="171.0" layoutY="312.0" mnemonicParsing="false" text="Cancel" />
-    <Button fx:id="gambleButton" layoutX="341.0" layoutY="312.0" mnemonicParsing="false" text="Gamble!" />
+    <Button fx:id="gambleButton" onAction="#gambleButtonClicked" layoutX="341.0" layoutY="312.0" mnemonicParsing="false" text="Gamble!" />
     <Text layoutX="116.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rounds    1-3    4-7    8-11    12&#10;Money      50    100     150     200" />
     <Text layoutX="82.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here, you can gamble by getting bonus money for your unused time!" />
     <Text layoutX="116.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Round Bonus" />
