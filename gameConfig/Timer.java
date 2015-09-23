@@ -16,14 +16,13 @@ import javafx.scene.layout.VBox;
 import javafx.animation.KeyFrame;
 import javafx.util.Duration;
 
-import javax.swing.*;
-
 public class Timer extends Application {
     private int beginTime;// = 50;
     private Integer timeLeft;// = beginTime;
     private Timeline timeline;
     private Label timerLabel = new Label();
-
+    private static Button endButton;
+    
     public Timer(int beginTime) {
         this.beginTime = beginTime;
         timeLeft = beginTime;
@@ -45,7 +44,7 @@ public class Timer extends Application {
         box.setLayoutY(30);
         box.getChildren().add(timerLabel);
 
-        Button endButton = new Button("End Turn");
+        endButton = new Button("End Turn");
         box.getChildren().add(endButton);
 
         t.getChildren().add(box);
@@ -65,15 +64,25 @@ public class Timer extends Application {
                                     timeLeft.toString());
                             if (timeLeft <= 0) {
                                 timeline.stop();
+                                Turns.playerTurn++;
+                                GameController.beginTurn();
+                                stage.close();
                             }
                         }));
         timeline.playFromStart();
         endButton.setOnAction((ActionEvent e) -> {
             timeline.stop();
             stage.close();
+            Turns.playerTurn++;
+            GameController.beginTurn();
         });
         Turns.playerTurn++;
 
+    }
+    
+    //simulates "End Turn" button pressed
+    public static void endTurn() {
+    	endButton.fire();
     }
 
     public static void main(String[] args) {
@@ -81,3 +90,4 @@ public class Timer extends Application {
     }
 
 }
+

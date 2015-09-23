@@ -6,8 +6,11 @@ public class Land {
     private int row;
     private int col;
 
+    public static boolean landBuyEnable = false;
+    
     // private hasMule //TODO
     // private numMule //If a mule is on the property when sold, it is lost
+    //randomNum = minimum + (int)(Math.random()*maximum);
 
     public Land(int row, int col) {
         this.row = row;
@@ -20,27 +23,35 @@ public class Land {
 
     public Player getOwner() {return owner;}
 
-    public void buyLand(Player p) {
-        int price = 300 + Turns.rounds;
-        owner = p;
-        owned = true;
+    public int getBuyPrice() {
+        return 300 + Turns.rounds + (int)(Math.random() * 100);
+    }
+    public int getSellPrice() {
+        return 400 + (int)(Math.random() * 200);
+    }
 
-        /*
-        The selling price is 400 + random(0-200).
-        You may also buy property if any is available from the land office. The buying price is 300 + round * random(0-100).
-         */
+    public void buyLand(Player p) {
+        if (!isOwned()) {
+            owner = p;
+            owned = true;
+            owner.addSubMoney(-getBuyPrice());
+        } else {
+            System.out.println("This land is already owned"); //TODO
+        }
     }
 
     public void sellLand() {
-        if (owner.getLocation() == Player.Location.LANDOFFICE) {
-            int sellPrice = 400 + (int)(Math.random() * 200); //randomNum = minimum + (int)(Math.random()*maximum);
-            owner = null;
-            owned = false;
+        if (isOwned()) {
+            if (owner.getLocation() == Player.Location.LANDOFFICE) {
+                owner.addSubMoney(getSellPrice());
+                owner = null;
+                owned = false;
+            } else {
+                System.out.println("Need to be in Land office"); //create error that says this? TODO
+            }
         } else {
-            System.out.println("Need to be in Land office"); //create error that says this? TODO
+            System.out.println("This land is not owned to sell"); //TODO
         }
-
-
     }
 
     public boolean isOwned() {return owned;}

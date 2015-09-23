@@ -1,5 +1,25 @@
 package gameConfig;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+public class Player {
+
+    int number;
+    String name;
+    int race;
+    String color;
+
+    public Player (int number, String name, int race, String color) {
+        this.number = number;
+        this.name = name;
+        //this.race = race;
+        this.color = color;
+=======
+=======
+>>>>>>> origin/kfindley7
+=======
+>>>>>>> origin/kfindley7
 import javafx.scene.paint.Color;
 
 public class Player {
@@ -15,12 +35,12 @@ public class Player {
     private int ore;
 
     //array of Land owned?
-    private int landGrants;
+    public int landGrants;
     private int numLand;
     private int score;
 
     private Location location;
-    private int turnsTaken;
+    private int turnsTaken; //TODO
 
     public Player (int number, String name, Race race, Color color) {
         this.number = number;
@@ -46,25 +66,63 @@ public class Player {
         } else {
             money = 1000;
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> origin/kfindley7
+=======
+>>>>>>> origin/kfindley7
+=======
+>>>>>>> origin/kfindley7
+=======
 
         location = Location.MAP;
+>>>>>>> origin/kfindley7
     }
 
     public enum Race {
         FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN
     }
 
-    public enum Location {
-        MAP, STORE, PUB, LANDOFFICE, ASSAYOFFICE
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    public String getName() {
+        return name;
     }
 
+    public String getColor(){
+        return color;
+    }
+
+=======
+=======
+>>>>>>> origin/kfindley7
+=======
+>>>>>>> origin/kfindley7
+    //public enum Location {}
+=======
+    public enum Location {
+        MAP, TOWN, STORE, PUB, LANDOFFICE
+        //assay office not needed in the game
+    }
+>>>>>>> origin/kfindley7
+
     public int getNumber() {return number;}
-
     public String getName() {return name;}
-
     public Race getRace() {return race;}
+    public int getLandGrants() {return landGrants;}
+
+    public Location getLocation() {return location;}
+    public void setLocation(Location l) {this.location = l;}
 
     public Color getColor() {return color;}
+
+    public int getScore() {
+        score = money + (500 * numLand) + (30 * food) + (25 * energy) + (50 * ore);
+        return score;
+    }
 
     public int getMoney() {return money;}
     public void addSubMoney(int amount) {money += amount;}
@@ -80,7 +138,16 @@ public class Player {
 
     public int getTurnsTaken() {return turnsTaken;}
     public void incTurnsTaken() {turnsTaken++;}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> origin/kfindley7
+=======
+>>>>>>> origin/kfindley7
+=======
+>>>>>>> origin/kfindley7
 
-    public Location getLocation() {return location;}
-
+=======
+    
+>>>>>>> master
 }

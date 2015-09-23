@@ -16,28 +16,27 @@ public class GameController implements Initializable {
 
     @FXML
     private Button startButton;
-
+    
     private static Stage start;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         assert startButton != null : "fx:id=\"startButton\" was not injected: " +
-                "check your FXML file ''.";
-    }
-
-    public static void beginTurn() {
-        // show start turn window (stage will be made in launcher
-        // when timer ends (or end button is pressed) this window should pop up
-        start = new Stage();
-        start.setScene(Launcher.playerStart);
-        start.setTitle(Turns.getNextTurn().getName() + "'s turn");
-        start.show();
+                "check your FXML file 'playerStart.fxml'.";
     }
 
     @FXML
-    public void startTurnButton(ActionEvent event) {
+    public static void beginTurn() {
+        start = new Stage();
+        start.setScene(Launcher.startScene);
+        start.setTitle(Turns.getTurn().getName() + "'s Turn");
+        start.show();
+    }
+    
+
+    public void startButtonClicked(ActionEvent event) {
         if (event.getSource() == startButton) {
-            Timer timer = new Timer(Turns.timeForTurn(Turns.getNextTurn()));
+            Timer timer = new Timer(Turns.timeForTurn(Turns.getTurn()));
             timer.start(new Stage());
             start.close();
         }
