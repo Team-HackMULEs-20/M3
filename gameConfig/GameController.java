@@ -84,6 +84,7 @@ public class GameController implements Initializable {
 
     @FXML
     public static void beginTurn() {
+        Launcher.primaryStage.hide();
         start = new Stage();
         start.setScene(Launcher.startScene);
         start.setTitle(Turns.getTurn().getName() + "'s Turn");
