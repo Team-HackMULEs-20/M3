@@ -34,7 +34,7 @@ public class Land {
         if (!isOwned()) {
             owner = p;
             owned = true;
-            owner.addSubMoney(-getBuyPrice());
+            owner.addSubMoney(getBuyPrice());
         } else {
             System.out.println("This land is already owned"); //TODO
         }
