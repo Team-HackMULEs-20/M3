@@ -53,6 +53,9 @@ public class GameController implements Initializable {
     @FXML
     private Button gambleButton;
 
+    @FXML
+    private Button backButton;
+
     public static int numPasses = 0;
 
     private static Stage start;
@@ -186,6 +189,19 @@ public class GameController implements Initializable {
             int timeLeft = Timer.getTimeLeft();
             System.out.println(timeLeft);
         }
+    }
+
+    @FXML
+    public void backButtonClicked(ActionEvent e) {
+       newStage = new Stage();
+        if (e.getSource() == backButton) {
+            newStage.setScene(Launcher.townScene);
+            newStage.setTitle("Town");
+            newStage.show();
+        }
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        stage.close();
+
     }
 
     public void buttonClicked5(ActionEvent e) {

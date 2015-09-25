@@ -3,19 +3,23 @@
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
   <children>
-    <Text layoutX="235.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Pub!" />
-    <Button fx:id="cancelButton" layoutX="171.0" layoutY="312.0" mnemonicParsing="false" text="Cancel" />
-    <Button fx:id="gambleButton" onAction="#gambleButtonClicked" layoutX="341.0" layoutY="312.0" mnemonicParsing="false" text="Gamble!" />
-    <Text layoutX="116.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rounds    1-3    4-7    8-11    12&#10;Money      50    100     150     200" />
-    <Text layoutX="82.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here, you can gamble by getting bonus money for your unused time!" />
-    <Text layoutX="116.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Round Bonus" />
-    <Text layoutX="116.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Bonus" />
-    <Text layoutX="116.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seconds Left    0-11    12-24    25-37    38-50&#10;Money" />
+    <Text layoutX="235.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Pub!" />
+    <Button fx:id="backButton" layoutX="18.0" layoutY="22.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
+    <Button fx:id="gambleButton" layoutX="377.0" layoutY="200.0" minWidth="22.0" mnemonicParsing="false" onAction="#gambleButtonClicked" prefWidth="22.0" text="Gamble!" />
+    <Text layoutX="82.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here, you can gamble by getting bonus money for your unused time!" />
+    <Text layoutX="218.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click the joystick to begin" />
+    <Text layoutX="436.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Won:" />
+    <ImageView id="slotmachine" fitHeight="331.0" fitWidth="252.0" layoutX="184.0" layoutY="94.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/slotmachine.gif" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
   </children>
 </AnchorPane>
