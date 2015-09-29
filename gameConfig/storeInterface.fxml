@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
+  <children>
+    <ImageView id="store" fitHeight="400.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/store.JPG" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <ImageView id="menu" fitHeight="330.0" fitWidth="444.0" layoutX="81.0" layoutY="36.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/menu.jpg" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <Text layoutX="231.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Store!" />
+    <Button fx:id="foodButton" layoutX="155.0" layoutY="118.0" mnemonicParsing="false" text="Food - $30" />
+    <Text layoutX="192.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What would you like to purchase?" />
+    <Button fx:id="energyButton" layoutX="149.0" layoutY="180.0" mnemonicParsing="false" text="Energy - $25" />
+    <Button fx:id="smithoreButton" layoutX="144.0" layoutY="250.0" mnemonicParsing="false" text="Smithore - $50" />
+    <Button layoutX="330.0" layoutY="118.0" mnemonicParsing="false" text="Chrystite - $100" />
+    <ComboBox layoutX="306.0" layoutY="179.0" promptText="Mule">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Food Mule - $125" />
+          <String fx:value="Energy Mule - $150" />
+          <String fx:value="Smithore Mule - $175" />
+          <String fx:value="Crystite Mule - $200" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Text layoutX="159.0" layoutY="166.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
+    <Text layoutX="162.0" layoutY="229.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
+    <Text layoutX="168.0" layoutY="296.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
+    <Text layoutX="358.0" layoutY="161.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
+    <Text layoutX="355.0" layoutY="227.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
+    <ComboBox layoutX="326.0" layoutY="250.0" prefWidth="128.0" promptText="Sell Products">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Food" />
+          <String fx:value="Energy" />
+          <String fx:value="Smithore" />
+          <String fx:value="Crystite" />
+          <String fx:value="Mule" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Button id="backButton" fx:id="backButton2" layoutX="17.0" layoutY="25.0" mnemonicParsing="false" onAction="#backButtonClicked2" text="Back" />
+    <Text layoutX="221.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16" />
+    <Text layoutX="224.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16" />
+    <Text layoutX="232.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+    <Text layoutX="420.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+    <Text layoutX="416.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25" />
+  </children>
+</AnchorPane>
