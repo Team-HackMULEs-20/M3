@@ -191,9 +191,16 @@ public class GameController implements Initializable {
     public void gambleButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == gambleButton) {
+            System.out.println("BUTTON PRESSED");
+            //if (Timer.getTimeLeft() == null)
             int timeLeft = Timer.getTimeLeft();
-            int t = Turns.rounds;
-            //System.out.println(timeLeft);
+            int r = Turns.rounds;
+            System.out.println("Turns: "+ r);
+            System.out.println(timeLeft);
+            Player p = Turns.getTurn();
+            System.out.println(p.getName());
+
+
         }
     }
 
