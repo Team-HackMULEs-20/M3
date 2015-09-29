@@ -156,7 +156,6 @@ public class GameController implements Initializable {
             newStage.setTitle("Town");
             newStage.show();
             Player p = Turns.getTurn();
-            p.setLocation(Player.Location.TOWN);
         }
     }
 
@@ -187,7 +186,8 @@ public class GameController implements Initializable {
         newStage = new Stage();
         if (e.getSource() == gambleButton) {
             int timeLeft = Timer.getTimeLeft();
-            System.out.println(timeLeft);
+            int t = Turns.rounds;
+            //System.out.println(timeLeft);
         }
     }
 

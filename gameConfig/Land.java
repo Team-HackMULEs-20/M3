@@ -42,13 +42,9 @@ public class Land {
 
     public void sellLand() {
         if (isOwned()) {
-            if (owner.getLocation() == Player.Location.LANDOFFICE) {
-                owner.addSubMoney(getSellPrice());
-                owner = null;
-                owned = false;
-            } else {
-                System.out.println("Need to be in Land office"); //create error that says this? TODO
-            }
+            owner.addSubMoney(getSellPrice());
+            owner = null;
+            owned = false;
         } else {
             System.out.println("This land is not owned to sell"); //TODO
         }
