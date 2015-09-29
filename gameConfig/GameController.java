@@ -56,6 +56,12 @@ public class GameController implements Initializable {
     @FXML
     private Button backButton;
 
+    @FXML
+    private Button backButton2;
+
+    @FXML
+    private Button storeButton;
+
     public static int numPasses = 0;
 
     private static Stage start;
@@ -201,7 +207,17 @@ public class GameController implements Initializable {
         }
         Stage stage = (Stage) backButton.getScene().getWindow();
         stage.close();
-
+    }
+    @FXML
+    public void backButtonClicked2(ActionEvent e) {
+        newStage = new Stage();
+        if (e.getSource() == backButton2) {
+            newStage.setScene(Launcher.townScene);
+            newStage.setTitle("Town");
+            newStage.show();
+        }
+        Stage stage = (Stage) backButton2.getScene().getWindow();
+        stage.close();
     }
 
     public void buttonClicked5(ActionEvent e) {
@@ -217,6 +233,18 @@ public class GameController implements Initializable {
             Timer.endTurn();
         }
     }
+
+    public void storeButtonClicked(ActionEvent e) {
+        newStage = new Stage();
+        if (e.getSource() == storeButton) {
+            newStage.setScene(Launcher.storeScene);
+            newStage.setTitle("Store");
+            newStage.show();
+        }
+        Stage stage = (Stage) storeButton.getScene().getWindow();
+        stage.close();
+    }
+
 
     public void landBuyButtonClicked(ActionEvent e) {
         if (Land.landBuyEnable) {
