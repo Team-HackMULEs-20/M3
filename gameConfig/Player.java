@@ -19,7 +19,6 @@ public class Player {
     private int numLand;
     private int score;
 
-    private Location location;
     private int turnsTaken; //TODO
 
     public Player (int number, String name, Race race, Color color) {
@@ -47,16 +46,10 @@ public class Player {
             money = 1000;
         }
 
-        location = Location.MAP;
     }
 
     public enum Race {
         FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN
-    }
-
-    public enum Location {
-        MAP, TOWN, STORE, PUB, LANDOFFICE
-        //assay office not needed in the game
     }
 
     public int getNumber() {return number;}
@@ -64,8 +57,6 @@ public class Player {
     public Race getRace() {return race;}
     public int getLandGrants() {return landGrants;}
 
-    public Location getLocation() {return location;}
-    public void setLocation(Location l) {this.location = l;}
 
     public Color getColor() {return color;}
 
