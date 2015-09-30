@@ -109,7 +109,7 @@ public class GameController implements Initializable {
     private static int startingBid;
     public static int landNotTaken;
     public static int numBids;
-    private boolean selectPhase = true;
+    private static boolean selectPhase = true;
 
 
     @Override
