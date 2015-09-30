@@ -21,6 +21,7 @@ public class Launcher extends Application {
     public static Scene pubGambleScene;
     public static Scene auctionScene;
     public static Scene storeScene;
+    public static Scene gambleConfirm;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -35,6 +36,7 @@ public class Launcher extends Application {
             Parent pubGamble = FXMLLoader.load(getClass().getResource("PubGambleInterface.fxml"));
             Parent auctionWin = FXMLLoader.load(getClass().getResource("AuctionWindow.fxml"));
             Parent store = FXMLLoader.load(getClass().getResource("storeInterface.fxml"));
+            Parent gambleC = FXMLLoader.load(getClass().getResource("GambleConfirmation.fxml"));
             startScene = new Scene(startWindow);
             errorMessage = new Scene(error);
             nextScene = new Scene(child);
@@ -45,6 +47,7 @@ public class Launcher extends Application {
             pubGambleScene = new Scene(pubGamble);
             auctionScene = new Scene(auctionWin);
             storeScene = new Scene(store);
+            gambleConfirm = new Scene(gambleC);
             Launcher.primaryStage = primaryStage;
             primaryStage.setTitle("M.U.L.E. Game Setup");
             primaryStage.setScene(rootScene);

@@ -115,7 +115,6 @@ public class Player {
             mb = 250;
         }
         System.out.println("Money Bonus: " + mb);
-
         money += mb;
     }
     
