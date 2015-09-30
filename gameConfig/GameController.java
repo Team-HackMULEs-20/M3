@@ -97,17 +97,11 @@ public class GameController implements Initializable {
 
 
     public static int numPasses = 0;
-
     private static Stage start;
-
     private Stage newStage;
-
     private static Stage auctionStage;
-
     private static int startingBid;
-
     public static int landNotTaken;
-
     public static int numBids;
 
 
@@ -241,15 +235,10 @@ public class GameController implements Initializable {
 
     @FXML
     public void gambleConfirm(ActionEvent e) {
-        //newStage = new Stage();
         if (e.getSource() == gambleOkButton) {
-            System.out.println("ok pressed");
-            Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-            stage.close();
         }
-//        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-//        stage.close();
-
+        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
@@ -275,7 +264,7 @@ public class GameController implements Initializable {
         stage.close();
     }
 
-    public void buttonClicked5(ActionEvent e) {
+    public void buyLandButtonClicked(ActionEvent e) {
         if (e.getSource() == landBuyButton) {
             if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
                 Land.landBuyEnable = true;
@@ -300,7 +289,7 @@ public class GameController implements Initializable {
     }
 
 
-    public void landBuyButtonClicked(ActionEvent e) {
+    public void purchaseLand(ActionEvent e) {
         if (Land.landBuyEnable) {
             Player currentP = Turns.getTurn();
             if (currentP.landGrants > 0)//check for land grants

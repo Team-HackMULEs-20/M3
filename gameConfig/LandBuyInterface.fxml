@@ -14,8 +14,8 @@
         <Text layoutX="217.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="It is your turn to buy land!" />
         <Text layoutX="13.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you do not wish to make a purchase this round, please select Pass and save your money." />
         <Text layoutX="156.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Each land costs $300. (The first two are free!)" />
-        <Button fx:id="passButton" layoutX="156.0" layoutY="298.0" mnemonicParsing="false" onAction="#buttonClicked5" text="Pass" />
-        <Button fx:id="landBuyButton" layoutX="364.0" layoutY="298.0" mnemonicParsing="false" onAction="#buttonClicked5" text="Buy Land" />
+        <Button fx:id="passButton" layoutX="156.0" layoutY="298.0" mnemonicParsing="false" onAction="#buyLandButtonClicked" text="Pass" />
+        <Button fx:id="landBuyButton" layoutX="364.0" layoutY="298.0" mnemonicParsing="false" onAction="#buyLandButtonClicked" text="Buy Land" />
         <Text layoutX="89.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To purchase land simply click on which land you would like to buy." />
         <Text layoutX="156.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You cannot buy land owned by someone else." />
       </children>
