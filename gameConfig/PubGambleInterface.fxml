@@ -12,14 +12,14 @@
   <children>
     <Text layoutX="235.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Pub!" />
     <Button fx:id="backButton" layoutX="18.0" layoutY="22.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
-    <Button fx:id="gambleButton" layoutX="377.0" layoutY="200.0" minWidth="22.0" mnemonicParsing="false" onAction="#gambleButtonClicked" prefWidth="22.0" text="Gamble!" />
     <Text layoutX="82.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here, you can gamble by getting bonus money for your unused time!" />
     <Text layoutX="218.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click the joystick to begin" />
     <Text layoutX="436.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Won:" />
-    <ImageView id="slotmachine" fitHeight="331.0" fitWidth="252.0" layoutX="184.0" layoutY="94.0" pickOnBounds="true">
+    <ImageView id="slotmachine" fitHeight="331.0" fitWidth="252.0" layoutX="165.0" layoutY="105.0" pickOnBounds="true">
       <image>
         <Image url="@Media/slotmachine.gif" preserveRatio="true" smooth="true" />
       </image>
     </ImageView>
+    <Button fx:id="gambleButton" layoutX="346.0" layoutY="193.0" minWidth="22.0" mnemonicParsing="false" onAction="#gambleButtonClicked" opacity="0.0" prefHeight="66.0" prefWidth="51.0" text="Gamble!" />
   </children>
 </AnchorPane>

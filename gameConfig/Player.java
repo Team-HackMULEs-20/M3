@@ -79,5 +79,44 @@ public class Player {
 
     public int getTurnsTaken() {return turnsTaken;}
     public void incTurnsTaken() {turnsTaken++;}
+
+    public void gamble(int timeLeft) {
+        System.out.println(name + " has chosen to gamble at the Pub with " + timeLeft + " seconds left.");
+        int r = Turns.rounds;
+
+        int rb = 0; // round bonus
+        if (r <= 3) { // rounds 1 - 3
+            rb = 50;
+        } else if (r <= 7) { // rounds 4 - 7
+            rb = 100;
+        } else if (r <= 11) { // rounds 5 - 11
+            rb = 150;
+        } else { // round 12
+            rb = 200;
+        }
+        System.out.println("Round Bonus: " + rb);
+
+        int tb = 0; //time bonus
+        if (timeLeft < 12) { // time left = 0-11 seconds
+            tb = 50;
+        } else if (timeLeft < 25) { // time left = 12-24 seconds
+            tb = 100;
+        } else if (timeLeft < 37) { // time left = 25-36 seconds
+            tb = 150;
+        } else { // time left = 37-50 seconds
+            tb = 200;
+        }
+        System.out.println("Time Bonus: " + tb);
+
+        //money bonus = round bonus * random(0 to timebonus)
+        //randomNum = minimum + (int)(Math.random()*maximum);
+        int mb = rb * ((int)(Math.random() * tb)); //money bonus
+        if (mb > 250) {
+            mb = 250;
+        }
+        System.out.println("Money Bonus: " + mb);
+
+        money += mb;
+    }
     
 }
