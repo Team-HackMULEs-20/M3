@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <Text layoutX="234.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land Selection Phase" />
+    <Text layoutX="63.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Each Player has two land grants and gets two free pieces of land per game.&#10;After that, each plot of land costs $300." textAlignment="CENTER" />
+    <Text layoutX="52.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Select/ Purchase a plot of land, simply click on the desired grid on the map.&#10;If you do not want to make a purchase, please click &quot;Pass&quot;." textAlignment="CENTER" />
+    <Button fx:id="Pass" layoutX="202.0" layoutY="311.0" mnemonicParsing="false" text="Pass" />
+    <Button fx:id="selectLand" layoutX="300.0" layoutY="311.0" mnemonicParsing="false" text="Select /  Purchase Land" />
+    <Text layoutX="30.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Each Player will get an oppurtunity to select land in this phase until either all the land&#10;has been claimed or all players have passed on a selection round." textAlignment="CENTER" />
+  </children>
+</AnchorPane>
