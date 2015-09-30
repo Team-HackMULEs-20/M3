@@ -65,6 +65,37 @@ public class GameController implements Initializable {
     @FXML
     private Button gambleOkButton;
 
+    @FXML
+    private Label foodCostLabel;
+
+    @FXML
+    private Label energyCostLabel;
+
+    @FXML
+    private Label smithoreCostLabel;
+
+    @FXML
+    private Label chrystiteCostLabel;
+
+    @FXML
+    private Label muleCostLabel;
+
+    @FXML
+    private Label foodQuantityLabel;
+
+    @FXML
+    private Label energyQuantityLabel;
+
+    @FXML
+    private Label smithoreQuantityLabel;
+
+    @FXML
+    private Label chrystiteQuantityLabel;
+
+    @FXML
+    private Label muleQuantityLabel;
+
+
     public static int numPasses = 0;
 
     private static Stage start;
