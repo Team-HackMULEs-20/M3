@@ -60,7 +60,7 @@ public class Player {
 
     public Color getColor() {return color;}
 
-    public int getScore() {
+    public int getScore() { //TODO
         score = money + (500 * numLand) + (30 * food) + (25 * energy) + (50 * ore);
         return score;
     }
