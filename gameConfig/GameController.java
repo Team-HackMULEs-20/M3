@@ -66,6 +66,12 @@ public class GameController implements Initializable {
     private Button gambleOkButton;
 
     @FXML
+    private Button passSelect;
+
+    @FXML
+    private Button selectLand;
+
+    @FXML
     private Label foodCostLabel;
 
     @FXML
@@ -103,6 +109,7 @@ public class GameController implements Initializable {
     private static int startingBid;
     public static int landNotTaken;
     public static int numBids;
+    private boolean selectPhase = true;
 
 
     @Override
@@ -136,9 +143,12 @@ public class GameController implements Initializable {
             start.close();
             if (numPasses < Controller.numPlayer) {
                 System.out.println("Land Selection Phase");
-                newStage.setScene(Launcher.landBuyIntScene);
+                selectPhase = true;
+                newStage.setScene(Launcher.selectLandPhase);
                 newStage.setTitle(Turns.getTurn().getName());
                 newStage.show();
+            } else {
+                selectPhase = false;
             }
         }
     }
@@ -271,9 +281,23 @@ public class GameController implements Initializable {
             Stage stage = (Stage) landBuyButton.getScene().getWindow();
             stage.close();
         } else if (e.getSource() == passButton) {
-            numPasses++;
             Stage stage = (Stage) passButton.getScene().getWindow();
             stage.close();
+        }
+    }
+
+    @FXML
+    public void selectionPhase(ActionEvent event) {
+        if (event.getSource() == selectLand) {
+            if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
+                Land.landBuyEnable = true;
+            Stage stage = (Stage) selectLand.getScene().getWindow();
+            stage.close();
+        } else {
+            numPasses++;
+            Stage stage = (Stage) passSelect.getScene().getWindow();
+            stage.close();
+            Timer.endTurn();
         }
     }
 
@@ -308,8 +332,9 @@ public class GameController implements Initializable {
             GridPane.setValignment(color, VPos.TOP);
             landButton.setDisable(true);//disable the land button since land is purchased
             Land.landBuyEnable = false;//disable land buying for next turn
-
-            Timer.endTurn();
+            if (selectPhase) {
+                Timer.endTurn();
+            }
         }
     }
 }
