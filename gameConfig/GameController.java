@@ -231,7 +231,6 @@ public class GameController implements Initializable {
             numPasses++;
             Stage stage = (Stage) passButton.getScene().getWindow();
             stage.close();
-            Timer.endTurn();
         }
     }
 
