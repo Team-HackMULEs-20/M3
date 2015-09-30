@@ -212,12 +212,9 @@ public class GameController implements Initializable {
     public void gambleConfirm(ActionEvent e) {
         //newStage = new Stage();
         if (e.getSource() == gambleOkButton) {
-            System.out.println("ok pressed");
-            Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-            stage.close();
         }
-//        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-//        stage.close();
+        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
+        stage.close();
 
     }
 
