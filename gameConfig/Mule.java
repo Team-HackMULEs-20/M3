@@ -2,7 +2,7 @@ package gameConfig;
 
 public class Mule {
 	
-	private Type type;
+	public static Type type;
 	private Player owner;
 	private int cost;
 	
@@ -34,7 +34,7 @@ public class Mule {
 		return type;
 	}
 	
-	private enum Type {
+	public enum Type {
 		FOOD, ENERGY, SMITHORE, CRYSTITE
 	}
 	
