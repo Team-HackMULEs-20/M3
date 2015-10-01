@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e5d5de5-beb0-4a9f-aaba-1ea8883596ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameConfig/Store.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Store.java" afterPath="$PROJECT_DIR$/gameConfig/Store.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="M.U.L.E.-Project.iws" />
@@ -40,9 +40,12 @@
           <file leaf-file-name="Store.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gameConfig/Store.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4937571">
-                  <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-                  <folding />
+                <state vertical-scroll-proportion="-0.95800227">
+                  <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#3718#3719#0" expanded="true" />
+                    <element signature="e#3753#3754#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -778,7 +781,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443649434260</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Created Store class">
+      <created>1443712332610</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1443712332610</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -803,6 +812,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33509934" sideWeight="0.55007154" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32794458" sideWeight="0.4745098" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.4881475" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3231788" sideWeight="0.49427754" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -813,7 +823,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.4881475" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20132013" sideWeight="0.44992846" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -832,7 +841,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Opening screen graphic" />
     <MESSAGE value="Updated screens" />
     <MESSAGE value="Created land class" />
     <MESSAGE value="Town map shows up" />
@@ -857,7 +865,8 @@
     <MESSAGE value="updated screen" />
     <MESSAGE value="Fixed Selection Phase process. Implemented separate window for selection phase" />
     <MESSAGE value="Had to make a variable in selection phase shit static" />
-    <option name="LAST_COMMIT_MESSAGE" value="Had to make a variable in selection phase shit static" />
+    <MESSAGE value="Created Store class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Store class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1292,9 +1301,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/Store.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4937571">
-          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-0.95800227">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#3718#3719#0" expanded="true" />
+            <element signature="e#3753#3754#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

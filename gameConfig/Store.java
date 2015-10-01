@@ -14,10 +14,8 @@ public class Store {
     public int crysQuantity;
     public int muleCost;
     public int muleQuantity;
-    public Mule.Type muleType;
 
     public Store() {
-        this.muleType = Mule.type;
         if (Controller.level.equals("Beginner")) {
             this.foodQuantity = 16;
             this.foodCost = 30;
@@ -104,10 +102,6 @@ public class Store {
         }
     }
 
-    public Mule.Type getMuleType() {
-        return muleType;
-    }
-
     public int getFoodCost() {
         return foodCost;
     }
@@ -144,18 +138,6 @@ public class Store {
         return muleQuantity;
     }
 
-    public int getMuleCost() {
-        if (this.muleType.equals(Mule.Type.FOOD)) {
-            muleCost += 30;
-        } else if (this.muleType.equals(Mule.Type.ENERGY)) {
-            muleCost += 25;
-        } else if (this.muleType.equals(Mule.Type.SMITHORE)) {
-            muleCost += 50;
-        } else if (this.muleType.equals(Mule.Type.CRYSTITE)) {
-            muleCost += 100;
-        }
-        return muleCost;
-    }
 
 
 }
