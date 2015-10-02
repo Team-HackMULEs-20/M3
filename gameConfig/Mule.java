@@ -5,6 +5,7 @@ public class Mule {
 	private Type type;
 	private Player owner;
 	private int cost;
+	private Land position;
 	
 	public Mule(Type t) {
 		type = t;
@@ -22,6 +23,10 @@ public class Mule {
 		
 	}
 
+	public int getCost() {
+		return cost;
+	}
+	
 	public void setOwner(Player p) {
 		owner = p;
 	}
@@ -34,7 +39,11 @@ public class Mule {
 		return type;
 	}
 	
-	private enum Type {
+	public void setPosition(Land p) {
+		position = p;
+	}
+	
+	public enum Type {
 		FOOD, ENERGY, SMITHORE, CRYSTITE
 	}
 	

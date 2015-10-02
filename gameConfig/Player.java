@@ -1,10 +1,13 @@
 package gameConfig;
 
+import java.util.ArrayList;
+
 import javafx.scene.paint.Color;
 
 public class Player {
 
-    private int number;
+    public boolean muleBuyEnable;
+	private int number;
     private String name;
     private Race race;
     private Color color;
@@ -18,6 +21,9 @@ public class Player {
     public int landGrants;
     private int numLand;
     private int score;
+    
+    public ArrayList<Land> landOwned;
+    public ArrayList<Mule> mulesOwned;
 
     private int turnsTaken; //TODO
 
@@ -26,6 +32,10 @@ public class Player {
         this.name = name;
         this.race = race;
         this.color = color;
+        
+        landOwned = new ArrayList<Land>();
+        mulesOwned = new ArrayList<Mule>();
+        muleBuyEnable = false;
 
         turnsTaken = 0;
         landGrants = 2;
@@ -116,6 +126,28 @@ public class Player {
         }
         System.out.println("Money Bonus: " + mb);
         money += mb;
+    }
+    
+    public void buyMule(Mule mule, Land land) {
+    	
+    	if (money >= mule.getCost()) {//check that player has enough money
+    		money = money - mule.getCost();//player pays for the mule
+    		mule.setOwner(this);//player owns the mule
+    		if (this.equals(land.getOwner())) {//check to see if valid land
+    			if (!land.hasMule()) {//if there isn't a mule already on the land
+    			mule.setPosition(land);//mule is placed on the land
+    			mulesOwned.add(mule);//player owns mule
+    			land.setHasMule(true);
+    			} else {//if the land already has a mule, mule is lost
+    				System.out.println("There is already a mule on this land. You have lost your mule.");
+    			}
+    		} else {//if player doesn't own the land, mule is lost
+    			System.out.println("You do not own this land. You have lost your mule.");
+    		}
+    	} else {//if not enough money, nothing happens
+    		System.out.println("You do not have enough money.");
+    	}
+    	
     }
     
 }

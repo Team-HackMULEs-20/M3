@@ -5,6 +5,7 @@ public class Land {
     private boolean owned;
     private int row;
     private int col;
+    private boolean hasMule;
 
     public static boolean landBuyEnable = false;
     
@@ -12,10 +13,11 @@ public class Land {
     // private numMule //If a mule is on the property when sold, it is lost
     //randomNum = minimum + (int)(Math.random()*maximum);
 
-    public Land(int row, int col) {
+    public Land(int col, int row) {
         this.row = row;
         this.col = col;
         owned = false;
+        hasMule = false;
     }
 
     public int getRow() {return row;}
@@ -30,10 +32,14 @@ public class Land {
         return 400 + (int)(Math.random() * 200);
     }
 
+    public void setOwner(Player p) {
+    	owner = p;
+    	owned = true;
+    }
+    
     public void buyLand(Player p) {
         if (!isOwned()) {
-            owner = p;
-            owned = true;
+        	setOwner(p);
             owner.addSubMoney(getBuyPrice());
         } else {
             System.out.println("This land is already owned"); //TODO
@@ -50,5 +56,8 @@ public class Land {
         }
     }
 
+    public boolean hasMule() {return hasMule;}
+    public void setHasMule(boolean mule) {hasMule = mule;}
+    
     public boolean isOwned() {return owned;}
 }
