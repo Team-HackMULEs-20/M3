@@ -85,7 +85,7 @@ public class Controller implements Initializable {
 	}
 
 	@FXML
-	private void buttonClicked(ActionEvent e) throws NullPointerException {
+	private void gameSetup(ActionEvent e) throws NullPointerException {
 		try {
 			if (e.getSource() == nextButton) {
 				numPlayer = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
@@ -107,7 +107,7 @@ public class Controller implements Initializable {
 
 
 	@FXML
-	private void buttonClicked2(ActionEvent e) throws NullPointerException {
+	private void playerSetup(ActionEvent e) throws NullPointerException {
 		newStage = new Stage();
 		try {
 			if (e.getSource() == nextButton2) {
@@ -140,6 +140,8 @@ public class Controller implements Initializable {
 						Launcher.primaryStage.setTitle("Player 2 Configuration");
 						Launcher.primaryStage.toFront();
 						playerName.clear();
+						raceChoice.getSelectionModel().clearSelection();
+						colorPick.setValue(Color.WHITE);
 						count += 1;
 					} else if (count == 2) {
 						if (count == numPlayer) { // if user selected only 2 players then show game screen
@@ -159,6 +161,8 @@ public class Controller implements Initializable {
 							Launcher.primaryStage.setTitle("Player 3 Configuration");
 							Launcher.primaryStage.toFront();
 							playerName.clear();
+							raceChoice.getSelectionModel().clearSelection();
+							colorPick.setValue(Color.WHITE);
 							count += 1;
 						}
 
@@ -180,6 +184,8 @@ public class Controller implements Initializable {
 							Launcher.primaryStage.setTitle("Player 4 Configuration");
 							Launcher.primaryStage.toFront();
 							playerName.clear();
+							raceChoice.getSelectionModel().clearSelection();
+							colorPick.setValue(Color.WHITE);
 							count += 1;
 						}
 
@@ -199,6 +205,9 @@ public class Controller implements Initializable {
 					}
 				}
 			} else if (e.getSource() == backButton) {
+				playerName.clear();
+				raceChoice.getSelectionModel().clearSelection();
+				colorPick.setValue(Color.WHITE);
 				Launcher.primaryStage.setScene(Launcher.rootScene);
 				Launcher.primaryStage.setTitle("M.U.L.E. Game Setup");
 			}
