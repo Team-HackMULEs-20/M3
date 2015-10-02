@@ -58,5 +58,9 @@ public class Land {
 		}
 	}
 
+	public boolean hasMule() {return hasMule;}
+	
+	public void setHasMule(boolean mule) {hasMule = mule;}
+	
 	public boolean isOwned() {return owned;}
 }
