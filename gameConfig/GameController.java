@@ -100,6 +100,8 @@ public class GameController implements Initializable {
 
     @FXML
     private Label muleQuantityLabel;
+    
+    public static Mule.Type currentMuleType;
 
 
     public static int numPasses = 0;
