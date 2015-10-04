@@ -49,12 +49,12 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Button fx:id="nextButton2" layoutX="335.0" layoutY="319.0" mnemonicParsing="false" onAction="#buttonClicked2" text="Next">
+    <Button fx:id="nextButton2" layoutX="335.0" layoutY="319.0" mnemonicParsing="false" onAction="#playerSetup" text="Next">
       <font>
         <Font name="American Typewriter" size="15.0" />
       </font>
     </Button>
-    <Button fx:id="backButton" layoutX="199.0" layoutY="318.0" mnemonicParsing="false" onAction="#buttonClicked2" text="Back">
+    <Button fx:id="backButton" layoutX="199.0" layoutY="318.0" mnemonicParsing="false" onAction="#playerSetup" text="Back">
       <font>
         <Font name="American Typewriter" size="17.0" />
       </font>
