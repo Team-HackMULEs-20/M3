@@ -111,6 +111,12 @@ public class Store {
                 }
             } else {
                 smithQuantity++;
+                customer.addSubMoney(smithCost-8);
+                if (smithQuantity == 0) {
+                    smithCost = 50;
+                } else {
+                    smithCost -= 5;
+                }
             }
         }
     }
@@ -118,14 +124,26 @@ public class Store {
     // CHRYSTITE: initial q-c = 0-100
     // with each sold / bought, price changes by $10 (only for greater than 1)
     // sold to the store at $15 less than they cost
-    public void setChrysQuantity(int amount, boolean buy) {
+    public void setChrysQuantity(boolean buy, Player customer) {
         if (buy && crysQuantity == 0) {
             System.out.println("Not enough Chrystite in the store.");
         } else {
             if (buy) {
-                this.crysQuantity -= amount;
+                crysQuantity--;
+                customer.addSubMoney(-crysCost);
+                if (crysQuantity == 0) {
+                    crysCost = 100;
+                } else {
+                    crysCost += 10;
+                }
             } else {
-                this.crysQuantity += amount;
+                crysQuantity++;
+                customer.addSubMoney(crysCost-15);
+                if (crysQuantity == 0) {
+                    crysCost = 100;
+                } else {
+                    crysCost -= 10;
+                }
             }
         }
     }
@@ -133,14 +151,14 @@ public class Store {
     // MULE: initial q-c = 25-100
     // with each sold / bought, price changes by $0
     // sold to the store at $15 less than they cost
-    public void setMuleQuantity(int amount, boolean buy) {
-        if (amount > muleQuantity && buy || buy && muleQuantity == 0) {
+    public void setMuleQuantity(boolean buy, Player customer) {
+        if (buy && muleQuantity == 0) {
             System.out.println("Not enough Mules in the store.");
         } else {
             if (buy) {
-                this.muleQuantity -= amount;
+                this.muleQuantity--;
             } else {
-                this.muleQuantity += amount;
+                this.muleQuantity++;
             }
         }
     }
