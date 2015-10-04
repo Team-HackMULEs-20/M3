@@ -62,11 +62,13 @@ public class Controller implements Initializable {
 	public static String race;
 	public static String map;
 	public static String level;
+    public static Land[][] landPlots;
+    public static Store store;
+
 	private static int count;
 	private static Color color;
 	private Stage newStage;
 	private static Player[] players;
-	public static Land[][] landPlots;
 	private static Turns gameTurns;
 	//private boolean landBuyEnable = false;
 
@@ -97,6 +99,8 @@ public class Controller implements Initializable {
 				Launcher.primaryStage.setScene(Launcher.nextScene); // Show player config screen for player 1
 				Launcher.primaryStage.setTitle("Player 1 Configuration");
 				count = 1;
+
+                store = new Store();
 			} else if (e.getSource() == cancelButton) {
 				Launcher.primaryStage.close();
 			}
