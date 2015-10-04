@@ -1,7 +1,5 @@
 package gameConfig;
-/**
- * Created by findleyck on 10/1/15.
- */
+
 public class Store {
 
     public int foodCost;
@@ -41,45 +39,87 @@ public class Store {
         }
     }
 
+
+//    public void setFoodQuantity(int amount, boolean buy) {
+//        if (amount > foodQuantity && buy || buy && foodQuantity == 0) {
+//            System.out.println("Not enough Food in the store.");
+//        } else {
+//            if (buy) {
+//                this.foodQuantity -= amount;
+//            } else {
+//                this.foodQuantity += amount;
+//            }
+//        }
+//    }
+
     // buy is to determine when player is selling or buying
-    public void setFoodQuantity(int amount, boolean buy) {
-        if (amount > foodQuantity && buy || buy && foodQuantity == 0) {
+    //only one item is be purchased/sold at a time, prices increase with each purchase,
+    // and decrease with each sell.
+
+    //FOOD: initial q-c = 16-30
+    // with each food sold / bought, price changes by $2
+    // food sold to the store at $5 less than they cost
+    public void setFoodQuantity(boolean buy, Player customer) {
+        if (buy && foodQuantity == 0) {
             System.out.println("Not enough Food in the store.");
         } else {
             if (buy) {
-                this.foodQuantity -= amount;
+                foodQuantity--;
+                customer.addSubMoney(-foodCost);
+                foodCost += 2;
             } else {
-                this.foodQuantity += amount;
+                foodQuantity++;
+                customer.addSubMoney(foodCost-5);
+                foodCost -= 2;
             }
         }
     }
 
-    public void setEnergyQuantity(int amount, boolean buy) {
-        if (amount > energyQuantity && buy || buy && energyQuantity == 0) {
+    // ENERGY: initial q-c = 16-25
+    // with each sold / bought, price changes by $2
+    // sold to the store at $5 less than they cost
+    public void setEnergyQuantity(boolean buy, Player customer) {
+        if (buy && energyQuantity == 0) {
             System.out.println("Not enough Energy in the store.");
         } else {
             if (buy) {
-                this.energyQuantity -= amount;
+                energyQuantity--;
+                customer.addSubMoney(-energyCost);
+                energyCost += 2;
             } else {
-                this.energyQuantity += amount;
+                energyQuantity++;
+                customer.addSubMoney(energyCost-5);
+                energyCost -= 2;
             }
         }
     }
 
-    public void setSmithQuantity(int amount, boolean buy) {
-        if (amount > smithQuantity && buy || buy && smithQuantity == 0) {
+    // Smithore: initial q-c = 0-50
+    // with each sold / bought, price changes by $5 (only for greater than 1)
+    // sold to the store at $8 less than they cost
+    public void setSmithQuantity(boolean buy, Player customer) {
+        if (buy && smithQuantity == 0) {
             System.out.println("Not enough Smithore in the store.");
         } else {
             if (buy) {
-                this.smithQuantity -= amount;
+                smithQuantity--;
+                customer.addSubMoney(-smithCost);
+                if (smithQuantity == 0) {
+                    smithCost = 50;
+                } else {
+                    smithCost += 5;
+                }
             } else {
-                this.smithQuantity += amount;
+                smithQuantity++;
             }
         }
     }
 
+    // CHRYSTITE: initial q-c = 0-100
+    // with each sold / bought, price changes by $10 (only for greater than 1)
+    // sold to the store at $15 less than they cost
     public void setChrysQuantity(int amount, boolean buy) {
-        if (amount > crysQuantity && buy || buy && crysQuantity == 0) {
+        if (buy && crysQuantity == 0) {
             System.out.println("Not enough Chrystite in the store.");
         } else {
             if (buy) {
@@ -90,6 +130,9 @@ public class Store {
         }
     }
 
+    // MULE: initial q-c = 25-100
+    // with each sold / bought, price changes by $0
+    // sold to the store at $15 less than they cost
     public void setMuleQuantity(int amount, boolean buy) {
         if (amount > muleQuantity && buy || buy && muleQuantity == 0) {
             System.out.println("Not enough Mules in the store.");
