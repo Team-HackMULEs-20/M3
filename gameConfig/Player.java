@@ -16,6 +16,7 @@ public class Player {
 	private int food;
 	private int energy;
 	private int ore;
+	private int crystite;
 
 	//array of Land owned?
 	public int landGrants;
@@ -56,6 +57,8 @@ public class Player {
 			money = 1000;
 		}
 
+        ore = 0;
+        crystite = 0;
 	}
 
 	public enum Race {
@@ -86,6 +89,9 @@ public class Player {
 
 	public int getOre() {return ore;}
 	public void addSubOre(int amount) {ore += amount;}
+
+    public int getCrystite() {return crystite;}
+    public void addSubCrystite(int amount) {crystite += amount;}
 
 	public int getTurnsTaken() {return turnsTaken;}
 	public void incTurnsTaken() {turnsTaken++;}
