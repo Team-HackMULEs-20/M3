@@ -56,8 +56,8 @@ public class GameController implements Initializable {
     @FXML
     private Button backButton;
 
-    @FXML
-    private Button backButton2;
+//    @FXML
+//    private Button backButton2;
 
     @FXML
     private Button storeButton;
@@ -113,7 +113,7 @@ public class GameController implements Initializable {
     public static int numBids;
     private static boolean selectPhase = true;
 
-
+// TURNS AND SETUP
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         assert startButton != null : "fx:id=\"startButton\" was not injected: " +
@@ -155,6 +155,7 @@ public class GameController implements Initializable {
         }
     }
 
+// AUCTIONING
     public static boolean isAuctionTime() {
         boolean auctionTime = false;
         landNotTaken = 44;
@@ -194,6 +195,22 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
+    public void selectionPhase(ActionEvent event) {
+        if (event.getSource() == selectLand) {
+            if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
+                Land.landBuyEnable = true;
+            Stage stage = (Stage) selectLand.getScene().getWindow();
+            stage.close();
+        } else {
+            numPasses++;
+            Stage stage = (Stage) passSelect.getScene().getWindow();
+            stage.close();
+            Timer.endTurn();
+        }
+    }
+
+//TOWN BUTTONS
     public void townButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == townButton) {
@@ -205,6 +222,7 @@ public class GameController implements Initializable {
         }
     }
 
+//LAND OFFICE
     public void landOfficeButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == landOfficeButton) {
@@ -216,6 +234,7 @@ public class GameController implements Initializable {
         stage.close();
     }
 
+//PUB
     public void pubButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == pubButton) {
@@ -264,17 +283,17 @@ public class GameController implements Initializable {
         Stage stage = (Stage) backButton.getScene().getWindow();
         stage.close();
     }
-    @FXML
-    public void backButtonClicked2(ActionEvent e) {
-        newStage = new Stage();
-        if (e.getSource() == backButton2) {
-            newStage.setScene(Launcher.townScene);
-            newStage.setTitle("Town");
-            newStage.show();
-        }
-        Stage stage = (Stage) backButton2.getScene().getWindow();
-        stage.close();
-    }
+//    @FXML
+//    public void backButtonClicked2(ActionEvent e) {
+//        newStage = new Stage();
+//        if (e.getSource() == backButton2) {
+//            newStage.setScene(Launcher.townScene);
+//            newStage.setTitle("Town");
+//            newStage.show();
+//        }
+//        Stage stage = (Stage) backButton2.getScene().getWindow();
+//        stage.close();
+//    }
 
     public void buyLandButtonClicked(ActionEvent e) {
         if (e.getSource() == landBuyButton) {
@@ -285,21 +304,6 @@ public class GameController implements Initializable {
         } else if (e.getSource() == passButton) {
             Stage stage = (Stage) passButton.getScene().getWindow();
             stage.close();
-        }
-    }
-
-    @FXML
-    public void selectionPhase(ActionEvent event) {
-        if (event.getSource() == selectLand) {
-            if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
-                Land.landBuyEnable = true;
-            Stage stage = (Stage) selectLand.getScene().getWindow();
-            stage.close();
-        } else {
-            numPasses++;
-            Stage stage = (Stage) passSelect.getScene().getWindow();
-            stage.close();
-            Timer.endTurn();
         }
     }
 

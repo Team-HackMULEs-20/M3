@@ -53,7 +53,7 @@
         </FXCollections>
       </items>
     </ComboBox>
-    <Button id="backButton" fx:id="backButton2" layoutX="17.0" layoutY="25.0" mnemonicParsing="false" onAction="#backButtonClicked2" text="Back" />
+    <Button id="backButton" fx:id="backButton" layoutX="17.0" layoutY="25.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
     <Text layoutX="169.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" />
     <Text layoutX="177.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" />
     <Text layoutX="362.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" />
