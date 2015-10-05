@@ -59,18 +59,30 @@ public class Store {
     //FOOD: initial q-c = 16-30
     // with each food sold / bought, price changes by $2
     // food sold to the store at $5 less than they cost
-    public void setFoodQuantity(boolean buy, Player customer) {
+    public void buySellFood(boolean buy, Player customer) {
         if (buy && foodQuantity == 0) {
             System.out.println("Not enough Food in the store.");
         } else {
             if (buy) {
                 foodQuantity--;
-                customer.addSubMoney(-foodCost);
-                foodCost += 2;
+                if (customer.getMoney() >= foodCost) {
+                    customer.addSubMoney(-foodCost);
+                    customer.addSubFood(1);
+                    foodCost += 2;
+                } else {
+                    // make into error message? //TODO
+                    System.out.println("You do not have enough money for this item");
+                }
             } else {
-                foodQuantity++;
-                customer.addSubMoney(foodCost-5);
-                foodCost -= 2;
+                if (customer.getFood() >= 1) {
+                    foodQuantity++;
+                    customer.addSubMoney(foodCost-5);
+                    customer.addSubFood(-1);
+                    foodCost -= 2;
+                } else {
+                    // make into error message? //TODO
+                    System.out.println("You do not have any of this item to sell");
+                }
             }
         }
     }
@@ -78,18 +90,28 @@ public class Store {
     // ENERGY: initial q-c = 16-25
     // with each sold / bought, price changes by $2
     // sold to the store at $5 less than they cost
-    public void setEnergyQuantity(boolean buy, Player customer) {
+    public void buySellEnergy(boolean buy, Player customer) {
         if (buy && energyQuantity == 0) {
             System.out.println("Not enough Energy in the store.");
         } else {
             if (buy) {
                 energyQuantity--;
-                customer.addSubMoney(-energyCost);
-                energyCost += 2;
+                if (customer.getMoney() >= energyCost) {
+                    customer.addSubMoney(-energyCost);
+                    customer.addSubEnergy(1);
+                    energyCost += 2;
+                } else {
+                    System.out.println("You do not have enough money for this item");
+                }
             } else {
-                energyQuantity++;
-                customer.addSubMoney(energyCost-5);
-                energyCost -= 2;
+                if (customer.getEnergy() >= 1) {
+                    energyQuantity++;
+                    customer.addSubMoney(energyCost-5);
+                    customer.addSubEnergy(-1);
+                    energyCost -= 2;
+                } else {
+                    System.out.println("You do not have any of this item to sell");
+                }
             }
         }
     }
@@ -97,25 +119,35 @@ public class Store {
     // Smithore: initial q-c = 0-50
     // with each sold / bought, price changes by $5 (only for greater than 1)
     // sold to the store at $8 less than they cost
-    public void setSmithQuantity(boolean buy, Player customer) {
+    public void buySellSmithore(boolean buy, Player customer) {
         if (buy && smithQuantity == 0) {
             System.out.println("Not enough Smithore in the store.");
         } else {
             if (buy) {
                 smithQuantity--;
-                customer.addSubMoney(-smithCost);
-                if (smithQuantity == 0) {
-                    smithCost = 50;
+                if (customer.getMoney() >= smithCost) {
+                    customer.addSubMoney(-smithCost);
+                    customer.addSubOre(1);
+                    if (smithQuantity == 0) {
+                        smithCost = 50;
+                    } else {
+                        smithCost += 5;
+                    }
                 } else {
-                    smithCost += 5;
+                    System.out.println("You do not have enough money for this item");
                 }
             } else {
-                smithQuantity++;
-                customer.addSubMoney(smithCost-8);
-                if (smithQuantity == 0) {
-                    smithCost = 50;
+                if (customer.getOre() >= 1) {
+                    smithQuantity++;
+                    customer.addSubMoney(smithCost-8);
+                    customer.addSubOre(-1);
+                    if (smithQuantity == 0) {
+                        smithCost = 50;
+                    } else {
+                        smithCost -= 5;
+                    }
                 } else {
-                    smithCost -= 5;
+                    System.out.println("You do not have any of this item to sell");
                 }
             }
         }
@@ -124,25 +156,35 @@ public class Store {
     // CHRYSTITE: initial q-c = 0-100
     // with each sold / bought, price changes by $10 (only for greater than 1)
     // sold to the store at $15 less than they cost
-    public void setChrysQuantity(boolean buy, Player customer) {
+    public void buySellChrystite(boolean buy, Player customer) {
         if (buy && crysQuantity == 0) {
             System.out.println("Not enough Chrystite in the store.");
         } else {
             if (buy) {
                 crysQuantity--;
-                customer.addSubMoney(-crysCost);
-                if (crysQuantity == 0) {
-                    crysCost = 100;
+                if (customer.getMoney() >= crysCost) {
+                    customer.addSubMoney(-crysCost);
+                    customer.addSubCrystite(1);
+                    if (crysQuantity == 0) {
+                        crysCost = 100;
+                    } else {
+                        crysCost += 10;
+                    }
                 } else {
-                    crysCost += 10;
+                    System.out.println("You do not have enough money for this item");
                 }
             } else {
-                crysQuantity++;
-                customer.addSubMoney(crysCost-15);
-                if (crysQuantity == 0) {
-                    crysCost = 100;
+                if (customer.getCrystite() >= 1) {
+                    crysQuantity++;
+                    customer.addSubMoney(crysCost-15);
+                    customer.addSubCrystite(-1);
+                    if (crysQuantity == 0) {
+                        crysCost = 100;
+                    } else {
+                        crysCost -= 10;
+                    }
                 } else {
-                    crysCost -= 10;
+                    System.out.println("You do not have enough money for this item");
                 }
             }
         }
@@ -151,14 +193,15 @@ public class Store {
     // MULE: initial q-c = 25-100
     // with each sold / bought, price changes by $0
     // sold to the store at $15 less than they cost
-    public void setMuleQuantity(boolean buy, Player customer) {
+    // TODO
+    public void buySellMule(boolean buy, Player customer) {
         if (buy && muleQuantity == 0) {
             System.out.println("Not enough Mules in the store.");
         } else {
             if (buy) {
-                this.muleQuantity--;
+                muleQuantity--;
             } else {
-                this.muleQuantity++;
+                muleQuantity++;
             }
         }
     }
@@ -197,8 +240,6 @@ public class Store {
 
     public int getMuleQuantity() {
         return muleQuantity;
-    }
-
-
+    } //also cost //TODO
 
 }
