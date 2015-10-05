@@ -36,7 +36,7 @@ public class Launcher extends Application {
             Parent landBuy = FXMLLoader.load(getClass().getResource("LandBuyInterface.fxml"));
             Parent pubGamble = FXMLLoader.load(getClass().getResource("PubGambleInterface.fxml"));
             Parent auctionWin = FXMLLoader.load(getClass().getResource("AuctionWindow.fxml"));
-            Parent store = FXMLLoader.load(getClass().getResource("storeInterface.fxml"));
+            Parent store = FXMLLoader.load(getClass().getResource("storeInterface2.fxml"));
             Parent gambleC = FXMLLoader.load(getClass().getResource("GambleConfirmation.fxml"));
             Parent selectPhase = FXMLLoader.load(getClass().getResource("SelectionPhaseInterface.fxml"));
             startScene = new Scene(startWindow);
