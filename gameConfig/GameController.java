@@ -4,13 +4,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
+import javafx.geometry.Pos;
 import javafx.geometry.VPos;
+import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -116,6 +120,15 @@ public class GameController implements Initializable {
     public static int landNotTaken;
     public static int numBids;
     private static boolean selectPhase = true;
+    
+    private Stage infoStage;
+    private Label moneyLeft = new Label();
+    private Label foodLeft = new Label();
+    private Label currRound = new Label();
+    private Label energyLeft = new Label();
+    private Label oreLeft = new Label();
+    private Label currPlayer = new Label();
+    private boolean isMade = false;
 
     // TURNS AND SETUP
     @Override
@@ -143,6 +156,7 @@ public class GameController implements Initializable {
 
     public void startButtonClicked(ActionEvent event) {
         newStage = new Stage();
+        startBar();
         if (event.getSource() == startButton) {
             Timer timer = new Timer(Turns.timeForTurn(Turns.getTurn()));
             timer.start(new Stage());
@@ -159,6 +173,93 @@ public class GameController implements Initializable {
             } else {
                 selectPhase = false;
             }
+        }
+    }
+    
+    public void startBar() {
+        infoStage = new Stage();
+        Player p = Turns.getTurn();
+        if (isMade == false) {
+            isMade = true;
+            infoStage.setTitle("Information Bar");
+            Group t2 = new Group();
+            Scene scene2 = new Scene(t2, 600, 100);
+
+            currRound.setText("Round " + Turns.rounds);
+            currRound.setTextFill(Color.BLACK);
+            currRound.setStyle("-fx-font-size: 15;");
+
+            currPlayer.setText("It is " + p.getName() + "'s Turn");
+            currPlayer.setTextFill(Color.BLACK);
+            currPlayer.setStyle("-fx-font-size: 15;");
+
+            moneyLeft.setText("Money: " + p.getMoney());
+            moneyLeft.setTextFill(Color.BLACK);
+            moneyLeft.setStyle("-fx-font-size: 15;");
+
+            foodLeft.setText("Food: " + p.getFood());
+            foodLeft.setTextFill(Color.BLACK);
+            foodLeft.setStyle("-fx-font-size: 15;");
+
+            energyLeft.setText("Energy: " + p.getEnergy());
+            energyLeft.setTextFill(Color.BLACK);
+            energyLeft.setStyle("-fx-font-size: 15;");
+
+            oreLeft.setText("Ore: " + p.getOre());
+            oreLeft.setTextFill(Color.BLACK);
+            oreLeft.setStyle("-fx-font-size: 15;");
+
+            Label l1 = new Label("                                          ");
+            Label l2 = new Label("                                          ");
+            Label l3 = new Label("                                          ");
+
+            GridPane grid2 = new GridPane();
+            grid2.setAlignment(Pos.CENTER);
+            grid2.setHgap(20);
+            grid2.setVgap(10);
+            grid2.add(l1, 1, 0);
+            grid2.add(currPlayer, 2, 0);
+            grid2.add(currRound, 4, 0);
+            grid2.add(l2, 1, 1);
+            grid2.add(moneyLeft, 2, 1);
+            grid2.add(foodLeft, 4, 1);
+            grid2.add(l3, 1, 2);
+            grid2.add(energyLeft, 2, 2);
+            grid2.add(oreLeft, 4, 2);
+            t2.getChildren().add(grid2);
+
+            infoStage.setScene(scene2);
+            infoStage.show();
+            infoStage.toFront();
+
+        } else if (isMade == true) {
+            currRound.setText("Round " + Turns.rounds);
+            currRound.setTextFill(Color.BLACK);
+            currRound.setStyle("-fx-font-size: 15;");
+
+            currPlayer.setText("It is " + p.getName() + "'s Turn");
+            currPlayer.setTextFill(Color.BLACK);
+            currPlayer.setStyle("-fx-font-size: 15;");
+
+            moneyLeft.setText("Money: " + p.getMoney());
+            moneyLeft.setTextFill(Color.BLACK);
+            moneyLeft.setStyle("-fx-font-size: 15;");
+
+            foodLeft.setText("Food: " + p.getFood());
+            foodLeft.setTextFill(Color.BLACK);
+            foodLeft.setStyle("-fx-font-size: 15;");
+
+            energyLeft.setText("Energy: " + p.getEnergy());
+            energyLeft.setTextFill(Color.BLACK);
+            energyLeft.setStyle("-fx-font-size: 15;");
+
+            oreLeft.setText("Ore: " + p.getOre());
+            oreLeft.setTextFill(Color.BLACK);
+            oreLeft.setStyle("-fx-font-size: 15;");
+        }
+
+        if (Turns.rounds + 1 == 14) {
+            infoStage.close();
         }
     }
 
@@ -308,7 +409,9 @@ public class GameController implements Initializable {
             }
 
             Land.landBuyEnable = false;//disable land buying for next turn
-            Timer.endTurn();
+            if (numPasses < Controller.numPlayer) {
+                Timer.endTurn();
+            }
 
         } else if (currentP.muleBuyEnable) {
             if (currentP.landOwned.contains(newLand)) {
