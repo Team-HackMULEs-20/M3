@@ -298,7 +298,9 @@ public class GameController implements Initializable {
             }
 
             Land.landBuyEnable = false;//disable land buying for next turn
-            Timer.endTurn();
+            if (numPasses < Controller.numPlayer) {
+                Timer.endTurn();
+            }
 
         } else if (currentP.muleBuyEnable) {
             if (currentP.landOwned.contains(newLand)) {
