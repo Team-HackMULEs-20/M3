@@ -95,10 +95,17 @@ public class GameController implements Initializable {
     @FXML
     private Label chrystiteQuantityLabel;
 
-    @FXML
-    private Label muleQuantityLabel;
+//    @FXML
+//    private Label buyFoodButton;
+//
+//    @FXML
+//    private Label muleQuantityLabel;
+//
+//    @FXML
+//    private Label muleQuantityLabel;
 
     public static Mule.Type currentMuleType;
+    public static Store store;
 
 
     public static int numPasses = 0;
@@ -140,6 +147,9 @@ public class GameController implements Initializable {
             Timer timer = new Timer(Turns.timeForTurn(Turns.getTurn()));
             timer.start(new Stage());
             start.close();
+
+            store = new Store();
+
             if (numPasses < Controller.numPlayer) {
                 System.out.println("Land Selection Phase");
                 selectPhase = true;
@@ -354,10 +364,14 @@ public class GameController implements Initializable {
             newStage.setScene(Launcher.storeScene);
             newStage.setTitle("Store");
             newStage.show();
+
+            //foodCostLabel.setText("" + store.getFoodCost());
         }
         Stage stage = (Stage) storeButton.getScene().getWindow();
         stage.close();
     }
+
+    //public void
 }
 
 
