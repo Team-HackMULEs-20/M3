@@ -29,29 +29,20 @@
          <font>
             <Font name="Bradley Hand Bold" size="18.0" />
          </font></Text>
-    <ComboBox layoutX="174.0" layoutY="305.0" promptText="Mule">
-      <items>
-        <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Food Mule" />
-          <String fx:value="Energy Mule" />
-          <String fx:value="Smithore Mule" />
-          <String fx:value="Chrystite Mule" />
-        </FXCollections>
-      </items>
-    </ComboBox>
     <Button id="backButton" fx:id="backButton2" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonClicked2" text="Back" />
-      <GridPane gridLinesVisible="true" layoutX="153.0" layoutY="140.0" prefHeight="150.0" prefWidth="305.0">
+      <GridPane gridLinesVisible="true" layoutX="148.0" layoutY="138.0" prefHeight="190.0" prefWidth="305.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="69.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="62.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="75.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="60.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="60.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="60.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="55.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="55.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="53.0" minHeight="4.0" prefHeight="45.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
         </rowConstraints>
@@ -131,7 +122,7 @@
                     <Font name="Bradley Hand Bold" size="13.0" />
                 </font>
             </Label>
-            <Label fx:id="smithoreCostLabel1" text="\$crys" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Label fx:id="crystiteCostLabel" text="\$crys" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                 <font>
                     <Font name="Bradley Hand Bold" size="13.0" />
                 </font>
@@ -156,12 +147,37 @@
                 <Font name="Bradley Hand Bold" size="13.0" />
               </font>
             </Label>
+          <ComboBox promptText="Mule" GridPane.rowIndex="5">
+            <items>
+              <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Food Mule" />
+                <String fx:value="Energy Mule" />
+                <String fx:value="Smithore Mule" />
+                <String fx:value="Chrystite Mule" />
+              </FXCollections>
+            </items>
+          </ComboBox>
+            <Button fx:id="buyMuleButton" mnemonicParsing="false" prefHeight="11.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Bradley Hand Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="sellCrysButton1" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Bradley Hand Bold" size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="muleQuantityLabel1" text="muleQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Bradley Hand Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="muleCostLabel" text="select mule&#10;type" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Bradley Hand Bold" size="10.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
-      <Button fx:id="buyMuleButton" layoutX="344.0" layoutY="304.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="46.0" text="Buy">
-         <font>
-            <Font name="Bradley Hand Bold" size="13.0" />
-         </font>
-      </Button>
   </children>
 </AnchorPane>
