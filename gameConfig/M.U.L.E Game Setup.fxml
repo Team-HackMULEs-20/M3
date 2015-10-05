@@ -11,16 +11,20 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.text.*?>
 
-<GridPane id="M.U.L.E. Game Setup" alignment="CENTER" gridLinesVisible="false" hgap="10.0" prefHeight="400.00010681152344" prefWidth="600.0" vgap="10.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.Controller">
+<GridPane id="M.U.L.E. Game Setup" alignment="CENTER" gridLinesVisible="false" hgap="10.0" prefHeight="400.00010681152344" prefWidth="600.0" vgap="10.0" visible="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameConfig.Controller">
   <children>
-    <ImageView fitHeight="155.85807019232936" fitWidth="465.9998779296875" opacity="1.0" pickOnBounds="true" preserveRatio="true" smooth="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP">
-      <image>
-        <Image url="@Media/Title_Mule.png" />
-      </image>
-    </ImageView>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647">
+         <children>
+          <ImageView fitHeight="155.85806274414062" fitWidth="465.9998779296875" layoutX="56.0" layoutY="14.0" opacity="1.0" pickOnBounds="true" preserveRatio="true" smooth="true">
+            <image>
+              <Image url="@Media/Title_Mule.png" />
+            </image>
+          </ImageView>
+         </children>
+      </AnchorPane>
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty" GridPane.columnIndex="1" GridPane.rowIndex="1">
       <font>
-        <Font size="15.0" fx:id="x1" />
+        <Font name="American Typewriter" size="20.0" fx:id="x1" />
       </font>
     </Text>
     <ChoiceBox fx:id="difficulty" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
@@ -51,23 +55,31 @@
         </FXCollections>
       </items>
     </ChoiceBox>
-    <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#buttonClicked" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-    <Button fx:id="nextButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#buttonClicked" opacity="1.0" text="Next" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-    <Text fill="#5200ff" scaleX="1.0" scaleY="1.1538329678357622" strokeType="OUTSIDE" strokeWidth="0.0" text="(Re)created by Team 20: HackMULEs" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+    <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#gameSetup" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+      <font>
+        <Font name="American Typewriter" size="15.0" fx:id="x2" />
+      </font>
+    </Button>
+    <Button fx:id="nextButton" alignment="TOP_LEFT" contentDisplay="TOP" font="$x2" mnemonicParsing="false" onAction="#gameSetup" opacity="1.0" text="Next" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+    <Text fill="#5200ff" scaleX="1.0" scaleY="1.1538329678357622" strokeType="OUTSIDE" strokeWidth="0.0" text="(Re)created by Team 20: HackMULEs" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+      <font>
+        <Font name="American Typewriter" size="13.0" />
+      </font>
+    </Text>
   </children>
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="124.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="131.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="55.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="156.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="94.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="111.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="152.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="41.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="171.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="85.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="147.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="164.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="24.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
   </rowConstraints>
 </GridPane>

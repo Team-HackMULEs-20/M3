@@ -30,6 +30,11 @@ public class Timer extends Application {
 
     @Override
     public void start(Stage stage) {
+        Player p = Turns.getTurn();
+        System.out.println("Round " + Turns.rounds);
+        System.out.println("It is " + p.getName() + "'s Turn");
+        System.out.println("Money: " + p.getMoney() + "; Food: " + p.getFood() + "; Energy: " + p.getEnergy() + "; Ore: " + p.getOre());
+
         stage.setTitle("Turn Timer");
         Group t = new Group();
         Scene scene = new Scene(t,150,150);

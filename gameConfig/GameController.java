@@ -4,13 +4,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
+import javafx.geometry.Pos;
 import javafx.geometry.VPos;
+import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -57,29 +61,76 @@ public class GameController implements Initializable {
     private Button backButton;
 
     @FXML
-    private Button backButton2;
-
-    @FXML
     private Button storeButton;
 
     @FXML
     private Button gambleOkButton;
 
+    @FXML
+    private Button passSelect;
+
+    @FXML
+    private Button selectLand;
+
+    @FXML
+    private Label foodCostLabel;
+
+    @FXML
+    private Label energyCostLabel;
+
+    @FXML
+    private Label smithoreCostLabel;
+
+    @FXML
+    private Label chrystiteCostLabel;
+
+    @FXML
+    private Label muleCostLabel;
+
+    @FXML
+    private Label foodQuantityLabel;
+
+    @FXML
+    private Label energyQuantityLabel;
+
+    @FXML
+    private Label smithoreQuantityLabel;
+
+    @FXML
+    private Label chrystiteQuantityLabel;
+
+//    @FXML
+//    private Label buyFoodButton;
+//
+//    @FXML
+//    private Label muleQuantityLabel;
+//
+//    @FXML
+//    private Label muleQuantityLabel;
+
+    public static Mule.Type currentMuleType;
+    public static Store store;
+
+
     public static int numPasses = 0;
-
     private static Stage start;
-
     private Stage newStage;
-
     private static Stage auctionStage;
-
     private static int startingBid;
-
     public static int landNotTaken;
-
     public static int numBids;
+    private static boolean selectPhase = true;
+    
+    private Stage infoStage;
+    private Label moneyLeft = new Label();
+    private Label foodLeft = new Label();
+    private Label currRound = new Label();
+    private Label energyLeft = new Label();
+    private Label oreLeft = new Label();
+    private Label currPlayer = new Label();
+    private boolean isMade = false;
 
-
+    // TURNS AND SETUP
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         assert startButton != null : "fx:id=\"startButton\" was not injected: " +
@@ -105,24 +156,119 @@ public class GameController implements Initializable {
 
     public void startButtonClicked(ActionEvent event) {
         newStage = new Stage();
+        startBar();
         if (event.getSource() == startButton) {
             Timer timer = new Timer(Turns.timeForTurn(Turns.getTurn()));
             timer.start(new Stage());
             start.close();
+
+            store = new Store();
+
             if (numPasses < Controller.numPlayer) {
                 System.out.println("Land Selection Phase");
-                newStage.setScene(Launcher.landBuyIntScene);
+                selectPhase = true;
+                newStage.setScene(Launcher.selectLandPhase);
                 newStage.setTitle(Turns.getTurn().getName());
                 newStage.show();
+            } else {
+                selectPhase = false;
             }
         }
     }
+    
+    public void startBar() {
+        infoStage = new Stage();
+        Player p = Turns.getTurn();
+        if (isMade == false) {
+            isMade = true;
+            infoStage.setTitle("Information Bar");
+            Group t2 = new Group();
+            Scene scene2 = new Scene(t2, 600, 100);
 
+            currRound.setText("Round " + Turns.rounds);
+            currRound.setTextFill(Color.BLACK);
+            currRound.setStyle("-fx-font-size: 15;");
+
+            currPlayer.setText("It is " + p.getName() + "'s Turn");
+            currPlayer.setTextFill(Color.BLACK);
+            currPlayer.setStyle("-fx-font-size: 15;");
+
+            moneyLeft.setText("Money: " + p.getMoney());
+            moneyLeft.setTextFill(Color.BLACK);
+            moneyLeft.setStyle("-fx-font-size: 15;");
+
+            foodLeft.setText("Food: " + p.getFood());
+            foodLeft.setTextFill(Color.BLACK);
+            foodLeft.setStyle("-fx-font-size: 15;");
+
+            energyLeft.setText("Energy: " + p.getEnergy());
+            energyLeft.setTextFill(Color.BLACK);
+            energyLeft.setStyle("-fx-font-size: 15;");
+
+            oreLeft.setText("Ore: " + p.getOre());
+            oreLeft.setTextFill(Color.BLACK);
+            oreLeft.setStyle("-fx-font-size: 15;");
+
+            Label l1 = new Label("                                          ");
+            Label l2 = new Label("                                          ");
+            Label l3 = new Label("                                          ");
+
+            GridPane grid2 = new GridPane();
+            grid2.setAlignment(Pos.CENTER);
+            grid2.setHgap(20);
+            grid2.setVgap(10);
+            grid2.add(l1, 1, 0);
+            grid2.add(currPlayer, 2, 0);
+            grid2.add(currRound, 4, 0);
+            grid2.add(l2, 1, 1);
+            grid2.add(moneyLeft, 2, 1);
+            grid2.add(foodLeft, 4, 1);
+            grid2.add(l3, 1, 2);
+            grid2.add(energyLeft, 2, 2);
+            grid2.add(oreLeft, 4, 2);
+            t2.getChildren().add(grid2);
+
+            infoStage.setScene(scene2);
+            infoStage.show();
+            infoStage.toFront();
+
+        } else if (isMade == true) {
+            currRound.setText("Round " + Turns.rounds);
+            currRound.setTextFill(Color.BLACK);
+            currRound.setStyle("-fx-font-size: 15;");
+
+            currPlayer.setText("It is " + p.getName() + "'s Turn");
+            currPlayer.setTextFill(Color.BLACK);
+            currPlayer.setStyle("-fx-font-size: 15;");
+
+            moneyLeft.setText("Money: " + p.getMoney());
+            moneyLeft.setTextFill(Color.BLACK);
+            moneyLeft.setStyle("-fx-font-size: 15;");
+
+            foodLeft.setText("Food: " + p.getFood());
+            foodLeft.setTextFill(Color.BLACK);
+            foodLeft.setStyle("-fx-font-size: 15;");
+
+            energyLeft.setText("Energy: " + p.getEnergy());
+            energyLeft.setTextFill(Color.BLACK);
+            energyLeft.setStyle("-fx-font-size: 15;");
+
+            oreLeft.setText("Ore: " + p.getOre());
+            oreLeft.setTextFill(Color.BLACK);
+            oreLeft.setStyle("-fx-font-size: 15;");
+        }
+
+        if (Turns.rounds + 1 == 14) {
+            infoStage.close();
+        }
+    }
+
+    // AUCTIONING
     public static boolean isAuctionTime() {
         boolean auctionTime = false;
         landNotTaken = 44;
-        for (Land[] item: Controller.landPlots) {
-            for (Land plot: item) {
+        for (Land[] item : Controller.landPlots) {
+            for (Land plot : item) {
                 if (plot.isOwned()) {
                     landNotTaken--;
                 }
@@ -157,6 +303,22 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
+    public void selectionPhase(ActionEvent event) {
+        if (event.getSource() == selectLand) {
+            if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
+                Land.landBuyEnable = true;
+            Stage stage = (Stage) selectLand.getScene().getWindow();
+            stage.close();
+        } else {
+            numPasses++;
+            Stage stage = (Stage) passSelect.getScene().getWindow();
+            stage.close();
+            Timer.endTurn();
+        }
+    }
+
+    //TOWN BUTTONS
     public void townButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == townButton) {
@@ -168,6 +330,19 @@ public class GameController implements Initializable {
         }
     }
 
+    @FXML
+    public void backButtonClicked(ActionEvent e) {
+        newStage = new Stage();
+        if (e.getSource() == backButton) {
+            newStage.setScene(Launcher.townScene);
+            newStage.setTitle("Town");
+            newStage.show();
+        }
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        stage.close();
+    }
+
+    //LAND OFFICE
     public void landOfficeButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == landOfficeButton) {
@@ -179,6 +354,74 @@ public class GameController implements Initializable {
         stage.close();
     }
 
+    public void buyLandButtonClicked(ActionEvent e) {
+        if (e.getSource() == landBuyButton) {
+            if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
+                Land.landBuyEnable = true;
+            Stage stage = (Stage) landBuyButton.getScene().getWindow();
+            stage.close();
+        } else if (e.getSource() == passButton) {
+            Stage stage = (Stage) passButton.getScene().getWindow();
+            stage.close();
+        }
+    }
+
+    public void landButtonClicked(ActionEvent e) {
+        Player currentP = Turns.getTurn();
+        Node landButton = (Node) e.getSource();
+        GridPane grid = (GridPane) landButton.getParent();
+        Land newLand = new Land(GridPane.getColumnIndex(landButton), GridPane.getRowIndex(landButton));
+        if (Land.landBuyEnable) {
+            if (currentP.landGrants > 0) {//check for land grants
+                currentP.landGrants--;
+
+                Rectangle color = new Rectangle();
+                color.setFill(currentP.getColor());
+                color.setHeight(25);
+                color.setWidth(25);
+                color.setOpacity(1);
+                grid.add(color, GridPane.getColumnIndex(landButton), GridPane.getRowIndex(landButton));
+                GridPane.setHalignment(color, HPos.LEFT);
+                GridPane.setValignment(color, VPos.TOP);
+                landButton.setDisable(true);//disable the land button since land is purchased
+
+                newLand.setOwner(currentP);
+                currentP.landOwned.add(newLand);
+
+            } else if (currentP.getMoney() >= 300) {//if not grants sub money
+                currentP.addSubMoney(-300);
+
+                Rectangle color = new Rectangle();
+                color.setFill(currentP.getColor());
+                color.setHeight(25);
+                color.setWidth(25);
+                color.setOpacity(1);
+                grid.add(color, GridPane.getColumnIndex(landButton), GridPane.getRowIndex(landButton));
+                GridPane.setHalignment(color, HPos.LEFT);
+                GridPane.setValignment(color, VPos.TOP);
+                landButton.setDisable(true);//disable the land button since land is purchased
+
+                newLand.setOwner(currentP);
+                currentP.landOwned.add(newLand);
+
+            } else {
+                System.out.println("You do not have enough money to buy this land");
+            }
+
+            Land.landBuyEnable = false;//disable land buying for next turn
+            if (numPasses < Controller.numPlayer) {
+                Timer.endTurn();
+            }
+
+        } else if (currentP.muleBuyEnable) {
+            if (currentP.landOwned.contains(newLand)) {
+                currentP.buyMule(new Mule(currentMuleType), newLand);
+            }
+
+        }
+    }
+
+    //PUB
     public void pubButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == pubButton) {
@@ -210,52 +453,13 @@ public class GameController implements Initializable {
 
     @FXML
     public void gambleConfirm(ActionEvent e) {
-        //newStage = new Stage();
         if (e.getSource() == gambleOkButton) {
-            System.out.println("ok pressed");
-            Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-            stage.close();
         }
-//        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-//        stage.close();
-
-    }
-
-    @FXML
-    public void backButtonClicked(ActionEvent e) {
-       newStage = new Stage();
-        if (e.getSource() == backButton) {
-            newStage.setScene(Launcher.townScene);
-            newStage.setTitle("Town");
-            newStage.show();
-        }
-        Stage stage = (Stage) backButton.getScene().getWindow();
-        stage.close();
-    }
-    @FXML
-    public void backButtonClicked2(ActionEvent e) {
-        newStage = new Stage();
-        if (e.getSource() == backButton2) {
-            newStage.setScene(Launcher.townScene);
-            newStage.setTitle("Town");
-            newStage.show();
-        }
-        Stage stage = (Stage) backButton2.getScene().getWindow();
+        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
         stage.close();
     }
 
-    public void buttonClicked5(ActionEvent e) {
-        if (e.getSource() == landBuyButton) {
-            if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
-                Land.landBuyEnable = true;
-            Stage stage = (Stage) landBuyButton.getScene().getWindow();
-            stage.close();
-        } else if (e.getSource() == passButton) {
-            numPasses++;
-            Stage stage = (Stage) passButton.getScene().getWindow();
-            stage.close();
-        }
-    }
+//STORE
 
     public void storeButtonClicked(ActionEvent e) {
         newStage = new Stage();
@@ -263,33 +467,14 @@ public class GameController implements Initializable {
             newStage.setScene(Launcher.storeScene);
             newStage.setTitle("Store");
             newStage.show();
+
+            //foodCostLabel.setText("" + store.getFoodCost());
         }
         Stage stage = (Stage) storeButton.getScene().getWindow();
         stage.close();
     }
 
-
-    public void landBuyButtonClicked(ActionEvent e) {
-        if (Land.landBuyEnable) {
-            Player currentP = Turns.getTurn();
-            if (currentP.landGrants > 0)//check for land grants
-                currentP.landGrants--;
-            else//if not grants sub money
-                currentP.addSubMoney(-300);
-            Node landButton = (Node) e.getSource();
-            GridPane grid = (GridPane) landButton.getParent();
-            Rectangle color =  new Rectangle();
-            color.setFill(currentP.getColor());
-            color.setHeight(25);
-            color.setWidth(25);
-            color.setOpacity(1);
-            grid.add(color, GridPane.getColumnIndex(landButton), GridPane.getRowIndex(landButton));
-            GridPane.setHalignment(color, HPos.LEFT);
-            GridPane.setValignment(color, VPos.TOP);
-            landButton.setDisable(true);//disable the land button since land is purchased
-            Land.landBuyEnable = false;//disable land buying for next turn
-
-            Timer.endTurn();
-        }
-    }
+    //public void
 }
+
+

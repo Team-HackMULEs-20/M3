@@ -16,48 +16,58 @@
         <Image url="@Media/store.JPG" preserveRatio="true" smooth="true" />
       </image>
     </ImageView>
-    <ImageView id="menu" fitHeight="330.0" fitWidth="444.0" layoutX="81.0" layoutY="36.0" pickOnBounds="true">
+    <ImageView id="menu" fitHeight="330.0" fitWidth="444.0" layoutX="79.0" layoutY="40.0" pickOnBounds="true">
       <image>
         <Image url="@Media/menu.jpg" preserveRatio="true" smooth="true" />
       </image>
     </ImageView>
     <Text layoutX="231.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Store!" />
-    <Button fx:id="foodButton" layoutX="155.0" layoutY="118.0" mnemonicParsing="false" text="Food - $30" />
+    <Button fx:id="foodButton" layoutX="177.0" layoutY="118.0" mnemonicParsing="false" text="Food" />
     <Text layoutX="192.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What would you like to purchase?" />
-    <Button fx:id="energyButton" layoutX="149.0" layoutY="180.0" mnemonicParsing="false" text="Energy - $25" />
-    <Button fx:id="smithoreButton" layoutX="144.0" layoutY="250.0" mnemonicParsing="false" text="Smithore - $50" />
-    <Button layoutX="330.0" layoutY="118.0" mnemonicParsing="false" text="Chrystite - $100" />
-    <ComboBox layoutX="306.0" layoutY="179.0" promptText="Mule">
+    <Button fx:id="energyButton" layoutX="169.0" layoutY="183.0" mnemonicParsing="false" text="Energy" />
+    <Button fx:id="smithoreButton" layoutX="163.0" layoutY="250.0" mnemonicParsing="false" text="Smithore" />
+    <Button layoutX="354.0" layoutY="118.0" mnemonicParsing="false" text="Chrystite" />
+    <ComboBox layoutX="329.0" layoutY="182.0" promptText="Mule">
       <items>
         <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Food Mule - $125" />
-          <String fx:value="Energy Mule - $150" />
-          <String fx:value="Smithore Mule - $175" />
-          <String fx:value="Crystite Mule - $200" />
+          <String fx:value="Food Mule" />
+          <String fx:value="Energy Mule" />
+          <String fx:value="Smithore Mule" />
+          <String fx:value="Chrystite Mule" />
         </FXCollections>
       </items>
     </ComboBox>
-    <Text layoutX="159.0" layoutY="166.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
-    <Text layoutX="162.0" layoutY="229.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
-    <Text layoutX="168.0" layoutY="296.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
-    <Text layoutX="358.0" layoutY="161.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
-    <Text layoutX="355.0" layoutY="227.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
+    <Text layoutX="165.0" layoutY="172.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
+    <Text layoutX="162.0" layoutY="240.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
+    <Text layoutX="167.0" layoutY="307.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
+    <Text layoutX="354.0" layoutY="173.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
+    <Text layoutX="348.0" layoutY="239.0" scaleX="1.0" scaleY="0.9999985583947038" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" />
     <ComboBox layoutX="326.0" layoutY="250.0" prefWidth="128.0" promptText="Sell Products">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Food" />
           <String fx:value="Energy" />
           <String fx:value="Smithore" />
-          <String fx:value="Crystite" />
+          <String fx:value="Chrystite" />
           <String fx:value="Mule" />
         </FXCollections>
       </items>
     </ComboBox>
-    <Button id="backButton" fx:id="backButton2" layoutX="17.0" layoutY="25.0" mnemonicParsing="false" onAction="#backButtonClicked2" text="Back" />
-    <Text layoutX="221.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16" />
-    <Text layoutX="224.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16" />
-    <Text layoutX="232.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-    <Text layoutX="420.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-    <Text layoutX="416.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25" />
+    <Button id="backButton" fx:id="backButton" layoutX="17.0" layoutY="25.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
+    <Text layoutX="169.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" />
+    <Text layoutX="177.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" />
+    <Text layoutX="362.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" />
+    <Text layoutX="355.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" />
+    <Text layoutX="172.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" />
+    <Label fx:id="foodCostLabel" layoutX="214.0" layoutY="145.0" prefWidth="40.0" text="\$" />
+    <Label id="foodCostLabel" fx:id="chrystiteCostLabel" layoutX="395.0" layoutY="145.0" prefWidth="40.0" text="\$" />
+    <Label id="foodCostLabel" fx:id="energyCostLabel" layoutX="202.0" layoutY="209.0" prefWidth="40.0" text="\$" />
+    <Label id="foodCostLabel" fx:id="smithoreCostLabel" layoutX="209.0" layoutY="276.0" prefWidth="40.0" text="\$" />
+    <Label id="foodCostLabel" fx:id="muleCostLabel" layoutX="394.0" layoutY="209.0" prefWidth="40.0" text="\$" />
+    <Label id="foodCostLabel" fx:id="foodQuantityLabel" layoutX="225.0" layoutY="160.0" prefWidth="40.0" text="x" />
+    <Label id="foodCostLabel" fx:id="energyQuantityLabel" layoutX="220.0" layoutY="227.0" prefWidth="40.0" text="x" />
+    <Label id="foodCostLabel" fx:id="smithoreQuantityLabel" layoutX="228.0" layoutY="294.0" prefWidth="40.0" text="x" />
+    <Label id="foodCostLabel" fx:id="chrystiteQuantityLabel" layoutX="415.0" layoutY="160.0" prefWidth="40.0" text="x" />
+    <Label id="foodCostLabel" fx:id="muleQuantityLabel" layoutX="409.0" layoutY="227.0" prefWidth="40.0" text="x" />
   </children>
 </AnchorPane>

@@ -10,20 +10,48 @@
 
 <AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
   <children>
-    <Text layoutX="211.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Pub!">
-      <font>
-        <Font name="System Bold" size="17.0" />
-      </font>
-    </Text>
-    <Button fx:id="backButton" layoutX="18.0" layoutY="22.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
-    <Text layoutX="82.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here, you can gamble by getting bonus money for your unused time!" />
-    <Text layoutX="218.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click the joystick to begin" />
-    <Text layoutX="436.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Won:" />
-    <ImageView fitHeight="258.65172169873114" fitWidth="192.8251953125" layoutX="203.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="433.63277858844873" fitWidth="611.8854370117188" layoutX="1.0" layoutY="-34.0" pickOnBounds="true" preserveRatio="true">
       <image>
-        <Image url="@Media/slotmachine2.png" />
+        <Image url="@Media/pubBg2.jpg" />
       </image>
     </ImageView>
-    <Button fx:id="gambleButton" layoutX="326.0" layoutY="186.0" minWidth="22.0" mnemonicParsing="false" onAction="#gambleButtonClicked" opacity="0.0" prefHeight="64.0" prefWidth="62.96044921875" text="Gamble!" />
+    <ImageView fitHeight="49.0626220703125" fitWidth="96.5670166015625" layoutX="489.0" layoutY="189.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@Media/chalkBoard.png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="187.79998779296875" fitWidth="377.28570556640625" layoutX="112.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@Media/chalkBoard.png" />
+      </image>
+    </ImageView>
+    <Text fill="WHITE" layoutX="173.0" layoutY="48.0" scaleX="1.0131768113628092" scaleY="1.0000026688015538" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Pub!">
+      <font>
+        <Font name="Brush Script MT Italic" size="40.0" />
+      </font>
+    </Text>
+    <Button fx:id="backButton" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
+    <Text fill="WHITE" layoutX="183.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gamble by getting bonus money&#10;for your unused time!" textAlignment="CENTER">
+      <font>
+        <Font name="Bradley Hand Bold" size="17.0" fx:id="x1" />
+      </font>
+    </Text>
+    <Text fill="WHITE" font="$x1" layoutX="178.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click the slot machine lever to bet" />
+    <ImageView fitHeight="339.65692138671875" fitWidth="253.2146647941387" layoutX="314.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@Media/slotmachine3.png" />
+      </image>
+    </ImageView>
+    <Button fx:id="gambleButton" layoutX="485.0" layoutY="214.0" minWidth="22.0" mnemonicParsing="false" onAction="#gambleButtonClicked" opacity="0.0" prefHeight="64.0" prefWidth="62.96044921875" text="Gamble!" />
+    <ImageView fitHeight="49.062625885009766" fitWidth="103.56688690185547" layoutX="375.0" layoutY="156.0" opacity="0.85" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@Media/clock.png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="52.466007232666016" fitWidth="110.56686401367188" layoutX="374.0" layoutY="354.0" opacity="0.92" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@Media/clock.png" />
+      </image>
+    </ImageView>
   </children>
 </AnchorPane>

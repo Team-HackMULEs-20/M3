@@ -6,19 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
   <!-- TODO Add Nodes -->
   <children>
-    <Pane layoutX="0.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
-      <children>
-        <Text layoutX="217.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="It is your turn to buy land!" />
-        <Text layoutX="13.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you do not wish to make a purchase this round, please select Pass and save your money." />
-        <Text layoutX="156.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Each land costs $300. (The first two are free!)" />
-        <Button fx:id="passButton" layoutX="156.0" layoutY="298.0" mnemonicParsing="false" onAction="#buttonClicked5" text="Pass" />
-        <Button fx:id="landBuyButton" layoutX="364.0" layoutY="298.0" mnemonicParsing="false" onAction="#buttonClicked5" text="Buy Land" />
-        <Text layoutX="89.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To purchase land simply click on which land you would like to buy." />
-        <Text layoutX="156.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You cannot buy land owned by someone else." />
-      </children>
-    </Pane>
+    <Text layoutX="13.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you do not wish to make a purchase this round, please select Pass and save your money." />
+    <Text layoutX="233.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Each land costs $300" />
+    <Button fx:id="landBuyButton" layoutX="336.0" layoutY="302.0" mnemonicParsing="false" onAction="#buyLandButtonClicked" text="Buy Land" />
+    <Text layoutX="89.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To purchase land simply click on which land you would like to buy." />
+    <Button fx:id="passButton" layoutX="183.0" layoutY="302.0" mnemonicParsing="false" onAction="#buyLandButtonClicked" text="Pass" />
+    <Text layoutX="148.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You cannot buy land owned by someone else." />
+    <Text layoutX="264.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land Office" />
   </children>
 </AnchorPane>
