@@ -22,7 +22,7 @@ public class Timer extends Application {
     private Timeline timeline;
     private Label timerLabel = new Label();
     private static Button endButton;
-    
+
     public Timer(int beginTime) {
         this.beginTime = beginTime;
         timeLeft = beginTime;
@@ -83,10 +83,10 @@ public class Timer extends Application {
         });
 
     }
-    
+
     //simulates "End Turn" button pressed
     public static void endTurn() {
-    	endButton.fire();
+        endButton.fire();
     }
 
     public static int getTimeLeft() {return timeLeft;}
@@ -96,4 +96,3 @@ public class Timer extends Application {
     }
 
 }
-

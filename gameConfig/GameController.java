@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import javax.naming.ldap.Control;
@@ -179,35 +180,30 @@ public class GameController implements Initializable {
     public void startBar() {
         infoStage = new Stage();
         Player p = Turns.getTurn();
-        if (isMade == false) {
+        if (!isMade) {
             isMade = true;
             infoStage.setTitle("Information Bar");
+            infoStage.setAlwaysOnTop(true);
             Group t2 = new Group();
             Scene scene2 = new Scene(t2, 600, 100);
 
             currRound.setText("Round " + Turns.rounds);
-            currRound.setTextFill(Color.BLACK);
-            currRound.setStyle("-fx-font-size: 15;");
+            currRound.setFont(new Font("American Typewriter Bold", 18));
 
             currPlayer.setText("It is " + p.getName() + "'s Turn");
-            currPlayer.setTextFill(Color.BLACK);
-            currPlayer.setStyle("-fx-font-size: 15;");
+            currPlayer.setFont(new Font("American Typewriter Bold", 18));
 
             moneyLeft.setText("Money: " + p.getMoney());
-            moneyLeft.setTextFill(Color.BLACK);
-            moneyLeft.setStyle("-fx-font-size: 15;");
+            moneyLeft.setFont(new Font("American Typewriter", 15));
 
             foodLeft.setText("Food: " + p.getFood());
-            foodLeft.setTextFill(Color.BLACK);
-            foodLeft.setStyle("-fx-font-size: 15;");
+            foodLeft.setFont(new Font("American Typewriter", 15));
 
             energyLeft.setText("Energy: " + p.getEnergy());
-            energyLeft.setTextFill(Color.BLACK);
-            energyLeft.setStyle("-fx-font-size: 15;");
+            energyLeft.setFont(new Font("American Typewriter", 15));
 
             oreLeft.setText("Ore: " + p.getOre());
-            oreLeft.setTextFill(Color.BLACK);
-            oreLeft.setStyle("-fx-font-size: 15;");
+            oreLeft.setFont(new Font("American Typewriter", 15));
 
             Label l1 = new Label("                                          ");
             Label l2 = new Label("                                          ");
@@ -232,30 +228,24 @@ public class GameController implements Initializable {
             infoStage.show();
             infoStage.toFront();
 
-        } else if (isMade == true) {
+        } else if (isMade) {
             currRound.setText("Round " + Turns.rounds);
-            currRound.setTextFill(Color.BLACK);
-            currRound.setStyle("-fx-font-size: 15;");
+            currRound.setFont(new Font("American Typewriter Bold", 18));
 
             currPlayer.setText("It is " + p.getName() + "'s Turn");
-            currPlayer.setTextFill(Color.BLACK);
-            currPlayer.setStyle("-fx-font-size: 15;");
+            currPlayer.setFont(new Font("American Typewriter Bold", 18));
 
             moneyLeft.setText("Money: " + p.getMoney());
-            moneyLeft.setTextFill(Color.BLACK);
-            moneyLeft.setStyle("-fx-font-size: 15;");
+            moneyLeft.setFont(new Font("American Typewriter", 15));
 
             foodLeft.setText("Food: " + p.getFood());
-            foodLeft.setTextFill(Color.BLACK);
-            foodLeft.setStyle("-fx-font-size: 15;");
+            foodLeft.setFont(new Font("American Typewriter", 15));
 
             energyLeft.setText("Energy: " + p.getEnergy());
-            energyLeft.setTextFill(Color.BLACK);
-            energyLeft.setStyle("-fx-font-size: 15;");
+            energyLeft.setFont(new Font("American Typewriter", 15));
 
             oreLeft.setText("Ore: " + p.getOre());
-            oreLeft.setTextFill(Color.BLACK);
-            oreLeft.setStyle("-fx-font-size: 15;");
+            oreLeft.setFont(new Font("American Typewriter", 15));
         }
 
         if (Turns.rounds + 1 == 14) {
