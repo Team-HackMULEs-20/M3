@@ -190,7 +190,6 @@ public class GameController implements Initializable {
             infoStage.setAlwaysOnTop(true);
             Group t2 = new Group();
             Scene scene2 = new Scene(t2, 600, 100);
-            scene2.setFill(p.getColor());
 
             currRound.setText("Round " + Turns.rounds);
             currRound.setFont(new Font("American Typewriter Bold", 18));
@@ -288,8 +287,9 @@ public class GameController implements Initializable {
         }
         if (landNotTaken < Controller.numPlayer) {
             auctionTime = true;
+            startingBid = Land.getBuyPrice() / 2;
         }
-        startingBid = Land.getBuyPrice() / 2;
+
         return auctionTime;
     }
 
