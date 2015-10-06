@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
@@ -13,6 +14,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -186,12 +190,21 @@ public class GameController implements Initializable {
             infoStage.setAlwaysOnTop(true);
             Group t2 = new Group();
             Scene scene2 = new Scene(t2, 600, 100);
+            scene2.setFill(p.getColor());
 
             currRound.setText("Round " + Turns.rounds);
             currRound.setFont(new Font("American Typewriter Bold", 18));
 
             currPlayer.setText("It is " + p.getName() + "'s Turn");
             currPlayer.setFont(new Font("American Typewriter Bold", 18));
+            if (p.getColor() != Color.WHITE) {
+                currPlayer.setTextFill(p.getColor());
+            } else {
+                currPlayer.setTextFill(p.getColor());
+                currPlayer.setBackground(new Background(new BackgroundFill(Color.BLACK,
+                        CornerRadii.EMPTY, Insets.EMPTY)));
+            }
+
 
             moneyLeft.setText("Money: " + p.getMoney());
             moneyLeft.setFont(new Font("American Typewriter", 15));
@@ -228,12 +241,21 @@ public class GameController implements Initializable {
             infoStage.show();
             infoStage.toFront();
 
-        } else if (isMade) {
+        } else {
             currRound.setText("Round " + Turns.rounds);
             currRound.setFont(new Font("American Typewriter Bold", 18));
 
             currPlayer.setText("It is " + p.getName() + "'s Turn");
             currPlayer.setFont(new Font("American Typewriter Bold", 18));
+            if (p.getColor() != Color.WHITE) {
+                currPlayer.setTextFill(p.getColor());
+                currPlayer.setBackground(new Background(new BackgroundFill(Color.WHITE,
+                        CornerRadii.EMPTY, Insets.EMPTY)));
+            } else {
+                currPlayer.setTextFill(p.getColor());
+                currPlayer.setBackground(new Background(new BackgroundFill(Color.BLACK,
+                        CornerRadii.EMPTY, Insets.EMPTY)));
+            }
 
             moneyLeft.setText("Money: " + p.getMoney());
             moneyLeft.setFont(new Font("American Typewriter", 15));
