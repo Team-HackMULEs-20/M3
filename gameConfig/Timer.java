@@ -31,9 +31,9 @@ public class Timer {
     public void start() {
         Stage stage = new Stage();
         Player p = Turns.getTurn();
-        System.out.println("Round " + Turns.rounds);
-        System.out.println("It is " + p.getName() + "'s Turn");
-        System.out.println("Money: " + p.getMoney() + "; Food: " + p.getFood()
+        System.out.print("Round " + Turns.rounds);
+        System.out.print(" | It is " + p.getName() + "'s Turn");
+        System.out.println(" | Money: " + p.getMoney() + "; Food: " + p.getFood()
                 + "; Energy: " + p.getEnergy() + "; Ore: " + p.getOre());
         InfoBar.timerLabel.setText("  " + timeLeft.toString());
         timeline = new Timeline();

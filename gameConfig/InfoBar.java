@@ -134,12 +134,6 @@ public class InfoBar {
             infoStage.close();
         }
     }
-
-    public void updatePlayerInfoBar(Player p) {
-        infoStage = new Stage();
-
-
-    }
 }
 
     /*

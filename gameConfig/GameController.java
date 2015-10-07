@@ -381,12 +381,8 @@ public class GameController implements Initializable {
             int timeLeft = Timer.getTimeLeft();
             Player p = Turns.getTurn();
             int moneyWon = p.gamble(timeLeft);
-            Timer.endTurn();
-
-            System.out.println("P's money = " + p.getMoney());
-            if (infoBar == null) {System.out.println("INFOBAR NULL");}
             infoBar.updateInfoBar();
-            System.out.println("P's money = " + p.getMoney());
+            Timer.endTurn();
 
             newStage.setScene(Launcher.gambleConfirm);
             newStage.setTitle("Congratulations");
