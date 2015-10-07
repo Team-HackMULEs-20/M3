@@ -177,7 +177,7 @@ public class GameController implements Initializable {
         //infoBar.updateInfoBar();
 		if (event.getSource() == startButton) {
 			Timer timer = new Timer(Turns.timeForTurn(Turns.getTurn()));
-			timer.start(new Stage());
+			timer.start();
 			start.close();
 
 			store = new Store();

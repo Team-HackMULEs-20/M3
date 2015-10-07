@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -24,17 +25,20 @@ public class InfoBar {
     private Label energyLeft = new Label();
     private Label oreLeft = new Label();
     private Label currPlayer = new Label();
+    public static Label timerLabel = new Label();
+    public static Button endButton = new Button("End Turn");
 
 
     public InfoBar() {
         infoStage = new Stage();
         Player p = Turns.getTurn();
-
         //infoBarCreated = true;
         infoStage.setTitle("Information Bar");
         infoStage.setAlwaysOnTop(true);
         Group t2 = new Group();
-        Scene scene2 = new Scene(t2, 600, 100);
+        Scene scene2 = new Scene(t2, 600, 120);
+
+        timerLabel.setFont(new Font("American Typewriter Bold", 30));
 
         currRound.setText("Round " + Turns.rounds);
         currRound.setFont(new Font("American Typewriter Bold", 18));
@@ -62,9 +66,11 @@ public class InfoBar {
         oreLeft.setText("Ore: " + p.getOre());
         oreLeft.setFont(new Font("American Typewriter", 15));
 
-        Label l1 = new Label("                                          ");
-        Label l2 = new Label("                                          ");
-        Label l3 = new Label("                                          ");
+        Label l1 = new Label("                   ");
+        Label l2 = new Label("                   ");
+        Label l3 = new Label("                   ");
+        Label l4 = new Label(" Timer");
+        l4.setFont(new Font("American Typewriter Bold", 18));
 
         GridPane grid2 = new GridPane();
         grid2.setAlignment(Pos.CENTER);
@@ -79,6 +85,9 @@ public class InfoBar {
         grid2.add(l3, 1, 2);
         grid2.add(energyLeft, 2, 2);
         grid2.add(oreLeft, 4, 2);
+        grid2.add(timerLabel, 5, 1);
+        grid2.add(endButton, 5, 2);
+        grid2.add(l4, 5, 0);
         t2.getChildren().add(grid2);
 
         infoStage.setScene(scene2);

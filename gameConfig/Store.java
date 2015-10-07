@@ -1,5 +1,8 @@
 package gameConfig;
 
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+
 public class Store {
 
 	public static int foodCost, foodQuantity,
@@ -7,6 +10,7 @@ public class Store {
 	smithCost, smithQuantity,
 	crysCost, crysQuantity,
 	muleCost, muleQuantity;
+
 
     public Store() {
         if (Controller.level.equals("Beginner")) {
@@ -200,6 +204,7 @@ public class Store {
             }
         }
     }
+
 
     public int getFoodCost() {
         return foodCost;

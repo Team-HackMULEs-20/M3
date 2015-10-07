@@ -16,48 +16,26 @@ import javafx.scene.layout.VBox;
 import javafx.animation.KeyFrame;
 import javafx.util.Duration;
 
-public class Timer extends Application {
+public class Timer {
     private int beginTime;// = 50;
     private static Integer timeLeft;// beginTime;
     private Timeline timeline;
-    private Label timerLabel = new Label();
-    private static Button endButton;
+    //public Label timerLabel = new Label();
+    //private static Button endButton;
 
     public Timer(int beginTime) {
         this.beginTime = beginTime;
         timeLeft = beginTime;
     }
 
-    @Override
-    public void start(Stage stage) {
+    public void start() {
+        Stage stage = new Stage();
         Player p = Turns.getTurn();
         System.out.println("Round " + Turns.rounds);
         System.out.println("It is " + p.getName() + "'s Turn");
         System.out.println("Money: " + p.getMoney() + "; Food: " + p.getFood() + "; Energy: " + p.getEnergy() + "; Ore: " + p.getOre());
 
-        stage.setTitle("Turn Timer");
-        Group t = new Group();
-        Scene scene = new Scene(t,150,150);
-
-        timerLabel.setText(timeLeft.toString());
-        timerLabel.setTextFill(Color.BLACK);
-        timerLabel.setStyle("-fx-font-size: 5em;");
-
-        VBox box = new VBox();
-        box.setAlignment(Pos.CENTER);
-        box.setPrefWidth(scene.getWidth());
-        box.setLayoutY(30);
-        box.getChildren().add(timerLabel);
-
-        endButton = new Button("End Turn");
-        box.getChildren().add(endButton);
-
-        t.getChildren().add(box);
-
-        stage.setScene(scene);
-        stage.show();
-        stage.toFront();
-
+        InfoBar.timerLabel.setText("  " + timeLeft.toString());
         timeline = new Timeline();
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.getKeyFrames().add(
@@ -65,8 +43,8 @@ public class Timer extends Application {
                         event -> {
                             timeLeft--;
                             // update timerLabel
-                            timerLabel.setText(
-                                    timeLeft.toString());
+                            InfoBar.timerLabel.setText("  "
+                                    + timeLeft.toString());
                             if (timeLeft <= 0) {
                                 timeline.stop();
                                 Turns.playerTurn++;
@@ -75,7 +53,7 @@ public class Timer extends Application {
                             }
                         }));
         timeline.playFromStart();
-        endButton.setOnAction((ActionEvent e) -> {
+        InfoBar.endButton.setOnAction((ActionEvent e) -> {
             timeline.stop();
             stage.close();
             Turns.playerTurn++;
@@ -86,7 +64,7 @@ public class Timer extends Application {
 
     //simulates "End Turn" button pressed
     public static void endTurn() {
-        endButton.fire();
+        InfoBar.endButton.fire();
     }
 
     public static int getTimeLeft() {return timeLeft;}
