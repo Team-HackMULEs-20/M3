@@ -27,7 +27,7 @@
     <Button fx:id="energyButton" layoutX="169.0" layoutY="183.0" mnemonicParsing="false" text="Energy" />
     <Button fx:id="smithoreButton" layoutX="163.0" layoutY="250.0" mnemonicParsing="false" text="Smithore" />
     <Button layoutX="354.0" layoutY="118.0" mnemonicParsing="false" text="Chrystite" />
-    <ComboBox layoutX="329.0" layoutY="182.0" promptText="Mule">
+    <ComboBox fx:id="muleTypeButton" onAction="#muleButtonClicked" layoutX="329.0" layoutY="182.0" promptText="Mule">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Food Mule" />

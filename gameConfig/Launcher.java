@@ -27,18 +27,18 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("M.U.L.E Game Setup.fxml"));
-            Parent child = FXMLLoader.load(getClass().getResource("playerSetup.fxml"));
-            Parent error = FXMLLoader.load(getClass().getResource("configError.fxml"));
-            Parent gameRoot = FXMLLoader.load(getClass().getResource("MainMap.fxml"));
-            Parent town = FXMLLoader.load(getClass().getResource("TownMap.fxml"));
-            Parent startWindow = FXMLLoader.load(getClass().getResource("playerStart.fxml"));
-            Parent landBuy = FXMLLoader.load(getClass().getResource("LandBuyInterface.fxml"));
-            Parent pubGamble = FXMLLoader.load(getClass().getResource("PubGambleInterface.fxml"));
-            Parent auctionWin = FXMLLoader.load(getClass().getResource("AuctionWindow.fxml"));
-            Parent store = FXMLLoader.load(getClass().getResource("storeInterface2.fxml"));
-            Parent gambleC = FXMLLoader.load(getClass().getResource("GambleConfirmation.fxml"));
-            Parent selectPhase = FXMLLoader.load(getClass().getResource("SelectionPhaseInterface.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("UIFiles/M.U.L.E Game Setup.fxml"));
+            Parent child = FXMLLoader.load(getClass().getResource("UIFiles/playerSetup.fxml"));
+            Parent error = FXMLLoader.load(getClass().getResource("UIFiles/configError.fxml"));
+            Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
+            Parent town = FXMLLoader.load(getClass().getResource("UIFiles/TownMap.fxml"));
+            Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
+            Parent landBuy = FXMLLoader.load(getClass().getResource("UIFiles/LandBuyInterface.fxml"));
+            Parent pubGamble = FXMLLoader.load(getClass().getResource("UIFiles/PubGambleInterface.fxml"));
+            Parent auctionWin = FXMLLoader.load(getClass().getResource("UIFiles/AuctionWindow.fxml"));
+            Parent store = FXMLLoader.load(getClass().getResource("UIFiles/storeInterface2.fxml"));
+            Parent gambleC = FXMLLoader.load(getClass().getResource("UIFiles/GambleConfirmation.fxml"));
+            Parent selectPhase = FXMLLoader.load(getClass().getResource("UIFiles/SelectionPhaseInterface.fxml"));
             startScene = new Scene(startWindow);
             errorMessage = new Scene(error);
             nextScene = new Scene(child);

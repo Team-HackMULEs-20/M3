@@ -9,6 +9,8 @@ public class Land {
 	public static boolean landBuyEnable = false;
 
 	private boolean hasMule;
+	public static Player latestBidder;
+
 
 
 	// private hasMule //TODO
@@ -39,6 +41,10 @@ public class Land {
 		owned = true;
 	}
 
+	public void setBidder(Player p) {
+		latestBidder = p;
+	}
+
 	public void buyLand(Player p) {
 		if (!isOwned()) {
 			setOwner(p);
@@ -63,4 +69,9 @@ public class Land {
 	public void setHasMule(boolean mule) {hasMule = mule;}
 	
 	public boolean isOwned() {return owned;}
+	
+	public boolean equals(Land land) {
+		return (land.getRow() == this.row && land.getCol() == this.getCol()); 
+	}
+	
 }

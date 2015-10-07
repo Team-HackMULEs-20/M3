@@ -67,7 +67,7 @@ public class Controller implements Initializable {
 	private static int count;
 	private static Color color;
 	private Stage newStage;
-	private static Player[] players;
+	public static Player[] players;
 	private static Turns gameTurns;
 	//private boolean landBuyEnable = false;
 
@@ -153,7 +153,7 @@ public class Controller implements Initializable {
 							newStage.show();
 							GameController.beginTurn();
 							//creates land array
-							landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
+							landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
 							for (int i = 0; i < landPlots.length; i++) {
 								for (int j = 0; j < landPlots[0].length; j++) {
 									landPlots[i][j] = new Land(i,j);
@@ -176,7 +176,7 @@ public class Controller implements Initializable {
 							newStage.show();
 							GameController.beginTurn();
 							//creates land array
-							landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
+							landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
 							for (int i = 0; i < landPlots.length; i++) {
 								for (int j = 0; j < landPlots[0].length; j++) {
 									landPlots[i][j] = new Land(i,j);
@@ -198,7 +198,7 @@ public class Controller implements Initializable {
 						newStage.show();
 						GameController.beginTurn();
 						//creates land array
-						landPlots = new Land[5][9];//5 rows, 9 columns, row = i, col = j
+						landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
 						for (int i = 0; i < landPlots.length; i++) {
 							for (int j = 0; j < landPlots[0].length; j++) {
 								landPlots[i][j] = new Land(i,j);

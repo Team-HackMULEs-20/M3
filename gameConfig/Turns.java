@@ -1,5 +1,7 @@
 package gameConfig;
 
+import sun.java2d.pipe.hw.AccelDeviceEventListener;
+
 public class Turns {
     public static Player[] players;
     public static int rounds;
@@ -15,19 +17,18 @@ public class Turns {
     public static Player getTurn() {
         if (playerTurn > players.length) {
             rounds++;
-            /*if (GameController.numBids == 1) {
-                Land.buyLand(players[playerTurn]);
-            }*/
-            GameController.numBids = 0;
+            if (Auction.numBids == 1) {
+                System.out.println("one bid on current plot");
+                Player p = Auction.getLastBidder();
+                Auction.giveLandToBidder(Auction.auctionLand[Auction.currentLand], p);
+            }
+            Auction.numBids = 0;
             if (GameController.numPasses != players.length) {
                 GameController.numPasses = 0;
             }
             playerTurn = 1;
             Turns.sortByScore();
             System.out.println("Next Round");
-            if (GameController.isAuctionTime()) {
-                GameController.startAuction();
-            }
         }
         return players[playerTurn - 1];
     }
