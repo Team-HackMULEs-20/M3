@@ -11,7 +11,7 @@ public class Store {
     public int crysCost;
     public int crysQuantity;
     public int muleCost;
-    public int muleQuantity;
+    public static int muleQuantity;
 
     public Store() {
         if (Controller.level.equals("Beginner")) {

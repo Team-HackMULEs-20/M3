@@ -57,8 +57,8 @@ public class Player {
 			money = 1000;
 		}
 
-        ore = 0;
-        crystite = 0;
+		ore = 0;
+		crystite = 0;
 	}
 
 	public enum Race {
@@ -90,8 +90,8 @@ public class Player {
 	public int getOre() {return ore;}
 	public void addSubOre(int amount) {ore += amount;}
 
-    public int getCrystite() {return crystite;}
-    public void addSubCrystite(int amount) {crystite += amount;}
+	public int getCrystite() {return crystite;}
+	public void addSubCrystite(int amount) {crystite += amount;}
 
 	public int getTurnsTaken() {return turnsTaken;}
 	public void incTurnsTaken() {turnsTaken++;}
@@ -134,16 +134,20 @@ public class Player {
 		money += mb;
 	}
 
-	public void buyMule(Mule mule, Land land) {
-
+	public boolean buyMule(Mule mule, Land land) {
 		if (money >= mule.getCost()) {//check that player has enough money
 			money = money - mule.getCost();//player pays for the mule
 			mule.setOwner(this);//player owns the mule
-			if (this.equals(land.getOwner())) {//check to see if valid land
-				if (!land.hasMule()) {//if there isn't a mule already on the land
-					mule.setPosition(land);//mule is placed on the land
+			Store.muleQuantity--;
+			Land landPlot = Controller.landPlots[land.getCol()][land.getRow()];
+			if (this.equals(landPlot.getOwner())) {//check to see if valid land
+				if (!landPlot.hasMule()) {//if there isn't a mule already on the land
+					mule.setPosition(landPlot);//mule is placed on the land
 					mulesOwned.add(mule);//player owns mule
-					land.setHasMule(true);
+					landPlot.setHasMule(true);
+					System.out.println("mule placed.");
+					muleBuyEnable = false;
+					return true;
 				} else {//if the land already has a mule, mule is lost
 					System.out.println("There is already a mule on this land. You have lost your mule.");
 				}
@@ -153,7 +157,8 @@ public class Player {
 		} else {//if not enough money, nothing happens
 			System.out.println("You do not have enough money.");
 		}
-
+		muleBuyEnable = false;
+		return false;
 	}
 
 
