@@ -84,8 +84,8 @@
           </items>
         </ComboBox>
         <Button fx:id="buyMuleButton" font="$x3" mnemonicParsing="false" onAction="#muleBuyButtonClick" prefHeight="11.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-        <Button fx:id="sellCrysButton1" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-        <Label fx:id="muleQuantityLabel1" font="$x3" text="muleQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+        <Button fx:id="sellMuleButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+        <Label fx:id="muleQuantityLabel" font="$x3" text="muleQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
         <Label fx:id="muleCostLabel" text="select mule&#10;type" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
           <font>
             <Font name="Bradley Hand Bold" size="10.0" />
