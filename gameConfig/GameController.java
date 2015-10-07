@@ -40,7 +40,7 @@ public class GameController implements Initializable {
 	private Button landBuyButton;
 
 	@FXML
-	private Button passButton;
+	private Button backButton2;
 
 	@FXML
 	private Button townButton;
@@ -164,7 +164,7 @@ public class GameController implements Initializable {
 				"check your FXML file 'playerStart.fxml'.";
 		assert landBuyButton != null : "fx:id=\"landBuyButton\" was not injected: " +
 				"check your FXML file 'landBuyInterface.fxml'.";
-		assert passButton != null : "fx:id=\"passButton\" was not injected: " +
+		assert backButton2 != null : "fx:id=\"passButton\" was not injected: " +
 				"check your FXML file 'landBuyInterface.fxml'.";
 		assert townButton != null : "fx:id=\"townButton\" was not injected: " +
 				"check your FXML file 'MainMap.fxml'.";
@@ -279,14 +279,18 @@ public class GameController implements Initializable {
 	}
 
 	public void buyLandButtonClicked(ActionEvent e) {
+		newStage = new Stage();
 		if (e.getSource() == landBuyButton) {
 			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
 				Land.landBuyEnable = true;
 			Stage stage = (Stage) landBuyButton.getScene().getWindow();
 			stage.close();
-		} else if (e.getSource() == passButton) {
-			Stage stage = (Stage) passButton.getScene().getWindow();
+		} else if (e.getSource() == backButton2) {
+			Stage stage = (Stage) backButton2.getScene().getWindow();
 			stage.close();
+			newStage.setScene(Launcher.townScene);
+			newStage.setTitle(Turns.getTurn().getName());
+			newStage.show();
 		}
 	}
 
