@@ -172,12 +172,12 @@ public class GameController implements Initializable {
 			start.close();
 
 			store = new Store();
-			boolean auctionTime = auction.isAuctionTime();
+			/* boolean auctionTime = auction.isAuctionTime();
 			System.out.println("before auction if statement");
 			if (auctionTime) {
 				System.out.println("Auction time");
 				auction.startAuction();
-			}
+			} */
 			if (numPasses < Controller.numPlayer) {
 				System.out.println("Land Selection Phase");
 				selectPhase = true;
@@ -408,7 +408,7 @@ public class GameController implements Initializable {
 		} else if (currentP.muleBuyEnable) {
 			boolean muleBought = currentP.buyMule(new Mule(currentMuleType), newLand);//buy mule / return false if mule has been lost
 			if (muleBought) {//if !muleLost
-				Image mulePic =  new Image("gameConfig/Media/aMule.png");
+				Image mulePic =  new Image("gameConfig/UIFiles/Media/aMule.png");
 				ImageView muleView = new ImageView();
 				muleView.setImage(mulePic);
 				muleView.setFitWidth(50);
