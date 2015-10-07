@@ -96,7 +96,7 @@ public class Player {
 	public int getTurnsTaken() {return turnsTaken;}
 	public void incTurnsTaken() {turnsTaken++;}
 
-	public void gamble(int timeLeft) {
+	public int gamble(int timeLeft) {
 		System.out.println(name + " has chosen to gamble at the Pub with " + timeLeft + " seconds left.");
 		int r = Turns.rounds;
 
@@ -110,7 +110,7 @@ public class Player {
 		} else { // round 12
 			rb = 200;
 		}
-		System.out.println("Round Bonus: " + rb);
+		System.out.print("Round Bonus: " + rb);
 
 		int tb = 0; //time bonus
 		if (timeLeft < 12) { // time left = 0-11 seconds
@@ -122,7 +122,7 @@ public class Player {
 		} else { // time left = 37-50 seconds
 			tb = 200;
 		}
-		System.out.println("Time Bonus: " + tb);
+		System.out.print(" | Time Bonus: " + tb);
 
 		//money bonus = round bonus * random(0 to timebonus)
 		//randomNum = minimum + (int)(Math.random()*maximum);
@@ -130,8 +130,9 @@ public class Player {
 		if (mb > 250) {
 			mb = 250;
 		}
-		System.out.println("Money Bonus: " + mb);
+		System.out.println(" | Money Bonus: " + mb);
 		money += mb;
+		return mb;
 	}
 
 	public boolean buyMule(Mule mule, Land land) {
