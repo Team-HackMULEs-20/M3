@@ -2,16 +2,11 @@ package gameConfig;
 
 public class Store {
 
-    public int foodCost;
-    public int foodQuantity;
-    public int energyCost;
-    public int energyQuantity;
-    public int smithCost;
-    public int smithQuantity;
-    public int crysCost;
-    public int crysQuantity;
-    public int muleCost;
-    public static int muleQuantity;
+	public static int foodCost, foodQuantity,
+	energyCost, energyQuantity,
+	smithCost, smithQuantity,
+	crysCost, crysQuantity,
+	muleCost, muleQuantity;
 
     public Store() {
         if (Controller.level.equals("Beginner")) {
