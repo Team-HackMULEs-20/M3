@@ -108,17 +108,41 @@ public class GameController implements Initializable {
 	@FXML
 	private Label chrystiteQuantityLabel;
 
+    @FXML
+    private Label muleQuantityLabel;
+
 	@FXML
 	private ComboBox muleChoice;
 
-	//    @FXML
-	//    private Label buyFoodButton;
-	//
-	//    @FXML
-	//    private Label muleQuantityLabel;
-	//
-	//    @FXML
-	//    private Label muleQuantityLabel;
+    @FXML
+	private Button buyFoodButton;
+
+    @FXML
+    private Button sellFoodButton;
+
+    @FXML
+    private Button buyEnergyButton;
+
+    @FXML
+    private Button sellEnergyButton;
+
+    @FXML
+    private Button buyOreButton;
+
+    @FXML
+    private Button sellOreButton;
+
+    @FXML
+    private Button buyCrysButton;
+
+    @FXML
+    private Button sellCrysButton;
+
+    @FXML
+    private Button buyMuleButton;
+
+    @FXML
+    private Button sellMuleButton;
 
 	public static Mule.Type currentMuleType;
 	public static Store store;
