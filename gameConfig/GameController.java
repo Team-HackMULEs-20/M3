@@ -314,8 +314,9 @@ public class GameController implements Initializable {
 				Controller.landPlots[col][row].setOwner(currentP);
 				currentP.landOwned.add(newLand);
 
-			} else if (currentP.getMoney() >= 300){//if not grants sub money
+			} else if (currentP.getMoney() >= 300){//if not grants sub money //doesn't allow to buy when at $300 //TODO
 				currentP.addSubMoney(-300);
+                infoBar.updateInfoBar();
 
 				Rectangle color =  new Rectangle();
 				color.setFill(currentP.getColor());
