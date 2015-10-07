@@ -9,6 +9,8 @@ public class Land {
 	public static boolean landBuyEnable = false;
 
 	private boolean hasMule;
+	public static Player latestBidder;
+
 
 
 	// private hasMule //TODO
@@ -37,6 +39,10 @@ public class Land {
 	public void setOwner(Player p) {
 		owner = p;
 		owned = true;
+	}
+
+	public void setBidder(Player p) {
+		latestBidder = p;
 	}
 
 	public void buyLand(Player p) {

@@ -67,7 +67,7 @@ public class Controller implements Initializable {
 	private static int count;
 	private static Color color;
 	private Stage newStage;
-	private static Player[] players;
+	public static Player[] players;
 	private static Turns gameTurns;
 	//private boolean landBuyEnable = false;
 

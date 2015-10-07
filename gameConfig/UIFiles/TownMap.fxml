@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
+  <children>
+    <GridPane layoutX="29.0" layoutY="0.0" prefHeight="400.0" prefWidth="593.0">
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <ImageView id="bg" fitHeight="400.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/bg.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <ImageView id="bldg1" fitHeight="146.0" fitWidth="144.0" layoutX="14.0" layoutY="0.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/bldg1.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <ImageView id="bldg2" fitHeight="136.0" fitWidth="252.0" layoutX="342.0" layoutY="10.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/bldg2.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <ImageView id="bldg3" fitHeight="136.0" fitWidth="205.0" layoutX="395.0" layoutY="250.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/bldg3.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <ImageView id="bldg4" fitHeight="122.0" fitWidth="213.0" layoutX="0.0" layoutY="264.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/bldg4.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <Button fx:id="pubButton" layoutX="158.0" layoutY="126.0" mnemonicParsing="false" onAction="#pubButtonClicked" text="Pub" />
+    <Button fx:id="landOfficeButton" layoutX="375.0" layoutY="126.0" mnemonicParsing="false" onAction="#landOfficeButtonClicked" text="Land Office" />
+    <Button fx:id="assayOfficeButton" layoutX="158.0" layoutY="366.0" mnemonicParsing="false" onAction="#landOfficeButtonClicked" text="Assay Office" />
+    <Button fx:id="storeButton" layoutX="375.0" layoutY="365.0" mnemonicParsing="false" onAction="#storeButtonClicked" text="Store" />
+  </children>
+</AnchorPane>

@@ -48,10 +48,10 @@ public class GameController implements Initializable {
     private Button pubButton;
 
     @FXML
-    private static TextField bidAmount;
+    private TextField bidAmount;
 
     @FXML
-    private static Label currentBidLabel;
+    public static Label currentBidLabel;
 
     @FXML
     private Button bidButton;
@@ -120,10 +120,6 @@ public class GameController implements Initializable {
     public static int numPasses = 0;
     private static Stage start;
     private Stage newStage;
-    private static Stage auctionStage;
-    private static int startingBid;
-    public static int landNotTaken;
-    public static int numBids;
     private static boolean selectPhase = true;
     
     private Stage infoStage;
@@ -134,6 +130,7 @@ public class GameController implements Initializable {
     private Label oreLeft = new Label();
     private Label currPlayer = new Label();
     private boolean isMade = false;
+    private Auction auction = new Auction();
 
     // TURNS AND SETUP
     @Override
@@ -168,7 +165,12 @@ public class GameController implements Initializable {
             start.close();
 
             store = new Store();
-
+            boolean auctionTime = auction.isAuctionTime();
+            System.out.println("before auction if statement");
+            if (auctionTime) {
+                System.out.println("Auction time");
+                auction.startAuction();
+            }
             if (numPasses < Controller.numPlayer) {
                 System.out.println("Land Selection Phase");
                 selectPhase = true;
@@ -274,44 +276,15 @@ public class GameController implements Initializable {
         }
     }
 
-    // AUCTIONING
-    public static boolean isAuctionTime() {
-        boolean auctionTime = false;
-        landNotTaken = 44;
-        for (Land[] item : Controller.landPlots) {
-            for (Land plot : item) {
-                if (plot.isOwned()) {
-                    landNotTaken--;
-                }
-            }
-        }
-        if (landNotTaken < Controller.numPlayer) {
-            auctionTime = true;
-            startingBid = Land.getBuyPrice() / 2;
-        }
-
-        return auctionTime;
-    }
-
-    public static void startAuction() {
-        auctionStage = new Stage();
-        auctionStage.setScene(Launcher.auctionScene);
-        auctionStage.setTitle(Turns.getTurn().getName() + "'s Turn");
-    }
-
     @FXML
     public void bidButtonClicked(ActionEvent event) {
         if (event.getSource() == bidButton) {
             int currentBidAmount = Integer.parseInt(bidAmount.getText());
             Player p = Turns.getTurn();
-            if (currentBidAmount > startingBid && p.getMoney() > currentBidAmount) {
-                startingBid = currentBidAmount;
-                currentBidLabel.setText("Current Bid is: " + startingBid);
-                GameController.numBids++;
-            }
+            auction.placeBid(p, currentBidAmount);
         } else if (event.getSource() == bidPassButton) {
             Timer.endTurn();
-            auctionStage.close();
+            auction.auctionStage.close();
         }
     }
 
