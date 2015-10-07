@@ -403,7 +403,9 @@ public class GameController implements Initializable {
 			}
 
 			Land.landBuyEnable = false;//disable land buying for next turn
-			Timer.endTurn();
+            if (selectPhase) {
+                Timer.endTurn();
+            }
 
 		} else if (currentP.muleBuyEnable) {
 			boolean muleBought = currentP.buyMule(new Mule(currentMuleType), newLand);//buy mule / return false if mule has been lost
