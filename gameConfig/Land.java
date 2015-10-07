@@ -69,4 +69,9 @@ public class Land {
 	public void setHasMule(boolean mule) {hasMule = mule;}
 	
 	public boolean isOwned() {return owned;}
+	
+	public boolean equals(Land land) {
+		return (land.getRow() == this.row && land.getCol() == this.getCol()); 
+	}
+	
 }
