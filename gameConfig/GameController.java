@@ -428,5 +428,58 @@ public class GameController implements Initializable {
 		Stage stage = (Stage) muleChoice.getScene().getWindow();
 		stage.close();
 	}
+	//PUB
+    public void pubButtonClicked(ActionEvent e) {
+        newStage = new Stage();
+        if (e.getSource() == pubButton) {
+            newStage.setScene(Launcher.pubGambleScene);
+            newStage.setTitle(Turns.getTurn().getName());
+            newStage.show();
+        }
+        Stage stage = (Stage) pubButton.getScene().getWindow();
+        stage.close();
+    }
 
+    @FXML
+    public void gambleButtonClicked(ActionEvent e) {
+        newStage = new Stage();
+        if (e.getSource() == gambleButton) {
+            //System.out.println("BUTTON PRESSED");
+            int timeLeft = Timer.getTimeLeft();
+            Player p = Turns.getTurn();
+            p.gamble(timeLeft);
+            Timer.endTurn();
+
+            newStage.setScene(Launcher.gambleConfirm);
+            newStage.setTitle("Congratulations");
+            newStage.show();
+        }
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    public void gambleConfirm(ActionEvent e) {
+        if (e.getSource() == gambleOkButton) {
+        }
+        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
+        stage.close();
+    }
+
+//STORE
+
+    public void storeButtonClicked(ActionEvent e) {
+        newStage = new Stage();
+        if (e.getSource() == storeButton) {
+            newStage.setScene(Launcher.storeScene);
+            newStage.setTitle("Store");
+            newStage.show();
+
+            //foodCostLabel.setText("" + store.getFoodCost());
+        }
+        Stage stage = (Stage) storeButton.getScene().getWindow();
+        stage.close();
+    }
+
+    //public void
 }
