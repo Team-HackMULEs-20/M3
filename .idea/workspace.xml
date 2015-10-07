@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e5d5de5-beb0-4a9f-aaba-1ea8883596ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameConfig/InfoBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/GameController.java" afterPath="$PROJECT_DIR$/gameConfig/GameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Player.java" afterPath="$PROJECT_DIR$/gameConfig/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.idea/workspace.xml" />
     </list>
@@ -777,7 +774,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444224156614</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Made InfoBar class &amp; changed some stuff">
+      <created>1444246705481</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1444246705481</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -831,7 +834,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Pub Gambling work" />
     <MESSAGE value="Pub Gambling progress" />
     <MESSAGE value="Made background of slot machine transparent" />
     <MESSAGE value="Turn ends after Gamble" />
@@ -856,7 +858,8 @@
     <MESSAGE value="Updated player stat window so player color is shown" />
     <MESSAGE value="Made a new folder to hold all the fxml files in. Cleaned up everything. Still works same as before" />
     <MESSAGE value="Updated file tree. Here is the folder of fxml files under UIFiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated file tree. Here is the folder of fxml files under UIFiles" />
+    <MESSAGE value="Made InfoBar class &amp; changed some stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made InfoBar class &amp; changed some stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
