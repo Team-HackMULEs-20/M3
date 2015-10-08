@@ -14,27 +14,27 @@ public class Store {
 
     public Store() {
         if (Controller.level.equals("Beginner")) {
-            this.foodQuantity = 16;
-            this.foodCost = 30;
-            this.energyQuantity = 16;
-            this.energyCost = 25;
-            this.smithQuantity = 0;
-            this.smithCost = 50;
-            this.crysQuantity = 0;
-            this.crysCost = 100;
-            this.muleQuantity = 25;
-            this.muleCost = 100;
+            foodQuantity = 16;
+            foodCost = 30;
+            energyQuantity = 16;
+            energyCost = 25;
+            smithQuantity = 0;
+            smithCost = 50;
+            crysQuantity = 0;
+            crysCost = 100;
+            muleQuantity = 25;
+            muleCost = 100;
         } else {
-            this.foodQuantity = 8;
-            this.foodCost = 30;
-            this.energyQuantity = 8;
-            this.energyCost = 25;
-            this.smithQuantity = 8;
-            this.smithCost = 50;
-            this.crysQuantity = 0;
-            this.crysCost = 100;
-            this.muleQuantity = 14;
-            this.muleCost = 100;
+            foodQuantity = 8;
+            foodCost = 30;
+            energyQuantity = 8;
+            energyCost = 25;
+            smithQuantity = 8;
+            smithCost = 50;
+            crysQuantity = 0;
+            crysCost = 100;
+            muleQuantity = 14;
+            muleCost = 100;
         }
     }
 
@@ -44,9 +44,9 @@ public class Store {
 //            System.out.println("Not enough Food in the store.");
 //        } else {
 //            if (buy) {
-//                this.foodQuantity -= amount;
+//                foodQuantity -= amount;
 //            } else {
-//                this.foodQuantity += amount;
+//                foodQuantity += amount;
 //            }
 //        }
 //    }
