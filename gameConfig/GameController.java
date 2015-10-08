@@ -358,15 +358,6 @@ public class GameController implements Initializable {
 		}
 	}
 
-	public void muleBuyButtonClick(ActionEvent e) {
-		String choice = muleChoice.getSelectionModel().getSelectedItem().toString();
-		choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
-		currentMuleType = Mule.Type.valueOf(choice);
-		Player currentP = Turns.getTurn();
-		currentP.muleBuyEnable = true;
-		Stage stage = (Stage) muleChoice.getScene().getWindow();
-		stage.close();
-	}
 	//PUB
     public void pubButtonClicked(ActionEvent e) {
         newStage = new Stage();
@@ -420,5 +411,69 @@ public class GameController implements Initializable {
         stage.close();
     }
 
-    //public void
+    public void buyFoodButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellFood(true, p);
+        infoBar.updateInfoBar();
+	}
+
+	public void sellFoodButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellFood(false,p);
+        infoBar.updateInfoBar();
+	}
+
+	public void buyEnergyButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellEnergy(true,p);
+        infoBar.updateInfoBar();
+	}
+
+	public void sellEnergyButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellEnergy(false,p);
+        infoBar.updateInfoBar();
+	}
+
+	public void buyOreButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellSmithore(true,p);
+        infoBar.updateInfoBar();
+	}
+
+	public void sellOreButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellSmithore(false,p);
+        infoBar.updateInfoBar();
+	}
+
+	public void buyCrysButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellChrystite(true,p);
+        infoBar.updateInfoBar();
+	}
+
+	public void sellCrysButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellChrystite(false,p);
+        infoBar.updateInfoBar();
+	}
+
+	public void buyMuleButtonClicked(ActionEvent e) {
+        String choice = muleChoice.getSelectionModel().getSelectedItem().toString();
+        choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
+        currentMuleType = Mule.Type.valueOf(choice);
+        Player p = Turns.getTurn();
+        p.muleBuyEnable = true;
+        Stage stage = (Stage) muleChoice.getScene().getWindow();
+        stage.close();
+        //infoBar.updateInfoBar(); //Todo
+	}
+
+	public void sellMuleButtonClicked(ActionEvent e) { //Todo
+        Player p = Turns.getTurn();
+        //infoBar.updateInfoBar(); //Todo
+	}
+
+
 }

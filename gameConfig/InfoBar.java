@@ -128,7 +128,7 @@ public class InfoBar {
 
         oreLeft.setText("Ore: " + p.getOre());
         oreLeft.setFont(new Font("American Typewriter", 15));
-        System.out.println("INFO BAR UPDATED");
+        //System.out.println("INFO BAR UPDATED");
 
         if (Turns.rounds + 1 == 14) {
             infoStage.close();
