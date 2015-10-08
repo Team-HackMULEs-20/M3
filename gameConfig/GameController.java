@@ -394,9 +394,9 @@ public class GameController implements Initializable {
     @FXML
     public void gambleConfirm(ActionEvent e) {
         if (e.getSource() == gambleOkButton) {
-        }
-        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-        stage.close();
+			Stage stage = (Stage) gambleOkButton.getScene().getWindow();
+			stage.close();
+		}
     }
 
 //STORE
