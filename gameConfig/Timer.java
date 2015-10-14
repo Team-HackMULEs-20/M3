@@ -17,7 +17,7 @@ import javafx.animation.KeyFrame;
 import javafx.util.Duration;
 
 public class Timer {
-    private int beginTime;// = 50;
+    private int beginTime;// = 50; //TODO unused var
     private static Integer timeLeft;// beginTime;
     private Timeline timeline;
     //public Label timerLabel = new Label();
