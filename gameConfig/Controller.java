@@ -34,7 +34,7 @@ public class Controller implements Initializable {
 	private Button nextButton2;
 
 	@FXML
-	private Button backButton;
+	private Button backButton;//TODO unused var
 
 	@FXML
 	private ChoiceBox numPlayers;
@@ -68,7 +68,7 @@ public class Controller implements Initializable {
 	private static Color color;
 	private Stage newStage;
 	public static Player[] players;
-	private static Turns gameTurns;
+	private static Turns gameTurns;//TODO unused var
 	//private boolean landBuyEnable = false;
 
 	@Override
