@@ -90,60 +90,60 @@ public class GameController implements Initializable {
 	private Button selectLand;
 
 
-	private Label foodCostLabel;
+	// private Label foodCostLabel;//TODO unused var
 
-	private Label energyCostLabel;
+	// private Label energyCostLabel;//TODO unused var
 
-	private Label smithoreCostLabel;
+	// private Label smithoreCostLabel;//TODO unused var
 
-	private Label chrystiteCostLabel;
+	// private Label chrystiteCostLabel;//TODO unused var
 
-	@FXML
-	private Label muleCostLabel;
+	// @FXML
+	// private Label muleCostLabel;//TODO unused var
 
-	private Label foodQuantityLabel;
+	// private Label foodQuantityLabel;//TODO unused var
 
-	private Label energyQuantityLabel;
+	// private Label energyQuantityLabel;//TODO unused var
 
-	private Label smithoreQuantityLabel;
+	// private Label smithoreQuantityLabel;//TODO unused var
 
-	private Label chrystiteQuantityLabel;
+	// private Label chrystiteQuantityLabel;//TODO unused var
 
-    @FXML
-    private Label muleQuantityLabel;
+    //@FXML
+    //private Label muleQuantityLabel;//TODO unused var
 
 	@FXML
 	private ComboBox muleChoice;
 
-    @FXML
-	private Button buyFoodButton;
+ //   @FXML
+	// private Button buyFoodButton;//TODO unused var
 
-    @FXML
-    private Button sellFoodButton;
+ //   @FXML
+ //   private Button sellFoodButton;//TODO unused var
 
-    @FXML
-    private Button buyEnergyButton;
+ //   @FXML
+ //   private Button buyEnergyButton;//TODO unused var
 
-    @FXML
-    private Button sellEnergyButton;
+ //   @FXML
+ //   private Button sellEnergyButton;//TODO unused var
 
-    @FXML
-    private Button buyOreButton;
+ //   @FXML
+ //   private Button buyOreButton;//TODO unused var
 
-    @FXML
-    private Button sellOreButton;
+ //   @FXML
+ //   private Button sellOreButton;//TODO unused var
 
-    @FXML
-    private Button buyCrysButton;
+    //@FXML
+    //private Button buyCrysButton;//TODO unused var
 
-    @FXML
-    private Button sellCrysButton;
+    //@FXML
+    //private Button sellCrysButton;//TODO unused var
 
-    @FXML
-    private Button buyMuleButton;
+    //@FXML
+    //private Button buyMuleButton;//TODO unused var
 
-    @FXML
-    private Button sellMuleButton;
+    //@FXML
+    //private Button sellMuleButton;//TODO unused var
 
 
 	public static Mule.Type currentMuleType;
@@ -388,7 +388,7 @@ public class GameController implements Initializable {
         if (e.getSource() == gambleButton) {
             int timeLeft = Timer.getTimeLeft();
             Player p = Turns.getTurn();
-            int moneyWon = p.gamble(timeLeft);
+            int moneyWon = p.gamble(timeLeft); //TODO unused var
             infoBar.updateInfoBar();
             Timer.endTurn();
 
