@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
   <children>
     <ImageView id="store" fitHeight="400.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
       <image>
@@ -53,18 +53,18 @@
           </font>
         </Text>
         <Text font="$x2" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-        <Button fx:id="buyFoodButton" mnemonicParsing="false" prefHeight="11.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+        <Button fx:id="buyFoodButton" mnemonicParsing="false" prefHeight="11.0" prefWidth="46.0" onAction="#buyFoodButtonClicked" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
           <font>
             <Font name="Bradley Hand Bold" size="13.0" fx:id="x3" />
           </font>
         </Button>
-        <Button fx:id="buyEnergyButton" font="$x3" mnemonicParsing="false" prefHeight="12.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-        <Button fx:id="sellFoodButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-        <Button fx:id="buyOreButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-        <Button fx:id="buyCrysButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-        <Button fx:id="sellEnergyButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-        <Button fx:id="sellOreButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-        <Button fx:id="sellCrysButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+        <Button fx:id="buyEnergyButton" font="$x3" mnemonicParsing="false" prefHeight="12.0" prefWidth="46.0" onAction="#buyEnergyButtonClicked" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <Button fx:id="sellFoodButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" onAction="#sellFoodButtonClicked" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <Button fx:id="buyOreButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" onAction="#buyOreButtonClicked" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+        <Button fx:id="buyCrysButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" onAction="#buyCrysButtonClicked" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+        <Button fx:id="sellEnergyButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" onAction="#sellEnergyButtonClicked" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <Button fx:id="sellOreButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" onAction="#sellOreButtonClicked" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+        <Button fx:id="sellCrysButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" onAction="#sellCrysButtonClicked" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
         <!--<Label fx:id="foodCostLabel" font="$x3" text="\$food" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
         <Label fx:id="energyCostLabel" font="$x3" text="\$energy" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
         <Label fx:id="smithoreCostLabel" font="$x3" text="\$ore" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
@@ -83,8 +83,8 @@
             </FXCollections>
           </items>
         </ComboBox>
-        <Button fx:id="buyMuleButton" font="$x3" mnemonicParsing="false" onAction="#muleBuyButtonClick" prefHeight="11.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-        <Button fx:id="sellMuleButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+        <Button fx:id="buyMuleButton" font="$x3" mnemonicParsing="false" onAction="#buyMuleButtonClicked" prefHeight="11.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+        <Button fx:id="sellMuleButton" font="$x3" mnemonicParsing="false" onAction="#sellMuleButtonClicked" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
         <Label fx:id="muleQuantityLabel" font="$x3" text="muleQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
         <Label fx:id="muleCostLabel" text="select mule&#10;type" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
           <font>

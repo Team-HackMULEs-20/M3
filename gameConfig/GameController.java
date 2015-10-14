@@ -1,5 +1,6 @@
 package gameConfig;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,15 +10,13 @@ import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -81,31 +80,24 @@ public class GameController implements Initializable {
 	@FXML
 	private Button selectLand;
 
-	@FXML
+
 	private Label foodCostLabel;
 
-	@FXML
 	private Label energyCostLabel;
 
-	@FXML
 	private Label smithoreCostLabel;
 
-	@FXML
 	private Label chrystiteCostLabel;
 
 	@FXML
 	private Label muleCostLabel;
 
-	@FXML
 	private Label foodQuantityLabel;
 
-	@FXML
 	private Label energyQuantityLabel;
 
-	@FXML
 	private Label smithoreQuantityLabel;
 
-	@FXML
 	private Label chrystiteQuantityLabel;
 
     @FXML
@@ -144,6 +136,7 @@ public class GameController implements Initializable {
     @FXML
     private Button sellMuleButton;
 
+
 	public static Mule.Type currentMuleType;
 	public static Store store;
 
@@ -170,6 +163,7 @@ public class GameController implements Initializable {
 				"check your FXML file 'MainMap.fxml'.";
 		assert landOfficeButton != null : "fx:id=\"landOfficeButton\" was not injected: " +
 				"check your FXML file 'TownMap.fxml'.";
+
 	}
 
 	@FXML
@@ -213,6 +207,15 @@ public class GameController implements Initializable {
 				selectPhase = false;
 			}
 		}
+	}
+
+	public void updateStoreLabels() {
+		System.out.println("Food Cost: " + store.getFoodCost() + " | Food Quantity: " + store.getFoodQuantity());
+		System.out.println("Energy Cost: " + store.getEnergyCost() + " | Energy Quantity: " + store.getEnergyQuantity());
+		System.out.println("Smithore Cost: " + store.getSmithCost() + " | Smithore Quantity: " + store.getSmithQuantity());
+		System.out.println("Food Cost: " + store.getFoodCost() + " | Food Quantity: " + store.getFoodQuantity());
+		System.out.println("Crystite Cost: " + store.getCrysCost() + " | Food Quantity: " + store.getCrysQuantity());
+		System.out.println("Mule Cost: " + Store.muleCost + " | " + "Mule Quantity: " + store.getMuleQuantity());
 	}
 
 	@FXML
@@ -358,15 +361,6 @@ public class GameController implements Initializable {
 		}
 	}
 
-	public void muleBuyButtonClick(ActionEvent e) {
-		String choice = muleChoice.getSelectionModel().getSelectedItem().toString();
-		choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
-		currentMuleType = Mule.Type.valueOf(choice);
-		Player currentP = Turns.getTurn();
-		currentP.muleBuyEnable = true;
-		Stage stage = (Stage) muleChoice.getScene().getWindow();
-		stage.close();
-	}
 	//PUB
     public void pubButtonClicked(ActionEvent e) {
         newStage = new Stage();
@@ -400,14 +394,15 @@ public class GameController implements Initializable {
     @FXML
     public void gambleConfirm(ActionEvent e) {
         if (e.getSource() == gambleOkButton) {
-        }
-        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-        stage.close();
+			Stage stage = (Stage) gambleOkButton.getScene().getWindow();
+			stage.close();
+		}
     }
 
 //STORE
 
     public void storeButtonClicked(ActionEvent e) {
+		this.updateStoreLabels();
         newStage = new Stage();
         if (e.getSource() == storeButton) {
             newStage.setScene(Launcher.storeScene);
@@ -420,5 +415,79 @@ public class GameController implements Initializable {
         stage.close();
     }
 
-    //public void
+    public void buyFoodButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellFood(true, p);
+		this.updateStoreLabels();
+        infoBar.updateInfoBar();
+	}
+
+	public void sellFoodButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellFood(false,p);
+		this.updateStoreLabels();
+        infoBar.updateInfoBar();
+	}
+
+	public void buyEnergyButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellEnergy(true,p);
+		this.updateStoreLabels();
+        infoBar.updateInfoBar();
+	}
+
+	public void sellEnergyButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellEnergy(false,p);
+		this.updateStoreLabels();
+        infoBar.updateInfoBar();
+	}
+
+	public void buyOreButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellSmithore(true,p);
+		this.updateStoreLabels();
+        infoBar.updateInfoBar();
+	}
+
+	public void sellOreButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellSmithore(false,p);
+		this.updateStoreLabels();
+        infoBar.updateInfoBar();
+	}
+
+	public void buyCrysButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellChrystite(true,p);
+		this.updateStoreLabels();
+        infoBar.updateInfoBar();
+	}
+
+	public void sellCrysButtonClicked(ActionEvent e) {
+        Player p = Turns.getTurn();
+        store.buySellChrystite(false,p);
+		this.updateStoreLabels();
+        infoBar.updateInfoBar();
+	}
+
+	public void buyMuleButtonClicked(ActionEvent e) {
+        String choice = muleChoice.getSelectionModel().getSelectedItem().toString();
+        choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
+        currentMuleType = Mule.Type.valueOf(choice);
+        Player p = Turns.getTurn();
+        p.muleBuyEnable = true;
+        Stage stage = (Stage) muleChoice.getScene().getWindow();
+        stage.close();
+		this.updateStoreLabels();
+        //infoBar.updateInfoBar(); //Todo
+	}
+
+	public void sellMuleButtonClicked(ActionEvent e) { //Todo
+        Player p = Turns.getTurn();
+		this.updateStoreLabels();
+        //infoBar.updateInfoBar(); //Todo
+	}
+
+
 }
