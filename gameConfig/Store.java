@@ -39,7 +39,7 @@ public class Store {
     }
 
 
-//    public void setFoodQuantity(int amount, boolean buy) {
+//    public void setFoodQuantity(int amount, boolean buy) { //TODO unused var
 //        if (amount > foodQuantity && buy || buy && foodQuantity == 0) {
 //            System.out.println("Not enough Food in the store.");
 //        } else {
@@ -193,17 +193,17 @@ public class Store {
     // with each sold / bought, price changes by $0
     // sold to the store at $15 less than they cost
     // TODO
-    public void buySellMule(boolean buy, Player customer) {
-        if (buy && muleQuantity == 0) {
-            System.out.println("Not enough Mules in the store.");
-        } else {
-            if (buy) {
-                muleQuantity--;
-            } else {
-                muleQuantity++;
-            }
-        }
-    }
+    //public void buySellMule(boolean buy, Player customer) { //TODO unused var
+    //    if (buy && muleQuantity == 0) {
+    //        System.out.println("Not enough Mules in the store.");
+    //    } else {
+    //        if (buy) {
+    //            muleQuantity--;
+    //        } else {
+    //            muleQuantity++;
+    //        }
+    //    }
+    //}
 
 
     public int getFoodCost() {
