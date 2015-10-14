@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
+  <children>
+    <ImageView id="assaybg" fitHeight="400.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/assaybg.jpg" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <ImageView id="menu" fitHeight="192.0" fitWidth="462.0" layoutX="77.0" layoutY="104.0" pickOnBounds="true">
+      <image>
+        <Image url="@Media/menu.jpg" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <Button fx:id="backButton3" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButton3Clicked" text="Back" />
+    <Text layoutX="207.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Assay Office!">
+      <font>
+        <Font size="15.0" />
+      </font>
+    </Text>
+    <Button fx:id="mineButton" layoutX="157.0" layoutY="202.0" mnemonicParsing="false" onAction="#mineButtonClicked" text="Start Mining!" />
+    <Button layoutX="337.0" layoutY="202.0" mnemonicParsing="false" text="Report a Sample" />
+  </children>
+</AnchorPane>
