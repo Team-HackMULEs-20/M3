@@ -22,32 +22,32 @@ public class Auction {
     }
 
     // AUCTIONING
-    public boolean isAuctionTime() {
-        boolean auctionTime = false;
-        int count = 0;
-        for (Land[] item : Controller.landPlots) {
-            for (Land plot : item) {
-                if (plot.isOwned()) {
-                    landNotTaken--;
-                    auctionLand[count] = plot;
-                    count++;
-                }
-            }
-        }
-        if (landNotTaken < Controller.numPlayer) {
-            auctionTime = true;
-        }
-        return auctionTime;
-    }
+    // public boolean isAuctionTime() { //TODO unused var
+    //     boolean auctionTime = false;
+    //     int count = 0;
+    //     for (Land[] item : Controller.landPlots) {
+    //         for (Land plot : item) {
+    //             if (plot.isOwned()) {
+    //                 landNotTaken--;
+    //                 auctionLand[count] = plot;
+    //                 count++;
+    //             }
+    //         }
+    //     }
+    //     if (landNotTaken < Controller.numPlayer) {
+    //         auctionTime = true;
+    //     }
+    //     return auctionTime;
+    // }
 
-    public void startAuction() {
-        auctionStage = new Stage();
-        auctionStage.setScene(Launcher.auctionScene);
-        for (Player p: Controller.players) {
-            auctionStage.setTitle(p.getName() + "'s Turn");
-            auctionStage.showAndWait();
-        }
-    }
+    // public void startAuction() { //TODO unused var
+    //     auctionStage = new Stage();
+    //     auctionStage.setScene(Launcher.auctionScene);
+    //     for (Player p: Controller.players) {
+    //         auctionStage.setTitle(p.getName() + "'s Turn");
+    //         auctionStage.showAndWait();
+    //     }
+    // }
 
     public void placeBid(Player p, int bidAmount) {
         Land plot = getCurrentLandAuction();
