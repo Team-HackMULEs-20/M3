@@ -499,7 +499,7 @@ public class GameController implements Initializable {
 	}
 
 	//ASSAY OFFICE
-	
+
 	public void backButton3Clicked(ActionEvent e) {
 		newStage = new Stage();
 		if (e.getSource() == backButton3) {
