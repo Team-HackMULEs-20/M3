@@ -42,7 +42,16 @@ public class GameController implements Initializable {
 	private Button backButton2;
 
 	@FXML
+	private Button backButton3;
+
+	@FXML
 	private Button townButton;
+
+	@FXML
+	private Button mineButton;
+
+	@FXML
+	private Button assayOfficeButton;
 
 	@FXML
 	private Button landOfficeButton;
@@ -489,5 +498,38 @@ public class GameController implements Initializable {
         //infoBar.updateInfoBar(); //Todo
 	}
 
+	//ASSAY OFFICE
+	
+	public void backButton3Clicked(ActionEvent e) {
+		newStage = new Stage();
+		if (e.getSource() == backButton3) {
+			newStage.setScene(Launcher.townScene);
+			newStage.setTitle("Town");
+			newStage.show();
+		}
+		Stage stage = (Stage) backButton3.getScene().getWindow();
+		stage.close();
+	}
 
+	public void mineButtonClicked(ActionEvent e) {
+		newStage = new Stage();
+		if (e.getSource() == backButton3) {
+			newStage.setScene(Launcher.gameScene);
+			newStage.setTitle("Main Map");
+			newStage.show();
+		}
+		Stage stage = (Stage) mineButton.getScene().getWindow();
+		stage.close();
+	}
+
+	public void assayOfficeButtonClicked(ActionEvent e) {
+		newStage = new Stage();
+		if (e.getSource() == assayOfficeButton) {
+			newStage.setScene(Launcher.assayScene);
+			newStage.setTitle("Assay Office");
+			newStage.show();
+		}
+		Stage stage = (Stage) assayOfficeButton.getScene().getWindow();
+		stage.close();
+	}
 }

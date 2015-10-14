@@ -23,6 +23,7 @@ public class Launcher extends Application {
     public static Scene storeScene;
     public static Scene gambleConfirm;
     public static Scene selectLandPhase;
+    public static Scene assayScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -39,6 +40,7 @@ public class Launcher extends Application {
             Parent store = FXMLLoader.load(getClass().getResource("UIFiles/storeInterface2.fxml"));
             Parent gambleC = FXMLLoader.load(getClass().getResource("UIFiles/GambleConfirmation.fxml"));
             Parent selectPhase = FXMLLoader.load(getClass().getResource("UIFiles/SelectionPhaseInterface.fxml"));
+            Parent assayOffice = FXMLLoader.load(getClass().getResource("UIFiles/AssayInterface.fxml"));
             startScene = new Scene(startWindow);
             errorMessage = new Scene(error);
             nextScene = new Scene(child);
@@ -51,6 +53,7 @@ public class Launcher extends Application {
             storeScene = new Scene(store);
             gambleConfirm = new Scene(gambleC);
             selectLandPhase = new Scene(selectPhase);
+            assayScene = new Scene(assayOffice);
             Launcher.primaryStage = primaryStage;
             primaryStage.setTitle("M.U.L.E. Game Setup");
             primaryStage.setScene(rootScene);
