@@ -93,11 +93,11 @@ public class GameController implements Initializable {
 
     private boolean infoBarCreated, townWinCreated,
 			landBuyIntCreated, pubWinCreated,
-			storeWinCreated, selectWinCreated = false;
+			storeWinCreated, selectWinCreated, assayWinCreated = false;
     public static InfoBar infoBar;
 	private Auction auction = new Auction();
 	public static Scene townScene, storeScene,
-			selectScene, landBuyIntScene, pubGambleScene;
+			selectScene, landBuyIntScene, pubGambleScene, assayScene;
 
 	// TURNS AND SETUP
 	@Override
@@ -426,5 +426,25 @@ public class GameController implements Initializable {
 	@FXML
 	public void mineButtonClicked(ActionEvent event) {
 		System.out.println("Mine button clicked");
+	}
+
+	@FXML
+	public void assayOfficeButtonClicked(ActionEvent event) {
+		newStage = new Stage();
+		if (!assayWinCreated) {
+			try {
+				Parent assay = FXMLLoader.load(getClass().getResource("UIFiles/AssayInterface.fxml"));
+				assayScene = new Scene(assay);
+				newStage.setScene(assayScene);
+				newStage.setTitle("Assay Office");
+				newStage.show();
+				assayWinCreated = true;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		} else {
+			newStage.setScene(assayScene);
+			newStage.show();
+		}
 	}
 }
