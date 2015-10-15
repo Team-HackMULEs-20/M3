@@ -2,6 +2,7 @@ package gameConfig;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
@@ -12,6 +13,7 @@ import java.util.ResourceBundle;
 import java.net.URL;
 
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -21,6 +23,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import sun.nio.ch.sctp.SctpNet;
 
 public class Controller implements Initializable {
 
@@ -34,7 +37,7 @@ public class Controller implements Initializable {
 	private Button nextButton2;
 
 	@FXML
-	private Button backButton;//TODO unused var
+	private Button backButton;
 
 	@FXML
 	private ChoiceBox numPlayers;
@@ -68,7 +71,9 @@ public class Controller implements Initializable {
 	private static Color color;
 	private Stage newStage;
 	public static Player[] players;
-	private static Turns gameTurns;//TODO unused var
+	private static Turns gameTurns;
+	private Scene gameScene;
+	public static Scene startScene;
 	//private boolean landBuyEnable = false;
 
 	@Override
@@ -148,7 +153,15 @@ public class Controller implements Initializable {
 					} else if (count == 2) {
 						if (count == numPlayer) { // if user selected only 2 players then show game screen
 							Launcher.primaryStage.hide();
-							newStage.setScene(Launcher.gameScene);
+							try {
+								Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
+								gameScene = new Scene(gameRoot);
+								Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
+								startScene = new Scene(startWindow);
+							} catch (Exception e1) {
+								e1.printStackTrace();
+							}
+							newStage.setScene(gameScene);
 							newStage.setTitle("Game Screen");
 							newStage.show();
 							GameController.beginTurn();
@@ -171,7 +184,15 @@ public class Controller implements Initializable {
 					} else if (count == 3) {
 						if (count == numPlayer) {
 							Launcher.primaryStage.hide();
-							newStage.setScene(Launcher.gameScene);
+							try {
+								Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
+								gameScene = new Scene(gameRoot);
+								Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
+								startScene = new Scene(startWindow);
+							} catch (Exception e1) {
+								e1.printStackTrace();
+							}
+							newStage.setScene(gameScene);
 							newStage.setTitle("Game Screen");
 							newStage.show();
 							GameController.beginTurn();
@@ -193,7 +214,15 @@ public class Controller implements Initializable {
 
 					} else if (count == 4) {
 						Launcher.primaryStage.hide();
-						newStage.setScene(Launcher.gameScene);
+						try {
+							Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
+							gameScene = new Scene(gameRoot);
+							Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
+							startScene = new Scene(startWindow);
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
+						newStage.setScene(gameScene);
 						newStage.setTitle("Game Screen");
 						newStage.show();
 						GameController.beginTurn();

@@ -1,6 +1,11 @@
 package gameConfig;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * Created by findleyck on 10/6/15.
@@ -22,32 +27,40 @@ public class Auction {
     }
 
     // AUCTIONING
-    // public boolean isAuctionTime() { //TODO unused var
-    //     boolean auctionTime = false;
-    //     int count = 0;
-    //     for (Land[] item : Controller.landPlots) {
-    //         for (Land plot : item) {
-    //             if (plot.isOwned()) {
-    //                 landNotTaken--;
-    //                 auctionLand[count] = plot;
-    //                 count++;
-    //             }
-    //         }
-    //     }
-    //     if (landNotTaken < Controller.numPlayer) {
-    //         auctionTime = true;
-    //     }
-    //     return auctionTime;
-    // }
+    public boolean isAuctionTime() {
+        boolean auctionTime = false;
+        int count = 0;
+        for (Land[] item : Controller.landPlots) {
+            for (Land plot : item) {
+                if (plot.isOwned()) {
+                    landNotTaken--;
+                    auctionLand[count] = plot;
+                    count++;
+                }
+            }
+        }
+        if (landNotTaken < Controller.numPlayer) {
+            auctionTime = true;
+        }
+        return auctionTime;
+    }
 
-    // public void startAuction() { //TODO unused var
-    //     auctionStage = new Stage();
-    //     auctionStage.setScene(Launcher.auctionScene);
-    //     for (Player p: Controller.players) {
-    //         auctionStage.setTitle(p.getName() + "'s Turn");
-    //         auctionStage.showAndWait();
-    //     }
-    // }
+    public void startAuction() {
+        auctionStage = new Stage();
+        try {
+            Parent selectPhase = FXMLLoader.load(getClass().getResource("UIFiles/AuctionWindow.fxml"));
+            Scene auctionScene = new Scene(selectPhase);
+            auctionStage.setScene(auctionScene);
+            auctionStage.setTitle(Turns.getTurn().getName());
+            auctionStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        for (Player p: Controller.players) {
+            auctionStage.setTitle(p.getName() + "'s Turn");
+            auctionStage.showAndWait();
+        }
+    }
 
     public void placeBid(Player p, int bidAmount) {
         Land plot = getCurrentLandAuction();
