@@ -417,4 +417,14 @@ public class GameController implements Initializable {
         Stage stage = (Stage) storeButton.getScene().getWindow();
         stage.close();
     }
+
+	@FXML
+	public void backButton3Clicked(ActionEvent event) {
+		System.out.println("Back from assay office");
+	}
+
+	@FXML
+	public void mineButtonClicked(ActionEvent event) {
+		System.out.println("Mine button clicked");
+	}
 }
