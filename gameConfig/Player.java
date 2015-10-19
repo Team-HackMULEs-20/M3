@@ -34,8 +34,8 @@ public class Player {
 		this.race = race;
 		this.color = color;
 
-		landOwned = new ArrayList<Land>();
-		mulesOwned = new ArrayList<Mule>();
+		landOwned = new ArrayList<>();
+		mulesOwned = new ArrayList<>();
 		muleBuyEnable = false;
 
 		//turnsTaken = 0; //TODO unused var
@@ -144,7 +144,9 @@ public class Player {
 			if (this.equals(landPlot.getOwner())) {//check to see if valid land
 				if (!landPlot.hasMule()) {//if there isn't a mule already on the land
 					mule.setPosition(landPlot);//mule is placed on the land
-					mulesOwned.add(mule);//player owns mule
+					this.mulesOwned.add(mule);//player owns mule
+					landPlot.setMuleType(mule.getType());
+					//landOwned.get(landOwned.indexOf(landPlot)).setHasMule(true);
 					landPlot.setHasMule(true);
 					System.out.println("mule placed.");
 					muleBuyEnable = false;

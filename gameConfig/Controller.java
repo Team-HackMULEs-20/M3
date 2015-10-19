@@ -76,6 +76,8 @@ public class Controller implements Initializable {
 	public static Scene startScene;
 	//private boolean landBuyEnable = false;
 
+	public LandType[] landTypes = LandType.standardMap();
+
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
 		assert nextButton != null : "fx:id=\"nextButton\" was not injected: " +
@@ -167,9 +169,13 @@ public class Controller implements Initializable {
 							GameController.beginTurn();
 							//creates land array
 							landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
+							int count = 0;
 							for (int i = 0; i < landPlots.length; i++) {
 								for (int j = 0; j < landPlots[0].length; j++) {
-									landPlots[i][j] = new Land(i,j);
+									Land newLand = new Land(i,j);
+									newLand.setType(landTypes[count]);
+									landPlots[i][j] = newLand;
+									count++;
 								}
 							}
 						} else { // if user selected more than 2 players, go on to player 3 config
@@ -198,9 +204,13 @@ public class Controller implements Initializable {
 							GameController.beginTurn();
 							//creates land array
 							landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
+							int count = 0;
 							for (int i = 0; i < landPlots.length; i++) {
 								for (int j = 0; j < landPlots[0].length; j++) {
-									landPlots[i][j] = new Land(i,j);
+									Land newLand = new Land(i,j);
+									newLand.setType(landTypes[count]);
+									landPlots[i][j] = newLand;
+									count++;
 								}
 							}
 						} else {
@@ -222,15 +232,20 @@ public class Controller implements Initializable {
 						} catch (Exception e1) {
 							e1.printStackTrace();
 						}
+
 						newStage.setScene(gameScene);
 						newStage.setTitle("Game Screen");
 						newStage.show();
 						GameController.beginTurn();
 						//creates land array
 						landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
+						int count = 0;
 						for (int i = 0; i < landPlots.length; i++) {
 							for (int j = 0; j < landPlots[0].length; j++) {
-								landPlots[i][j] = new Land(i,j);
+								Land newLand = new Land(i,j);
+								newLand.setType(landTypes[count]);
+								landPlots[i][j] = newLand;
+								count++;
 							}
 						}
 					}

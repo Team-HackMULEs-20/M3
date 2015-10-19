@@ -123,6 +123,7 @@ public class GameController implements Initializable {
 
 	@FXML
 	public void startButtonClicked(ActionEvent event) {
+		Player currentPlayer = Turns.getTurn();
 		newStage = new Stage();
         if (!infoBarCreated){
             infoBar = new InfoBar();
@@ -131,11 +132,19 @@ public class GameController implements Initializable {
             infoBar.updateInfoBar();
         }
 		if (event.getSource() == startButton) {
-			Timer timer = new Timer(Turns.timeForTurn(Turns.getTurn()));
+			Timer timer = new Timer(Turns.timeForTurn(currentPlayer));
 			timer.start();
 			Stage stage = (Stage) startButton.getScene().getWindow();
 			stage.close();
-
+			if (currentPlayer.landOwned.size() != 0 && currentPlayer.mulesOwned.size() != 0) {
+				for (Mule mule : currentPlayer.mulesOwned) {
+					if (mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
+							&& mule.getOwner() == currentPlayer) {
+						Mule.produce(mule.getType(), mule.getPosition().getType());
+						infoBar.updateInfoBar();
+					}
+				}
+			}
 			//store = new Store();
 			/* boolean auctionTime = auction.isAuctionTime();
 			System.out.println("before auction if statement");
@@ -165,6 +174,7 @@ public class GameController implements Initializable {
 				selectPhase = false;
 			}
 		}
+
 	}
 
 	@FXML
@@ -283,7 +293,6 @@ public class GameController implements Initializable {
 		if (Land.landBuyEnable) {
 			if (currentP.landGrants > 0) {//check for land grants
 				currentP.landGrants--;
-
 				Rectangle color =  new Rectangle();
 				color.setFill(currentP.getColor());
 				color.setHeight(25);
@@ -293,14 +302,14 @@ public class GameController implements Initializable {
 				GridPane.setHalignment(color, HPos.LEFT);
 				GridPane.setValignment(color, VPos.TOP);
 				// landButton.setDisable(true);//disable the land button since land is purchased
-
+				newLand.setOwner(currentP);
+				newLand.setType(Controller.landPlots[col][row].getType());
 				Controller.landPlots[col][row].setOwner(currentP);
 				currentP.landOwned.add(newLand);
 
 			} else if (currentP.getMoney() >= 300){//if not grants sub money //doesn't allow to buy when at $300 //TODO
 				currentP.addSubMoney(-300);
                 infoBar.updateInfoBar();
-
 				Rectangle color =  new Rectangle();
 				color.setFill(currentP.getColor());
 				color.setHeight(25);
@@ -310,7 +319,8 @@ public class GameController implements Initializable {
 				GridPane.setHalignment(color, HPos.LEFT);
 				GridPane.setValignment(color, VPos.TOP);
 				// landButton.setDisable(true);//disable the land button since land is purchased
-
+				newLand.setOwner(currentP);
+				newLand.setType(Controller.landPlots[col][row].getType());
 				Controller.landPlots[col][row].setOwner(currentP);
 				currentP.landOwned.add(newLand);
 

@@ -79,7 +79,7 @@
               <String fx:value="Food Mule" />
               <String fx:value="Energy Mule" />
               <String fx:value="Smithore Mule" />
-              <String fx:value="Chrystite Mule" />
+              <String fx:value="Crystite Mule" />
             </FXCollections>
           </items>
         </ComboBox>

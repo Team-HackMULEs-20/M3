@@ -5,11 +5,13 @@ public class Land {
 	private boolean owned;
 	private int row;
 	private int col;
+	private Mule.Type muleType;
 
 	public static boolean landBuyEnable = false;
 
 	private boolean hasMule;
 	public static Player latestBidder;
+	public LandType type;
 
 
 
@@ -20,14 +22,23 @@ public class Land {
 	public Land(int col, int row) {
 		this.row = row;
 		this.col = col;
-		owned = false;
-		hasMule = false;
+		this.owned = false;
+		this.hasMule = false;
 	}
 
 	public int getRow() {return row;}
 	public int getCol() {return col;}
 
 	public Player getOwner() {return owner;}
+
+	public LandType getType() {
+		return type;
+	}
+
+	public void setType(LandType newType) {
+		this.type = newType;
+	}
+
 
 	public static int getBuyPrice() {
 		return 300 + Turns.rounds + (int)(Math.random() * 100);
@@ -41,14 +52,22 @@ public class Land {
 		owned = true;
 	}
 
+	public void setMuleType(Mule.Type type) {
+		this.muleType = type;
+	}
+
+	public Mule.Type getMuleType() {
+		return muleType;
+	}
+
 	public void setBidder(Player p) {
 		latestBidder = p;
 	}
 
 	public void buyLand(Player p) {
 		if (!isOwned()) {
-			setOwner(p);
-			owner.addSubMoney(getBuyPrice());
+			this.setOwner(p);
+			this.owner.addSubMoney(getBuyPrice());
 		} else {
 			System.out.println("This land is already owned"); //TODO
 		}
