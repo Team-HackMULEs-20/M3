@@ -105,7 +105,7 @@ public class Player {
 			rb = 50;
 		} else if (r <= 7) { // rounds 4 - 7
 			rb = 100;
-		} else if (r <= 11) { // rounds 5 - 11
+		} else if (r <= 11) { // rounds 8 - 11
 			rb = 150;
 		} else { // round 12
 			rb = 200;
