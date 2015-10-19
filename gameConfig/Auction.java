@@ -1,6 +1,11 @@
 package gameConfig;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * Created by findleyck on 10/6/15.
@@ -42,7 +47,15 @@ public class Auction {
 
     public void startAuction() {
         auctionStage = new Stage();
-        auctionStage.setScene(Launcher.auctionScene);
+        try {
+            Parent selectPhase = FXMLLoader.load(getClass().getResource("UIFiles/AuctionWindow.fxml"));
+            Scene auctionScene = new Scene(selectPhase);
+            auctionStage.setScene(auctionScene);
+            auctionStage.setTitle(Turns.getTurn().getName());
+            auctionStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         for (Player p: Controller.players) {
             auctionStage.setTitle(p.getName() + "'s Turn");
             auctionStage.showAndWait();

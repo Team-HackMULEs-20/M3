@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 public class Player {
 
 	public boolean muleBuyEnable;
-	private int number;
+	private int number;//TODO unused var
 	private String name;
 	private Race race;
 	private Color color;
@@ -20,10 +20,10 @@ public class Player {
 
 	//array of Land owned?
 	public int landGrants;
-	private int numLand;
+	private int numLand; //TODO unused var
 	private int score;
 
-	private int turnsTaken; //TODO
+	//private int turnsTaken; //TODO unused var
 
 	public ArrayList<Land> landOwned;
 	public ArrayList<Mule> mulesOwned;
@@ -38,7 +38,7 @@ public class Player {
 		mulesOwned = new ArrayList<Mule>();
 		muleBuyEnable = false;
 
-		turnsTaken = 0;
+		//turnsTaken = 0; //TODO unused var
 		landGrants = 2;
 
 		if (Controller.level.equals("Beginner")){
@@ -93,8 +93,8 @@ public class Player {
 	public int getCrystite() {return crystite;}
 	public void addSubCrystite(int amount) {crystite += amount;}
 
-	public int getTurnsTaken() {return turnsTaken;}
-	public void incTurnsTaken() {turnsTaken++;}
+	// public int getTurnsTaken() {return turnsTaken;} //TODO unused method
+	// public void incTurnsTaken() {turnsTaken++;} //TODO unused method
 
 	public int gamble(int timeLeft) {
 		System.out.println(name + " has chosen to gamble at the Pub with " + timeLeft + " seconds left.");

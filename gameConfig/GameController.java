@@ -1,8 +1,8 @@
 package gameConfig;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -16,7 +16,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -27,8 +30,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import javax.naming.ldap.Control;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GameController implements Initializable {
 
@@ -80,81 +86,22 @@ public class GameController implements Initializable {
 	@FXML
 	private Button selectLand;
 
-
-	private Label foodCostLabel;
-
-	private Label energyCostLabel;
-
-	private Label smithoreCostLabel;
-
-	private Label chrystiteCostLabel;
-
-	@FXML
-	private Label muleCostLabel;
-
-	private Label foodQuantityLabel;
-
-	private Label energyQuantityLabel;
-
-	private Label smithoreQuantityLabel;
-
-	private Label chrystiteQuantityLabel;
-
-    @FXML
-    private Label muleQuantityLabel;
-
-	@FXML
-	private ComboBox muleChoice;
-
-    @FXML
-	private Button buyFoodButton;
-
-    @FXML
-    private Button sellFoodButton;
-
-    @FXML
-    private Button buyEnergyButton;
-
-    @FXML
-    private Button sellEnergyButton;
-
-    @FXML
-    private Button buyOreButton;
-
-    @FXML
-    private Button sellOreButton;
-
-    @FXML
-    private Button buyCrysButton;
-
-    @FXML
-    private Button sellCrysButton;
-
-    @FXML
-    private Button buyMuleButton;
-
-    @FXML
-    private Button sellMuleButton;
-
-
 	public static Mule.Type currentMuleType;
-	public static Store store;
-
-
 	public static int numPasses = 0;
-	private static Stage start;
 	private Stage newStage;
 	private static boolean selectPhase = true;
 
-    private boolean infoBarCreated = false;
-    private static InfoBar infoBar;
+    private boolean infoBarCreated, townWinCreated,
+			landBuyIntCreated, pubWinCreated,
+			storeWinCreated, selectWinCreated, assayWinCreated = false;
+    public static InfoBar infoBar;
 	private Auction auction = new Auction();
+	public static Scene townScene, storeScene,
+			selectScene, landBuyIntScene, pubGambleScene, assayScene;
 
 	// TURNS AND SETUP
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-		assert startButton != null : "fx:id=\"startButton\" was not injected: " +
-				"check your FXML file 'playerStart.fxml'.";
 		assert landBuyButton != null : "fx:id=\"landBuyButton\" was not injected: " +
 				"check your FXML file 'landBuyInterface.fxml'.";
 		assert backButton2 != null : "fx:id=\"passButton\" was not injected: " +
@@ -163,18 +110,18 @@ public class GameController implements Initializable {
 				"check your FXML file 'MainMap.fxml'.";
 		assert landOfficeButton != null : "fx:id=\"landOfficeButton\" was not injected: " +
 				"check your FXML file 'TownMap.fxml'.";
-
 	}
 
 	@FXML
 	public static void beginTurn() {
 		Launcher.primaryStage.hide();
-		start = new Stage();
-		start.setScene(Launcher.startScene);
+		Stage start = new Stage();
+		start.setScene(Controller.startScene);
 		start.setTitle(Turns.getTurn().getName() + "'s Turn");
 		start.show();
 	}
 
+	@FXML
 	public void startButtonClicked(ActionEvent event) {
 		newStage = new Stage();
         if (!infoBarCreated){
@@ -183,14 +130,13 @@ public class GameController implements Initializable {
         } else {
             infoBar.updateInfoBar();
         }
-		//infoBar();
-        //infoBar.updateInfoBar();
 		if (event.getSource() == startButton) {
 			Timer timer = new Timer(Turns.timeForTurn(Turns.getTurn()));
 			timer.start();
-			start.close();
+			Stage stage = (Stage) startButton.getScene().getWindow();
+			stage.close();
 
-			store = new Store();
+			//store = new Store();
 			/* boolean auctionTime = auction.isAuctionTime();
 			System.out.println("before auction if statement");
 			if (auctionTime) {
@@ -200,22 +146,25 @@ public class GameController implements Initializable {
 			if (numPasses < Controller.numPlayer) {
 				System.out.println("Land Selection Phase");
 				selectPhase = true;
-				newStage.setScene(Launcher.selectLandPhase);
-				newStage.setTitle(Turns.getTurn().getName());
-				newStage.show();
+				if (!selectWinCreated) {
+					try {
+						Parent selectPhase = FXMLLoader.load(getClass().getResource("UIFiles/SelectionPhaseInterface.fxml"));
+						selectScene = new Scene(selectPhase);
+						newStage.setScene(selectScene);
+						newStage.setTitle(Turns.getTurn().getName());
+						newStage.show();
+						selectWinCreated = true;
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				} else {
+					newStage.setScene(selectScene);
+					newStage.show();
+				}
 			} else {
 				selectPhase = false;
 			}
 		}
-	}
-
-	public void updateStoreLabels() {
-		System.out.println("Food Cost: " + store.getFoodCost() + " | Food Quantity: " + store.getFoodQuantity());
-		System.out.println("Energy Cost: " + store.getEnergyCost() + " | Energy Quantity: " + store.getEnergyQuantity());
-		System.out.println("Smithore Cost: " + store.getSmithCost() + " | Smithore Quantity: " + store.getSmithQuantity());
-		System.out.println("Food Cost: " + store.getFoodCost() + " | Food Quantity: " + store.getFoodQuantity());
-		System.out.println("Crystite Cost: " + store.getCrysCost() + " | Food Quantity: " + store.getCrysQuantity());
-		System.out.println("Mule Cost: " + Store.muleCost + " | " + "Mule Quantity: " + store.getMuleQuantity());
 	}
 
 	@FXML
@@ -246,13 +195,25 @@ public class GameController implements Initializable {
 	}
 
 	//TOWN BUTTONS
+	@FXML
 	public void townButtonClicked(ActionEvent e) {
 		newStage = new Stage();
 		if (e.getSource() == townButton) {
-			Launcher.primaryStage.hide();
-			newStage.setScene(Launcher.townScene);
-			newStage.setTitle("Town");
-			newStage.show();
+			if (!townWinCreated) {
+				try {
+					Parent town = FXMLLoader.load(getClass().getResource("UIFiles/TownMap.fxml"));
+					townScene = new Scene(town);
+					newStage.setScene(townScene);
+					newStage.setTitle("Welcome to the Town");
+					newStage.show();
+					townWinCreated = true;
+				} catch (Exception ex) {
+					Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+				}
+			} else {
+				newStage.setScene(townScene);
+				newStage.show();
+			}
 			Player p = Turns.getTurn();
 		}
 	}
@@ -261,7 +222,7 @@ public class GameController implements Initializable {
 	public void backButtonClicked(ActionEvent e) {
 		newStage = new Stage();
 		if (e.getSource() == backButton) {
-			newStage.setScene(Launcher.townScene);
+			newStage.setScene(townScene);
 			newStage.setTitle("Town");
 			newStage.show();
 		}
@@ -270,17 +231,31 @@ public class GameController implements Initializable {
 	}
 
 	//LAND OFFICE
+	@FXML
 	public void landOfficeButtonClicked(ActionEvent e) {
 		newStage = new Stage();
 		if (e.getSource() == landOfficeButton) {
-			newStage.setScene(Launcher.landBuyIntScene);
-			newStage.setTitle(Turns.getTurn().getName());
-			newStage.show();
+			if (!landBuyIntCreated) {
+				try {
+					Parent landBuy = FXMLLoader.load(getClass().getResource("UIFiles/LandBuyInterface.fxml"));
+					landBuyIntScene = new Scene(landBuy);
+					newStage.setScene(landBuyIntScene);
+					newStage.setTitle(Turns.getTurn().getName());
+					newStage.show();
+					landBuyIntCreated = true;
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			} else {
+				newStage.setScene(landBuyIntScene);
+				newStage.show();
+			}
 		}
 		Stage stage = (Stage) landOfficeButton.getScene().getWindow();
 		stage.close();
 	}
 
+	@FXML
 	public void buyLandButtonClicked(ActionEvent e) {
 		newStage = new Stage();
 		if (e.getSource() == landBuyButton) {
@@ -291,12 +266,13 @@ public class GameController implements Initializable {
 		} else if (e.getSource() == backButton2) {
 			Stage stage = (Stage) backButton2.getScene().getWindow();
 			stage.close();
-			newStage.setScene(Launcher.townScene);
+			newStage.setScene(townScene);
 			newStage.setTitle(Turns.getTurn().getName());
 			newStage.show();
 		}
 	}
 
+	@FXML
 	public void landButtonClicked(ActionEvent e) {
 		Player currentP = Turns.getTurn();
 		Node landButton = (Node) e.getSource();
@@ -362,12 +338,24 @@ public class GameController implements Initializable {
 	}
 
 	//PUB
+	@FXML
     public void pubButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == pubButton) {
-            newStage.setScene(Launcher.pubGambleScene);
-            newStage.setTitle(Turns.getTurn().getName());
-            newStage.show();
+			if (!pubWinCreated) {
+				try {
+					Parent pubGamble = FXMLLoader.load(getClass().getResource("UIFiles/PubGambleInterface.fxml"));
+					pubGambleScene = new Scene(pubGamble);
+					newStage.setScene(pubGambleScene);
+					newStage.show();
+					pubWinCreated = true;
+				} catch (Exception ex) {
+					Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+				}
+			} else {
+				newStage.setScene(pubGambleScene);
+				newStage.show();
+			}
         }
         Stage stage = (Stage) pubButton.getScene().getWindow();
         stage.close();
@@ -382,10 +370,16 @@ public class GameController implements Initializable {
             int moneyWon = p.gamble(timeLeft);
             infoBar.updateInfoBar();
             Timer.endTurn();
+			try {
+				Parent gambleC = FXMLLoader.load(getClass().getResource("UIFiles/GambleConfirmation.fxml"));
+				Scene gambleConfirm = new Scene(gambleC);
+				newStage.setScene(gambleConfirm);
+				newStage.setTitle("Congratulations");
+				newStage.show();
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 
-            newStage.setScene(Launcher.gambleConfirm);
-            newStage.setTitle("Congratulations");
-            newStage.show();
         }
         Stage stage = (Stage) backButton.getScene().getWindow();
         stage.close();
@@ -394,100 +388,63 @@ public class GameController implements Initializable {
     @FXML
     public void gambleConfirm(ActionEvent e) {
         if (e.getSource() == gambleOkButton) {
-			Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-			stage.close();
-		}
+        }
+        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
+        stage.close();
     }
 
-//STORE
-
+	//STORE
+	@FXML
     public void storeButtonClicked(ActionEvent e) {
-		this.updateStoreLabels();
         newStage = new Stage();
         if (e.getSource() == storeButton) {
-            newStage.setScene(Launcher.storeScene);
-            newStage.setTitle("Store");
-            newStage.show();
-
-            //foodCostLabel.setText("" + store.getFoodCost());
+			if (!storeWinCreated) {
+				try {
+					Parent storeFile = FXMLLoader.load(getClass().getResource("UIFiles/storeInterface2.fxml"));
+					storeScene = new Scene(storeFile);
+					newStage.setScene(storeScene);
+					newStage.setTitle("Welcome to the Store");
+					newStage.show();
+					storeWinCreated = true;
+				} catch (Exception ex) {
+					Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+				}
+			} else {
+				newStage.setScene(storeScene);
+				newStage.show();
+			}
         }
         Stage stage = (Stage) storeButton.getScene().getWindow();
         stage.close();
     }
 
-    public void buyFoodButtonClicked(ActionEvent e) {
-        Player p = Turns.getTurn();
-        store.buySellFood(true, p);
-		this.updateStoreLabels();
-        infoBar.updateInfoBar();
+	@FXML
+	public void backButton3Clicked(ActionEvent event) {
+		System.out.println("Back from assay office");
 	}
 
-	public void sellFoodButtonClicked(ActionEvent e) {
-        Player p = Turns.getTurn();
-        store.buySellFood(false,p);
-		this.updateStoreLabels();
-        infoBar.updateInfoBar();
+	@FXML
+	public void mineButtonClicked(ActionEvent event) {
+		System.out.println("Mine button clicked");
 	}
 
-	public void buyEnergyButtonClicked(ActionEvent e) {
-        Player p = Turns.getTurn();
-        store.buySellEnergy(true,p);
-		this.updateStoreLabels();
-        infoBar.updateInfoBar();
+	@FXML
+	public void assayOfficeButtonClicked(ActionEvent event) {
+		newStage = new Stage();
+		if (!assayWinCreated) {
+			try {
+				Parent assay = FXMLLoader.load(getClass().getResource("UIFiles/AssayInterface.fxml"));
+				assayScene = new Scene(assay);
+				newStage.setScene(assayScene);
+				newStage.setTitle("Assay Office");
+				newStage.show();
+				assayWinCreated = true;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		} else {
+			newStage.setScene(assayScene);
+			newStage.show();
+		}
 	}
-
-	public void sellEnergyButtonClicked(ActionEvent e) {
-        Player p = Turns.getTurn();
-        store.buySellEnergy(false,p);
-		this.updateStoreLabels();
-        infoBar.updateInfoBar();
-	}
-
-	public void buyOreButtonClicked(ActionEvent e) {
-        Player p = Turns.getTurn();
-        store.buySellSmithore(true,p);
-		this.updateStoreLabels();
-        infoBar.updateInfoBar();
-	}
-
-	public void sellOreButtonClicked(ActionEvent e) {
-        Player p = Turns.getTurn();
-        store.buySellSmithore(false,p);
-		this.updateStoreLabels();
-        infoBar.updateInfoBar();
-	}
-
-	public void buyCrysButtonClicked(ActionEvent e) {
-        Player p = Turns.getTurn();
-        store.buySellChrystite(true,p);
-		this.updateStoreLabels();
-        infoBar.updateInfoBar();
-	}
-
-	public void sellCrysButtonClicked(ActionEvent e) {
-        Player p = Turns.getTurn();
-        store.buySellChrystite(false,p);
-		this.updateStoreLabels();
-        infoBar.updateInfoBar();
-	}
-
-	public void buyMuleButtonClicked(ActionEvent e) {
-        String choice = muleChoice.getSelectionModel().getSelectedItem().toString();
-        choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
-        currentMuleType = Mule.Type.valueOf(choice);
-        Player p = Turns.getTurn();
-        p.muleBuyEnable = true;
-        Stage stage = (Stage) muleChoice.getScene().getWindow();
-        stage.close();
-		this.updateStoreLabels();
-        //infoBar.updateInfoBar(); //Todo
-	}
-
-	public void sellMuleButtonClicked(ActionEvent e) { //Todo
-        Player p = Turns.getTurn();
-		this.updateStoreLabels();
-        //infoBar.updateInfoBar(); //Todo
-	}
-
-
 }

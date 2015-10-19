@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.StoreController">
   <children>
     <ImageView id="store" fitHeight="400.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
       <image>
@@ -65,14 +65,14 @@
         <Button fx:id="sellEnergyButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" onAction="#sellEnergyButtonClicked" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
         <Button fx:id="sellOreButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" onAction="#sellOreButtonClicked" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
         <Button fx:id="sellCrysButton" font="$x3" mnemonicParsing="false" prefHeight="27.0" prefWidth="46.0" onAction="#sellCrysButtonClicked" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-        <!--<Label fx:id="foodCostLabel" font="$x3" text="\$food" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <Label fx:id="foodCostLabel" font="$x3" text="\$food" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
         <Label fx:id="energyCostLabel" font="$x3" text="\$energy" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
         <Label fx:id="smithoreCostLabel" font="$x3" text="\$ore" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
         <Label fx:id="crystiteCostLabel" font="$x3" text="\$crys" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
         <Label fx:id="foodQuantityLabel" font="$x3" text="foodQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
         <Label fx:id="energyQuantityLabel" font="$x3" text="energyQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
         <Label fx:id="smithoreQuantityLabel" font="$x3" text="oreQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-        <Label fx:id="crystiteQuantityLabel" font="$x3" text="crysQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />-->
+        <Label fx:id="crystiteQuantityLabel" font="$x3" text="crysQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
         <ComboBox fx:id="muleChoice" promptText="Mule" GridPane.rowIndex="5">
           <items>
             <FXCollections fx:factory="observableArrayList">

@@ -54,15 +54,15 @@ public class Land {
 		}
 	}
 
-	public void sellLand() {
-		if (isOwned()) {
-			owner.addSubMoney(getSellPrice());
-			owner = null;
-			owned = false;
-		} else {
-			System.out.println("This land is not owned to sell"); //TODO
-		}
-	}
+	// public void sellLand() { //TODO unused method
+	// 	if (isOwned()) {
+	// 		owner.addSubMoney(getSellPrice());
+	// 		owner = null;
+	// 		owned = false;
+	// 	} else {
+	// 		System.out.println("This land is not owned to sell"); //TODO
+	// 	}
+	// }
 
 	public boolean hasMule() {return hasMule;}
 	

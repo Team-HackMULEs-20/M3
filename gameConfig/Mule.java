@@ -3,9 +3,9 @@ package gameConfig;
 public class Mule {
 
 	public static Type type;
-	private Player owner;
+	private Player owner; //TODO unused var
 	private int cost;
-	private Land position;
+	private Land position; //TODO unused var
 
 	public Mule(Type t) {
 		type = t;
@@ -31,13 +31,13 @@ public class Mule {
 		owner = p;
 	}
 
-	public Player getOwner() {
-		return owner;
-	}
+	// public Player getOwner() { //TODO unused var
+	// 	return owner;
+	// }
 
-	public Type getType() {
-		return type;
-	}
+	// public Type getType() { //TODO unused var
+	// 	return type;
+	// }
 
 	public void setPosition(Land p) {
 		position = p;
