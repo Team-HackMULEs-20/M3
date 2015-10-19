@@ -36,7 +36,7 @@ public class InfoBar {
         infoStage.setTitle("Information Bar");
         infoStage.setAlwaysOnTop(true);
         Group t2 = new Group();
-        Scene scene2 = new Scene(t2, 600, 120);
+        Scene scene2 = new Scene(t2, 600, 140);
 
         timerLabel.setFont(new Font("American Typewriter Bold", 30));
 
@@ -65,10 +65,17 @@ public class InfoBar {
 
         oreLeft.setText("Ore: " + p.getOre());
         oreLeft.setFont(new Font("American Typewriter", 15));
+        
+        crystiteLeft.setText("Crystite: " + p.getCrystite()); //Added
+        crystiteLeft.setFont(new Font("American Typewriter", 15)); // added
+
+        numMules.setText("Mules Owned: " + p.getOre()); //added
+        numMules.setFont(new Font("American Typewriter", 15)); //added
 
         Label l1 = new Label("                   ");
         Label l2 = new Label("                   ");
         Label l3 = new Label("                   ");
+        Label l5 = new Label("                   ");
         Label l4 = new Label(" Timer");
         l4.setFont(new Font("American Typewriter Bold", 18));
 
@@ -85,6 +92,9 @@ public class InfoBar {
         grid2.add(l3, 1, 2);
         grid2.add(energyLeft, 2, 2);
         grid2.add(oreLeft, 4, 2);
+        grid2.add(l5, 1,3);
+        grid2.add(crystiteLeft, 2, 3);
+        grid2.add(numMules,4, 3);
         grid2.add(timerLabel, 5, 1);
         grid2.add(endButton, 5, 2);
         grid2.add(l4, 5, 0);
@@ -128,6 +138,13 @@ public class InfoBar {
 
         oreLeft.setText("Ore: " + p.getOre());
         oreLeft.setFont(new Font("American Typewriter", 15));
+        
+        crystiteLeft.setText("Crystite: " + p.getCrystite());
+        crystiteLeft.setFont(new Font("American Typewriter", 15));
+
+        numMules.setText("Mules Owned: " + p.getOre()); //added
+        numMules.setFont(new Font("American Typewriter", 15)); //added
+        
         //System.out.println("INFO BAR UPDATED");
 
         if (Turns.rounds + 1 == 14) {
