@@ -29,7 +29,6 @@ public class Timer {
     }
 
     public void start() {
-        Stage stage = new Stage();
         Player p = Turns.getTurn();
         System.out.print("Round " + Turns.rounds);
         System.out.print(" | It is " + p.getName() + "'s Turn");
@@ -48,15 +47,15 @@ public class Timer {
                             if (timeLeft <= 0) {
                                 timeline.stop();
                                 Turns.playerTurn++;
+                                GameController.newStage.close();
                                 GameController.beginTurn();
-                                stage.close();
                             }
                         }));
         timeline.playFromStart();
         InfoBar.endButton.setOnAction((ActionEvent e) -> {
             timeline.stop();
-            stage.close();
             Turns.playerTurn++;
+            GameController.newStage.close();
             GameController.beginTurn();
         });
 

@@ -31,14 +31,13 @@ public class StoreController implements Initializable {
 
     private static Stage newStage;
     private Store store;
-    //private static Scene storeScene;
-    //private Parent storeFile;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resourceBundle) {
         this.store = new Store();
        // System.out.println(store);
         muleQuantityLabel.setText(String.valueOf(store.getMuleQuantity()));
+        muleCostLabel.setText(String.valueOf(store.getMuleCost()));
         foodCostLabel.setText(String.valueOf(store.getFoodCost()));
         foodQuantityLabel.setText(String.valueOf(store.getFoodQuantity()));
         energyCostLabel.setText(String.valueOf(store.getEnergyCost()));
@@ -51,6 +50,7 @@ public class StoreController implements Initializable {
 
     public void updateStoreLabels() {
         muleQuantityLabel.setText(String.valueOf(store.getMuleQuantity()));
+        muleCostLabel.setText(String.valueOf(store.getMuleCost()));
         foodCostLabel.setText(String.valueOf(store.getFoodCost()));
         foodQuantityLabel.setText(String.valueOf(store.getFoodQuantity()));
         energyCostLabel.setText(String.valueOf(store.getEnergyCost()));
@@ -82,9 +82,9 @@ public class StoreController implements Initializable {
         p.muleBuyEnable = true;
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
-        //store.buySellMule(true, p);
+        store.buySellMule(true, p);
         this.updateStoreLabels();
-        //GameController.infoBar.updateInfoBar(); //Todo
+        GameController.infoBar.updateInfoBar(); //Todo
     }
 
     @FXML

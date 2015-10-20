@@ -88,7 +88,7 @@ public class GameController implements Initializable {
 
 	public static Mule.Type currentMuleType;
 	public static int numPasses = 0;
-	private Stage newStage;
+	public static Stage newStage;
 	private static boolean selectPhase = true;
 
     private boolean infoBarCreated, townWinCreated,
@@ -115,6 +115,7 @@ public class GameController implements Initializable {
 	@FXML
 	public static void beginTurn() {
 		Launcher.primaryStage.hide();
+		//newStage.hide();
 		Stage start = new Stage();
 		start.setScene(Controller.startScene);
 		start.setTitle(Turns.getTurn().getName() + "'s Turn");
@@ -140,6 +141,7 @@ public class GameController implements Initializable {
 				for (Mule mule : currentPlayer.mulesOwned) {
 					if (mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
 							&& mule.getOwner() == currentPlayer) {
+						System.out.println("producing");
 						Mule.produce(mule.getType(), mule.getPosition().getType());
 						infoBar.updateInfoBar();
 					}
