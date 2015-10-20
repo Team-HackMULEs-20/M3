@@ -125,8 +125,8 @@ public class Player {
 		System.out.print(" | Time Bonus: " + tb);
 
 		//money bonus = round bonus * random(0 to timebonus)
-		//randomNum = minimum + (int)(Math.random()*maximum);
-		int mb = rb * ((int)(Math.random() * tb)); //money bonus
+		//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
+		int mb = rb * ((int)(Math.random() * (tb+1))); //money bonus
 		if (mb > 250) {
 			mb = 250;
 		}

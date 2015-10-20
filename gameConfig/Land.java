@@ -39,12 +39,10 @@ public class Land {
 		this.type = newType;
 	}
 
-
-	public static int getBuyPrice() {
-		return 300 + Turns.rounds + (int)(Math.random() * 100);
-	}
+	//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
+	public static int getBuyPrice() {return 300 + (Turns.rounds * (int)(Math.random() * (100 + 1))); }
 	public int getSellPrice() {
-		return 400 + (int)(Math.random() * 200);
+		return 400 + (int)(Math.random() * (200 + 1));
 	}
 
 	public void setOwner(Player p) {
