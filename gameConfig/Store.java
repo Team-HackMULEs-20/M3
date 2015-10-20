@@ -60,7 +60,7 @@ public class Store {
     // food sold to the store at $5 less than they cost
     public void buySellFood(boolean buy, Player customer) {
         if (buy && foodQuantity == 0) {
-            System.out.println("Not enough Food in the store.");
+            GameController.errorMessageBox("Not enough Food in the store");
         } else {
             if (buy) {
                 foodQuantity--;
@@ -70,7 +70,8 @@ public class Store {
                     foodCost += 2;
                 } else {
                     // make into error message? //TODO
-                    System.out.println("You do not have enough money for this item");
+                    GameController.errorMessageBox("You do not have enough money for this item.");
+
                 }
             } else {
                 if (customer.getFood() >= 1) {
@@ -80,7 +81,8 @@ public class Store {
                     foodCost -= 2;
                 } else {
                     // make into error message? //TODO
-                    System.out.println("You do not have any of this item to sell");
+                    GameController.errorMessageBox("You do not have any of this item to sell");
+
                 }
             }
         }
@@ -91,7 +93,7 @@ public class Store {
     // sold to the store at $5 less than they cost
     public void buySellEnergy(boolean buy, Player customer) {
         if (buy && energyQuantity == 0) {
-            System.out.println("Not enough Energy in the store.");
+            GameController.errorMessageBox("Not enough Energy in the store");
         } else {
             if (buy) {
                 energyQuantity--;
@@ -100,7 +102,7 @@ public class Store {
                     customer.addSubEnergy(1);
                     energyCost += 2;
                 } else {
-                    System.out.println("You do not have enough money for this item");
+                    GameController.errorMessageBox("You do not have enough money for this item");
                 }
             } else {
                 if (customer.getEnergy() >= 1) {
@@ -109,7 +111,7 @@ public class Store {
                     customer.addSubEnergy(-1);
                     energyCost -= 2;
                 } else {
-                    System.out.println("You do not have any of this item to sell");
+                    GameController.errorMessageBox("You do not have any of this item to sell");
                 }
             }
         }
@@ -120,20 +122,20 @@ public class Store {
     // sold to the store at $8 less than they cost
     public void buySellSmithore(boolean buy, Player customer) {
         if (buy && smithQuantity == 0) {
-            System.out.println("Not enough Smithore in the store.");
+            GameController.errorMessageBox("Not enough Smithore in the store");
         } else {
             if (buy) {
-                smithQuantity--;
                 if (customer.getMoney() >= smithCost) {
                     customer.addSubMoney(-smithCost);
                     customer.addSubOre(1);
+                    smithQuantity--;
                     if (smithQuantity == 0) {
                         smithCost = 50;
                     } else {
                         smithCost += 5;
                     }
                 } else {
-                    System.out.println("You do not have enough money for this item");
+                    GameController.errorMessageBox("You do not have enough money for this item");
                 }
             } else {
                 if (customer.getOre() >= 1) {
@@ -146,7 +148,7 @@ public class Store {
                         smithCost -= 5;
                     }
                 } else {
-                    System.out.println("You do not have any of this item to sell");
+                    GameController.errorMessageBox("You do not have any of this item to sell");
                 }
             }
         }
@@ -157,7 +159,7 @@ public class Store {
     // sold to the store at $15 less than they cost
     public void buySellChrystite(boolean buy, Player customer) {
         if (buy && crysQuantity == 0) {
-            System.out.println("Not enough Chrystite in the store.");
+            GameController.errorMessageBox("Not enough Crystite in the store.");
         } else {
             if (buy) {
                 crysQuantity--;
@@ -170,7 +172,7 @@ public class Store {
                         crysCost += 10;
                     }
                 } else {
-                    System.out.println("You do not have enough money for this item");
+                    GameController.errorMessageBox("You do not have enough money for this item");
                 }
             } else {
                 if (customer.getCrystite() >= 1) {
@@ -183,7 +185,7 @@ public class Store {
                         crysCost -= 10;
                     }
                 } else {
-                    System.out.println("You do not have enough money for this item");
+                    GameController.errorMessageBox("You do not have enough money for this item");
                 }
             }
         }
@@ -196,12 +198,14 @@ public class Store {
     public void buySellMule(boolean buy, Player customer) {
         int money = customer.getMoney();
         if (buy && muleQuantity == 0) {
-            System.out.println("Not enough Mules in the store.");
+            GameController.errorMessageBox("Not enough Mules in the store");
         } else {
             if (buy && money >= muleCost) {
                 muleQuantity--;
             } else if (!buy) {
                 muleQuantity++;
+            } else if (buy && money < muleCost) {
+                GameController.errorMessageBox("You do not have enough money for this item.");
             }
         }
     }

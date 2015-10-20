@@ -16,10 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -327,7 +324,8 @@ public class GameController implements Initializable {
 				currentP.landOwned.add(newLand);
 
 			} else {
-				System.out.println("You do not have enough money to buy this land");
+				GameController.errorMessageBox("You do not have enough money to buy this land");
+
 			}
 
 			Land.landBuyEnable = false;//disable land buying for next turn
@@ -458,5 +456,27 @@ public class GameController implements Initializable {
 			newStage.setScene(assayScene);
 			newStage.show();
 		}
+	}
+
+	public static void errorMessageBox(String message) {
+		Stage errorStage = new Stage();
+		errorStage.setTitle("Error!");
+		GridPane grid = new GridPane();
+		Label errorLabel = new Label(message);
+		errorLabel.setFont(new Font("American Typewriter", 15));
+		Button errorButton = new Button("Ok");
+		errorButton.setFont(new Font("American Typewriter", 17));
+		grid.add(errorLabel, 0, 0);
+		grid.add(errorButton, 1, 1);
+		Scene errorScene = new Scene(grid);
+		errorStage.setScene(errorScene);
+		newStage.hide();
+		errorStage.show();
+		errorStage.toFront();
+		errorButton.setOnAction((ActionEvent e) -> {
+			errorStage.close();
+			newStage.show();
+		});
+
 	}
 }

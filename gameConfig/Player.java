@@ -152,13 +152,15 @@ public class Player {
 					muleBuyEnable = false;
 					return true;
 				} else {//if the land already has a mule, mule is lost
-					System.out.println("There is already a mule on this land. You have lost your mule.");
+					GameController.errorMessageBox("There is already a mule on this land. You have lost your mule.");
+
 				}
 			} else {//if player doesn't own the land, mule is lost
-				System.out.println("You do not own this land. You have lost your mule.");
+				GameController.errorMessageBox("You do not own this land. You have lost your mule.");
+
 			}
 		} else {//if not enough money, nothing happens
-			System.out.println("You do not have enough money.");
+			GameController.errorMessageBox("You do not have enough money.");
 		}
 		muleBuyEnable = false;
 		return false;
