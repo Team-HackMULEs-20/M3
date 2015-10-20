@@ -25,6 +25,8 @@ public class InfoBar {
     private Label energyLeft = new Label();
     private Label oreLeft = new Label();
     private Label currPlayer = new Label();
+    private Label crystiteLeft = new Label(); //added
+    private Label numMules = new Label(); //added
     public static Label timerLabel = new Label();
     public static Button endButton = new Button("End Turn");
 
