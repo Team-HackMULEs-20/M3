@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 public class Player {
 
 	public boolean muleBuyEnable;
-	private int number;//TODO unused var
+	//private int number;//TODO unused var
 	private String name;
 	private Race race;
 	private Color color;
@@ -18,18 +18,13 @@ public class Player {
 	private int ore;
 	private int crystite;
 
-	//array of Land owned?
 	public int landGrants;
-	private int numLand; //TODO unused var
 	private int score;
-
-	//private int turnsTaken; //TODO unused var
-
 	public ArrayList<Land> landOwned;
 	public ArrayList<Mule> mulesOwned;
 
 	public Player (int number, String name, Race race, Color color) {
-		this.number = number;
+		//this.number = number;
 		this.name = name;
 		this.race = race;
 		this.color = color;
@@ -65,7 +60,7 @@ public class Player {
 		FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN
 	}
 
-	public int getNumber() {return number;}
+	//public int getNumber() {return number;}
 	public String getName() {return name;}
 	public Race getRace() {return race;}
 	public int getLandGrants() {return landGrants;}
@@ -73,8 +68,8 @@ public class Player {
 
 	public Color getColor() {return color;}
 
-	public int getScore() { //TODO
-		score = money + (500 * numLand) + (30 * food) + (25 * energy) + (50 * ore);
+	public int getScore() { //TODO score
+		score = money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
 		return score;
 	}
 
@@ -92,9 +87,6 @@ public class Player {
 
 	public int getCrystite() {return crystite;}
 	public void addSubCrystite(int amount) {crystite += amount;}
-
-	// public int getTurnsTaken() {return turnsTaken;} //TODO unused method
-	// public void incTurnsTaken() {turnsTaken++;} //TODO unused method
 
 	public int gamble(int timeLeft) {
 		System.out.println(name + " has chosen to gamble at the Pub with " + timeLeft + " seconds left.");
