@@ -23,7 +23,7 @@ public class Player {
 	public ArrayList<Land> landOwned;
 	public ArrayList<Mule> mulesOwned;
 
-	public Player (int number, String name, Race race, Color color) {
+	public Player (String name, Race race, Color color) {
 		//this.number = number;
 		this.name = name;
 		this.race = race;

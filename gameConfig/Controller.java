@@ -133,7 +133,7 @@ public class Controller implements Initializable {
 				color = colorPick.getValue();
 
 				//creating Player
-				Player p = new Player(count, name, r, color);
+				Player p = new Player(name, r, color);
 				players[count - 1] = p;
 				if (players[players.length - 1] != null) {
 
