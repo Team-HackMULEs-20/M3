@@ -60,7 +60,7 @@ public class Player {
 		FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN
 	}
 
-	//public int getNumber() {return number;}
+	//public int getNumber() {return number;} // TODO unused
 	public String getName() {return name;}
 	public Race getRace() {return race;}
 	public int getLandGrants() {return landGrants;}
@@ -116,7 +116,7 @@ public class Player {
 		}
 		System.out.print(" | Time Bonus: " + tb);
 
-		//money bonus = round bonus * random(0 to timebonus)
+		//money bonus = round bonus * random(0 to timeBonus)
 		//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
 		int mb = rb * ((int)(Math.random() * (tb+1))); //money bonus
 		if (mb > 250) {

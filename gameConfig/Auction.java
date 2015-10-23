@@ -7,9 +7,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * Created by findleyck on 10/6/15.
- */
 public class Auction {
 
     public Stage auctionStage;

@@ -14,9 +14,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-/**
- * Created by jessicahoffman on 10/7/15.
- */
 public class InfoBar {
     private Stage infoStage;
     private Label moneyLeft = new Label();

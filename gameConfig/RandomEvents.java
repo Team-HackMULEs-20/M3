@@ -3,9 +3,6 @@ package gameConfig;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by jessicahoffman on 10/19/15.
- */
 public class RandomEvents {
 //    Map<Integer, String> re;
 //
@@ -55,7 +52,7 @@ public class RandomEvents {
             } else if (chooseRE == 6) {
                 System.out.println("MISCHIEVOUS UGA STUDENTS BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD.");
                 int f = p.getFood();
-                p.addSubFood(-(int)(f/2));
+                p.addSubFood(-(f/2));
 
             } else {
                 int m = 6 * calculateM();

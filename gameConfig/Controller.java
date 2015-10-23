@@ -4,26 +4,19 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.HPos;
-import javafx.geometry.VPos;
 import javafx.event.ActionEvent;
 
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.net.URL;
 
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import sun.nio.ch.sctp.SctpNet;
 
 public class Controller implements Initializable {
 

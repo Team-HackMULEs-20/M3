@@ -341,7 +341,7 @@ public class GameController implements Initializable {
 				muleView.setImage(mulePic);
 				muleView.setFitWidth(50);
 				muleView.setPreserveRatio(true);
-				grid.setConstraints(muleView, col, row, 1, 1);
+				GridPane.setConstraints(muleView, col, row, 1, 1);
 				grid.getChildren().add(muleView);
 			}
 		}

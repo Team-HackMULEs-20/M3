@@ -10,9 +10,6 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by findleyck on 10/7/15.
- */
 public class StoreController implements Initializable {
 
     @FXML
