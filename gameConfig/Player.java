@@ -138,8 +138,8 @@ public class Player {
 					mule.setPosition(landPlot);//mule is placed on the land
 					this.mulesOwned.add(mule);//player owns mule
 					landPlot.setMuleType(mule.getType());
-					//landOwned.get(landOwned.indexOf(landPlot)).setHasMule(true);
 					landPlot.setHasMule(true);
+					GameController.currentMuleType = StoreController.potentialMule.getType();
 					System.out.println("mule placed.");
 					muleBuyEnable = false;
 					return true;

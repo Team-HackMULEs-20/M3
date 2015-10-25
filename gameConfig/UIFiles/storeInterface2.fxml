@@ -71,7 +71,7 @@
         <Label fx:id="energyQuantityLabel" font="$x3" text="energyQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
         <Label fx:id="smithoreQuantityLabel" font="$x3" text="oreQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
         <Label fx:id="crystiteQuantityLabel" font="$x3" text="crysQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-        <ComboBox fx:id="muleChoice" promptText="Mule" GridPane.rowIndex="5">
+        <ComboBox onAction="#updateMuleCostLabel" fx:id="muleChoice" promptText="Mule" GridPane.rowIndex="5">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="Food Mule" />

@@ -11,16 +11,16 @@ public class Mule {
 
 	public Mule(Type t) {
 		type = t;
-		cost = 100;
+		this.cost = 100;
 
 		if (type == Type.FOOD) {
-			cost += 25;
+			this.cost += 25;
 		} else if (type == Type.ENERGY) {
-			cost += 50;
+			this.cost += 50;
 		} else if (type == Type.SMITHORE) {
-			cost += 75;
+			this.cost += 75;
 		} else if (type == Type.CRYSTITE) {
-			cost += 100;
+			this.cost += 100;
 		}
 
 	}

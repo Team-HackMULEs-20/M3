@@ -28,6 +28,8 @@ public class StoreController implements Initializable {
 
     private static Stage newStage;
     private Store store;
+    private String choice;
+    public static Mule potentialMule;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resourceBundle) {
@@ -59,6 +61,18 @@ public class StoreController implements Initializable {
     }
 
     @FXML
+    public void updateMuleCostLabel(ActionEvent e) {
+        System.out.println("update mule cost button clicked");
+        if (e.getSource() == muleChoice) {
+            choice = muleChoice.getSelectionModel().getSelectedItem().toString();
+            choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
+            Mule.Type type = Mule.Type.valueOf(choice);
+            potentialMule = new Mule(type);
+            muleCostLabel.setText(String.valueOf(potentialMule.getCost()));
+        }
+    }
+
+    @FXML
     public void backButtonClicked(ActionEvent e) {
         newStage = new Stage();
         if (e.getSource() == backButton) {
@@ -72,9 +86,6 @@ public class StoreController implements Initializable {
 
     @FXML
     public void buyMuleButtonClicked(ActionEvent event) {
-        String choice = muleChoice.getSelectionModel().getSelectedItem().toString();
-        choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
-        GameController.currentMuleType = Mule.Type.valueOf(choice);
         Player p = Turns.getTurn();
         p.muleBuyEnable = true;
         Stage stage = (Stage) muleChoice.getScene().getWindow();
