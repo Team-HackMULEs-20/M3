@@ -102,8 +102,6 @@ public class InfoBar {
         infoStage.setScene(scene2);
         infoStage.show();
         infoStage.toFront();
-
-        System.out.println("INFO BAR CREATED");
     }
 
     public void updateInfoBar() {
@@ -126,7 +124,7 @@ public class InfoBar {
         }
 
         moneyLeft.setText("Money: " + p.getMoney());
-        System.out.println("in info bar "+ p.getName() + " " + p.getMoney());
+        //System.out.println("in info bar "+ p.getName() + " " + p.getMoney());
         moneyLeft.setFont(new Font("American Typewriter", 15));
 
         foodLeft.setText("Food: " + p.getFood());

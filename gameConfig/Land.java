@@ -67,19 +67,19 @@ public class Land {
 			this.setOwner(p);
 			this.owner.addSubMoney(getBuyPrice());
 		} else {
-			System.out.println("This land is already owned"); //TODO
+			GameController.errorMessageBox("This land is already owned");
 		}
 	}
 
-	// public void sellLand() { //TODO unused method
-	// 	if (isOwned()) {
-	// 		owner.addSubMoney(getSellPrice());
-	// 		owner = null;
-	// 		owned = false;
-	// 	} else {
-	// 		System.out.println("This land is not owned to sell"); //TODO
-	// 	}
-	// }
+	 public void sellLand() { //TODO unused method
+	 	if (isOwned()) {
+	 		owner.addSubMoney(getSellPrice());
+	 		owner = null;
+	 		owned = false;
+	 	} else {
+			GameController.errorMessageBox("This land is not owned to sell");
+	 	}
+	 }
 
 	public boolean hasMule() {return hasMule;}
 	

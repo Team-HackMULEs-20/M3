@@ -89,7 +89,6 @@ public class Player {
 	public void addSubCrystite(int amount) {crystite += amount;}
 
 	public int gamble(int timeLeft) {
-		System.out.println(name + " has chosen to gamble at the Pub with " + timeLeft + " seconds left.");
 		int r = Turns.rounds;
 
 		int rb = 0; // round bonus
@@ -102,7 +101,6 @@ public class Player {
 		} else { // round 12
 			rb = 200;
 		}
-		System.out.print("Round Bonus: " + rb);
 
 		int tb = 0; //time bonus
 		if (timeLeft < 12) { // time left = 0-11 seconds
@@ -114,7 +112,6 @@ public class Player {
 		} else { // time left = 37-50 seconds
 			tb = 200;
 		}
-		System.out.print(" | Time Bonus: " + tb);
 
 		//money bonus = round bonus * random(0 to timeBonus)
 		//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
@@ -122,7 +119,6 @@ public class Player {
 		if (mb > 250) {
 			mb = 250;
 		}
-		System.out.println(" | Money Bonus: " + mb);
 		money += mb;
 		return mb;
 	}
