@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Mule {
 
-	public static Type type;
+	private static Type type;
 	private Player owner;
 	private int cost;
 	private Land position;

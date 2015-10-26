@@ -54,9 +54,9 @@ public class Controller implements Initializable {
 	private ColorPicker colorPick;
 
 	public static Integer numPlayer;
-	public static String name;
-	public static String race;
-	public static String map;
+	//private static String name;
+	//private static String race;
+	//private static String map;
 	public static String level;
     public static Land[][] landPlots;
 
@@ -69,7 +69,7 @@ public class Controller implements Initializable {
 	public static Scene startScene;
 	//private boolean landBuyEnable = false;
 
-	public LandType[] landTypes = LandType.standardMap();
+	private LandType[] landTypes = LandType.standardMap();
 
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -93,7 +93,7 @@ public class Controller implements Initializable {
 
 				//initializing players array
 				players = new Player[numPlayer.intValue()];
-				map = mapType.getSelectionModel().getSelectedItem().toString();
+				String map = mapType.getSelectionModel().getSelectedItem().toString();
 				level = difficulty.getSelectionModel().getSelectedItem().toString(); //"Beginner", "Standard", or "Tournament"
 				Launcher.primaryStage.setScene(Launcher.nextScene); // Show player config screen for player 1
 				Launcher.primaryStage.setTitle("Player 1 Configuration");
@@ -114,8 +114,8 @@ public class Controller implements Initializable {
 		try {
 			if (e.getSource() == nextButton2) {
 
-				name = playerName.getText();
-				race = raceChoice.getSelectionModel().getSelectedItem().toString();
+				String name = playerName.getText();
+				String race = raceChoice.getSelectionModel().getSelectedItem().toString();
 				if (race.length() > 8) {
 					race = race.toUpperCase().substring(0, race.indexOf(" "));
 				} else {

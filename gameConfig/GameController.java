@@ -96,6 +96,7 @@ public class GameController implements Initializable {
 	public static Scene townScene, storeScene,
 			selectScene, landBuyIntScene, pubGambleScene, assayScene;
 
+
 	// TURNS AND SETUP
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {

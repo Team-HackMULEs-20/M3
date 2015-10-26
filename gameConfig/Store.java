@@ -1,8 +1,5 @@
 package gameConfig;
 
-import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
-
 public class Store {
 
 	public static int foodCost, foodQuantity,
@@ -69,7 +66,6 @@ public class Store {
                     customer.addSubFood(1);
                     foodCost += 2;
                 } else {
-                    // make into error message? //TODO
                     GameController.errorMessageBox("You do not have enough money for this item.");
 
                 }
@@ -80,7 +76,6 @@ public class Store {
                     customer.addSubFood(-1);
                     foodCost -= 2;
                 } else {
-                    // make into error message? //TODO
                     GameController.errorMessageBox("You do not have any of this item to sell");
 
                 }
