@@ -19,7 +19,6 @@ public class Player {
 	private int crystite;
 
 	public int landGrants;
-	private int score;
 	public ArrayList<Land> landOwned;
 	public ArrayList<Mule> mulesOwned;
 
@@ -69,7 +68,7 @@ public class Player {
 	public Color getColor() {return color;}
 
 	public int getScore() { //TODO score
-		score = money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
+		int score = money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
 		return score;
 	}
 

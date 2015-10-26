@@ -26,9 +26,7 @@ public class StoreController implements Initializable {
             foodQuantityLabel, energyQuantityLabel, smithoreQuantityLabel,
             crystiteQuantityLabel;
 
-    private static Stage newStage;
     private Store store;
-    private String choice;
     public static Mule potentialMule;
 
     @Override
@@ -64,7 +62,7 @@ public class StoreController implements Initializable {
     public void updateMuleCostLabel(ActionEvent e) {
         System.out.println("update mule cost button clicked");
         if (e.getSource() == muleChoice) {
-            choice = muleChoice.getSelectionModel().getSelectedItem().toString();
+            String choice = muleChoice.getSelectionModel().getSelectedItem().toString();
             choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
             Mule.Type type = Mule.Type.valueOf(choice);
             potentialMule = new Mule(type);
@@ -74,7 +72,7 @@ public class StoreController implements Initializable {
 
     @FXML
     public void backButtonClicked(ActionEvent e) {
-        newStage = new Stage();
+        Stage newStage = new Stage();
         if (e.getSource() == backButton) {
             newStage.setScene(GameController.townScene);
             newStage.setTitle("Town");

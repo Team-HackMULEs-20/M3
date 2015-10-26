@@ -54,20 +54,13 @@ public class Controller implements Initializable {
 	private ColorPicker colorPick;
 
 	public static Integer numPlayer;
-	//private static String name;
-	//private static String race;
-	//private static String map;
 	public static String level;
     public static Land[][] landPlots;
 
 	private static int count;
-	private static Color color;
-	private Stage newStage;
 	public static Player[] players;
-	private static Turns gameTurns;
 	private Scene gameScene;
 	public static Scene startScene;
-	//private boolean landBuyEnable = false;
 
 	private LandType[] landTypes = LandType.standardMap();
 
@@ -110,7 +103,7 @@ public class Controller implements Initializable {
 
 	@FXML
 	private void playerSetup(ActionEvent e) throws NullPointerException {
-		newStage = new Stage();
+		Stage newStage = new Stage();
 		try {
 			if (e.getSource() == nextButton2) {
 
@@ -123,7 +116,7 @@ public class Controller implements Initializable {
 				}
 				Player.Race r = Player.Race.valueOf(race);
 
-				color = colorPick.getValue();
+				Color color = colorPick.getValue();
 
 				//creating Player
 				Player p = new Player(name, r, color);
@@ -131,7 +124,7 @@ public class Controller implements Initializable {
 				if (players[players.length - 1] != null) {
 
 					//when players array is full, begins game turns
-					gameTurns = new Turns(players);
+					Turns gameTurns = new Turns(players);
 				}
 
 				if (name.equals("")) { // check if player entered a name
