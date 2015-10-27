@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 public class Player {
 
 	public boolean muleBuyEnable;
-	private int number;//TODO unused var
+	//private int number;//TODO unused var
 	private String name;
 	private Race race;
 	private Color color;
@@ -18,24 +18,18 @@ public class Player {
 	private int ore;
 	private int crystite;
 
-	//array of Land owned?
 	public int landGrants;
-	private int numLand; //TODO unused var
-	private int score;
-
-	//private int turnsTaken; //TODO unused var
-
 	public ArrayList<Land> landOwned;
 	public ArrayList<Mule> mulesOwned;
 
-	public Player (int number, String name, Race race, Color color) {
-		this.number = number;
+	public Player (String name, Race race, Color color) {
+		//this.number = number;
 		this.name = name;
 		this.race = race;
 		this.color = color;
 
-		landOwned = new ArrayList<Land>();
-		mulesOwned = new ArrayList<Mule>();
+		landOwned = new ArrayList<>();
+		mulesOwned = new ArrayList<>();
 		muleBuyEnable = false;
 
 		//turnsTaken = 0; //TODO unused var
@@ -65,7 +59,7 @@ public class Player {
 		FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN
 	}
 
-	public int getNumber() {return number;}
+	//public int getNumber() {return number;} // TODO unused
 	public String getName() {return name;}
 	public Race getRace() {return race;}
 	public int getLandGrants() {return landGrants;}
@@ -73,8 +67,8 @@ public class Player {
 
 	public Color getColor() {return color;}
 
-	public int getScore() { //TODO
-		score = money + (500 * numLand) + (30 * food) + (25 * energy) + (50 * ore);
+	public int getScore() { //TODO score
+		int score = money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
 		return score;
 	}
 
@@ -93,11 +87,7 @@ public class Player {
 	public int getCrystite() {return crystite;}
 	public void addSubCrystite(int amount) {crystite += amount;}
 
-	// public int getTurnsTaken() {return turnsTaken;} //TODO unused method
-	// public void incTurnsTaken() {turnsTaken++;} //TODO unused method
-
 	public int gamble(int timeLeft) {
-		System.out.println(name + " has chosen to gamble at the Pub with " + timeLeft + " seconds left.");
 		int r = Turns.rounds;
 
 		int rb = 0; // round bonus
@@ -105,12 +95,11 @@ public class Player {
 			rb = 50;
 		} else if (r <= 7) { // rounds 4 - 7
 			rb = 100;
-		} else if (r <= 11) { // rounds 5 - 11
+		} else if (r <= 11) { // rounds 8 - 11
 			rb = 150;
 		} else { // round 12
 			rb = 200;
 		}
-		System.out.print("Round Bonus: " + rb);
 
 		int tb = 0; //time bonus
 		if (timeLeft < 12) { // time left = 0-11 seconds
@@ -122,15 +111,13 @@ public class Player {
 		} else { // time left = 37-50 seconds
 			tb = 200;
 		}
-		System.out.print(" | Time Bonus: " + tb);
 
-		//money bonus = round bonus * random(0 to timebonus)
-		//randomNum = minimum + (int)(Math.random()*maximum);
-		int mb = rb * ((int)(Math.random() * tb)); //money bonus
+		//money bonus = round bonus * random(0 to timeBonus)
+		//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
+		int mb = rb * ((int)(Math.random() * (tb+1))); //money bonus
 		if (mb > 250) {
 			mb = 250;
 		}
-		System.out.println(" | Money Bonus: " + mb);
 		money += mb;
 		return mb;
 	}
@@ -144,19 +131,23 @@ public class Player {
 			if (this.equals(landPlot.getOwner())) {//check to see if valid land
 				if (!landPlot.hasMule()) {//if there isn't a mule already on the land
 					mule.setPosition(landPlot);//mule is placed on the land
-					mulesOwned.add(mule);//player owns mule
+					this.mulesOwned.add(mule);//player owns mule
+					landPlot.setMuleType(mule.getType());
 					landPlot.setHasMule(true);
+					GameController.currentMuleType = StoreController.potentialMule.getType();
 					System.out.println("mule placed.");
 					muleBuyEnable = false;
 					return true;
 				} else {//if the land already has a mule, mule is lost
-					System.out.println("There is already a mule on this land. You have lost your mule.");
+					GameController.errorMessageBox("There is already a mule on this land. You have lost your mule.");
+
 				}
 			} else {//if player doesn't own the land, mule is lost
-				System.out.println("You do not own this land. You have lost your mule.");
+				GameController.errorMessageBox("You do not own this land. You have lost your mule.");
+
 			}
 		} else {//if not enough money, nothing happens
-			System.out.println("You do not have enough money.");
+			GameController.errorMessageBox("You do not have enough money.");
 		}
 		muleBuyEnable = false;
 		return false;

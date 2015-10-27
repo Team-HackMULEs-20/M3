@@ -10,9 +10,6 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by findleyck on 10/7/15.
- */
 public class StoreController implements Initializable {
 
     @FXML
@@ -29,16 +26,15 @@ public class StoreController implements Initializable {
             foodQuantityLabel, energyQuantityLabel, smithoreQuantityLabel,
             crystiteQuantityLabel;
 
-    private static Stage newStage;
     private Store store;
-    //private static Scene storeScene;
-    //private Parent storeFile;
+    public static Mule potentialMule;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resourceBundle) {
         this.store = new Store();
        // System.out.println(store);
         muleQuantityLabel.setText(String.valueOf(store.getMuleQuantity()));
+        muleCostLabel.setText(String.valueOf(store.getMuleCost()));
         foodCostLabel.setText(String.valueOf(store.getFoodCost()));
         foodQuantityLabel.setText(String.valueOf(store.getFoodQuantity()));
         energyCostLabel.setText(String.valueOf(store.getEnergyCost()));
@@ -51,6 +47,7 @@ public class StoreController implements Initializable {
 
     public void updateStoreLabels() {
         muleQuantityLabel.setText(String.valueOf(store.getMuleQuantity()));
+        muleCostLabel.setText(String.valueOf(store.getMuleCost()));
         foodCostLabel.setText(String.valueOf(store.getFoodCost()));
         foodQuantityLabel.setText(String.valueOf(store.getFoodQuantity()));
         energyCostLabel.setText(String.valueOf(store.getEnergyCost()));
@@ -62,8 +59,20 @@ public class StoreController implements Initializable {
     }
 
     @FXML
+    public void updateMuleCostLabel(ActionEvent e) {
+        System.out.println("update mule cost button clicked");
+        if (e.getSource() == muleChoice) {
+            String choice = muleChoice.getSelectionModel().getSelectedItem().toString();
+            choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
+            Mule.Type type = Mule.Type.valueOf(choice);
+            potentialMule = new Mule(type);
+            muleCostLabel.setText(String.valueOf(potentialMule.getCost()));
+        }
+    }
+
+    @FXML
     public void backButtonClicked(ActionEvent e) {
-        newStage = new Stage();
+        Stage newStage = new Stage();
         if (e.getSource() == backButton) {
             newStage.setScene(GameController.townScene);
             newStage.setTitle("Town");
@@ -75,16 +84,13 @@ public class StoreController implements Initializable {
 
     @FXML
     public void buyMuleButtonClicked(ActionEvent event) {
-        String choice = muleChoice.getSelectionModel().getSelectedItem().toString();
-        choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
-        GameController.currentMuleType = Mule.Type.valueOf(choice);
         Player p = Turns.getTurn();
         p.muleBuyEnable = true;
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
-        //store.buySellMule(true, p);
+        store.buySellMule(true, p);
         this.updateStoreLabels();
-        //GameController.infoBar.updateInfoBar(); //Todo
+        GameController.infoBar.updateInfoBar(); //Todo
     }
 
     @FXML

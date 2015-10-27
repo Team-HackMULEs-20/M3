@@ -4,26 +4,19 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.HPos;
-import javafx.geometry.VPos;
 import javafx.event.ActionEvent;
 
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.net.URL;
 
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import sun.nio.ch.sctp.SctpNet;
 
 public class Controller implements Initializable {
 
@@ -61,20 +54,15 @@ public class Controller implements Initializable {
 	private ColorPicker colorPick;
 
 	public static Integer numPlayer;
-	public static String name;
-	public static String race;
-	public static String map;
 	public static String level;
     public static Land[][] landPlots;
 
 	private static int count;
-	private static Color color;
-	private Stage newStage;
 	public static Player[] players;
-	private static Turns gameTurns;
 	private Scene gameScene;
 	public static Scene startScene;
-	//private boolean landBuyEnable = false;
+
+	private LandType[] landTypes = LandType.standardMap();
 
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -98,7 +86,7 @@ public class Controller implements Initializable {
 
 				//initializing players array
 				players = new Player[numPlayer.intValue()];
-				map = mapType.getSelectionModel().getSelectedItem().toString();
+				String map = mapType.getSelectionModel().getSelectedItem().toString();
 				level = difficulty.getSelectionModel().getSelectedItem().toString(); //"Beginner", "Standard", or "Tournament"
 				Launcher.primaryStage.setScene(Launcher.nextScene); // Show player config screen for player 1
 				Launcher.primaryStage.setTitle("Player 1 Configuration");
@@ -115,12 +103,12 @@ public class Controller implements Initializable {
 
 	@FXML
 	private void playerSetup(ActionEvent e) throws NullPointerException {
-		newStage = new Stage();
+		Stage newStage = new Stage();
 		try {
 			if (e.getSource() == nextButton2) {
 
-				name = playerName.getText();
-				race = raceChoice.getSelectionModel().getSelectedItem().toString();
+				String name = playerName.getText();
+				String race = raceChoice.getSelectionModel().getSelectedItem().toString();
 				if (race.length() > 8) {
 					race = race.toUpperCase().substring(0, race.indexOf(" "));
 				} else {
@@ -128,15 +116,15 @@ public class Controller implements Initializable {
 				}
 				Player.Race r = Player.Race.valueOf(race);
 
-				color = colorPick.getValue();
+				Color color = colorPick.getValue();
 
 				//creating Player
-				Player p = new Player(count, name, r, color);
+				Player p = new Player(name, r, color);
 				players[count - 1] = p;
 				if (players[players.length - 1] != null) {
 
 					//when players array is full, begins game turns
-					gameTurns = new Turns(players);
+					Turns gameTurns = new Turns(players);
 				}
 
 				if (name.equals("")) { // check if player entered a name
@@ -167,9 +155,13 @@ public class Controller implements Initializable {
 							GameController.beginTurn();
 							//creates land array
 							landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
+							int count = 0;
 							for (int i = 0; i < landPlots.length; i++) {
 								for (int j = 0; j < landPlots[0].length; j++) {
-									landPlots[i][j] = new Land(i,j);
+									Land newLand = new Land(i,j);
+									newLand.setType(landTypes[count]);
+									landPlots[i][j] = newLand;
+									count++;
 								}
 							}
 						} else { // if user selected more than 2 players, go on to player 3 config
@@ -198,9 +190,13 @@ public class Controller implements Initializable {
 							GameController.beginTurn();
 							//creates land array
 							landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
+							int count = 0;
 							for (int i = 0; i < landPlots.length; i++) {
 								for (int j = 0; j < landPlots[0].length; j++) {
-									landPlots[i][j] = new Land(i,j);
+									Land newLand = new Land(i,j);
+									newLand.setType(landTypes[count]);
+									landPlots[i][j] = newLand;
+									count++;
 								}
 							}
 						} else {
@@ -222,15 +218,20 @@ public class Controller implements Initializable {
 						} catch (Exception e1) {
 							e1.printStackTrace();
 						}
+
 						newStage.setScene(gameScene);
 						newStage.setTitle("Game Screen");
 						newStage.show();
 						GameController.beginTurn();
 						//creates land array
 						landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
+						int count = 0;
 						for (int i = 0; i < landPlots.length; i++) {
 							for (int j = 0; j < landPlots[0].length; j++) {
-								landPlots[i][j] = new Land(i,j);
+								Land newLand = new Land(i,j);
+								newLand.setType(landTypes[count]);
+								landPlots[i][j] = newLand;
+								count++;
 							}
 						}
 					}

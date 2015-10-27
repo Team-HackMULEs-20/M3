@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.StoreController">
@@ -73,20 +71,20 @@
         <Label fx:id="energyQuantityLabel" font="$x3" text="energyQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
         <Label fx:id="smithoreQuantityLabel" font="$x3" text="oreQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
         <Label fx:id="crystiteQuantityLabel" font="$x3" text="crysQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-        <ComboBox fx:id="muleChoice" promptText="Mule" GridPane.rowIndex="5">
+        <ComboBox onAction="#updateMuleCostLabel" fx:id="muleChoice" promptText="Mule" GridPane.rowIndex="5">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="Food Mule" />
               <String fx:value="Energy Mule" />
               <String fx:value="Smithore Mule" />
-              <String fx:value="Chrystite Mule" />
+              <String fx:value="Crystite Mule" />
             </FXCollections>
           </items>
         </ComboBox>
         <Button fx:id="buyMuleButton" font="$x3" mnemonicParsing="false" onAction="#buyMuleButtonClicked" prefHeight="11.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
         <Button fx:id="sellMuleButton" font="$x3" mnemonicParsing="false" onAction="#sellMuleButtonClicked" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
         <Label fx:id="muleQuantityLabel" font="$x3" text="muleQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-        <Label fx:id="muleCostLabel" text="select mule&#10;type" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+        <Label fx:id="muleCostLabel" font="$x3" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
           <font>
             <Font name="Bradley Hand Bold" size="10.0" />
           </font>
