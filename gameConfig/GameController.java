@@ -81,6 +81,9 @@ public class GameController implements Initializable {
 	private Button passSelect;
 
 	@FXML
+	private Button assayBackButton;
+
+	@FXML
 	private Button selectLand;
 
 	public static Mule.Type currentMuleType;
@@ -430,8 +433,15 @@ public class GameController implements Initializable {
     }
 
 	@FXML
-	public void backButton3Clicked(ActionEvent event) {
-		System.out.println("Back from assay office");
+	public void assayBackButton(ActionEvent e) {
+		newStage = new Stage();
+		if (e.getSource() == assayBackButton) {
+			newStage.setScene(townScene);
+			newStage.setTitle("Town");
+			newStage.show();
+		}
+		Stage stage = (Stage) assayBackButton.getScene().getWindow();
+		stage.close();
 	}
 
 	@FXML
