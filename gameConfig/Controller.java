@@ -87,6 +87,14 @@ public class Controller implements Initializable {
 				//initializing players array
 				players = new Player[numPlayer.intValue()];
 				String map = mapType.getSelectionModel().getSelectedItem().toString();
+				if(map == "Random") {
+					try {
+						Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
+		//				RandMap.setImages();
+					} catch(Exception e1) {
+						e1.printStackTrace();
+					}
+				}
 				level = difficulty.getSelectionModel().getSelectedItem().toString(); //"Beginner", "Standard", or "Tournament"
 				Launcher.primaryStage.setScene(Launcher.nextScene); // Show player config screen for player 1
 				Launcher.primaryStage.setTitle("Player 1 Configuration");
