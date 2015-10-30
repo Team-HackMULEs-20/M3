@@ -63,6 +63,9 @@ public class GameController implements Initializable {
 	private Button bidButton;
 
 	@FXML
+	private Button assayBackButton;
+
+	@FXML
 	private Button bidPassButton;
 
 	@FXML
@@ -430,8 +433,16 @@ public class GameController implements Initializable {
     }
 
 	@FXML
-	public void backButton3Clicked(ActionEvent event) {
-		System.out.println("Back from assay office");
+	public void assayBackButtonClicked(ActionEvent e) {
+		newStage = new Stage();
+		if (e.getSource() == assayBackButton) {
+			newStage.setScene(townScene);
+			newStage.setTitle("Town");
+			newStage.show();
+		}
+		Stage stage = (Stage) assayBackButton.getScene().getWindow();
+		stage.close();
+
 	}
 
 	@FXML
