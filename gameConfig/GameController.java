@@ -91,10 +91,11 @@ public class GameController implements Initializable {
 	public static Stage newStage;
 	private static boolean selectPhase = true;
 
-    private boolean infoBarCreated, townWinCreated,
+	private boolean infoBarCreated, townWinCreated,
 			landBuyIntCreated, pubWinCreated,
 			storeWinCreated, selectWinCreated, assayWinCreated = false;
-    public static InfoBar infoBar;
+    	public static InfoBar infoBar;
+    	public RandomEvents randomEvents;
 	private Auction auction = new Auction();
 	public static Scene townScene, storeScene,
 			selectScene, landBuyIntScene, pubGambleScene, assayScene;
@@ -133,6 +134,8 @@ public class GameController implements Initializable {
         } else {
             infoBar.updateInfoBar();
         }
+        randomEvents = new RandomEvents();
+        randomEvents.determineRandomEvent(currentPlayer);
 		if (event.getSource() == startButton) {
 			Timer timer = new Timer(Turns.timeForTurn(currentPlayer));
 			timer.start();
