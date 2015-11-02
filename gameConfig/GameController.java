@@ -96,6 +96,7 @@ public class GameController implements Initializable {
 			storeWinCreated, selectWinCreated, assayWinCreated = false;
     public static InfoBar infoBar;
     public RandomEvents randomEvents;
+    public RandomEvents randomMessage;
 	private Auction auction = new Auction();
 	public static Scene townScene, storeScene,
 			selectScene, landBuyIntScene, pubGambleScene, assayScene;
@@ -135,7 +136,8 @@ public class GameController implements Initializable {
             infoBar.updateInfoBar();
         }
         randomEvents = new RandomEvents();
-        randomEvents.determineRandomEvent(currentPlayer);
+        String message;
+        message = randomEvents.determineRandomEvent(currentPlayer);
 		if (event.getSource() == startButton) {
 			Timer timer = new Timer(Turns.timeForTurn(currentPlayer));
 			timer.start();
@@ -178,6 +180,10 @@ public class GameController implements Initializable {
 				}
 			} else {
 				selectPhase = false;
+			}
+			if (message != "NVM") {
+				randomMessage = new RandomEvents();
+				randomMessage.messageBox(message);
 			}
 		}
 
