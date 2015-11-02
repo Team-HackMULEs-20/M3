@@ -94,8 +94,8 @@ public class GameController implements Initializable {
 	private boolean infoBarCreated, townWinCreated,
 			landBuyIntCreated, pubWinCreated,
 			storeWinCreated, selectWinCreated, assayWinCreated = false;
-    	public static InfoBar infoBar;
-    	public RandomEvents randomEvents;
+    public static InfoBar infoBar;
+    public RandomEvents randomEvents;
 	private Auction auction = new Auction();
 	public static Scene townScene, storeScene,
 			selectScene, landBuyIntScene, pubGambleScene, assayScene;
