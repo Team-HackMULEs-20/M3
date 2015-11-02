@@ -23,7 +23,7 @@ public class RandomEvents {
     public void determineRandomEvent(Player p){
 
         int chance = (int)(Math.random() * 100);
-        if (chance <= 100) {
+        if (chance <= 27) {
             int chooseRE = (int)(Math.random() * 7) + 1;
             if (chooseRE == 1) {
                 System.out.println("YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS.");
