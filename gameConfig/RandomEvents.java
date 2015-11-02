@@ -20,7 +20,7 @@ public class RandomEvents {
 
     //randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
 
-    public void determineRandomEvent(Player p){
+    public String determineRandomEvent(Player p){
 
         int chance = (int)(Math.random() * 100);
         if (chance <= 27) {
@@ -29,37 +29,45 @@ public class RandomEvents {
                 System.out.println("YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS.");
                 p.addSubFood(3);
                 p.addSubEnergy(2);
+                return "YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS.";
 
             } else if (chooseRE == 2) {
                 System.out.println("A WANDERING TECH STUDENT REPAID YOUR HOSPITALITY BY LEAVING TWO BARS OF ORE.");
                 p.addSubOre(2);
+                return "A WANDERING TECH STUDENT REPAID YOUR HOSPITALITY BY LEAVING TWO BARS OF ORE.";
 
             } else if (chooseRE == 3) {
                 int m = 8 * calculateM();
                 System.out.println("THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER FOR $" + m + ".");
                 p.addSubMoney(m);
+                return "THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER FOR $" + m + ".";
 
             } else if (chooseRE == 4) {
                 int m = 2 * calculateM();
                 System.out.println("YOU FOUND A DEAD MOOSE RAT AND SOLD THE HIDE FOR $" + m + ".");
                 p.addSubMoney(m);
+                return "YOU FOUND A DEAD MOOSE RAT AND SOLD THE HIDE FOR $" + m + ".";
 
             } else if (chooseRE == 5) {
                 int m = 4 * calculateM();
                 System.out.println("FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE. REPAIRS COST $" + m + ".");
                 p.addSubMoney(-m);
+                return "FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE. REPAIRS COST $" + m + ".";
 
             } else if (chooseRE == 6) {
                 System.out.println("MISCHIEVOUS UGA STUDENTS BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD.");
                 int f = p.getFood();
                 p.addSubFood(-(f/2));
+                return "MISCHIEVOUS UGA STUDENTS BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD.";
 
             } else {
                 int m = 6 * calculateM();
                 System.out.println("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN. IT COST YOU $" + m + " TO CLEAN IT UP.");
                 p.addSubMoney(-m);
+                return "YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN. IT COST YOU $" + m + " TO CLEAN IT UP.";
             }
         }
+        return "NVM";
     }
 
     public static int calculateM(){
@@ -76,6 +84,26 @@ public class RandomEvents {
             m = 100;
         }
         return m;
+    }
+    
+    public static void messageBox(String message) {
+        Stage errorStage = new Stage();
+        errorStage.setTitle("Random Event!");
+        GridPane grid = new GridPane();
+        Label errorLabel = new Label(message);
+        errorLabel.setFont(new Font("American Typewriter", 15));
+        Button errorButton = new Button("Ok");
+        errorButton.setFont(new Font("American Typewriter", 17));
+        grid.add(errorLabel, 0, 0);
+        grid.add(errorButton, 0, 1);
+        Scene errorScene = new Scene(grid);
+        errorStage.setScene(errorScene);
+        errorStage.show();
+        errorStage.toFront();
+        errorButton.setOnAction((ActionEvent e) -> {
+            errorStage.close();
+        });
+
     }
 
 }
