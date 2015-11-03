@@ -5,28 +5,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.geometry.VPos;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
-import javax.naming.ldap.Control;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -85,6 +76,9 @@ public class GameController implements Initializable {
 
 	@FXML
 	private Button selectLand;
+
+	@FXML
+	private Button oreOkButton;
 
 	public static Mule.Type currentMuleType;
 	public static int numPasses = 0;
@@ -181,7 +175,7 @@ public class GameController implements Initializable {
 			} else {
 				selectPhase = false;
 			}
-			if (message != "NVM") {
+			if (!(message.equals("NVM"))) {
 				randomMessage = new RandomEvents();
 				randomMessage.messageBox(message);
 			}
@@ -494,10 +488,26 @@ public class GameController implements Initializable {
 		newStage.hide();
 		errorStage.show();
 		errorStage.toFront();
-		errorButton.setOnAction((ActionEvent e) -> {
-			errorStage.close();
-			newStage.show();
-		});
 
+	}
+
+	public void oreErrorMessage(ActionEvent e) {
+		if(e.getSource() == oreOkButton) {
+			if (!storeWinCreated) {
+				try {
+					Parent storeFile = FXMLLoader.load(getClass().getResource("UIFiles/storeInterface2.fxml"));
+					storeScene = new Scene(storeFile);
+					newStage.setScene(storeScene);
+					newStage.setTitle("Welcome to the Store");
+					newStage.show();
+					storeWinCreated = true;
+				} catch (Exception ex) {
+					Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+				}
+			} else {
+				newStage.setScene(storeScene);
+				newStage.show();
+			}
+		}
 	}
 }

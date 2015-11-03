@@ -6,7 +6,7 @@ public class Store {
 	energyCost, energyQuantity,
 	smithCost, smithQuantity,
 	crysCost, crysQuantity,
-	muleCost, muleQuantity;
+	muleCost, muleQuantity, oreQuantity;
 
 
     public Store() {
@@ -21,6 +21,7 @@ public class Store {
             crysCost = 100;
             muleQuantity = 25;
             muleCost = 100;
+            oreQuantity = 0;
         } else {
             foodQuantity = 8;
             foodCost = 30;
@@ -32,6 +33,7 @@ public class Store {
             crysCost = 100;
             muleQuantity = 14;
             muleCost = 100;
+            oreQuantity = 0;
         }
     }
 
@@ -194,6 +196,9 @@ public class Store {
         int money = customer.getMoney();
         if (buy && muleQuantity == 0) {
             GameController.errorMessageBox("Not enough Mules in the store");
+        } else if(oreQuantity == 0) {
+            Launcher.primaryStage.setScene(Launcher.oreErrorScene);
+            Launcher.primaryStage.setTitle("Error!");
         } else {
             if (buy && money >= muleCost) {
                 muleQuantity--;
