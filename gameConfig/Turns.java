@@ -1,7 +1,5 @@
 package gameConfig;
 
-import sun.java2d.pipe.hw.AccelDeviceEventListener;
-
 public class Turns {
     public static Player[] players;
     public static int rounds;

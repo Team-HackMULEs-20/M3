@@ -3,30 +3,13 @@ package gameConfig;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.GridPane;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import java.util.logging.Logger;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import java.util.logging.Level;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.util.Random;
-import java.awt.image.Raster;
 import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 
-
-
-/**
- * Created by Abigail on 10/18/15.
- */
 public class RandMap{
     private int row, col, randNum;
     public ImageView plain, town, pic;
