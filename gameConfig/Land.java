@@ -6,7 +6,6 @@ public class Land {
 	private int row;
 	private int col;
 	private Mule.Type muleType;
-
 	public static boolean landBuyEnable = false;
 
 	private boolean hasMule;
@@ -24,6 +23,7 @@ public class Land {
 		this.col = col;
 		this.owned = false;
 		this.hasMule = false;
+		this.owner = null;
 	}
 
 	public int getRow() {return row;}
@@ -46,8 +46,8 @@ public class Land {
 	}
 
 	public void setOwner(Player p) {
-		owner = p;
-		owned = true;
+		this.owner = p;
+		this.owned = true;
 	}
 
 	public void setMuleType(Mule.Type type) {

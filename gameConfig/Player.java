@@ -72,6 +72,10 @@ public class Player {
 		return score;
 	}
 
+	public void setMuleBuyEnable(boolean newEnable) {
+		this.muleBuyEnable = newEnable;
+	}
+
 	public int getMoney() {return money;}
 	public void addSubMoney(int amount) {money += amount;}
 
@@ -122,35 +126,44 @@ public class Player {
 		return mb;
 	}
 
-	public boolean buyMule(Mule mule, Land land) {
-		if (money >= mule.getCost()) {//check that player has enough money
-			money = money - mule.getCost();//player pays for the mule
-			mule.setOwner(this);//player owns the mule
-			Store.muleQuantity--;
-			Land landPlot = Controller.landPlots[land.getCol()][land.getRow()];
-			if (this.equals(landPlot.getOwner())) {//check to see if valid land
-				if (!landPlot.hasMule()) {//if there isn't a mule already on the land
-					mule.setPosition(landPlot);//mule is placed on the land
-					this.mulesOwned.add(mule);//player owns mule
-					landPlot.setMuleType(mule.getType());
-					landPlot.setHasMule(true);
-					GameController.currentMuleType = StoreController.potentialMule.getType();
-					System.out.println("mule placed.");
-					muleBuyEnable = false;
-					return true;
-				} else {//if the land already has a mule, mule is lost
-					GameController.errorMessageBox("There is already a mule on this land. You have lost your mule.");
+	public boolean buyMule(boolean buy, Mule mule, Land land) {
+		//Land landPlot = Controller.landPlots[land.getCol()][land.getRow()];
+		if (buy) {
+			if (money >= mule.getCost()) {//check that player has enough money
+				money = money - mule.getCost();//player pays for the mule
+				mule.setOwner(this);//player owns the mule
+				Store.muleQuantity--;
+				if (this.equals(land.getOwner())) {//check to see if valid land
+					if (!land.hasMule()) {//if there isn't a mule already on the land
+						mule.setPosition(land);//mule is placed on the land
+						this.mulesOwned.add(mule);//player owns mule
+						land.setMuleType(mule.getType());
+						land.setHasMule(true);
+						GameController.currentMuleType = StoreController.potentialMule.getType();
+						System.out.println("mule placed.");
+						muleBuyEnable = false;
+						return true;
+					} else {//if the land already has a mule, mule is lost
+						GameController.errorMessageBox("There is already a mule on this land. You have lost your mule.");
+
+					}
+				} else {//if player doesn't own the land, mule is lost
+					GameController.errorMessageBox("You do not own this land. You have lost your mule.");
 
 				}
-			} else {//if player doesn't own the land, mule is lost
-				GameController.errorMessageBox("You do not own this land. You have lost your mule.");
-
+			} else {//if not enough money, nothing happens
+				GameController.errorMessageBox("You do not have enough money.");
 			}
-		} else {//if not enough money, nothing happens
-			GameController.errorMessageBox("You do not have enough money.");
+			muleBuyEnable = false;
+			return false;
+		} else {
+			Store.muleQuantity++;
+			land.getOwner().addSubMoney(Store.muleCost - 15);
+			land.setHasMule(false);
+			land.setMuleType(null);
+			land.getOwner().setMuleBuyEnable(true);
+			return false;
 		}
-		muleBuyEnable = false;
-		return false;
 	}
 
 

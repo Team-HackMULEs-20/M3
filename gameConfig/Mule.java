@@ -22,7 +22,6 @@ public class Mule {
 		} else if (type == Type.CRYSTITE) {
 			this.cost += 100;
 		}
-
 	}
 
 	public Type getType() {
@@ -53,53 +52,52 @@ public class Mule {
 		FOOD, ENERGY, SMITHORE, CRYSTITE
 	}
 
-	public static void produce(Type typeMule, LandType plotType) {
-		Player p = Turns.getTurn();
+	public static void produce(Type typeMule, LandType plotType, Player p) {
 		Random randomInt = new Random();
-		if (plotType == LandType.RIVER) {
+		if (plotType.equals(LandType.RIVER)) {
 			if (typeMule == Type.FOOD) {
 				p.addSubFood(4);
 			} else if (typeMule == Type.ENERGY) {
 				p.addSubEnergy(2);
 			}
-		} else if (plotType == LandType.PLAIN) {
+		} else if (plotType.equals(LandType.PLAIN)) {
 			if (typeMule == Type.FOOD) {
 				p.addSubFood(2);
 			} else if (typeMule == Type.ENERGY) {
 				p.addSubEnergy(3);
 			} else if (typeMule == Type.SMITHORE) {
 				p.addSubOre(1);
-			} else {
+			} else if (typeMule == Type.CRYSTITE) {
 				p.addSubCrystite(randomInt.nextInt(5));
 			}
-		} else if (plotType == LandType.M1) {
+		} else if (plotType.equals(LandType.M1)) {
 			if (typeMule == Type.FOOD) {
 				p.addSubFood(1);
 			} else if (typeMule == Type.ENERGY) {
 				p.addSubEnergy(1);
 			} else if (typeMule == Type.SMITHORE) {
 				p.addSubOre(2);
-			} else {
+			} else if (typeMule == Type.CRYSTITE) {
 				p.addSubCrystite(randomInt.nextInt(5));
 			}
-		} else if (plotType == LandType.M2) {
+		} else if (plotType.equals(LandType.M2)) {
 			if (typeMule == Type.FOOD) {
 				p.addSubFood(1);
 			} else if (typeMule == Type.ENERGY) {
 				p.addSubEnergy(1);
 			} else if (typeMule == Type.SMITHORE) {
 				p.addSubOre(3);
-			} else {
+			} else if (typeMule == Type.CRYSTITE) {
 				p.addSubCrystite(randomInt.nextInt(5));
 			}
-		} else if (plotType == LandType.M3) {
+		} else if (plotType.equals(LandType.M3)) {
 			if (typeMule == Type.FOOD) {
 				p.addSubFood(1);
 			} else if (typeMule == Type.ENERGY) {
 				p.addSubEnergy(1);
 			} else if (typeMule == Type.SMITHORE) {
 				p.addSubOre(4);
-			} else {
+			} else if (typeMule == Type.CRYSTITE) {
 				p.addSubCrystite(randomInt.nextInt(5));
 			}
 		}

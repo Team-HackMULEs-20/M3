@@ -1,5 +1,7 @@
 package gameConfig;
 
+import com.sun.org.apache.xerces.internal.dom.ChildNode;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +22,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -139,10 +142,11 @@ public class GameController implements Initializable {
 			stage.close();
 			if (currentPlayer.landOwned.size() != 0 && currentPlayer.mulesOwned.size() != 0) {
 				for (Mule mule : currentPlayer.mulesOwned) {
+					System.out.println(mule.getType());
 					if (mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
 							&& mule.getOwner() == currentPlayer) {
 						System.out.println("producing");
-						Mule.produce(mule.getType(), mule.getPosition().getType());
+						Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
 						infoBar.updateInfoBar();
 					}
 				}
@@ -290,12 +294,13 @@ public class GameController implements Initializable {
 
 	@FXML
 	public void landButtonClicked(ActionEvent e) {
+		Mule mule = StoreController.potentialMule;
 		Player currentP = Turns.getTurn();
 		Node landButton = (Node) e.getSource();
 		GridPane grid = (GridPane) landButton.getParent();
 		int col = GridPane.getColumnIndex(landButton);
 		int row = GridPane.getRowIndex(landButton);
-		Land newLand = new Land(GridPane.getColumnIndex(landButton), GridPane.getRowIndex(landButton));
+		Land newLand = new Land(col, row);
 		if (Land.landBuyEnable) {
 			if (currentP.landGrants > 0) {//check for land grants
 				currentP.landGrants--;
@@ -312,10 +317,8 @@ public class GameController implements Initializable {
 				newLand.setType(Controller.landPlots[col][row].getType());
 				Controller.landPlots[col][row].setOwner(currentP);
 				currentP.landOwned.add(newLand);
-
 			} else if (currentP.getMoney() >= 300){//if not grants sub money //doesn't allow to buy when at $300 //TODO
 				currentP.addSubMoney(-300);
-                infoBar.updateInfoBar();
 				Rectangle color =  new Rectangle();
 				color.setFill(currentP.getColor());
 				color.setHeight(25);
@@ -329,10 +332,8 @@ public class GameController implements Initializable {
 				newLand.setType(Controller.landPlots[col][row].getType());
 				Controller.landPlots[col][row].setOwner(currentP);
 				currentP.landOwned.add(newLand);
-
 			} else {
 				GameController.errorMessageBox("You do not have enough money to buy this land");
-
 			}
 
 			Land.landBuyEnable = false;//disable land buying for next turn
@@ -341,8 +342,7 @@ public class GameController implements Initializable {
             }
 
 		} else if (currentP.muleBuyEnable) {
-			Mule mule = new Mule(currentMuleType);
-			boolean muleBought = currentP.buyMule(mule, newLand);//buy mule / return false if mule has been lost
+			boolean muleBought = currentP.buyMule(true, mule, Controller.landPlots[col][row]);//buy mule / return false if mule has been lost
 			if (muleBought) {//if !muleLost
 				Image mulePic =  new Image("gameConfig/UIFiles/Media/aMule.png");
 				ImageView muleView = new ImageView();
@@ -350,11 +350,34 @@ public class GameController implements Initializable {
 				muleView.setFitWidth(50);
 				muleView.setPreserveRatio(true);
 				GridPane.setConstraints(muleView, col, row, 1, 1);
+				muleView.setId(currentP.getName());
 				grid.getChildren().add(muleView);
-				//currentP.mulesOwned.add(mule);
-				infoBar.updateInfoBar();
+			}
+		} else {
+			if (mule.getType() == Controller.landPlots[col][row].getMuleType()) {
+				boolean muleBought = currentP.buyMule(false, mule, Controller.landPlots[col][row]);
+				if (!muleBought) {
+					for (Node node : grid.getChildren()) {
+						if (Objects.equals(currentP.getName(), node.getId())) {
+							grid.getChildren().remove(node);
+							break;
+						}
+					}
+					int pos = -1;
+					for (Mule m : currentP.mulesOwned) {
+						pos++;
+						if (m.getPosition().equals(newLand)) {
+							break;
+						}
+					}
+					currentP.mulesOwned.remove(pos);
+				}
+			} else {
+				errorMessageBox("This land has a " + Controller.landPlots[col][row].getMuleType()
+						+ " mule on it, not a " + mule.getType() + " mule.");
 			}
 		}
+		infoBar.updateInfoBar();
 	}
 
 	//PUB
@@ -484,6 +507,7 @@ public class GameController implements Initializable {
 		errorLabel.setFont(new Font("American Typewriter", 15));
 		Button errorButton = new Button("Ok");
 		errorButton.setFont(new Font("American Typewriter", 17));
+		errorButton.setOnAction((ActionEvent e) -> errorStage.close());
 		grid.add(errorLabel, 0, 0);
 		grid.add(errorButton, 1, 1);
 		Scene errorScene = new Scene(grid);
