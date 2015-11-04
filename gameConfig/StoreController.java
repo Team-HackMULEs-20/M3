@@ -88,6 +88,7 @@ public class StoreController implements Initializable {
     public void buyMuleButtonClicked(ActionEvent event) {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
+        GameController.landButton.setDisable(false);
         this.messageBox();
         this.updateStoreLabels();
         buy  = true;
@@ -97,6 +98,7 @@ public class StoreController implements Initializable {
     public void sellMuleButtonClicked(ActionEvent event) {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
+        GameController.landButton.setDisable(false);
         this.messageBox();
         this.updateStoreLabels();
         buy = false;
