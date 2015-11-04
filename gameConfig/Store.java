@@ -6,8 +6,9 @@ public class Store {
 	energyCost, energyQuantity,
 	smithCost, smithQuantity,
 	crysCost, crysQuantity,
-	muleCost, muleQuantity, oreQuantity;
+	muleCost, oreQuantity;
 
+    public int muleQuantity;
 
     public Store() {
         if (Controller.level.equals("Beginner")) {
@@ -19,7 +20,7 @@ public class Store {
             smithCost = 50;
             crysQuantity = 0;
             crysCost = 100;
-            muleQuantity = 25;
+            this.muleQuantity = 25;
             muleCost = 100;
             oreQuantity = 0;
         } else {
@@ -31,7 +32,7 @@ public class Store {
             smithCost = 50;
             crysQuantity = 0;
             crysCost = 100;
-            muleQuantity = 14;
+            this.muleQuantity = 14;
             muleCost = 100;
             oreQuantity = 8;
         }
