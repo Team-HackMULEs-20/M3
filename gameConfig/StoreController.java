@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 public class StoreController implements Initializable {
 
     @FXML
-    private Button buyEnergyButton, sellFoodButton,
+    public Button buyEnergyButton, sellFoodButton,
             buyOreButton, buyCrysButton, sellEnergyButton,
             sellCrysButton, buyMuleButton, sellMuleButton,
             backButton, sellOreButton;
@@ -88,16 +88,12 @@ public class StoreController implements Initializable {
         p.muleBuyEnable = true;
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
-        this.updateStoreLabels();
-        GameController.infoBar.updateInfoBar(); //Todo
     }
 
     @FXML
     public void sellMuleButtonClicked(ActionEvent event) {
-        Player p = Turns.getTurn();
-        store.buySellMule(false, p, potentialMule);
-        this.updateStoreLabels();
-        GameController.infoBar.updateInfoBar(); //Todo
+        Stage stage = (Stage) muleChoice.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

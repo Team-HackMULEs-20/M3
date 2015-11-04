@@ -1,5 +1,7 @@
 package gameConfig;
 
+import javafx.scene.layout.GridPane;
+
 public class Store {
 
 	public static int foodCost, foodQuantity,
@@ -184,35 +186,6 @@ public class Store {
                 } else {
                     GameController.errorMessageBox("You do not have enough money for this item");
                 }
-            }
-        }
-    }
-
-    // MULE: initial q-c = 25-100
-    // with each sold / bought, price changes by $0
-    // sold to the store at $15 less than they cost
-    // TODO
-    public void buySellMule(boolean buy, Player customer, Mule mule) {
-        if (buy && muleQuantity == 0) {
-            GameController.errorMessageBox("Not enough Mules in the store");
-        } else if (oreQuantity == 0) {
-            Launcher.primaryStage.setScene(Launcher.oreErrorScene);
-            Launcher.primaryStage.setTitle("Error!");
-        } else {
-            int pos = -1;
-            if (!buy) {
-                for (int i = 0; i < customer.mulesOwned.size(); i++) {
-                    if (customer.mulesOwned.get(i).getType() == mule.getType()) {
-                        pos = i;
-                        break;
-                    }
-                }
-            }
-            if (pos != -1) {
-                System.out.println("Selling mule");
-                muleQuantity++;
-                customer.addSubMoney(muleCost - 15);
-                customer.mulesOwned.remove(pos);
             }
         }
     }
