@@ -3,6 +3,7 @@ package gameConfig;
 import javafx.scene.paint.Color;
 import org.junit.Before;
 import org.junit.Test;
+import org.omg.CORBA.TIMEOUT;
 
 import static org.junit.Assert.*;
 
@@ -25,6 +26,7 @@ public class TurnsTest {
         playersBefore[3] = new Player("Abby", Player.Race.HUMAN, Color.CRIMSON);
         playersBefore[3].landOwned.add(new Land(0, 0));
         Turns turns = new Turns(playersBefore);
+        Turns.rounds = 2;
         playersByScore = new Player[4];
         playersByScore[0] = playersBefore[2];
         playersByScore[1] = playersBefore[0];
@@ -32,9 +34,17 @@ public class TurnsTest {
         playersByScore[3] = playersBefore[1];
     }
 
-    @Test
+    @Test(timeout = TIMEOUT)
     public void testSortByScore() throws Exception {
         Turns.sortByScore();
         assertArrayEquals(playersByScore, playersBefore);
+    }
+
+    @Test(timeout = TIMEOUT)
+    public void testTimeForTurn() throws Exception {
+        playersBefore[0].addSubFood(-6);
+        int time = Turns.timeForTurn(playersBefore[0]);
+        assertEquals(30, time);
+        assertEquals(50, Turns.timeForTurn(playersBefore[2]));
     }
 }

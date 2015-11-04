@@ -33,7 +33,7 @@ public class Store {
             crysCost = 100;
             muleQuantity = 14;
             muleCost = 100;
-            oreQuantity = 0;
+            oreQuantity = 8;
         }
     }
 
@@ -192,20 +192,27 @@ public class Store {
     // with each sold / bought, price changes by $0
     // sold to the store at $15 less than they cost
     // TODO
-    public void buySellMule(boolean buy, Player customer) {
-        int money = customer.getMoney();
+    public void buySellMule(boolean buy, Player customer, Mule mule) {
         if (buy && muleQuantity == 0) {
             GameController.errorMessageBox("Not enough Mules in the store");
-        } else if(oreQuantity == 0) {
+        } else if (oreQuantity == 0) {
             Launcher.primaryStage.setScene(Launcher.oreErrorScene);
             Launcher.primaryStage.setTitle("Error!");
         } else {
-            if (buy && money >= muleCost) {
-                muleQuantity--;
-            } else if (!buy) {
+            int pos = -1;
+            if (!buy) {
+                for (int i = 0; i < customer.mulesOwned.size(); i++) {
+                    if (customer.mulesOwned.get(i).getType() == mule.getType()) {
+                        pos = i;
+                        break;
+                    }
+                }
+            }
+            if (pos != -1) {
+                System.out.println("Selling mule");
                 muleQuantity++;
-            } else if (buy && money < muleCost) {
-                GameController.errorMessageBox("You do not have enough money for this item.");
+                customer.addSubMoney(muleCost - 15);
+                customer.mulesOwned.remove(pos);
             }
         }
     }

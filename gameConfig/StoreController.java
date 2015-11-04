@@ -26,7 +26,7 @@ public class StoreController implements Initializable {
             foodQuantityLabel, energyQuantityLabel, smithoreQuantityLabel,
             crystiteQuantityLabel;
 
-    private Store store;
+    public static Store store;
     public static Mule potentialMule;
 
     @Override
@@ -88,7 +88,6 @@ public class StoreController implements Initializable {
         p.muleBuyEnable = true;
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
-        store.buySellMule(true, p);
         this.updateStoreLabels();
         GameController.infoBar.updateInfoBar(); //Todo
     }
@@ -96,7 +95,9 @@ public class StoreController implements Initializable {
     @FXML
     public void sellMuleButtonClicked(ActionEvent event) {
         Player p = Turns.getTurn();
-        //GameController.infoBar.updateInfoBar(); //Todo
+        store.buySellMule(false, p, potentialMule);
+        this.updateStoreLabels();
+        GameController.infoBar.updateInfoBar(); //Todo
     }
 
     @FXML

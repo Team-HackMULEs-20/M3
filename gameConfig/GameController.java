@@ -139,10 +139,11 @@ public class GameController implements Initializable {
 			stage.close();
 			if (currentPlayer.landOwned.size() != 0 && currentPlayer.mulesOwned.size() != 0) {
 				for (Mule mule : currentPlayer.mulesOwned) {
+					System.out.println(mule.getType());
 					if (mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
 							&& mule.getOwner() == currentPlayer) {
 						System.out.println("producing");
-						Mule.produce(mule.getType(), mule.getPosition().getType());
+						Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
 						infoBar.updateInfoBar();
 					}
 				}
@@ -341,7 +342,7 @@ public class GameController implements Initializable {
             }
 
 		} else if (currentP.muleBuyEnable) {
-			Mule mule = new Mule(currentMuleType);
+			Mule mule = StoreController.potentialMule;
 			boolean muleBought = currentP.buyMule(mule, newLand);//buy mule / return false if mule has been lost
 			if (muleBought) {//if !muleLost
 				Image mulePic =  new Image("gameConfig/UIFiles/Media/aMule.png");
@@ -351,7 +352,6 @@ public class GameController implements Initializable {
 				muleView.setPreserveRatio(true);
 				GridPane.setConstraints(muleView, col, row, 1, 1);
 				grid.getChildren().add(muleView);
-				//currentP.mulesOwned.add(mule);
 				infoBar.updateInfoBar();
 			}
 		}
