@@ -1,7 +1,5 @@
 package gameConfig;
 
-import com.sun.org.apache.xerces.internal.dom.ChildNode;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

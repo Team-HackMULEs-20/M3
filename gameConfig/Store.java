@@ -1,7 +1,5 @@
 package gameConfig;
 
-import javafx.scene.layout.GridPane;
-
 public class Store {
 
 	public static int foodCost, foodQuantity,
