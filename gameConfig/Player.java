@@ -126,10 +126,10 @@ public class Player {
 			if (money >= mule.getCost()) {//check that player has enough money
 				money = money - mule.getCost();//player pays for the mule
 				mule.setOwner(this);//player owns the mule
-				Store.muleQuantity--;
 				if (this.equals(land.getOwner())) {//check to see if valid land
 					if (!land.hasMule()) {//if there isn't a mule already on the land
 						mule.setPosition(land);//mule is placed on the land
+						StoreController.store.muleQuantity--;
 						this.mulesOwned.add(mule);//player owns mule
 						land.setMuleType(mule.getType());
 						land.setHasMule(true);
@@ -149,7 +149,7 @@ public class Player {
 			return false;
 		} else {
 			if (this.equals(land.getOwner())) {
-				Store.muleQuantity++;
+				StoreController.store.muleQuantity++;
 				land.getOwner().addSubMoney(Store.muleCost - 15);
 				land.setHasMule(false);
 				land.setMuleType(null);
@@ -157,6 +157,7 @@ public class Player {
 				return false;
 			} else {
 				land.setMuleBuyEnable(false);
+				GameController.errorMessageBox("There is not mule on this land.");
 				return true;
 			}
 		}
