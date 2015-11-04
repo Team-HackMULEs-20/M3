@@ -20,20 +20,26 @@ public class TurnsTest {
         Controller.level = "Beginner";
         playersBefore = new Player[4];
         playersBefore[0] = new Player("Kaley", Player.Race.BUZZITE, Color.AQUA);
-        playersBefore[1] = new Player("Chris", Player.Race.BONZOID, Color.BLUE);
-        playersBefore[2] = new Player("Jess", Player.Race.FLAPPER, Color.BROWN);
+        playersBefore[1] = new Player("Chris", Player.Race.FLAPPER, Color.BLUE);
+        playersBefore[2] = new Player("Jess", Player.Race.BONZOID, Color.BROWN);
         playersBefore[3] = new Player("Abby", Player.Race.HUMAN, Color.CRIMSON);
+        playersBefore[3].landOwned.add(new Land(0, 0));
         Turns turns = new Turns(playersBefore);
         playersByScore = new Player[4];
-        playersByScore[0] = playersBefore[3];
-        playersByScore[1] = playersBefore[1];
-        playersByScore[2] = playersBefore[0];
-        playersByScore[3] = playersBefore[2];
+        playersByScore[0] = playersBefore[2];
+        playersByScore[1] = playersBefore[0];
+        playersByScore[2] = playersBefore[3];
+        playersByScore[3] = playersBefore[1];
     }
 
     @Test
     public void testSortByScore() throws Exception {
         Turns.sortByScore();
+        System.out.println("after sort");
+        for (Player i : playersBefore) {
+            System.out.println(i.getRace());
+            System.out.println(i.getScore());
+        }
         assertArrayEquals(playersByScore, playersBefore);
     }
 }

@@ -35,7 +35,9 @@ public class Turns {
         for (int i = 0; i < players.length; i++) {
             int min = i;
             for (int j = i + 1; j < players.length; j++) {
-                if (players[i].getScore() > players[j].getScore()) {
+                if (players[min].getScore() > players[j].getScore()) {
+                    min = j;
+                } else if (players[min].getScore() == players[j].getScore()) {
                     min = j;
                 }
             }
