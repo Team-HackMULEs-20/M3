@@ -24,7 +24,7 @@ public class Auction {
     }
 
     // AUCTIONING
-    public boolean isAuctionTime() {
+    public static boolean isAuctionTime() {
         boolean auctionTime = false;
         int count = 0;
         for (Land[] item : Controller.landPlots) {
