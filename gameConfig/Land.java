@@ -11,6 +11,7 @@ public class Land {
 	private boolean hasMule;
 	public static Player latestBidder;
 	public LandType type;
+	private boolean muleBuyEnable;
 
 
 
@@ -24,6 +25,7 @@ public class Land {
 		this.owned = false;
 		this.hasMule = false;
 		this.owner = null;
+		this.muleBuyEnable = true;
 	}
 
 	public int getRow() {return row;}
@@ -48,6 +50,14 @@ public class Land {
 	public void setOwner(Player p) {
 		this.owner = p;
 		this.owned = true;
+	}
+
+	public boolean getMuleBuyEnable() {
+		return muleBuyEnable;
+	}
+
+	public void setMuleBuyEnable(boolean newEnable) {
+		this.muleBuyEnable = newEnable;
 	}
 
 	public void setMuleType(Mule.Type type) {

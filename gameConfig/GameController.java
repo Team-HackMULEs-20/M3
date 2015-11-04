@@ -299,6 +299,7 @@ public class GameController implements Initializable {
 		int col = GridPane.getColumnIndex(landButton);
 		int row = GridPane.getRowIndex(landButton);
 		Land newLand = new Land(col, row);
+		Land selectedLand = Controller.landPlots[col][row];
 		if (Land.landBuyEnable) {
 			if (currentP.landGrants > 0) {//check for land grants
 				currentP.landGrants--;
@@ -339,8 +340,8 @@ public class GameController implements Initializable {
                 Timer.endTurn();
             }
 
-		} else if (currentP.muleBuyEnable) {
-			boolean muleBought = currentP.buyMule(true, mule, Controller.landPlots[col][row]);//buy mule / return false if mule has been lost
+		} else if (selectedLand.getMuleBuyEnable()) {
+			boolean muleBought = currentP.buyMule(true, mule, selectedLand);//buy mule / return false if mule has been lost
 			if (muleBought) {//if !muleLost
 				Image mulePic =  new Image("gameConfig/UIFiles/Media/aMule.png");
 				ImageView muleView = new ImageView();
@@ -348,15 +349,16 @@ public class GameController implements Initializable {
 				muleView.setFitWidth(50);
 				muleView.setPreserveRatio(true);
 				GridPane.setConstraints(muleView, col, row, 1, 1);
-				muleView.setId(currentP.getName());
+				muleView.setId(String.valueOf(col) + String.valueOf(row));
 				grid.getChildren().add(muleView);
 			}
 		} else {
-			if (mule.getType() == Controller.landPlots[col][row].getMuleType()) {
-				boolean muleBought = currentP.buyMule(false, mule, Controller.landPlots[col][row]);
+			if (mule.getType() == selectedLand.getMuleType()) {
+				boolean muleBought = currentP.buyMule(false, mule, selectedLand);
 				if (!muleBought) {
 					for (Node node : grid.getChildren()) {
-						if (Objects.equals(currentP.getName(), node.getId())) {
+						String temp = String.valueOf(col) + String.valueOf(row);
+						if (Objects.equals(temp, node.getId())) {
 							grid.getChildren().remove(node);
 							break;
 						}
@@ -513,7 +515,6 @@ public class GameController implements Initializable {
 		newStage.hide();
 		errorStage.show();
 		errorStage.toFront();
-
 	}
 
 	public void oreErrorMessage(ActionEvent e) {

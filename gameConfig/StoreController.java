@@ -3,9 +3,12 @@ package gameConfig;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -84,16 +87,33 @@ public class StoreController implements Initializable {
 
     @FXML
     public void buyMuleButtonClicked(ActionEvent event) {
-        Player p = Turns.getTurn();
-        p.muleBuyEnable = true;
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
+        this.messageBox();
     }
 
     @FXML
     public void sellMuleButtonClicked(ActionEvent event) {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
+        this.messageBox();
+    }
+
+    private void messageBox() {
+        Stage stage = new Stage();
+        stage.setTitle("Buying/Selling a Mule");
+        GridPane grid = new GridPane();
+        Label label = new Label("Please select one of your land plots to emplace/sell mule.");
+        label.setFont(new Font("American Typewriter", 15));
+        Button errorButton = new Button("Ok");
+        errorButton.setFont(new Font("American Typewriter", 17));
+        errorButton.setOnAction((ActionEvent e) -> stage.close());
+        grid.add(label, 0, 0);
+        grid.add(errorButton, 1, 1);
+        Scene errorScene = new Scene(grid);
+        stage.setScene(errorScene);
+        stage.show();
+        stage.toFront();
     }
 
     @FXML
