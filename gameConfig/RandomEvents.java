@@ -29,6 +29,11 @@ public class RandomEvents {
 
 	//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
 
+	/**
+	 *
+	 * @param p the player to have the event occur to
+	 * @return string of the event message
+	 */
 	public String determineRandomEvent(Player p){
 
 		int chance = (int)(Math.random() * 100);
@@ -106,6 +111,10 @@ public class RandomEvents {
 			return "NVM";
 	}
 
+	/**
+	 *
+	 * @return m the round probability
+	 */
 	public static int calculateM(){
 		int r = Turns.rounds;
 		int m;
@@ -122,6 +131,10 @@ public class RandomEvents {
 		return m;
 	}
 
+	/**
+	 *
+	 * @param message the message the pass into the message box
+	 */
 	public static void messageBox(String message) {
 		Stage errorStage = new Stage();
 		errorStage.setTitle("Random Event!");

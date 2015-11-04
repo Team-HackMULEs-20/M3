@@ -15,6 +15,10 @@ public class TurnsTest {
     private Player[] playersByScore;
     private static final int TIMEOUT = 200;
 
+    /**
+     *
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         Controller.level = "Beginner";
@@ -33,12 +37,20 @@ public class TurnsTest {
         playersByScore[3] = playersBefore[1];
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test(timeout = TIMEOUT)
     public void testSortByScore() throws Exception {
         Turns.sortByScore();
         assertArrayEquals(playersByScore, playersBefore);
     }
 
+    /**
+     * 
+     * @throws Exception
+     */
     @Test(timeout = TIMEOUT)
     public void testTimeForTurn() throws Exception {
         playersBefore[0].addSubFood(-6);

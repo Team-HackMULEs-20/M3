@@ -23,6 +23,9 @@ public class Auction {
         landNotTaken = 44;
     }
 
+    /**
+     * @return auctionTime the boolean value if it is time to auction or not
+     */
     // AUCTIONING
     public static boolean isAuctionTime() {
         boolean auctionTime = false;
@@ -42,6 +45,9 @@ public class Auction {
         return auctionTime;
     }
 
+    /**
+     * @return none
+     */
     public void startAuction() {
         auctionStage = new Stage();
         try {
@@ -59,6 +65,11 @@ public class Auction {
         }
     }
 
+    /**
+     *
+     * @param p the player to place bid one
+     * @param bidAmount the amount to bid
+     */
     public void placeBid(Player p, int bidAmount) {
         Land plot = getCurrentLandAuction();
         if (bidAmount > startingBid && p.getMoney() > bidAmount) {
@@ -69,15 +80,28 @@ public class Auction {
         }
     }
 
+    /**
+     *
+     * @return Player that was the last bidder
+     */
     public static Player getLastBidder() {
         return Land.latestBidder;
     }
 
+    /**
+     *
+     * @param plot the land plot buy
+     * @param p player that won the bid
+     */
     public static void giveLandToBidder(Land plot, Player p) {
         bidWinner = p;
         plot.buyLand(bidWinner);
     }
 
+    /**
+     *
+     * @return Land that is currently being auctioned
+     */
     public static Land getCurrentLandAuction() {
         return auctionLand[currentLand - 1];
     }

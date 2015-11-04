@@ -22,10 +22,21 @@ public class RandMap{
         this.row = row;
     }
 
+    /**
+     *
+     * @return row the row of the grid
+     */
     public int getRow() {return row;}
-
+    /**
+     *
+     * @return col the column of the grid
+     */
     public int getCol() {return col;}
 
+    /**
+     *
+     * @throws IOException
+     */
     public void setImages() throws IOException {
 
         File file = new File("UIFiles/Media/RandMapTiles");

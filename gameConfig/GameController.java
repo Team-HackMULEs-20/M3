@@ -96,7 +96,11 @@ public class GameController implements Initializable {
 	public static Scene townScene, storeScene,
 			selectScene, landBuyIntScene, pubGambleScene, assayScene;
 
-
+	/**
+	 *
+	 * @param fxmlFileLocation URL for the file location
+	 * @param resources rousourcebundle to check resources
+	 */
 	// TURNS AND SETUP
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -110,6 +114,7 @@ public class GameController implements Initializable {
 				"check your FXML file 'TownMap.fxml'.";
 	}
 
+
 	@FXML
 	public static void beginTurn() {
 		Launcher.primaryStage.hide();
@@ -120,6 +125,10 @@ public class GameController implements Initializable {
 		start.show();
 	}
 
+	/**
+	 *
+	 * @param event actionevent to check button
+	 */
 	@FXML
 	public void startButtonClicked(ActionEvent event) {
 		Player currentPlayer = Turns.getTurn();
@@ -185,6 +194,10 @@ public class GameController implements Initializable {
 
 	}
 
+	/**
+	 *
+	 * @param event actionevent to check button source
+	 */
 	@FXML
 	public void bidButtonClicked(ActionEvent event) {
 		if (event.getSource() == bidButton) {
@@ -197,6 +210,10 @@ public class GameController implements Initializable {
 		}
 	}
 
+	/**
+	 *
+	 * @param event actionevent to check button source
+	 */
 	@FXML
 	public void selectionPhase(ActionEvent event) {
 		if (event.getSource() == selectLand) {
@@ -212,6 +229,10 @@ public class GameController implements Initializable {
 		}
 	}
 
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
 	//TOWN BUTTONS
 	@FXML
 	public void townButtonClicked(ActionEvent e) {
@@ -236,6 +257,10 @@ public class GameController implements Initializable {
 		}
 	}
 
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
 	@FXML
 	public void backButtonClicked(ActionEvent e) {
 		newStage = new Stage();
@@ -247,7 +272,10 @@ public class GameController implements Initializable {
 		Stage stage = (Stage) backButton.getScene().getWindow();
 		stage.close();
 	}
-
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
 	//LAND OFFICE
 	@FXML
 	public void landOfficeButtonClicked(ActionEvent e) {
@@ -272,7 +300,10 @@ public class GameController implements Initializable {
 		Stage stage = (Stage) landOfficeButton.getScene().getWindow();
 		stage.close();
 	}
-
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
 	@FXML
 	public void buyLandButtonClicked(ActionEvent e) {
 		newStage = new Stage();
@@ -289,7 +320,10 @@ public class GameController implements Initializable {
 			newStage.show();
 		}
 	}
-
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
 	@FXML
 	public void landButtonClicked(ActionEvent e) {
 		Mule mule = StoreController.potentialMule;
@@ -377,7 +411,10 @@ public class GameController implements Initializable {
 		}
 		infoBar.updateInfoBar();
 	}
-
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
 	//PUB
 	@FXML
     public void pubButtonClicked(ActionEvent e) {
@@ -401,7 +438,10 @@ public class GameController implements Initializable {
         Stage stage = (Stage) pubButton.getScene().getWindow();
         stage.close();
     }
-
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
     @FXML
     public void gambleButtonClicked(ActionEvent e) {
         newStage = new Stage();
@@ -425,7 +465,10 @@ public class GameController implements Initializable {
         Stage stage = (Stage) backButton.getScene().getWindow();
         stage.close();
     }
-
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
     @FXML
     public void gambleConfirm(ActionEvent e) {
         if (e.getSource() == gambleOkButton) {
@@ -433,7 +476,10 @@ public class GameController implements Initializable {
         Stage stage = (Stage) gambleOkButton.getScene().getWindow();
         stage.close();
     }
-
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
 	//STORE
 	@FXML
     public void storeButtonClicked(ActionEvent e) {
@@ -458,7 +504,10 @@ public class GameController implements Initializable {
         Stage stage = (Stage) storeButton.getScene().getWindow();
         stage.close();
     }
-
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
 	@FXML
 	public void assayBackButtonClicked(ActionEvent e) {
 		newStage = new Stage();
@@ -471,12 +520,18 @@ public class GameController implements Initializable {
 		stage.close();
 
 	}
-
+	/**
+	 *
+	 * @param event actionevent to check button source
+	 */
 	@FXML
 	public void mineButtonClicked(ActionEvent event) {
 		System.out.println("Mine button clicked");
 	}
-
+	/**
+	 *
+	 * @param event actionevent to check button source
+	 */
 	@FXML
 	public void assayOfficeButtonClicked(ActionEvent event) {
 		newStage = new Stage();
@@ -496,7 +551,10 @@ public class GameController implements Initializable {
 			newStage.show();
 		}
 	}
-
+	/**
+	 *
+	 * @param message string to show on error box
+	 */
 	public static void errorMessageBox(String message) {
 		Stage errorStage = new Stage();
 		errorStage.setTitle("Error!");
@@ -515,7 +573,10 @@ public class GameController implements Initializable {
 		errorStage.toFront();
 
 	}
-
+	/**
+	 *
+	 * @param e actionevent to check button source
+	 */
 	public void oreErrorMessage(ActionEvent e) {
 		if(e.getSource() == oreOkButton) {
 			if (!storeWinCreated) {

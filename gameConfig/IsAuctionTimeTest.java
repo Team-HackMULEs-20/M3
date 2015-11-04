@@ -13,6 +13,10 @@ public class IsAuctionTimeTest {
     private Boolean[] auctionTest;
     private Boolean[] auctionCheck;
 
+    /**
+     *
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         Controller.landPlots = new Land[0][0];
@@ -32,6 +36,10 @@ public class IsAuctionTimeTest {
 
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void isAuctionTime() throws Exception {
         assertArrayEquals(auctionCheck, auctionTest);

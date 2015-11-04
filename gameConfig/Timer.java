@@ -11,6 +11,10 @@ class Timer {
     private static Integer timeLeft;// beginTime;
     private Timeline timeline;
 
+    /**
+     *
+     * @param beginTime the int to begin timer at
+     */
     public Timer(int beginTime) {
         timeLeft = beginTime;
     }
@@ -47,6 +51,10 @@ class Timer {
         InfoBar.endButton.fire();
     }
 
+    /**
+     *
+     * @return timeLeft the int of time left
+     */
     public static int getTimeLeft() {return timeLeft;}
 
     public static void main(String[] args) {

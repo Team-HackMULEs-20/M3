@@ -29,6 +29,11 @@ public class StoreController implements Initializable {
     public static Store store;
     public static Mule potentialMule;
 
+    /**
+     *
+     * @param fxmlFileLocation the fxml file where the file is located
+     * @param resourceBundle group of resources
+     */
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resourceBundle) {
         this.store = new Store();
@@ -58,6 +63,10 @@ public class StoreController implements Initializable {
         smithoreQuantityLabel.setText(String.valueOf(store.getSmithQuantity()));
     }
 
+    /**
+     *
+     * @param e the actionevent to check button source
+     */
     @FXML
     public void updateMuleCostLabel(ActionEvent e) {
         System.out.println("update mule cost button clicked");
@@ -70,6 +79,10 @@ public class StoreController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param e the actionevent to check button source
+     */
     @FXML
     public void backButtonClicked(ActionEvent e) {
         Stage newStage = new Stage();
@@ -82,6 +95,10 @@ public class StoreController implements Initializable {
         stage.close();
     }
 
+    /**
+     *
+     * @param event the actionevent to check button source
+     */
     @FXML
     public void buyMuleButtonClicked(ActionEvent event) {
         Player p = Turns.getTurn();
@@ -90,12 +107,20 @@ public class StoreController implements Initializable {
         stage.close();
     }
 
+    /**
+     *
+     * @param event actionevent to check button source
+     */
     @FXML
     public void sellMuleButtonClicked(ActionEvent event) {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     *
+     * @param e the actionevent to check button source
+     */
     @FXML
     public void buyFoodButtonClicked(ActionEvent e) {
         Player p = Turns.getTurn();
@@ -103,7 +128,10 @@ public class StoreController implements Initializable {
         this.updateStoreLabels();
         GameController.infoBar.updateInfoBar();
     }
-
+    /**
+     *
+     * @param e the actionevent to check button source
+     */
     @FXML
     public void sellFoodButtonClicked(ActionEvent e) {
         Player p = Turns.getTurn();
@@ -111,7 +139,10 @@ public class StoreController implements Initializable {
         this.updateStoreLabels();
         GameController.infoBar.updateInfoBar();
     }
-
+    /**
+     *
+     * @param e the actionevent to check button source
+     */
     @FXML
     public void buyEnergyButtonClicked(ActionEvent e) {
         Player p = Turns.getTurn();
@@ -119,7 +150,10 @@ public class StoreController implements Initializable {
         this.updateStoreLabels();
         GameController.infoBar.updateInfoBar();
     }
-
+    /**
+     *
+     * @param e the actionevent to check button source
+     */
     @FXML
     public void sellEnergyButtonClicked(ActionEvent e) {
         Player p = Turns.getTurn();
@@ -127,7 +161,10 @@ public class StoreController implements Initializable {
         this.updateStoreLabels();
         GameController.infoBar.updateInfoBar();
     }
-
+    /**
+     *
+     * @param e the actionevent to check button source
+     */
     @FXML
     public void buyOreButtonClicked(ActionEvent e) {
         Player p = Turns.getTurn();
@@ -135,7 +172,10 @@ public class StoreController implements Initializable {
         this.updateStoreLabels();
         GameController.infoBar.updateInfoBar();
     }
-
+    /**
+     *
+     * @param e the actionevent to check button source
+     */
     @FXML
     public void sellOreButtonClicked(ActionEvent e) {
         Player p = Turns.getTurn();
@@ -143,7 +183,10 @@ public class StoreController implements Initializable {
         this.updateStoreLabels();
         GameController.infoBar.updateInfoBar();
     }
-
+    /**
+     *
+     * @param e the actionevent to check button source
+     */
     @FXML
     public void buyCrysButtonClicked(ActionEvent e) {
         Player p = Turns.getTurn();
@@ -151,7 +194,10 @@ public class StoreController implements Initializable {
         this.updateStoreLabels();
         GameController.infoBar.updateInfoBar();
     }
-
+    /**
+     *
+     * @param e the actionevent to check button source
+     */
     @FXML
     public void sellCrysButtonClicked(ActionEvent e) {
         Player p = Turns.getTurn();

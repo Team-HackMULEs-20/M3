@@ -57,6 +57,12 @@ public class Store {
     //FOOD: initial q-c = 16-30
     // with each food sold / bought, price changes by $2
     // food sold to the store at $5 less than they cost
+
+    /**
+     *
+     * @param buy boolean if the item is bought
+     * @param customer the player buying or selling
+     */
     public void buySellFood(boolean buy, Player customer) {
         if (buy && foodQuantity == 0) {
             GameController.errorMessageBox("Not enough Food in the store");
@@ -88,6 +94,12 @@ public class Store {
     // ENERGY: initial q-c = 16-25
     // with each sold / bought, price changes by $2
     // sold to the store at $5 less than they cost
+
+    /**
+     *
+     * @param buy boolean if the item is bought
+     * @param customer the customer buying or selling
+     */
     public void buySellEnergy(boolean buy, Player customer) {
         if (buy && energyQuantity == 0) {
             GameController.errorMessageBox("Not enough Energy in the store");
@@ -117,6 +129,12 @@ public class Store {
     // Smithore: initial q-c = 0-50
     // with each sold / bought, price changes by $5 (only for greater than 1)
     // sold to the store at $8 less than they cost
+
+    /**
+     *
+     * @param buy boolean if bought
+     * @param customer player buying or selling
+     */
     public void buySellSmithore(boolean buy, Player customer) {
         if (buy && smithQuantity == 0) {
             GameController.errorMessageBox("Not enough Smithore in the store");
@@ -154,6 +172,12 @@ public class Store {
     // CHRYSTITE: initial q-c = 0-100
     // with each sold / bought, price changes by $10 (only for greater than 1)
     // sold to the store at $15 less than they cost
+
+    /**
+     *
+     * @param buy boolean if bought
+     * @param customer player buying or selling
+     */
     public void buySellChrystite(boolean buy, Player customer) {
         if (buy && crysQuantity == 0) {
             GameController.errorMessageBox("Not enough Crystite in the store.");
@@ -188,42 +212,73 @@ public class Store {
         }
     }
 
+    /**
+     *
+     * @return foodCost the cost of food
+     */
     public int getFoodCost() {
         return foodCost;
     }
-
+    /**
+     *
+     * @return foodQuantity the quantity of food
+     */
     public int getFoodQuantity() {
         return foodQuantity;
     }
-
+    /**
+     *
+     * @return energyCost the cost of energy
+     */
     public int getEnergyCost() {
         return energyCost;
     }
-
+    /**
+     *
+     * @return energyQuantity the quantity of energy
+     */
     public int getEnergyQuantity() {
         return energyQuantity;
     }
-
+    /**
+     *
+     * @return smithCost the cost of smithore
+     */
     public int getSmithCost() {
         return smithCost;
     }
-
+    /**
+     *
+     * @return smithQuantity the quantity of smithore
+     */
     public int getSmithQuantity() {
         return smithQuantity;
     }
-
+    /**
+     *
+     * @return crysCost the cost of crystite
+     */
     public int getCrysCost() {
         return crysCost;
     }
-
+    /**
+     *
+     * @return crysQuantity the quantity of crystite
+     */
     public int getCrysQuantity() {
         return crysQuantity;
     }
-
+    /**
+     *
+     * @return muleQuantity the quantity of mule
+     */
     public int getMuleQuantity() {
         return muleQuantity;
     }
-
+    /**
+     *
+     * @return muleCost the cost of mule
+     */
     public int getMuleCost() {
         return muleCost;
     }

@@ -12,6 +12,10 @@ public class Turns {
         playerTurn = 1;
     }
 
+    /**
+     *
+     * @return player whose turn it is
+     */
     public static Player getTurn() {
         if (playerTurn > players.length) {
             rounds++;
@@ -47,6 +51,11 @@ public class Turns {
         }
     }
 
+    /**
+     *
+     * @param player the player whose turn it is
+     * @return timeOfTurn the int representing the time of turn
+     */
     public static int timeForTurn(Player player) {
         int foodCount = player.getFood();
         if (foodCount == 0) {

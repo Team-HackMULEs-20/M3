@@ -63,6 +63,11 @@ public class Controller implements Initializable {
 
 	private LandType[] landTypes = LandType.standardMap();
 
+	/**
+	 *
+	 * @param fxmlFileLocation fxml file to add button to
+	 * @param resources resoucebundle to add buttons to
+	 */
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
 		assert nextButton != null : "fx:id=\"nextButton\" was not injected: " +
@@ -256,6 +261,10 @@ public class Controller implements Initializable {
 		}
 	}
 
+	/**
+	 *
+	 * @param event actionevent to check button
+	 */
 	public void errorBox(ActionEvent event) {
 		if (event.getSource() == okButton) {
 			if (count == 1) {

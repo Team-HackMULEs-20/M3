@@ -16,6 +16,11 @@ public class Launcher extends Application {
     public static Scene errorMessage;
     public static Scene oreErrorScene;
 
+    /**
+     *
+     * @param primaryStage the main stage of the game
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {

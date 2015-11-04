@@ -9,6 +9,10 @@ public class Mule {
 	private int cost;
 	private Land position;
 
+	/**
+	 *
+	 * @param t the type of mule to set the mule to
+	 */
 	public Mule(Type t) {
 		type = t;
 		this.cost = 100;
@@ -24,26 +28,50 @@ public class Mule {
 		}
 	}
 
+	/**
+	 *
+	 * @return type the type of mule
+	 */
 	public Type getType() {
 		return type;
 	}
 
+	/**
+	 *
+	 * @return cost the cost of the mule
+	 */
 	public int getCost() {
 		return cost;
 	}
 
+	/**
+	 *
+	 * @param p the player to set the owner to
+	 */
 	public void setOwner(Player p) {
 		owner = p;
 	}
 
+	/**
+	 *
+	 * @return owner the owner of the mule
+	 */
 	public Player getOwner() {
 		return owner;
 	}
 
+	/**
+	 *
+	 * @param p the position to set the mule to
+	 */
 	public void setPosition(Land p) {
 		position = p;
 	}
 
+	/**
+	 *
+	 * @return position the position of the land
+	 */
 	public Land getPosition() {
 		return position;
 	}
@@ -52,6 +80,12 @@ public class Mule {
 		FOOD, ENERGY, SMITHORE, CRYSTITE
 	}
 
+	/**
+	 *
+	 * @param typeMule the type of mule to produce
+	 * @param plotType the type of land type to produce on
+	 * @param p the player that owns the mule
+	 */
 	public static void produce(Type typeMule, LandType plotType, Player p) {
 		Random randomInt = new Random();
 		if (plotType.equals(LandType.RIVER)) {
