@@ -3,7 +3,6 @@ package gameConfig;
 import javafx.scene.paint.Color;
 import org.junit.Before;
 import org.junit.Test;
-import org.omg.CORBA.TIMEOUT;
 
 import static org.junit.Assert.*;
 
