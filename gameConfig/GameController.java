@@ -341,7 +341,8 @@ public class GameController implements Initializable {
             }
 
 		} else if (currentP.muleBuyEnable) {
-			boolean muleBought = currentP.buyMule(new Mule(currentMuleType), newLand);//buy mule / return false if mule has been lost
+			Mule mule = new Mule(currentMuleType);
+			boolean muleBought = currentP.buyMule(mule, newLand);//buy mule / return false if mule has been lost
 			if (muleBought) {//if !muleLost
 				Image mulePic =  new Image("gameConfig/UIFiles/Media/aMule.png");
 				ImageView muleView = new ImageView();
@@ -350,6 +351,8 @@ public class GameController implements Initializable {
 				muleView.setPreserveRatio(true);
 				GridPane.setConstraints(muleView, col, row, 1, 1);
 				grid.getChildren().add(muleView);
+				//currentP.mulesOwned.add(mule);
+				infoBar.updateInfoBar();
 			}
 		}
 	}

@@ -32,12 +32,16 @@ public class Turns {
     }
 
     public static void sortByScore() {
-        for (int i = 0; i < players.length - 1; i++) {
-            if (players[i].getScore() > players[i + 1].getScore()) {
-                Player temp = players[i + 1];
-                players[i + 1] = players[i];
-                players[i] = temp;
+        for (int i = 0; i < players.length; i++) {
+            int min = i;
+            for (int j = i + 1; j < players.length; j++) {
+                if (players[i].getScore() > players[j].getScore()) {
+                    min = j;
+                }
             }
+            Player temp = players[i];
+            players[i] = players[min];
+            players[min] = temp;
         }
     }
 
