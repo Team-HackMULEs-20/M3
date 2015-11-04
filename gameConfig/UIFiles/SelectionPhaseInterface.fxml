@@ -5,32 +5,34 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
-  <children>
-    <ImageView id="auction" fitHeight="400.0000305175781" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
-      <image>
-        <Image url="@Media/auction.jpg" preserveRatio="true" smooth="true" />
-      </image>
-    </ImageView>
-    <ImageView id="menu" fitHeight="329.9998779296875" fitWidth="572.0001220703125" layoutX="17.0" layoutY="38.0" pickOnBounds="true">
-      <image>
-        <Image url="@Media/menu.jpg" preserveRatio="true" smooth="true" />
-      </image>
-    </ImageView>
-    <Text layoutX="96.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Players get two land grants and two free pieces of land per game." textAlignment="CENTER" />
-    <Text layoutX="81.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click on the grid to purchase a $300 piece of land or choose to pass." textAlignment="CENTER" />
-    <Button fx:id="passSelect" layoutX="199.0" layoutY="313.0" mnemonicParsing="false" onAction="#selectionPhase" text="Pass" />
-    <Button fx:id="selectLand" layoutX="300.0" layoutY="313.0" mnemonicParsing="false" onAction="#selectionPhase" text="Select /  Purchase Land" />
-    <Text layoutX="60.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Players select land until all land has been claimed or all players have passed." textAlignment="CENTER" />
-    <ImageView id="gavel" fitHeight="147.0001220703125" fitWidth="208.0" layoutX="182.0" layoutY="92.0" pickOnBounds="true">
-      <image>
-        <Image url="@Media/gavel.png" preserveRatio="true" smooth="true" />
-      </image>
-    </ImageView>
-    <Text layoutX="229.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land Selection Phase">
-      <font>
-        <Font size="16.0" />
-      </font>
-    </Text>
-  </children>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
+  <ImageView id="auction" fitHeight="400.0000305175781" fitWidth="600.0" layoutX="0.0" layoutY="0.0"
+             pickOnBounds="true">
+    <Image url="@Media/auction.jpg" preserveRatio="true" smooth="true"/>
+  </ImageView>
+  <ImageView id="menu" fitHeight="329.9998779296875" fitWidth="572.0001220703125" layoutX="17.0" layoutY="38.0"
+             pickOnBounds="true">
+    <Image url="@Media/menu.jpg" preserveRatio="true" smooth="true"/>
+  </ImageView>
+  <Text layoutX="96.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0"
+        text="Players get two land grants and two free pieces of land per game." textAlignment="CENTER"/>
+  <Text layoutX="81.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0"
+        text="Click on the grid to purchase a $300 piece of land or choose to pass." textAlignment="CENTER"/>
+  <Button fx:id="passSelect" layoutX="199.0" layoutY="313.0" mnemonicParsing="false" onAction="#selectionPhase"
+          text="Pass"/>
+  <Button fx:id="selectLand" layoutX="300.0" layoutY="313.0" mnemonicParsing="false" onAction="#selectionPhase"
+          text="Select /  Purchase Land"/>
+  <Text layoutX="60.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0"
+        text="Players select land until all land has been claimed or all players have passed." textAlignment="CENTER"/>
+  <ImageView id="gavel" fitHeight="147.0001220703125" fitWidth="208.0" layoutX="182.0" layoutY="92.0"
+             pickOnBounds="true">
+    <Image url="@Media/gavel.png" preserveRatio="true" smooth="true"/>
+  </ImageView>
+  <Text layoutX="229.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land Selection Phase">
+    <font>
+      <Font size="16.0"/>
+    </font>
+  </Text>
 </AnchorPane>
