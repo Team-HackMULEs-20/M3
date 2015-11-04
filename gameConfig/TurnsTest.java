@@ -35,11 +35,6 @@ public class TurnsTest {
     @Test
     public void testSortByScore() throws Exception {
         Turns.sortByScore();
-        System.out.println("after sort");
-        for (Player i : playersBefore) {
-            System.out.println(i.getRace());
-            System.out.println(i.getScore());
-        }
         assertArrayEquals(playersByScore, playersBefore);
     }
 }

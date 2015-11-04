@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e5d5de5-beb0-4a9f-aaba-1ea8883596ee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Turns.java" afterPath="$PROJECT_DIR$/gameConfig/Turns.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/TurnsTest.java" afterPath="$PROJECT_DIR$/gameConfig/TurnsTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -107,8 +106,8 @@
               <file leaf-file-name="TurnsTest.java" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/gameConfig/TurnsTest.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.5376712">
-                      <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+                    <state vertical-scroll-proportion="0.5890411">
+                      <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
                       <folding />
                     </state>
                   </provider>
@@ -238,8 +237,8 @@
         <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
         <option value="$PROJECT_DIR$/gameConfig/Timer.java" />
         <option value="$PROJECT_DIR$/gameConfig/SortByScoreTest.java" />
-        <option value="$PROJECT_DIR$/gameConfig/TurnsTest.java" />
         <option value="$PROJECT_DIR$/gameConfig/Turns.java" />
+        <option value="$PROJECT_DIR$/gameConfig/TurnsTest.java" />
       </list>
     </option>
   </component>
@@ -749,12 +748,6 @@
       <option name="number" value="Default" />
       <updated>1442528931836</updated>
     </task>
-    <task id="LOCAL-00011" summary="Began working on Pub/Gambling interface">
-      <created>1443040289693</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1443040289693</updated>
-    </task>
     <task id="LOCAL-00012" summary="got pub screen to show up when clicked (still need to get it to go away)">
       <created>1443042602128</created>
       <option name="number" value="00012" />
@@ -1043,7 +1036,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446602405776</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Fixed sortByScore method and JUnit test">
+      <created>1446603196539</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1446603196539</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -1125,7 +1124,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update Store Purchases" />
     <MESSAGE value="Minor Changes" />
     <MESSAGE value="Added Crystite variable and get &amp; addsub functions" />
     <MESSAGE value="Updated store &amp; interface" />
@@ -1150,7 +1148,8 @@
     <MESSAGE value="removing print statements" />
     <MESSAGE value="added ore shortage error" />
     <MESSAGE value="Fixed sortByScore method and added my JUnit test for it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed sortByScore method and added my JUnit test for it" />
+    <MESSAGE value="Fixed sortByScore method and JUnit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed sortByScore method and JUnit test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1551,18 +1550,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/TurnsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5376712">
-          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/Turns.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28231293">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/TurnsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5890411">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
           <folding />
         </state>
       </provider>
