@@ -5,8 +5,6 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
-  <children>
     <Button fx:id="gambleOkButton" layoutX="105.0" layoutY="105.0" mnemonicParsing="false" onAction = "#gambleConfirm" text="OK" />
     <Text layoutX="34.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You've Successfully Gambled&#10;&#10;the Rest of Your Time!" textAlignment="CENTER" />
-  </children>
 </AnchorPane>
