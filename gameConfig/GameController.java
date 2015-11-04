@@ -232,7 +232,6 @@ public class GameController implements Initializable {
 				newStage.setScene(townScene);
 				newStage.show();
 			}
-			Player p = Turns.getTurn();
 		}
 	}
 
@@ -340,7 +339,7 @@ public class GameController implements Initializable {
                 Timer.endTurn();
             }
 
-		} else if (selectedLand.getMuleBuyEnable()) {
+		} else if (StoreController.buy) {
 			boolean muleBought = currentP.buyMule(true, mule, selectedLand);//buy mule / return false if mule has been lost
 			if (muleBought) {//if !muleLost
 				Image mulePic =  new Image("gameConfig/UIFiles/Media/aMule.png");
@@ -352,8 +351,8 @@ public class GameController implements Initializable {
 				muleView.setId(String.valueOf(col) + String.valueOf(row));
 				grid.getChildren().add(muleView);
 			}
-		} else {
-			if (mule.getType() == selectedLand.getMuleType()) {
+		} else if (!StoreController.buy) {
+			if (mule.getType() == selectedLand.getMuleType() && !StoreController.buy) {
 				boolean muleBought = currentP.buyMule(false, mule, selectedLand);
 				if (!muleBought) {
 					for (Node node : grid.getChildren()) {
@@ -372,7 +371,7 @@ public class GameController implements Initializable {
 					}
 					currentP.mulesOwned.remove(pos);
 				}
-			} else {
+			} else if (mule.getType() != selectedLand.getMuleType()) {
 				errorMessageBox("This land has a " + Controller.landPlots[col][row].getMuleType()
 						+ " mule on it, not a " + mule.getType() + " mule.");
 			}

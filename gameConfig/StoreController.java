@@ -31,11 +31,11 @@ public class StoreController implements Initializable {
 
     public static Store store;
     public static Mule potentialMule;
+    public static boolean buy;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resourceBundle) {
-        this.store = new Store();
-       // System.out.println(store);
+        store = new Store();
         muleQuantityLabel.setText(String.valueOf(store.getMuleQuantity()));
         muleCostLabel.setText(String.valueOf(store.getMuleCost()));
         foodCostLabel.setText(String.valueOf(store.getFoodCost()));
@@ -63,7 +63,6 @@ public class StoreController implements Initializable {
 
     @FXML
     public void updateMuleCostLabel(ActionEvent e) {
-        System.out.println("update mule cost button clicked");
         if (e.getSource() == muleChoice) {
             String choice = muleChoice.getSelectionModel().getSelectedItem().toString();
             choice = choice.toUpperCase().substring(0, choice.indexOf(" "));
@@ -90,6 +89,8 @@ public class StoreController implements Initializable {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
         this.messageBox();
+        this.updateStoreLabels();
+        buy  = true;
     }
 
     @FXML
@@ -97,6 +98,8 @@ public class StoreController implements Initializable {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
         this.messageBox();
+        this.updateStoreLabels();
+        buy = false;
     }
 
     private void messageBox() {
