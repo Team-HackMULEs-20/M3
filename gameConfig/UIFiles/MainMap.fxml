@@ -53,9 +53,7 @@
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="1" GridPane.rowIndex="2">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -63,51 +61,35 @@
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="2" GridPane.rowIndex="1">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="2" GridPane.rowIndex="2">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="2" GridPane.rowIndex="3">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="2" GridPane.rowIndex="4">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="3" GridPane.rowIndex="0">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="3" GridPane.rowIndex="1">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="3" GridPane.rowIndex="2">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="3" GridPane.rowIndex="3">
@@ -115,165 +97,111 @@
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="3" GridPane.rowIndex="4">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="6" GridPane.rowIndex="0">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="6" GridPane.rowIndex="1">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="6" GridPane.rowIndex="2">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="6" GridPane.rowIndex="4">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="7" GridPane.rowIndex="0">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="7" GridPane.rowIndex="2">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="7" GridPane.rowIndex="3">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="7" GridPane.rowIndex="4">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="8" GridPane.rowIndex="0">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="8" GridPane.rowIndex="3">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="river" fitHeight="86.8748779296875" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4"
                GridPane.rowIndex="0">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
     </ImageView>
     <ImageView id="river" fitHeight="86.8749008178711" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4"
                GridPane.rowIndex="1">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
     </ImageView>
     <ImageView id="river" fitHeight="78.875" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4"
                GridPane.rowIndex="3">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="5" GridPane.rowIndex="2">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="river" fitHeight="86.8748779296875" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4"
                GridPane.rowIndex="4">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
     </ImageView>
     <ImageView id="2mtns" fitHeight="78.0" fitWidth="67.0001220703125" pickOnBounds="true" GridPane.columnIndex="6"
                GridPane.rowIndex="3">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/2mtns.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/2mtns.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="5" GridPane.rowIndex="1">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="5" GridPane.rowIndex="3">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="5" GridPane.rowIndex="4">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="1mtn" fitHeight="79.0" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="1"
                GridPane.rowIndex="1">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png"/>
     </ImageView>
     <ImageView id="1mtn" fitHeight="79.0" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="2"
                GridPane.rowIndex="0">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png"/>
     </ImageView>
     <ImageView id="town" fitHeight="78.875" fitWidth="67.0000228881836" pickOnBounds="true" GridPane.columnIndex="4"
                GridPane.rowIndex="2">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/town.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/town.png"/>
     </ImageView>
     <ImageView id="3mtns" fitHeight="79.0" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="5"
                GridPane.rowIndex="0">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/3mtns.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/3mtns.png"/>
     </ImageView>
     <ImageView id="3mtns" fitHeight="80.0" fitWidth="67.0001220703125" pickOnBounds="true" GridPane.columnIndex="0"
                GridPane.rowIndex="2">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/3mtns.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/3mtns.png"/>
     </ImageView>
     <ImageView id="1mtn" fitHeight="80.0000228881836" fitWidth="67.0001220703125" pickOnBounds="true"
                GridPane.columnIndex="8" GridPane.rowIndex="2">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png"/>
     </ImageView>
     <ImageView id="2mtns" fitHeight="86.8748779296875" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="8"
                GridPane.rowIndex="4">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/2mtns.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/2mtns.png"/>
     </ImageView>
     <Button fx:id="townButton" mnemonicParsing="false" onAction="#townButtonClicked" opacity="0.0" prefHeight="79.0"
             prefWidth="66.0" text="Town" GridPane.columnIndex="4" GridPane.rowIndex="2"/>

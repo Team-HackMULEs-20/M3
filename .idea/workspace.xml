@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e5d5de5-beb0-4a9f-aaba-1ea8883596ee" name="Default" comment="infobar updated after random events">
+    <list default="true" id="9e5d5de5-beb0-4a9f-aaba-1ea8883596ee" name="Default" comment="code inspection work">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/M.U.L.E Game Setup.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/M.U.L.E Game Setup.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/PubGambleInterface.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/PubGambleInterface.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="M.U.L.E.-Project.iws" />
@@ -29,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GameController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34502923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -47,18 +45,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -101,8 +87,21 @@
       <file leaf-file-name="M.U.L.E Game Setup.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/M.U.L.E Game Setup.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.172414">
-              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+            <state vertical-scroll-proportion="-4.724138">
+              <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PubGambleInterface.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/PubGambleInterface.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.7883211">
+              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -127,8 +126,8 @@
       <file leaf-file-name="playerSetup.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.5517242">
-              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+            <state vertical-scroll-proportion="-4.724138">
+              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -200,7 +199,6 @@
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/playerStart.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/configError.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/LandBuyInterface.fxml" />
-        <option value="$PROJECT_DIR$/gameConfig/UIFiles/PubGambleInterface.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/TownMap.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/SelectionPhaseInterface.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/oreShortageError.fxml" />
@@ -231,6 +229,7 @@
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/RandomEvents.java" />
         <option value="$PROJECT_DIR$/gameConfig/GameController.java" />
+        <option value="$PROJECT_DIR$/gameConfig/UIFiles/PubGambleInterface.fxml" />
       </list>
     </option>
   </component>
@@ -690,12 +689,6 @@
       <option name="number" value="Default" />
       <updated>1442528931836</updated>
     </task>
-    <task id="LOCAL-00023" summary="Interfaces updated, selection phase specific screen created">
-      <created>1443638460051</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1443638460051</updated>
-    </task>
     <task id="LOCAL-00024" summary="updated screen">
       <created>1443638964800</created>
       <option name="number" value="00024" />
@@ -984,7 +977,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446753411905</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="code inspection work">
+      <created>1446753780304</created>
+      <option name="number" value="00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1446753780304</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -998,7 +997,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3231788" sideWeight="0.49427754" order="6" side_tool="false" content_ui="tabs" />
@@ -1007,9 +1006,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38013244" sideWeight="0.50858366" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38013244" sideWeight="0.4914163" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38013244" sideWeight="0.4914163" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13971397" sideWeight="0.4745098" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28344372" sideWeight="0.44992846" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28344372" sideWeight="0.44992846" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284091" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23032904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1066,7 +1065,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made InfoBar class &amp; changed some stuff" />
     <MESSAGE value="Fixed null pointer infobar error in pub" />
     <MESSAGE value="Infobar updated when gambling" />
     <MESSAGE value="Fixed issue of updating store labels. Created store controller" />
@@ -1091,7 +1089,8 @@
     <MESSAGE value="Save/Load game state works!" />
     <MESSAGE value="declaration redundancy edits" />
     <MESSAGE value="infobar updated after random events" />
-    <option name="LAST_COMMIT_MESSAGE" value="infobar updated after random events" />
+    <MESSAGE value="code inspection work" />
+    <option name="LAST_COMMIT_MESSAGE" value="code inspection work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1331,17 +1330,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/PubGambleInterface.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/LandType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1473,28 +1461,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/M.U.L.E Game Setup.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.172414">
-          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.5517242">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.030991735">
@@ -1548,12 +1514,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34502923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.724138">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/M.U.L.E Game Setup.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.724138">
+          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/PubGambleInterface.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7883211">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>

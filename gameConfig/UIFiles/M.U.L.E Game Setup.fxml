@@ -26,12 +26,10 @@
         <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES"/>
     </rowConstraints>
     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647">
-       <children>
-           <ImageView fitHeight="155.85806274414062" fitWidth="465.9998779296875" layoutX="67.0" layoutY="14.0"
-                      opacity="1.0" pickOnBounds="true" preserveRatio="true" smooth="true">
-               <Image url="@Media/Title_Mule.png"/>
-           </ImageView>
-       </children>
+        <ImageView fitHeight="155.85806274414062" fitWidth="465.9998779296875" layoutX="67.0" layoutY="14.0"
+                   opacity="1.0" pickOnBounds="true" preserveRatio="true" smooth="true">
+            <Image url="@Media/Title_Mule.png"/>
+        </ImageView>
     </AnchorPane>
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <font>
