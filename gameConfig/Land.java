@@ -54,10 +54,6 @@ public class Land implements Serializable {
 		this.owned = true;
 	}
 
-	public boolean getMuleBuyEnable() {
-		return muleBuyEnable;
-	}
-
 	public void setMuleBuyEnable(boolean newEnable) {
 		this.muleBuyEnable = newEnable;
 	}
