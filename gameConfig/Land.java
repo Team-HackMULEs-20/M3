@@ -12,7 +12,7 @@ public class Land implements Serializable {
 
 	private boolean hasMule;
 	public static Player latestBidder;
-	public LandType type;
+	private LandType type;
 	private boolean muleBuyEnable;
 
 
@@ -45,7 +45,7 @@ public class Land implements Serializable {
 
 	//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
 	public static int getBuyPrice() {return 300 + (Turns.rounds * (int)(Math.random() * (100 + 1))); }
-	public int getSellPrice() {
+	private int getSellPrice() {
 		return 400 + (int)(Math.random() * (200 + 1));
 	}
 

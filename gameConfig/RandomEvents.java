@@ -116,7 +116,7 @@ public class RandomEvents {
 	 *
 	 * @return m the round probability
 	 */
-	public static int calculateM(){
+	private static int calculateM(){
 		int r = Turns.rounds;
 		int m;
 

@@ -3,9 +3,9 @@ package gameConfig;
 import java.io.Serializable;
 
 public class Turns implements Serializable {
-    public static Player[] players;
+    private static Player[] players;
     public static int rounds;
-    public static int timeOfTurn;
+    private static int timeOfTurn;
     public static int playerTurn;
 
     public Turns(Player[] players) {

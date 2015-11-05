@@ -4,16 +4,16 @@ import java.io.Serializable;
 
 public class Store implements Serializable {
 
-	public int foodCost;
-    public int foodQuantity;
-    public int energyCost;
-    public int energyQuantity;
-    public int smithCost;
-    public int smithQuantity;
-    public int crysCost;
-    public int crysQuantity;
-    public final int muleCost;
-    public final int oreQuantity;
+	private int foodCost;
+    private int foodQuantity;
+    private int energyCost;
+    private int energyQuantity;
+    private int smithCost;
+    private int smithQuantity;
+    private int crysCost;
+    private int crysQuantity;
+    private final int muleCost;
+    private final int oreQuantity;
     public int muleQuantity;
 
     public Store() {
