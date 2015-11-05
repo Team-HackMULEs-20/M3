@@ -170,9 +170,6 @@ public class GameController implements Initializable {
 				System.out.println("Auction time");
 				auction.startAuction();
 			} */
-			if (Controller.loaded) {
-				numPasses = (int) Controller.loadData.get(4);
-			}
 			if (numPasses < Controller.numPlayer) {
 				System.out.println("Land Selection Phase");
 				selectPhase = true;
