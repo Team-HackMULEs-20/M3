@@ -148,6 +148,7 @@ public class GameController implements Initializable {
         randomEvents = new RandomEvents();
         String message;
         message = randomEvents.determineRandomEvent(currentPlayer);
+		infoBar.updateInfoBar();
 		if (event.getSource() == startButton) {
 			Timer timer = new Timer(Turns.timeForTurn(currentPlayer));
 			timer.start();

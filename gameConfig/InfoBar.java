@@ -1,6 +1,5 @@
 package gameConfig;
 
-import com.sun.javafx.fxml.builder.JavaFXSceneBuilder;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -16,7 +15,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.util.Objects;
 
 public class InfoBar {
