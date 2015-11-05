@@ -14,7 +14,6 @@ public class Auction {
     public static int landNotTaken;
     public static int numBids;
     public static Land[] auctionLand;
-    private static Player bidWinner;
     public static int currentLand;
 
     public Auction() {
@@ -94,7 +93,7 @@ public class Auction {
      * @param p player that won the bid
      */
     public static void giveLandToBidder(Land plot, Player p) {
-        bidWinner = p;
+        Player bidWinner = p;
         plot.buyLand(bidWinner);
     }
 
