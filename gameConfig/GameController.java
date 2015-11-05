@@ -122,11 +122,7 @@ public class GameController implements Initializable {
 
 	@FXML
 	public static void beginTurn() {
-		for (Node node : grid.getChildren()) {
-			if (node.getId() != null && !node.getId().equals("townButton")) {
-				node.setDisable(true);
-			}
-		}
+        grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(true));
 		Launcher.primaryStage.hide();
 		//newStage.hide();
 		Stage start = new Stage();
@@ -158,14 +154,12 @@ public class GameController implements Initializable {
 			Stage stage = (Stage) startButton.getScene().getWindow();
 			stage.close();
 			if (currentPlayer.landOwned.size() != 0 && currentPlayer.mulesOwned.size() != 0) {
-				for (Mule mule : currentPlayer.mulesOwned) {
-					if (mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
-							&& mule.getOwner() == currentPlayer) {
-						System.out.println("producing");
-						Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
-						infoBar.updateInfoBar();
-					}
-				}
+                currentPlayer.mulesOwned.stream().filter(mule -> mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
+                        && mule.getOwner() == currentPlayer).forEach(mule -> {
+                    System.out.println("producing");
+                    Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
+                    infoBar.updateInfoBar();
+                });
 			}
 			//store = new Store();
 			/* boolean auctionTime = auction.isAuctionTime();
@@ -226,11 +220,7 @@ public class GameController implements Initializable {
 	@FXML
 	public void selectionPhase(ActionEvent event) {
 		if (event.getSource() == selectLand) {
-			for (Node node : grid.getChildren()) {
-				if (node.getId() != null && !node.getId().equals("townButton")) {
-					node.setDisable(false);
-				}
-			}
+            grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
 			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
 				Land.landBuyEnable = true;
 			Stage stage = (Stage) selectLand.getScene().getWindow();
@@ -321,11 +311,7 @@ public class GameController implements Initializable {
 	public void buyLandButtonClicked(ActionEvent e) {
 		newStage = new Stage();
 		if (e.getSource() == landBuyButton) {
-			for (Node node : grid.getChildren()) {
-				if (node.getId() != null && !node.getId().equals("townButton")) {
-					node.setDisable(false);
-				}
-			}
+            grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
 			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
 				Land.landBuyEnable = true;
 			Stage stage = (Stage) landBuyButton.getScene().getWindow();
@@ -432,11 +418,7 @@ public class GameController implements Initializable {
 						+ " mule on it, not a " + mule.getType() + " mule.");
 			}
 		}
-		for (Node node : grid.getChildren()) {
-			if (node.getId() != null && !node.getId().equals("townButton")) {
-				node.setDisable(true);
-			}
-		}
+        grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(true));
 		infoBar.updateInfoBar();
 	}
 	/**

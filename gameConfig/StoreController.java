@@ -3,7 +3,6 @@ package gameConfig;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -128,11 +127,7 @@ public class StoreController implements Initializable {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
         GridPane grid = GameController.grid;
-        for (Node node : grid.getChildren()) {
-            if (node.getId() != null && !node.getId().equals("townButton")) {
-                node.setDisable(false);
-            }
-        }
+        grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
         this.messageBox();
         this.updateStoreLabels();
         buy  = true;
@@ -147,11 +142,7 @@ public class StoreController implements Initializable {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
         GridPane grid = GameController.grid;
-        for (Node node : grid.getChildren()) {
-            if (node.getId() != null && !node.getId().equals("townButton")) {
-                node.setDisable(false);
-            }
-        }
+        grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
         this.messageBox();
         this.updateStoreLabels();
         buy = false;
