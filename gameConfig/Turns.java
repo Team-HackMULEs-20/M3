@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Turns implements Serializable {
     private static Player[] players;
     public static int rounds;
-    private static int timeOfTurn;
+    public static int timeOfTurn;
     public static int playerTurn;
 
     public Turns(Player[] players) {

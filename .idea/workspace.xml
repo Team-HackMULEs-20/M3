@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e5d5de5-beb0-4a9f-aaba-1ea8883596ee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Auction.java" afterPath="$PROJECT_DIR$/gameConfig/Auction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Controller.java" afterPath="$PROJECT_DIR$/gameConfig/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/GameController.java" afterPath="$PROJECT_DIR$/gameConfig/GameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Land.java" afterPath="$PROJECT_DIR$/gameConfig/Land.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/RandomEvents.java" afterPath="$PROJECT_DIR$/gameConfig/RandomEvents.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Store.java" afterPath="$PROJECT_DIR$/gameConfig/Store.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/StoreController.java" afterPath="$PROJECT_DIR$/gameConfig/StoreController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Turns.java" afterPath="$PROJECT_DIR$/gameConfig/Turns.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/configError.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/configError.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.idea/workspace.xml" />
     </list>
     <ignored path="M.U.L.E.-Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,109 +29,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
+      <file leaf-file-name="configError.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/configError.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="545" column="53" selection-start-line="545" selection-start-column="53" selection-end-line="545" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#15443#15444#0" expanded="true" />
-                <element signature="e#15491#15492#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StoreController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameConfig/StoreController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="190" column="51" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+            <state vertical-scroll-proportion="-4.3448277">
+              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Store.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameConfig/Store.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-              <folding />
-            </state>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Turns.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameConfig/Turns.java">
+      <file leaf-file-name="MainMap.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state vertical-scroll-proportion="-4.137931">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameConfig/Launcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoadSaveGame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameConfig/LoadSaveGame.java">
+      <file leaf-file-name="M.U.L.E Game Setup.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/M.U.L.E Game Setup.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state vertical-scroll-proportion="-4.724138">
+              <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RandomEvents.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameConfig/RandomEvents.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="118" column="23" selection-start-line="118" selection-start-column="23" selection-end-line="118" selection-end-column="23" />
-              <folding />
-            </state>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
+      <file leaf-file-name="playerSetup.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2836439">
+              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Auction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameConfig/Auction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-              <folding />
-            </state>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RandMap.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gameConfig/RandMap.java">
+      <file leaf-file-name="storeInterface2.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1425781">
-              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+            <state vertical-scroll-proportion="-4.724138">
+              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -187,7 +142,6 @@
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/GambleConfirmation.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/AuctionWindow.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/playerStart.fxml" />
-        <option value="$PROJECT_DIR$/gameConfig/UIFiles/configError.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/LandBuyInterface.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/PubGambleInterface.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/TownMap.fxml" />
@@ -195,14 +149,12 @@
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/oreShortageError.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/AssayInterface.fxml" />
-        <option value="$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/LandType.java" />
         <option value="$PROJECT_DIR$/saveGame.ser" />
         <option value="$PROJECT_DIR$/gameConfig/Mule.java" />
         <option value="$PROJECT_DIR$/gameConfig/PlayerTest.java" />
         <option value="$PROJECT_DIR$/gameConfig/TurnsTest.java" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/M.U.L.E Game Setup.fxml" />
-        <option value="$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/LoadSaveGame.java" />
         <option value="$PROJECT_DIR$/gameConfig/Player.java" />
         <option value="$PROJECT_DIR$/gameConfig/Player.java" />
@@ -214,12 +166,15 @@
         <option value="$PROJECT_DIR$/gameConfig/Land.java" />
         <option value="$PROJECT_DIR$/gameConfig/Land.java" />
         <option value="$PROJECT_DIR$/gameConfig/RandomEvents.java" />
-        <option value="$PROJECT_DIR$/gameConfig/Turns.java" />
         <option value="$PROJECT_DIR$/gameConfig/StoreController.java" />
         <option value="$PROJECT_DIR$/gameConfig/Store.java" />
         <option value="$PROJECT_DIR$/gameConfig/Launcher.java" />
         <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
         <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
+        <option value="$PROJECT_DIR$/gameConfig/Turns.java" />
+        <option value="$PROJECT_DIR$/gameConfig/UIFiles/configError.fxml" />
+        <option value="$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml" />
+        <option value="$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml" />
       </list>
     </option>
   </component>
@@ -283,8 +238,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -317,27 +273,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="M.U.L.E.-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="M.U.L.E.-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameConfig" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UIFiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -697,12 +634,6 @@
       <option name="number" value="Default" />
       <updated>1442528931836</updated>
     </task>
-    <task id="LOCAL-00022" summary="updating player and land functions">
-      <created>1443623616991</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1443623616991</updated>
-    </task>
     <task id="LOCAL-00023" summary="Interfaces updated, selection phase specific screen created">
       <created>1443638460051</created>
       <option name="number" value="00023" />
@@ -991,7 +922,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446738345814</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="declaration redundancy edits">
+      <created>1446739068262</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1446739068263</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -1135,7 +1072,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1251,16 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/Timer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16506189">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/GambleConfirmation.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.137931">
@@ -1276,17 +1205,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.965517">
           <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/configError.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.275862">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1338,17 +1256,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/AssayInterface.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1371,17 +1278,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/PubGambleInterface.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1391,14 +1287,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/LandType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/Mule.java">
@@ -1419,28 +1307,6 @@
           <caret line="28" column="89" selection-start-line="28" selection-start-column="89" selection-end-line="28" selection-end-column="89" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/M.U.L.E Game Setup.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48231512">
-          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/Player.java">
@@ -1467,14 +1333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/Land.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/LoadSaveGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1491,6 +1349,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/RandMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/Auction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/LandType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/StoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="190" column="51" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/Store.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1502,7 +1392,7 @@
     <entry file="file://$PROJECT_DIR$/gameConfig/Turns.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1517,10 +1407,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="545" column="53" selection-start-line="545" selection-start-column="53" selection-end-line="545" selection-end-column="53" />
+          <caret line="398" column="0" selection-start-line="398" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#15443#15444#0" expanded="true" />
@@ -1529,36 +1437,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/StoreController.java">
+    <entry file="file://$PROJECT_DIR$/gameConfig/Land.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="190" column="51" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
+    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/M.U.L.E Game Setup.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="-4.724138">
+          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/Auction.java">
+    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/configError.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+        <state vertical-scroll-proportion="-4.3448277">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/RandMap.java">
+    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1425781">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+        <state vertical-scroll-proportion="-4.137931">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.724138">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2836439">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>

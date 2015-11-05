@@ -5,295 +5,387 @@
 <?import javafx.scene.layout.*?>
 
 
-<GridPane gridLinesVisible="true" prefHeight="397.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameConfig.GameController">
-    <children>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="86.87483978271484" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.000107629392" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="86.87486267089844" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="3">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="4">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00001525878906" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="3mtns" fitHeight="79.0" fitWidth="67.00002207031503" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/3mtns.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="0">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="0">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="0">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="2">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="3">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="7" GridPane.rowIndex="4">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="0">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="3">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="river" fitHeight="86.8748779296875" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="0">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/river.png" />
-            </image>
-        </ImageView>
-        <ImageView id="river" fitHeight="86.8749008178711" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/river.png" />
-            </image>
-        </ImageView>
-        <ImageView id="river" fitHeight="78.875" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/river.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="river" fitHeight="86.8748779296875" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/river.png" />
-            </image>
-        </ImageView>
-        <ImageView id="2mtns" fitHeight="78.0" fitWidth="67.0001220703125" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/2mtns.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/plain.png" />
-            </image>
-        </ImageView>
-        <ImageView id="1mtn" fitHeight="79.0" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png" />
-            </image>
-        </ImageView>
-        <ImageView id="1mtn" fitHeight="79.0" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png" />
-            </image>
-        </ImageView>
-        <ImageView id="town" fitHeight="78.875" fitWidth="67.0000228881836" pickOnBounds="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/town.png" />
-            </image>
-        </ImageView>
-        <ImageView id="3mtns" fitHeight="79.0" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="5" GridPane.rowIndex="0">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/3mtns.png" />
-            </image>
-        </ImageView>
-        <ImageView id="3mtns" fitHeight="80.0" fitWidth="67.0001220703125" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/3mtns.png" />
-            </image>
-        </ImageView>
-        <ImageView id="1mtn" fitHeight="80.0000228881836" fitWidth="67.0001220703125" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="2">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png" />
-            </image>
-        </ImageView>
-        <ImageView id="2mtns" fitHeight="86.8748779296875" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="8" GridPane.rowIndex="4">
-            <image>
-                <Image preserveRatio="true" smooth="true" url="@Media/2mtns.png" />
-            </image>
-        </ImageView>
-        <Button fx:id="townButton" mnemonicParsing="false" onAction="#townButtonClicked" opacity="0.0" prefHeight="79.0" prefWidth="66.0" text="Town" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="14.0" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" prefHeight="80.0" prefWidth="14.0" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" prefHeight="80.0" prefWidth="65.9998779296875" text="Land" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" prefHeight="80.0" prefWidth="67.0" text="Land" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="6" GridPane.rowIndex="0" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="0" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="8" GridPane.rowIndex="0" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="8" GridPane.rowIndex="3" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="8" GridPane.rowIndex="4" />
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-    </children>
+<GridPane gridLinesVisible="true" prefHeight="397.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameConfig.GameController">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
     </rowConstraints>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="86.87483978271484" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="0"
+               GridPane.rowIndex="1">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.000107629392" pickOnBounds="true"
+               GridPane.columnIndex="7" GridPane.rowIndex="1">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="86.87486267089844" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="0"
+               GridPane.rowIndex="3">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="0"
+               GridPane.rowIndex="4">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00001525878906" pickOnBounds="true"
+               GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="3mtns" fitHeight="79.0" fitWidth="67.00002207031503" pickOnBounds="true" GridPane.columnIndex="8"
+               GridPane.rowIndex="1">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/3mtns.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="2" GridPane.rowIndex="3">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="2" GridPane.rowIndex="4">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="3" GridPane.rowIndex="0">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="3" GridPane.rowIndex="1">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="3" GridPane.rowIndex="2">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="3" GridPane.rowIndex="3">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="3" GridPane.rowIndex="4">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="6" GridPane.rowIndex="0">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="6" GridPane.rowIndex="1">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="6" GridPane.rowIndex="2">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="6" GridPane.rowIndex="4">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="7" GridPane.rowIndex="0">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="7" GridPane.rowIndex="2">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="7" GridPane.rowIndex="3">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="7" GridPane.rowIndex="4">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="8" GridPane.rowIndex="0">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="8" GridPane.rowIndex="3">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="river" fitHeight="86.8748779296875" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4"
+               GridPane.rowIndex="0">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="river" fitHeight="86.8749008178711" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4"
+               GridPane.rowIndex="1">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="river" fitHeight="78.875" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4"
+               GridPane.rowIndex="3">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="5" GridPane.rowIndex="2">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="river" fitHeight="86.8748779296875" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="4"
+               GridPane.rowIndex="4">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/river.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="2mtns" fitHeight="78.0" fitWidth="67.0001220703125" pickOnBounds="true" GridPane.columnIndex="6"
+               GridPane.rowIndex="3">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/2mtns.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="5" GridPane.rowIndex="1">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="5" GridPane.rowIndex="3">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.00000762939453" pickOnBounds="true"
+               GridPane.columnIndex="5" GridPane.rowIndex="4">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="1mtn" fitHeight="79.0" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="1"
+               GridPane.rowIndex="1">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="1mtn" fitHeight="79.0" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="2"
+               GridPane.rowIndex="0">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="town" fitHeight="78.875" fitWidth="67.0000228881836" pickOnBounds="true" GridPane.columnIndex="4"
+               GridPane.rowIndex="2">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/town.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="3mtns" fitHeight="79.0" fitWidth="67.0" pickOnBounds="true" GridPane.columnIndex="5"
+               GridPane.rowIndex="0">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/3mtns.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="3mtns" fitHeight="80.0" fitWidth="67.0001220703125" pickOnBounds="true" GridPane.columnIndex="0"
+               GridPane.rowIndex="2">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/3mtns.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="1mtn" fitHeight="80.0000228881836" fitWidth="67.0001220703125" pickOnBounds="true"
+               GridPane.columnIndex="8" GridPane.rowIndex="2">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/1mtn.png"/>
+        </image>
+    </ImageView>
+    <ImageView id="2mtns" fitHeight="86.8748779296875" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="8"
+               GridPane.rowIndex="4">
+        <image>
+            <Image preserveRatio="true" smooth="true" url="@Media/2mtns.png"/>
+        </image>
+    </ImageView>
+    <Button fx:id="townButton" mnemonicParsing="false" onAction="#townButtonClicked" opacity="0.0" prefHeight="79.0"
+            prefWidth="66.0" text="Town" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="14.0" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" prefHeight="80.0" prefWidth="14.0" text="Land"
+            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" prefHeight="80.0" prefWidth="65.9998779296875" text="Land"
+            GridPane.columnIndex="8" GridPane.rowIndex="1"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" prefHeight="80.0" prefWidth="67.0" text="Land"
+            GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="6" GridPane.rowIndex="0"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="6" GridPane.rowIndex="1"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="0"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="1"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="8" GridPane.rowIndex="0"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="6" GridPane.rowIndex="2"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="2"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="8" GridPane.rowIndex="2"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="5" GridPane.rowIndex="3"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="5" GridPane.rowIndex="4"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="6" GridPane.rowIndex="3"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="6" GridPane.rowIndex="4"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="3"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="8" GridPane.rowIndex="3"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="4"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="8" GridPane.rowIndex="4"/>
+    <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+            onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
 </GridPane>
