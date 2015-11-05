@@ -93,8 +93,7 @@ public class Auction {
      * @param p player that won the bid
      */
     public static void giveLandToBidder(Land plot, Player p) {
-        Player bidWinner = p;
-        plot.buyLand(bidWinner);
+        plot.buyLand(p);
     }
 
     /**
