@@ -159,9 +159,7 @@ public class RandomEvents {
 		errorStage.setScene(errorScene);
 		errorStage.show();
 		errorStage.toFront();
-		errorButton.setOnAction((ActionEvent e) -> {
-			errorStage.close();
-		});
+		errorButton.setOnAction((ActionEvent e) -> errorStage.close());
 
 	}
 

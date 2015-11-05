@@ -155,14 +155,12 @@ public class GameController implements Initializable {
 			Stage stage = (Stage) startButton.getScene().getWindow();
 			stage.close();
 			if (currentPlayer.landOwned.size() != 0 && currentPlayer.mulesOwned.size() != 0) {
-				for (Mule mule : currentPlayer.mulesOwned) {
-					if (mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
-							&& mule.getOwner() == currentPlayer) {
-						System.out.println("producing");
-						Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
-						infoBar.updateInfoBar();
-					}
-				}
+                currentPlayer.mulesOwned.stream().filter(mule -> mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
+                        && mule.getOwner() == currentPlayer).forEach(mule -> {
+                    System.out.println("producing");
+                    Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
+                    infoBar.updateInfoBar();
+                });
 			}
 			//store = new Store();
 			/* boolean auctionTime = auction.isAuctionTime();
