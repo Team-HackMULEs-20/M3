@@ -308,6 +308,7 @@ public class Controller implements Initializable {
 			loadData = LoadSaveGame.load();
 			if (loadData != null) {
 				Controller.loaded = true;
+				GameController.numPasses = (int) Controller.loadData.get(4);
 				Parent gameRoot = null;
 				try {
 					gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));

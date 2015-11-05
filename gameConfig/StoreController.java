@@ -42,7 +42,8 @@ public class StoreController implements Initializable {
     public void initialize(URL fxmlFileLocation, ResourceBundle resourceBundle) {
         if (Controller.loaded) {
             store = (Store) Controller.loadData.get(2);
-        } else {
+        }
+        if (!Controller.loaded || store == null) {
             store = new Store();
         }
         muleQuantityLabel.setText(String.valueOf(store.getMuleQuantity()));

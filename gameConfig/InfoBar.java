@@ -1,5 +1,6 @@
 package gameConfig;
 
+import com.sun.javafx.fxml.builder.JavaFXSceneBuilder;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,6 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.util.Objects;
 
 public class InfoBar {
@@ -76,17 +78,46 @@ public class InfoBar {
         numMules.setFont(new Font("American Typewriter", 15)); //added
 
         Label l1 = new Label("                   ");
-        Label l2 = new Label("                   ");
-        Button quitGame = new Button("Save and Quit Game");
+        Button saveGame = new Button("Save Game");
+        Button endGame = new Button(" End Game");
         Label l5 = new Label("                   ");
         Label l4 = new Label(" Timer");
         l4.setFont(new Font("American Typewriter Bold", 18));
 
-        quitGame.setOnAction((ActionEvent e) -> {
+        saveGame.setOnAction((ActionEvent e) -> {
             LoadSaveGame.save();
-            System.out.println("Game saved and ended");
-            Launcher.primaryStage.close();
-            GameController.newStage.close();
+            System.out.println("Game saved");
+        });
+
+        Stage newStage = new Stage();
+        Label message = new Label("Would you like to save your progress first?");
+        message.setFont(new Font("American Typewriter", 15));
+        Button yesButton = new Button("Yes");
+        Button noButton = new Button("No");
+        Button cancel = new Button(("Cancel"));
+        GridPane yesNoGrid = new GridPane();
+        yesNoGrid.add(message, 1, 0);
+        yesNoGrid.add(yesButton, 0, 1);
+        yesNoGrid.add(noButton, 1, 1);
+        yesNoGrid.add(cancel, 2, 1);
+        newStage.setScene(new Scene(yesNoGrid));
+        boolean[] reply = new boolean[1];
+
+        yesButton.setOnAction((ActionEvent e) -> {
+            reply[0] = true;
+            newStage.close();
+        });
+        noButton.setOnAction((ActionEvent e) -> {
+            reply[0] = false;
+            newStage.close();
+        });
+        cancel.setOnAction((ActionEvent e) -> newStage.close());
+        endGame.setOnAction((ActionEvent e) -> {
+            newStage.showAndWait();
+            if (reply[0]) {
+                LoadSaveGame.save();
+            }
+            System.exit(0);
         });
 
         GridPane grid2 = new GridPane();
@@ -96,10 +127,10 @@ public class InfoBar {
         grid2.add(l1, 1, 0);
         grid2.add(currPlayer, 2, 0);
         grid2.add(currRound, 4, 0);
-        grid2.add(l2, 1, 1);
+        grid2.add(saveGame, 1, 1);
         grid2.add(moneyLeft, 2, 1);
         grid2.add(foodLeft, 4, 1);
-        grid2.add(quitGame, 1, 2);
+        grid2.add(endGame, 1, 2);
         grid2.add(energyLeft, 2, 2);
         grid2.add(oreLeft, 4, 2);
         grid2.add(l5, 1,3);
