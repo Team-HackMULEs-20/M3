@@ -26,10 +26,10 @@
     <Button fx:id="backButton" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
     <Text fill="WHITE" layoutX="183.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gamble by getting bonus money&#10;for your unused time!" textAlignment="CENTER">
       <font>
-        <Font name="Bradley Hand Bold" size="17.0" fx:id="x1" />
+        <Font name="Bradley Hand Bold" size="17.0" />
       </font>
     </Text>
-    <Text fill="WHITE" font="$x1" layoutX="178.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click the slot machine lever to bet" />
+    <Text fill="WHITE" layoutX="178.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click the slot machine lever to bet" />
   <ImageView fitHeight="339.65692138671875" fitWidth="253.2146647941387" layoutX="314.0" layoutY="125.0"
              pickOnBounds="true" preserveRatio="true">
     <Image url="@Media/slotmachine3.png"/>

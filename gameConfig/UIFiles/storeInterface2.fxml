@@ -24,7 +24,7 @@
     <Text layoutX="174.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0"
           text="What would you like to purchase?">
         <font>
-            <Font name="Bradley Hand Bold" size="18.0" fx:id="x2"/>
+            <Font name="Bradley Hand Bold" size="18.0"/>
         </font>
     </Text>
     <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonClicked"
@@ -71,7 +71,7 @@
                     <Font name="Bradley Hand Bold" size="14.0"/>
                 </font>
             </Text>
-            <Text font="$x2" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" GridPane.columnIndex="2"
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" GridPane.columnIndex="2"
                   GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
             <Button fx:id="buyFoodButton" mnemonicParsing="false" onAction="#buyFoodButtonClicked" prefHeight="11.0"
                     prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER"

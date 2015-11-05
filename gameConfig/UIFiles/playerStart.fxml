@@ -8,7 +8,7 @@
     <Button fx:id="startButton" onAction="#startButtonClicked" layoutX="32.0" layoutY="86.0" mnemonicParsing="false" text="Start Turn" />
     <Text layoutX="16.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="It's Your Turn!">
       <font>
-        <Font size="17.0" fx:id="x1" />
+        <Font size="17.0"/>
       </font>
     </Text>
 </AnchorPane>
