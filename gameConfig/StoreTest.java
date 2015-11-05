@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class StoreTest {
     private Player p;
     private Store s;
-    private final int[] Data = new int[7];
+    //private final int[] Data = new int[7];
     private final int[] DataBuyFood = new int[7];
     private final int[] DataSellFood = new int[7];
     private final int[] DataBuyEnergy = new int[7];
@@ -31,13 +31,13 @@ public class StoreTest {
         int eq = s.getEnergyQuantity();
         int ec = s.getEnergyCost();
 
-        Data[0] = pm;
-        Data[1] = pf;
-        Data[2] = pe;
-        Data[3] = fq;
-        Data[4] = fc;
-        Data[5] = eq;
-        Data[6] = ec;
+//        Data[0] = pm;
+//        Data[1] = pf;
+//        Data[2] = pe;
+//        Data[3] = fq;
+//        Data[4] = fc;
+//        Data[5] = eq;
+//        Data[6] = ec;
 
         pm -= fc;
         DataBuyFood[0] = pm;
