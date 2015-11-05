@@ -16,10 +16,25 @@ import java.util.ResourceBundle;
 public class StoreController implements Initializable {
 
     @FXML
-    public Button buyEnergyButton, sellFoodButton,
-            buyOreButton, buyCrysButton, sellEnergyButton,
-            sellCrysButton, buyMuleButton, sellMuleButton,
-            backButton, sellOreButton;
+    public Button buyEnergyButton;
+    @FXML
+    public Button sellFoodButton;
+    @FXML
+    public Button buyOreButton;
+    @FXML
+    public Button buyCrysButton;
+    @FXML
+    public Button sellEnergyButton;
+    @FXML
+    public Button sellCrysButton;
+    @FXML
+    public Button buyMuleButton;
+    @FXML
+    public Button sellMuleButton;
+    @FXML
+    private Button backButton;
+    @FXML
+    public Button sellOreButton;
     @FXML
     private ComboBox muleChoice;
 
@@ -58,7 +73,7 @@ public class StoreController implements Initializable {
         smithoreQuantityLabel.setText(String.valueOf(store.getSmithQuantity()));
     }
 
-    public void updateStoreLabels() {
+    private void updateStoreLabels() {
         muleQuantityLabel.setText(String.valueOf(store.getMuleQuantity()));
         muleCostLabel.setText(String.valueOf(store.getMuleCost()));
         foodCostLabel.setText(String.valueOf(store.getFoodCost()));

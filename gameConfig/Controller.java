@@ -14,13 +14,11 @@ import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -74,7 +72,7 @@ public class Controller implements Initializable {
 	public static Player[] players;
 	private Scene gameScene;
 	public static Scene startScene;
-	public static LandType[] landTypes = LandType.standardMap();
+	private static final LandType[] landTypes = LandType.standardMap();
 	public static List<Object> loadData;
 	public static boolean loaded;
 

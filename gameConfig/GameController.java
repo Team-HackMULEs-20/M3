@@ -91,12 +91,16 @@ public class GameController implements Initializable {
 			landBuyIntCreated, pubWinCreated,
 			storeWinCreated, selectWinCreated, assayWinCreated = false;
     public static InfoBar infoBar;
-	public static Node landButton;
-    public RandomEvents randomEvents;
-    public RandomEvents randomMessage;
-	private Auction auction = new Auction();
-	public static Scene townScene, storeScene,
-			selectScene, landBuyIntScene, pubGambleScene, assayScene;
+	private static Node landButton;
+    private RandomEvents randomEvents;
+    private RandomEvents randomMessage;
+	private final Auction auction = new Auction();
+	public static Scene townScene;
+	private static Scene storeScene;
+	private static Scene selectScene;
+	private static Scene landBuyIntScene;
+	private static Scene pubGambleScene;
+	private static Scene assayScene;
 
 	/**
 	 *

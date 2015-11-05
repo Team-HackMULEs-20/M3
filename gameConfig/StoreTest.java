@@ -9,13 +9,13 @@ import static org.junit.Assert.*;
 public class StoreTest {
     private Player p;
     private Store s;
-    private int[] Data = new int[7];
-    private int[] DataBuyFood = new int[7];
-    private int[] DataSellFood = new int[7];
-    private int[] DataBuyEnergy = new int[7];
-    private int[] DataSellEnergy = new int[7];
+    private final int[] Data = new int[7];
+    private final int[] DataBuyFood = new int[7];
+    private final int[] DataSellFood = new int[7];
+    private final int[] DataBuyEnergy = new int[7];
+    private final int[] DataSellEnergy = new int[7];
 
-    private int[] TestData = new int[7];
+    private final int[] TestData = new int[7];
 
     @Before
     public void setUp() throws Exception {
