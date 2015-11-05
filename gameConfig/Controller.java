@@ -80,7 +80,7 @@ public class Controller implements Initializable {
 	/**
 	 *
 	 * @param fxmlFileLocation fxml file to add button to
-	 * @param resources resoucebundle to add buttons to
+	 * @param resources resource bundle to add buttons to
 	 */
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -276,7 +276,7 @@ public class Controller implements Initializable {
 
 	/**
 	 *
-	 * @param event actionevent to check button
+	 * @param event action event to check button
 	 */
 	public void errorBox(ActionEvent event) {
 		if (event.getSource() == okButton) {
