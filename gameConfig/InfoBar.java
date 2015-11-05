@@ -119,6 +119,7 @@ public class InfoBar {
             newStage.showAndWait();
             if (Objects.equals(reply[0], "true")) {
                 LoadSaveGame.save();
+                System.exit(0);
             } else if (Objects.equals(reply[0], "false")) {
                 System.exit(0);
             } else {

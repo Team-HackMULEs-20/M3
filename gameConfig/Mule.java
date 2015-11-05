@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Mule implements Serializable {
 
-	private static Type type;
+	private Type type;
 	private Player owner;
 	private int cost;
 	private Land position;

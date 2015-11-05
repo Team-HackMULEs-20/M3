@@ -66,7 +66,7 @@ public class Controller implements Initializable {
 
 	public static Integer numPlayer;
 	public static String level;
-    public static Land[][] landPlots;
+	public static Land[][] landPlots;
 
 	private static int count;
 	public static Player[] players;
@@ -107,7 +107,7 @@ public class Controller implements Initializable {
 				if (Objects.equals(map, "Random")) {
 					try {
 						Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
-		//				RandMap.setImages();
+						//				RandMap.setImages();
 					} catch(Exception e1) {
 						e1.printStackTrace();
 					}
