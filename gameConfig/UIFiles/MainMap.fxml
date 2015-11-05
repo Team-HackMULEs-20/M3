@@ -27,15 +27,11 @@
     </rowConstraints>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="66.00000762939453" pickOnBounds="true"
                GridPane.columnIndex="0" GridPane.rowIndex="0">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="86.87483978271484" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="0"
                GridPane.rowIndex="1">
-        <image>
-            <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
-        </image>
+        <Image preserveRatio="true" smooth="true" url="@Media/plain.png"/>
     </ImageView>
     <ImageView id="plain" fitHeight="90.56254577636719" fitWidth="67.000107629392" pickOnBounds="true"
                GridPane.columnIndex="7" GridPane.rowIndex="1">

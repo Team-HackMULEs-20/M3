@@ -12,9 +12,7 @@
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameConfig.Controller">
   <ImageView fitHeight="329.53844370740524" fitWidth="476.0" layoutX="62.0" layoutY="29.0" opacity="0.2"
              pickOnBounds="true" preserveRatio="true">
-    <image>
-      <Image url="@Media/mule.png"/>
-    </image>
+    <Image url="@Media/mule.png"/>
   </ImageView>
   <GridPane layoutX="135.0" layoutY="103.0" prefHeight="179.0" prefWidth="329.0">
     <columnConstraints>
