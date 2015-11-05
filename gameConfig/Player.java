@@ -120,8 +120,6 @@ public class Player implements Serializable {
 	public boolean buyMule(boolean buy, Mule mule, Land land) {
 		//Land landPlot = Controller.landPlots[land.getCol()][land.getRow()];
 		if (buy) {
-			System.out.println(money);
-			System.out.println(mule.getCost());
 			if (money >= mule.getCost()) {//check that player has enough money
 				money = money - mule.getCost();//player pays for the mule
 				mule.setOwner(this);//player owns the mule

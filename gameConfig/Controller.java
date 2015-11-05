@@ -12,6 +12,7 @@ import java.net.URL;
 
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -75,6 +76,7 @@ public class Controller implements Initializable {
 	private static final LandType[] landTypes = LandType.standardMap();
 	public static List<Object> loadData;
 	public static boolean loaded;
+	public static Parent gameRoot = null;
 
 	/**
 	 *
@@ -167,7 +169,7 @@ public class Controller implements Initializable {
 						if (count == numPlayer) { // if user selected only 2 players then show game screen
 							Launcher.primaryStage.hide();
 							try {
-								Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
+								gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
 								gameScene = new Scene(gameRoot);
 								Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
 								startScene = new Scene(startWindow);
@@ -202,7 +204,7 @@ public class Controller implements Initializable {
 						if (count == numPlayer) {
 							Launcher.primaryStage.hide();
 							try {
-								Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
+								gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
 								gameScene = new Scene(gameRoot);
 								Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
 								startScene = new Scene(startWindow);
@@ -236,7 +238,7 @@ public class Controller implements Initializable {
 					} else if (count == 4) {
 						Launcher.primaryStage.hide();
 						try {
-							Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
+							gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
 							gameScene = new Scene(gameRoot);
 							Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
 							startScene = new Scene(startWindow);
@@ -307,7 +309,7 @@ public class Controller implements Initializable {
 			if (loadData != null) {
 				Controller.loaded = true;
 				GameController.numPasses = (int) Controller.loadData.get(4);
-				Parent gameRoot = null;
+				//GameController.landButton.setDisable(true);
 				try {
 					gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
 					gameScene = new Scene(gameRoot);

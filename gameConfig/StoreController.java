@@ -3,6 +3,7 @@ package gameConfig;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -10,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+import javax.naming.ldap.Control;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -125,7 +128,12 @@ public class StoreController implements Initializable {
     public void buyMuleButtonClicked(ActionEvent event) {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
-        //GameController.landButton.setDisable(false);
+        GridPane grid = GameController.grid;
+        for (Node node : grid.getChildren()) {
+            if (node.getId() != null && !node.getId().equals("townButton")) {
+                node.setDisable(false);
+            }
+        }
         this.messageBox();
         this.updateStoreLabels();
         buy  = true;
@@ -139,7 +147,12 @@ public class StoreController implements Initializable {
     public void sellMuleButtonClicked(ActionEvent event) {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
-        //GameController.landButton.setDisable(false);
+        GridPane grid = GameController.grid;
+        for (Node node : grid.getChildren()) {
+            if (node.getId() != null && !node.getId().equals("townButton")) {
+                node.setDisable(false);
+            }
+        }
         this.messageBox();
         this.updateStoreLabels();
         buy = false;

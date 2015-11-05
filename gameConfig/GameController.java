@@ -91,7 +91,7 @@ public class GameController implements Initializable {
 			landBuyIntCreated, pubWinCreated,
 			storeWinCreated, selectWinCreated, assayWinCreated = false;
 	public static InfoBar infoBar;
-	private static Node landButton;
+	public static Node landButton;
 	private RandomEvents randomEvents;
 	private RandomEvents randomMessage;
 	private final Auction auction = new Auction();
@@ -101,6 +101,7 @@ public class GameController implements Initializable {
 	private static Scene landBuyIntScene;
 	private static Scene pubGambleScene;
 	private static Scene assayScene;
+	public static GridPane grid;
 
 	/**
 	 *
@@ -110,6 +111,7 @@ public class GameController implements Initializable {
 	// TURNS AND SETUP
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
+		grid = (GridPane) Controller.gameRoot;
 		assert landBuyButton != null : "fx:id=\"landBuyButton\" was not injected: " +
 				"check your FXML file 'landBuyInterface.fxml'.";
 		assert backButton2 != null : "fx:id=\"passButton\" was not injected: " +
@@ -123,6 +125,11 @@ public class GameController implements Initializable {
 
 	@FXML
 	public static void beginTurn() {
+		for (Node node : grid.getChildren()) {
+			if (node.getId() != null && !node.getId().equals("townButton")) {
+				node.setDisable(true);
+			}
+		}
 		Launcher.primaryStage.hide();
 		//newStage.hide();
 		Stage start = new Stage();
@@ -222,6 +229,11 @@ public class GameController implements Initializable {
 	@FXML
 	public void selectionPhase(ActionEvent event) {
 		if (event.getSource() == selectLand) {
+			for (Node node : grid.getChildren()) {
+				if (node.getId() != null && !node.getId().equals("townButton")) {
+					node.setDisable(false);
+				}
+			}
 			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
 				Land.landBuyEnable = true;
 			Stage stage = (Stage) selectLand.getScene().getWindow();
@@ -311,8 +323,12 @@ public class GameController implements Initializable {
 	@FXML
 	public void buyLandButtonClicked(ActionEvent e) {
 		newStage = new Stage();
-		//landButton.setDisable(false);
 		if (e.getSource() == landBuyButton) {
+			for (Node node : grid.getChildren()) {
+				if (node.getId() != null && !node.getId().equals("townButton")) {
+					node.setDisable(false);
+				}
+			}
 			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
 				Land.landBuyEnable = true;
 			Stage stage = (Stage) landBuyButton.getScene().getWindow();
@@ -334,7 +350,7 @@ public class GameController implements Initializable {
 		Mule mule = StoreController.potentialMule;
 		Player currentP = Turns.getTurn();
 		landButton = (Node) e.getSource();
-		GridPane grid = (GridPane) landButton.getParent();
+		//GridPane grid = (GridPane) landButton.getParent();
 		int col = GridPane.getColumnIndex(landButton);
 		int row = GridPane.getRowIndex(landButton);
 		Land newLand = new Land(col, row);
@@ -417,6 +433,11 @@ public class GameController implements Initializable {
 			} else if (mule.getType() != selectedLand.getMuleType()) {
 				errorMessageBox("This land has a " + Controller.landPlots[col][row].getMuleType()
 						+ " mule on it, not a " + mule.getType() + " mule.");
+			}
+		}
+		for (Node node : grid.getChildren()) {
+			if (node.getId() != null && !node.getId().equals("townButton")) {
+				node.setDisable(true);
 			}
 		}
 		infoBar.updateInfoBar();
