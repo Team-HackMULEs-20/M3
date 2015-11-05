@@ -107,7 +107,7 @@ public class Controller implements Initializable {
 				String map = mapType.getSelectionModel().getSelectedItem().toString();
 				if (Objects.equals(map, "Random")) {
 					try {
-						Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
+						gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
 						//				RandMap.setImages();
 					} catch(Exception e1) {
 						e1.printStackTrace();
@@ -148,7 +148,6 @@ public class Controller implements Initializable {
 				Player p = new Player(name, r, color.toString());
 				players[count - 1] = p;
 				if (players[players.length - 1] != null) {
-
 					//when players array is full, begins game turns
 					Turns gameTurns = new Turns(players);
 				}

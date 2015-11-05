@@ -457,7 +457,7 @@ public class GameController implements Initializable {
 		if (e.getSource() == gambleButton) {
 			int timeLeft = Timer.getTimeLeft();
 			Player p = Turns.getTurn();
-			int moneyWon = p.gamble(timeLeft);
+			p.gamble(timeLeft);
 			infoBar.updateInfoBar();
 			Timer.endTurn();
 			try {

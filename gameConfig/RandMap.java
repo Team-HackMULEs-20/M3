@@ -47,13 +47,15 @@ public class RandMap{
         File[] fileList1 = file.listFiles();
         ArrayList<File> fileList2 = new ArrayList<>();
 
-        Collections.addAll(fileList2, fileList1);
+        if (fileList1 != null) {
+            Collections.addAll(fileList2, fileList1);
+        }
         Parent mainMap = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
         GridPane grid = (GridPane) mainMap;
         try {
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 5; j++) {
-                    Random rand = null;
+                    Random rand = new Random();
                     int randNum = rand.nextInt(fileList2.size()) + 1;
                     ImageView pic = new ImageView();
                     Object toAdd = fileList2.get(randNum).toURI().toString();
