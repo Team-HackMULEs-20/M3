@@ -5,10 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+// Kaley's JUnit
 
-/**
- * Created by findleyck on 11/3/15.
- */
 public class TurnsTest {
 
     private Player[] playersBefore;

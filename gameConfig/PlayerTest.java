@@ -5,9 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Carlos Gonzalez on 11/4/15.
- */
+// JUnit by Carlos
 
 public class PlayerTest {
 
