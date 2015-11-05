@@ -5,8 +5,8 @@ import java.io.Serializable;
 public class Land implements Serializable {
 	private Player owner;
 	private boolean owned;
-	private int row;
-	private int col;
+	private final int row;
+	private final int col;
 	private Mule.Type muleType;
 	public static boolean landBuyEnable = false;
 

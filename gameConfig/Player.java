@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class Player implements Serializable {
 
 	//private int number;//TODO unused var
-	private String name;
-	private Race race;
-	private String color;
+	private final String name;
+	private final Race race;
+	private final String color;
 
 	private int money;
 	private int food;
@@ -17,8 +17,8 @@ public class Player implements Serializable {
 	private int crystite;
 
 	public int landGrants;
-	public ArrayList<Land> landOwned;
-	public ArrayList<Mule> mulesOwned;
+	public final ArrayList<Land> landOwned;
+	public final ArrayList<Mule> mulesOwned;
 
 	public Player (String name, Race race, String color) {
 		//this.number = number;

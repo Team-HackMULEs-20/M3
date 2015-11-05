@@ -11,7 +11,9 @@ import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 
 public class RandMap{
-    private int row, col, randNum;
+    private final int row;
+    private final int col;
+    private int randNum;
     public ImageView plain, town, pic;
     private File file;
     private File[] fileList1;

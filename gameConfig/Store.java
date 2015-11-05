@@ -4,11 +4,17 @@ import java.io.Serializable;
 
 public class Store implements Serializable {
 
-	public int foodCost, foodQuantity,
-	energyCost, energyQuantity,
-	smithCost, smithQuantity,
-	crysCost, crysQuantity,
-	muleCost, oreQuantity, muleQuantity;
+	public int foodCost;
+    public int foodQuantity;
+    public int energyCost;
+    public int energyQuantity;
+    public int smithCost;
+    public int smithQuantity;
+    public int crysCost;
+    public int crysQuantity;
+    public final int muleCost;
+    public final int oreQuantity;
+    public int muleQuantity;
 
     public Store() {
         if (Controller.level.equals("Beginner")) {

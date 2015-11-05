@@ -94,7 +94,7 @@ public class GameController implements Initializable {
 	public static Node landButton;
     public RandomEvents randomEvents;
     public RandomEvents randomMessage;
-	private Auction auction = new Auction();
+	private final Auction auction = new Auction();
 	public static Scene townScene, storeScene,
 			selectScene, landBuyIntScene, pubGambleScene, assayScene;
 

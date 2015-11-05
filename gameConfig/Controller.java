@@ -74,7 +74,7 @@ public class Controller implements Initializable {
 	public static Player[] players;
 	private Scene gameScene;
 	public static Scene startScene;
-	public static LandType[] landTypes = LandType.standardMap();
+	public static final LandType[] landTypes = LandType.standardMap();
 	public static List<Object> loadData;
 	public static boolean loaded;
 

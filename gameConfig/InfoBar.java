@@ -20,16 +20,16 @@ import java.util.Objects;
 public class InfoBar {
 
     private Stage infoStage;
-    private Label moneyLeft = new Label();
-    private Label foodLeft = new Label();
-    private Label currRound = new Label();
-    private Label energyLeft = new Label();
-    private Label oreLeft = new Label();
-    private Label currPlayer = new Label();
-    private Label crystiteLeft = new Label(); //added
-    private Label numMules = new Label(); //added
-    public static Label timerLabel = new Label();
-    public static Button endButton = new Button("End Turn");
+    private final Label moneyLeft = new Label();
+    private final Label foodLeft = new Label();
+    private final Label currRound = new Label();
+    private final Label energyLeft = new Label();
+    private final Label oreLeft = new Label();
+    private final Label currPlayer = new Label();
+    private final Label crystiteLeft = new Label(); //added
+    private final Label numMules = new Label(); //added
+    public static final Label timerLabel = new Label();
+    public static final Button endButton = new Button("End Turn");
 
 
     public InfoBar() {
