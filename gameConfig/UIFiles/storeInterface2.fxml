@@ -29,7 +29,7 @@
     </Text>
     <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonClicked"
             text="Back"/>
-    <GridPane fx:id="storeGridPane" gridLinesVisible="true" layoutX="148.0" layoutY="138.0" prefHeight="190.0"
+    <GridPane gridLinesVisible="true" layoutX="148.0" layoutY="138.0" prefHeight="190.0"
               prefWidth="305.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="75.0"/>
