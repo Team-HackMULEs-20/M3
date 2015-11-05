@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e5d5de5-beb0-4a9f-aaba-1ea8883596ee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Land.java" afterPath="$PROJECT_DIR$/gameConfig/Land.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="M.U.L.E.-Project.iws" />
@@ -39,11 +38,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Land.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Land.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gameConfig/Land.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.1318328">
-                  <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -59,10 +58,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gameConfig/Player.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
+                <state vertical-scroll-proportion="-0.20578778">
                   <caret line="120" column="10" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -75,10 +74,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="GameController.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.4003216">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="411" column="51" selection-start-line="411" selection-start-column="51" selection-end-line="411" selection-end-column="51" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -99,11 +98,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.63826364">
+                  <caret line="315" column="43" selection-start-line="315" selection-start-column="43" selection-end-line="315" selection-end-column="43" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -190,10 +189,10 @@
         <option value="$PROJECT_DIR$/gameConfig/Player.java" />
         <option value="$PROJECT_DIR$/gameConfig/GameController.java" />
         <option value="$PROJECT_DIR$/gameConfig/LoadSaveGame.java" />
-        <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
-        <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
         <option value="$PROJECT_DIR$/gameConfig/Land.java" />
         <option value="$PROJECT_DIR$/gameConfig/Land.java" />
+        <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
+        <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
       </list>
     </option>
   </component>
@@ -900,12 +899,6 @@
       <option name="number" value="Default" />
       <updated>1442528931836</updated>
     </task>
-    <task id="LOCAL-00020" summary="Gamble Confirmation Fixed">
-      <created>1443618030942</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1443618030942</updated>
-    </task>
     <task id="LOCAL-00021" summary="Pub interface updates">
       <created>1443621305468</created>
       <option name="number" value="00021" />
@@ -1194,7 +1187,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446716172591</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Save/Load game state works!">
+      <created>1446716240989</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1446716240990</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -1719,16 +1718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="10" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/LoadSaveGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1739,19 +1728,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4003216">
+        <state vertical-scroll-proportion="0.0">
           <caret line="411" column="51" selection-start-line="411" selection-start-column="51" selection-end-line="411" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1763,9 +1742,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/Land.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1318328">
-          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.20578778">
+          <caret line="120" column="10" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63826364">
+          <caret line="315" column="43" selection-start-line="315" selection-start-column="43" selection-end-line="315" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
