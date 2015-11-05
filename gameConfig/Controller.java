@@ -320,23 +320,16 @@ public class Controller implements Initializable {
 				newStage.setScene(gameScene);
 				newStage.setTitle("Game Screen");
 				newStage.show();
+				GridPane grid = (GridPane) gameRoot;
 				landPlots = (Land[][]) loadData.get(0);
 				level = (String) loadData.get(1);
 				players = (Player[]) loadData.get(3);
 				for (Player player : players) {
 					for (Land land : player.landOwned) {
-						landPlots[land.getCol()][land.getRow()] = land;
+						landPlots[land.getCol()][land.getRow()].setOwner(player);
 					}
 				}
-				GridPane grid = (GridPane) gameRoot;
-				int pos = 0;
 				if (grid != null) {
-					for (Node node : grid.getChildren()) {
-						if (Objects.equals(node.getId(), "00")) {
-							break;
-						}
-						pos++;
-					}
 					for (Land[] landArray : landPlots) {
 						for (Land land : landArray) {
 							if (land.isOwned()) {
@@ -355,7 +348,8 @@ public class Controller implements Initializable {
 									muleView.setImage(mulePic);
 									muleView.setFitWidth(50);
 									muleView.setPreserveRatio(true);
-									GridPane.setConstraints(muleView, land.getCol(), land.getRow(), 1, 1);
+									GridPane.setHalignment(muleView, HPos.LEFT);
+									GridPane.setValignment(muleView, VPos.CENTER);
 									muleView.setId(String.valueOf(land.getCol()) + String.valueOf(land.getRow()));
 									grid.add(muleView, land.getCol(), land.getRow());
 								}

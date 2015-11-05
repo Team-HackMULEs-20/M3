@@ -388,6 +388,7 @@ public class GameController implements Initializable {
 				GridPane.setConstraints(muleView, col, row, 1, 1);
 				muleView.setId(String.valueOf(col) + String.valueOf(row));
 				grid.getChildren().add(muleView);
+				selectedLand.setHasMule(true);
 				//landButton.setDisable(true);
 			}
 		} else if (!StoreController.buy) {
@@ -408,6 +409,7 @@ public class GameController implements Initializable {
 							break;
 						}
 					}
+					selectedLand.setHasMule(false);
 					currentP.mulesOwned.remove(pos);
 					//landButton.setDisable(true);
 				}
