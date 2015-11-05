@@ -91,9 +91,6 @@ public class GameController implements Initializable {
 			landBuyIntCreated, pubWinCreated,
 			storeWinCreated, selectWinCreated, assayWinCreated = false;
 	public static InfoBar infoBar;
-	private static Node landButton;
-	private RandomEvents randomEvents;
-	private RandomEvents randomMessage;
 	private final Auction auction = new Auction();
 	public static Scene townScene;
 	private static Scene storeScene;
@@ -145,7 +142,7 @@ public class GameController implements Initializable {
 		} else {
 			infoBar.updateInfoBar();
 		}
-		randomEvents = new RandomEvents();
+		RandomEvents randomEvents = new RandomEvents();
 		String message;
 		message = randomEvents.determineRandomEvent(currentPlayer);
 		if (event.getSource() == startButton) {
@@ -154,14 +151,12 @@ public class GameController implements Initializable {
 			Stage stage = (Stage) startButton.getScene().getWindow();
 			stage.close();
 			if (currentPlayer.landOwned.size() != 0 && currentPlayer.mulesOwned.size() != 0) {
-				for (Mule mule : currentPlayer.mulesOwned) {
-					if (mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
-							&& mule.getOwner() == currentPlayer) {
-						System.out.println("producing");
-						Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
-						infoBar.updateInfoBar();
-					}
-				}
+                currentPlayer.mulesOwned.stream().filter(mule -> mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
+                        && mule.getOwner() == currentPlayer).forEach(mule -> {
+                    System.out.println("producing");
+                    Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
+                    infoBar.updateInfoBar();
+                });
 			}
 			//store = new Store();
 			/* boolean auctionTime = auction.isAuctionTime();
@@ -192,8 +187,8 @@ public class GameController implements Initializable {
 				selectPhase = false;
 			}
 			if (!(message.equals("NVM"))) {
-				randomMessage = new RandomEvents();
-				randomMessage.messageBox(message);
+				RandomEvents randomMessage = new RandomEvents();
+				RandomEvents.messageBox(message);
 			}
 		}
 
@@ -201,7 +196,7 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param event actionevent to check button source
+	 * @param event action-event to check button source
 	 */
 	@FXML
 	public void bidButtonClicked(ActionEvent event) {
@@ -333,7 +328,7 @@ public class GameController implements Initializable {
 	public void landButtonClicked(ActionEvent e) {
 		Mule mule = StoreController.potentialMule;
 		Player currentP = Turns.getTurn();
-		landButton = (Node) e.getSource();
+		Node landButton = (Node) e.getSource();
 		GridPane grid = (GridPane) landButton.getParent();
 		int col = GridPane.getColumnIndex(landButton);
 		int row = GridPane.getRowIndex(landButton);
@@ -457,7 +452,7 @@ public class GameController implements Initializable {
 		if (e.getSource() == gambleButton) {
 			int timeLeft = Timer.getTimeLeft();
 			Player p = Turns.getTurn();
-			int moneyWon = p.gamble(timeLeft);
+			int moneyWon = p.gamble(timeLeft); //TODO make popup with how much money won
 			infoBar.updateInfoBar();
 			Timer.endTurn();
 			try {
