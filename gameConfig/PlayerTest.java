@@ -14,7 +14,7 @@ public class PlayerTest {
     @Test
     public void testGamble() throws Exception {
         Controller.level = "Beginner";
-        Player p = new Player("Carlos", Player.Race.BUZZITE, Color.AQUA);
+        Player p = new Player("Carlos", Player.Race.BUZZITE, Color.AQUA.toString());
 
         Turns.rounds = 1;
         int time = 10;

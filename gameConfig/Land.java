@@ -1,6 +1,8 @@
 package gameConfig;
 
-public class Land {
+import java.io.Serializable;
+
+public class Land implements Serializable {
 	private Player owner;
 	private boolean owned;
 	private int row;

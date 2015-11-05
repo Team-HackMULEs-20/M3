@@ -1,8 +1,9 @@
 package gameConfig;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Mule {
+public class Mule implements Serializable {
 
 	private static Type type;
 	private Player owner;

@@ -23,10 +23,10 @@ public class TurnsTest {
     public void setUp() throws Exception {
         Controller.level = "Beginner";
         playersBefore = new Player[4];
-        playersBefore[0] = new Player("Kaley", Player.Race.BUZZITE, Color.AQUA);
-        playersBefore[1] = new Player("Chris", Player.Race.FLAPPER, Color.BLUE);
-        playersBefore[2] = new Player("Jess", Player.Race.BONZOID, Color.BROWN);
-        playersBefore[3] = new Player("Abby", Player.Race.HUMAN, Color.CRIMSON);
+        playersBefore[0] = new Player("Kaley", Player.Race.BUZZITE, Color.AQUA.toString());
+        playersBefore[1] = new Player("Chris", Player.Race.FLAPPER, Color.BLUE.toString());
+        playersBefore[2] = new Player("Jess", Player.Race.BONZOID, Color.BROWN.toString());
+        playersBefore[3] = new Player("Abby", Player.Race.HUMAN, Color.CRIMSON.toString());
         playersBefore[3].landOwned.add(new Land(0, 0));
         Turns turns = new Turns(playersBefore);
         Turns.rounds = 2;

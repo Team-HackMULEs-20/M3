@@ -40,7 +40,11 @@ public class StoreController implements Initializable {
      */
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resourceBundle) {
-        store = new Store();
+        if (Controller.loaded) {
+            store = (Store) Controller.loadData.get(2);
+        } else {
+            store = new Store();
+        }
         muleQuantityLabel.setText(String.valueOf(store.getMuleQuantity()));
         muleCostLabel.setText(String.valueOf(store.getMuleCost()));
         foodCostLabel.setText(String.valueOf(store.getFoodCost()));
@@ -105,7 +109,7 @@ public class StoreController implements Initializable {
     public void buyMuleButtonClicked(ActionEvent event) {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
-        GameController.landButton.setDisable(false);
+        //GameController.landButton.setDisable(false);
         this.messageBox();
         this.updateStoreLabels();
         buy  = true;
@@ -119,7 +123,7 @@ public class StoreController implements Initializable {
     public void sellMuleButtonClicked(ActionEvent event) {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
-        GameController.landButton.setDisable(false);
+        //GameController.landButton.setDisable(false);
         this.messageBox();
         this.updateStoreLabels();
         buy = false;

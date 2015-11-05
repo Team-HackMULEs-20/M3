@@ -1,15 +1,14 @@
 package gameConfig;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-import javafx.scene.paint.Color;
-
-public class Player {
+public class Player implements Serializable {
 
 	//private int number;//TODO unused var
 	private String name;
 	private Race race;
-	private Color color;
+	private String color;
 
 	private int money;
 	private int food;
@@ -21,12 +20,11 @@ public class Player {
 	public ArrayList<Land> landOwned;
 	public ArrayList<Mule> mulesOwned;
 
-	public Player (String name, Race race, Color color) {
+	public Player (String name, Race race, String color) {
 		//this.number = number;
 		this.name = name;
 		this.race = race;
 		this.color = color;
-
 		landOwned = new ArrayList<>();
 		mulesOwned = new ArrayList<>();
 
@@ -63,11 +61,10 @@ public class Player {
 	public int getLandGrants() {return landGrants;}
 
 
-	public Color getColor() {return color;}
+	public String getColor() {return color;}
 
 	public int getScore() { //TODO score
-		int score = money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
-		return score;
+		return money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
 	}
 
 	public int getMoney() {return money;}
@@ -88,7 +85,7 @@ public class Player {
 	public int gamble(int timeLeft) {
 		int r = Turns.rounds;
 
-		int rb = 0; // round bonus
+		int rb; // round bonus
 		if (r <= 3) { // rounds 1 - 3
 			rb = 50;
 		} else if (r <= 7) { // rounds 4 - 7
@@ -99,7 +96,7 @@ public class Player {
 			rb = 200;
 		}
 
-		int tb = 0; //time bonus
+		int tb; //time bonus
 		if (timeLeft < 12) { // time left = 0-11 seconds
 			tb = 50;
 		} else if (timeLeft < 25) { // time left = 12-24 seconds
@@ -150,7 +147,7 @@ public class Player {
 		} else {
 			if (this.equals(land.getOwner())) {
 				StoreController.store.muleQuantity++;
-				land.getOwner().addSubMoney(Store.muleCost - 15);
+				land.getOwner().addSubMoney(StoreController.store.getMuleCost() - 15);
 				land.setHasMule(false);
 				land.setMuleType(null);
 				land.setMuleBuyEnable(true);

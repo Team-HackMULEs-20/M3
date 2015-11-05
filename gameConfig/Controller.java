@@ -5,17 +5,28 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 
+import java.io.IOException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.net.URL;
 
+import javafx.geometry.HPos;
+import javafx.geometry.VPos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import java.util.List;
 
 public class Controller implements Initializable {
 
@@ -24,6 +35,9 @@ public class Controller implements Initializable {
 
 	@FXML
 	private Button cancelButton;
+
+	@FXML
+	private Button loadButton;
 
 	@FXML
 	private Button nextButton2;
@@ -60,8 +74,9 @@ public class Controller implements Initializable {
 	public static Player[] players;
 	private Scene gameScene;
 	public static Scene startScene;
-
-	private LandType[] landTypes = LandType.standardMap();
+	public static LandType[] landTypes = LandType.standardMap();
+	public static List<Object> loadData;
+	public static boolean loaded;
 
 	/**
 	 *
@@ -91,7 +106,7 @@ public class Controller implements Initializable {
 				//initializing players array
 				players = new Player[numPlayer.intValue()];
 				String map = mapType.getSelectionModel().getSelectedItem().toString();
-				if(map == "Random") {
+				if (Objects.equals(map, "Random")) {
 					try {
 						Parent gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
 		//				RandMap.setImages();
@@ -131,7 +146,7 @@ public class Controller implements Initializable {
 				Color color = colorPick.getValue();
 
 				//creating Player
-				Player p = new Player(name, r, color);
+				Player p = new Player(name, r, color.toString());
 				players[count - 1] = p;
 				if (players[players.length - 1] != null) {
 
@@ -282,6 +297,78 @@ public class Controller implements Initializable {
 			} else {
 				Launcher.primaryStage.setScene(Launcher.rootScene);
 				Launcher.primaryStage.setTitle("M.U.L.E. Game Setup");
+			}
+		}
+	}
+
+	@FXML
+	public void loadGame(ActionEvent event) {
+		Stage newStage = new Stage();
+		if (event.getSource() == loadButton) {
+			loadData = LoadSaveGame.load();
+			if (loadData != null) {
+				Controller.loaded = true;
+				Parent gameRoot = null;
+				try {
+					gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
+					gameScene = new Scene(gameRoot);
+					Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
+					startScene = new Scene(startWindow);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				newStage.setScene(gameScene);
+				newStage.setTitle("Game Screen");
+				newStage.show();
+				landPlots = (Land[][]) loadData.get(0);
+				level = (String) loadData.get(1);
+				players = (Player[]) loadData.get(3);
+				for (Player player : players) {
+					for (Land land : player.landOwned) {
+						landPlots[land.getCol()][land.getRow()] = land;
+					}
+				}
+				GridPane grid = (GridPane) gameRoot;
+				int pos = 0;
+				if (grid != null) {
+					for (Node node : grid.getChildren()) {
+						if (Objects.equals(node.getId(), "00")) {
+							break;
+						}
+						pos++;
+					}
+					for (Land[] landArray : landPlots) {
+						for (Land land : landArray) {
+							if (land.isOwned()) {
+								Player owner = land.getOwner();
+								Rectangle color = new Rectangle();
+								color.setFill(Color.valueOf(owner.getColor()));
+								color.setHeight(25);
+								color.setWidth(25);
+								color.setOpacity(1);
+								GridPane.setHalignment(color, HPos.LEFT);
+								GridPane.setValignment(color, VPos.TOP);
+								grid.add(color, land.getCol(), land.getRow());
+								if (land.hasMule()) {
+									Image mulePic = new Image("gameConfig/UIFiles/Media/aMule.png");
+									ImageView muleView = new ImageView();
+									muleView.setImage(mulePic);
+									muleView.setFitWidth(50);
+									muleView.setPreserveRatio(true);
+									GridPane.setConstraints(muleView, land.getCol(), land.getRow(), 1, 1);
+									muleView.setId(String.valueOf(land.getCol()) + String.valueOf(land.getRow()));
+									grid.add(muleView, land.getCol(), land.getRow());
+								}
+							}
+						}
+					}
+				}
+				numPlayer = players.length;
+				Turns turns = new Turns(players);
+				turns.setRounds((int) loadData.get(5));
+				GameController.beginTurn();
+			} else {
+				Controller.loaded = false;
 			}
 		}
 	}

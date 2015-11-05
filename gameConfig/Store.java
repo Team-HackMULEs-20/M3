@@ -1,40 +1,40 @@
 package gameConfig;
 
-public class Store {
+import java.io.Serializable;
 
-	public static int foodCost, foodQuantity,
+public class Store implements Serializable {
+
+	public int foodCost, foodQuantity,
 	energyCost, energyQuantity,
 	smithCost, smithQuantity,
 	crysCost, crysQuantity,
-	muleCost, oreQuantity;
-
-    public int muleQuantity;
+	muleCost, oreQuantity, muleQuantity;
 
     public Store() {
         if (Controller.level.equals("Beginner")) {
-            foodQuantity = 16;
-            foodCost = 30;
-            energyQuantity = 16;
-            energyCost = 25;
-            smithQuantity = 0;
-            smithCost = 50;
-            crysQuantity = 0;
-            crysCost = 100;
+            this.foodQuantity = 16;
+            this.foodCost = 30;
+            this.energyQuantity = 16;
+            this.energyCost = 25;
+            this.smithQuantity = 0;
+            this.smithCost = 50;
+            this.crysQuantity = 0;
+            this.crysCost = 100;
             this.muleQuantity = 25;
-            muleCost = 100;
-            oreQuantity = 0;
+            this.muleCost = 100;
+            this.oreQuantity = 0;
         } else {
-            foodQuantity = 8;
-            foodCost = 30;
-            energyQuantity = 8;
-            energyCost = 25;
-            smithQuantity = 8;
-            smithCost = 50;
-            crysQuantity = 0;
-            crysCost = 100;
+            this.foodQuantity = 8;
+            this.foodCost = 30;
+            this.energyQuantity = 8;
+            this.energyCost = 25;
+            this.smithQuantity = 8;
+            this.smithCost = 50;
+            this.crysQuantity = 0;
+            this.crysCost = 100;
             this.muleQuantity = 14;
-            muleCost = 100;
-            oreQuantity = 8;
+            this.muleCost = 100;
+            this.oreQuantity = 8;
         }
     }
 
@@ -76,7 +76,6 @@ public class Store {
                     foodCost += 2;
                 } else {
                     GameController.errorMessageBox("You do not have enough money for this item.");
-
                 }
             } else {
                 if (customer.getFood() >= 1) {

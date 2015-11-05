@@ -1,6 +1,8 @@
 package gameConfig;
 
-public class Turns {
+import java.io.Serializable;
+
+public class Turns implements Serializable {
     public static Player[] players;
     public static int rounds;
     public static int timeOfTurn;
@@ -10,6 +12,10 @@ public class Turns {
         Turns.players = players;
         rounds = 1;
         playerTurn = 1;
+    }
+
+    public void setRounds(int round) {
+        rounds = round;
     }
 
     /**

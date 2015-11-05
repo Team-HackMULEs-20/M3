@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -150,7 +151,6 @@ public class GameController implements Initializable {
 			stage.close();
 			if (currentPlayer.landOwned.size() != 0 && currentPlayer.mulesOwned.size() != 0) {
 				for (Mule mule : currentPlayer.mulesOwned) {
-					System.out.println(mule.getType());
 					if (mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
 							&& mule.getOwner() == currentPlayer) {
 						System.out.println("producing");
@@ -166,6 +166,9 @@ public class GameController implements Initializable {
 				System.out.println("Auction time");
 				auction.startAuction();
 			} */
+			if (Controller.loaded) {
+				numPasses = (int) Controller.loadData.get(4);
+			}
 			if (numPasses < Controller.numPlayer) {
 				System.out.println("Land Selection Phase");
 				selectPhase = true;
@@ -307,7 +310,7 @@ public class GameController implements Initializable {
 	@FXML
 	public void buyLandButtonClicked(ActionEvent e) {
 		newStage = new Stage();
-		landButton.setDisable(false);
+		//landButton.setDisable(false);
 		if (e.getSource() == landBuyButton) {
 			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
 				Land.landBuyEnable = true;
@@ -339,39 +342,36 @@ public class GameController implements Initializable {
 			if (currentP.landGrants > 0) {//check for land grants
 				currentP.landGrants--;
 				Rectangle color =  new Rectangle();
-				color.setFill(currentP.getColor());
+				color.setFill(Color.valueOf(currentP.getColor()));
 				color.setHeight(25);
 				color.setWidth(25);
 				color.setOpacity(1);
 				grid.add(color, col, row);
 				GridPane.setHalignment(color, HPos.LEFT);
 				GridPane.setValignment(color, VPos.TOP);
-				// landButton.setDisable(true);//disable the land button since land is purchased
 				newLand.setOwner(currentP);
-				newLand.setType(Controller.landPlots[col][row].getType());
-				Controller.landPlots[col][row].setOwner(currentP);
+				newLand.setType(selectedLand.getType());
+				selectedLand.setOwner(currentP);
 				currentP.landOwned.add(newLand);
-				landButton.setDisable(true);
+				//landButton.setDisable(true);
 			} else if (currentP.getMoney() >= 300){//if not grants sub money //doesn't allow to buy when at $300 //TODO
 				currentP.addSubMoney(-300);
-				Rectangle color =  new Rectangle();
-				color.setFill(currentP.getColor());
+				Rectangle color = new Rectangle();
+				color.setFill(Color.valueOf(currentP.getColor()));
 				color.setHeight(25);
 				color.setWidth(25);
 				color.setOpacity(1);
 				grid.add(color, col, row);
 				GridPane.setHalignment(color, HPos.LEFT);
 				GridPane.setValignment(color, VPos.TOP);
-				// landButton.setDisable(true);//disable the land button since land is purchased
 				newLand.setOwner(currentP);
-				newLand.setType(Controller.landPlots[col][row].getType());
-				Controller.landPlots[col][row].setOwner(currentP);
+				newLand.setType(selectedLand.getType());
+				selectedLand.setOwner(currentP);
 				currentP.landOwned.add(newLand);
-				landButton.setDisable(true);
+				//landButton.setDisable(true);
 			} else {
 				GameController.errorMessageBox("You do not have enough money to buy this land");
 			}
-
 			Land.landBuyEnable = false;//disable land buying for next turn
             if (selectPhase) {
                 Timer.endTurn();
@@ -388,7 +388,7 @@ public class GameController implements Initializable {
 				GridPane.setConstraints(muleView, col, row, 1, 1);
 				muleView.setId(String.valueOf(col) + String.valueOf(row));
 				grid.getChildren().add(muleView);
-				landButton.setDisable(true);
+				//landButton.setDisable(true);
 			}
 		} else if (!StoreController.buy) {
 			if (mule.getType() == selectedLand.getMuleType() && !StoreController.buy) {
@@ -409,7 +409,7 @@ public class GameController implements Initializable {
 						}
 					}
 					currentP.mulesOwned.remove(pos);
-					landButton.setDisable(true);
+					//landButton.setDisable(true);
 				}
 			} else if (mule.getType() != selectedLand.getMuleType()) {
 				errorMessageBox("This land has a " + Controller.landPlots[col][row].getMuleType()
@@ -422,7 +422,6 @@ public class GameController implements Initializable {
 	 *
 	 * @param e actionevent to check button source
 	 */
-	//PUB
 	@FXML
     public void pubButtonClicked(ActionEvent e) {
         newStage = new Stage();
@@ -479,15 +478,14 @@ public class GameController implements Initializable {
     @FXML
     public void gambleConfirm(ActionEvent e) {
         if (e.getSource() == gambleOkButton) {
+			Stage stage = (Stage) gambleOkButton.getScene().getWindow();
+			stage.close();
         }
-        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-        stage.close();
     }
 	/**
 	 *
 	 * @param e actionevent to check button source
 	 */
-	//STORE
 	@FXML
     public void storeButtonClicked(ActionEvent e) {
         newStage = new Stage();
@@ -525,7 +523,6 @@ public class GameController implements Initializable {
 		}
 		Stage stage = (Stage) assayBackButton.getScene().getWindow();
 		stage.close();
-
 	}
 	/**
 	 *
@@ -575,7 +572,6 @@ public class GameController implements Initializable {
 		grid.add(errorButton, 1, 1);
 		Scene errorScene = new Scene(grid);
 		errorStage.setScene(errorScene);
-		newStage.hide();
 		errorStage.show();
 		errorStage.toFront();
 	}

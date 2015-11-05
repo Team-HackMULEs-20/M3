@@ -1,5 +1,6 @@
 package gameConfig;
 
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -14,7 +15,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class InfoBar {
+
     private Stage infoStage;
     private Label moneyLeft = new Label();
     private Label foodLeft = new Label();
@@ -44,10 +48,10 @@ public class InfoBar {
 
         currPlayer.setText("It is " + p.getName() + "'s Turn");
         currPlayer.setFont(new Font("American Typewriter Bold", 18));
-        if (p.getColor() != Color.WHITE) {
-            currPlayer.setTextFill(p.getColor());
+        if (!Objects.equals(p.getColor(), Color.WHITE.toString())) {
+            currPlayer.setTextFill(Color.valueOf(p.getColor()));
         } else {
-            currPlayer.setTextFill(p.getColor());
+            currPlayer.setTextFill(Color.valueOf(p.getColor()));
             currPlayer.setBackground(new Background(new BackgroundFill(Color.BLACK,
                     CornerRadii.EMPTY, Insets.EMPTY)));
         }
@@ -73,10 +77,17 @@ public class InfoBar {
 
         Label l1 = new Label("                   ");
         Label l2 = new Label("                   ");
-        Label l3 = new Label("                   ");
+        Button quitGame = new Button("Save and Quit Game");
         Label l5 = new Label("                   ");
         Label l4 = new Label(" Timer");
         l4.setFont(new Font("American Typewriter Bold", 18));
+
+        quitGame.setOnAction((ActionEvent e) -> {
+            LoadSaveGame.save();
+            System.out.println("Game saved and ended");
+            Launcher.primaryStage.close();
+            GameController.newStage.close();
+        });
 
         GridPane grid2 = new GridPane();
         grid2.setAlignment(Pos.CENTER);
@@ -88,7 +99,7 @@ public class InfoBar {
         grid2.add(l2, 1, 1);
         grid2.add(moneyLeft, 2, 1);
         grid2.add(foodLeft, 4, 1);
-        grid2.add(l3, 1, 2);
+        grid2.add(quitGame, 1, 2);
         grid2.add(energyLeft, 2, 2);
         grid2.add(oreLeft, 4, 2);
         grid2.add(l5, 1,3);
@@ -113,12 +124,12 @@ public class InfoBar {
 
         currPlayer.setText("It is " + p.getName() + "'s Turn");
         currPlayer.setFont(new Font("American Typewriter Bold", 18));
-        if (p.getColor() != Color.WHITE) {
-            currPlayer.setTextFill(p.getColor());
+        if (!Objects.equals(p.getColor(), Color.WHITE.toString())) {
+            currPlayer.setTextFill(Color.valueOf(p.getColor()));
             currPlayer.setBackground(new Background(new BackgroundFill(Color.WHITE,
                     CornerRadii.EMPTY, Insets.EMPTY)));
         } else {
-            currPlayer.setTextFill(p.getColor());
+            currPlayer.setTextFill(Color.valueOf(p.getColor()));
             currPlayer.setBackground(new Background(new BackgroundFill(Color.BLACK,
                     CornerRadii.EMPTY, Insets.EMPTY)));
         }

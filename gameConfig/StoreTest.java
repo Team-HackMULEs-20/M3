@@ -20,7 +20,7 @@ public class StoreTest {
     @Before
     public void setUp() throws Exception {
         Controller.level = "Beginner";
-        p = new Player("Jess", Player.Race.BONZOID, Color.BROWN);
+        p = new Player("Jess", Player.Race.BONZOID, Color.BROWN.toString());
         s = new Store();
 
         int pm = p.getMoney();
