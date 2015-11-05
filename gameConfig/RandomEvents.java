@@ -138,14 +138,23 @@ public class RandomEvents {
 	public static void messageBox(String message) {
 		Stage errorStage = new Stage();
 		errorStage.setTitle("Random Event!");
+		errorStage.setAlwaysOnTop(true);
+		Group t = new Group();
 		GridPane grid = new GridPane();
+		grid.setAlignment(Pos.CENTER);
+		grid.setVgap(10);
+		grid.setHgap(10);
 		Label errorLabel = new Label(message);
 		errorLabel.setFont(new Font("American Typewriter", 15));
 		Button errorButton = new Button("Ok");
 		errorButton.setFont(new Font("American Typewriter", 17));
-		grid.add(errorLabel, 0, 0);
-		grid.add(errorButton, 0, 1);
-		Scene errorScene = new Scene(grid);
+		GridPane grid2 = new GridPane();
+		grid2.setAlignment(Pos.CENTER);
+		grid2.add(errorButton, 0, 0);
+		grid.add(errorLabel, 1, 0);
+		grid.add(grid2, 1, 1);
+		t.getChildren().add(grid);
+		Scene errorScene = new Scene(t);
 		errorStage.setScene(errorScene);
 		errorStage.show();
 		errorStage.toFront();
