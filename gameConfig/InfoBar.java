@@ -99,23 +99,29 @@ public class InfoBar {
         yesNoGrid.add(noButton, 1, 1);
         yesNoGrid.add(cancel, 2, 1);
         newStage.setScene(new Scene(yesNoGrid));
-        boolean[] reply = new boolean[1];
+        String[] reply = new String[1];
 
         yesButton.setOnAction((ActionEvent e) -> {
-            reply[0] = true;
+            reply[0] = "true";
             newStage.close();
         });
         noButton.setOnAction((ActionEvent e) -> {
-            reply[0] = false;
+            reply[0] = "false";
             newStage.close();
         });
-        cancel.setOnAction((ActionEvent e) -> newStage.close());
+        cancel.setOnAction((ActionEvent e) -> {
+            reply[0] = "cancel";
+            newStage.close();
+        });
         endGame.setOnAction((ActionEvent e) -> {
             newStage.showAndWait();
-            if (reply[0]) {
+            if (Objects.equals(reply[0], "true")) {
                 LoadSaveGame.save();
+            } else if (Objects.equals(reply[0], "false")) {
+                System.exit(0);
+            } else {
+                newStage.close();
             }
-            System.exit(0);
         });
 
         GridPane grid2 = new GridPane();
