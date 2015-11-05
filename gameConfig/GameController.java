@@ -91,9 +91,6 @@ public class GameController implements Initializable {
 			landBuyIntCreated, pubWinCreated,
 			storeWinCreated, selectWinCreated, assayWinCreated = false;
 	public static InfoBar infoBar;
-	public static Node landButton;
-	private RandomEvents randomEvents;
-	private RandomEvents randomMessage;
 	private final Auction auction = new Auction();
 	public static Scene townScene;
 	private static Scene storeScene;
@@ -152,7 +149,7 @@ public class GameController implements Initializable {
 		} else {
 			infoBar.updateInfoBar();
 		}
-		randomEvents = new RandomEvents();
+		RandomEvents randomEvents = new RandomEvents();
 		String message;
 		message = randomEvents.determineRandomEvent(currentPlayer);
 		if (event.getSource() == startButton) {
@@ -199,8 +196,8 @@ public class GameController implements Initializable {
 				selectPhase = false;
 			}
 			if (!(message.equals("NVM"))) {
-				randomMessage = new RandomEvents();
-				randomMessage.messageBox(message);
+				RandomEvents randomMessage = new RandomEvents();
+				RandomEvents.messageBox(message);
 			}
 		}
 
@@ -349,7 +346,7 @@ public class GameController implements Initializable {
 	public void landButtonClicked(ActionEvent e) {
 		Mule mule = StoreController.potentialMule;
 		Player currentP = Turns.getTurn();
-		landButton = (Node) e.getSource();
+		Node landButton = (Node) e.getSource();
 		//GridPane grid = (GridPane) landButton.getParent();
 		int col = GridPane.getColumnIndex(landButton);
 		int row = GridPane.getRowIndex(landButton);

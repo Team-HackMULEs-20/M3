@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class Player implements Serializable {
 
-	//private int number;//TODO unused var
 	private final String name;
 	private final Race race;
 	private final String color;
@@ -27,8 +26,6 @@ public class Player implements Serializable {
 		this.color = color;
 		landOwned = new ArrayList<>();
 		mulesOwned = new ArrayList<>();
-
-		//turnsTaken = 0; //TODO unused var
 		landGrants = 2;
 
 		if (Controller.level.equals("Beginner")){
@@ -55,7 +52,6 @@ public class Player implements Serializable {
 		FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN
 	}
 
-	//public int getNumber() {return number;} // TODO unused
 	public String getName() {return name;}
 	public Race getRace() {return race;}
 	public int getLandGrants() {return landGrants;}

@@ -12,7 +12,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import javax.naming.ldap.Control;
 import java.net.URL;
 import java.util.ResourceBundle;
 

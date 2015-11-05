@@ -3,6 +3,8 @@ package gameConfig;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.GridPane;
+
+import java.util.Collections;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 import java.io.*;
@@ -45,9 +47,7 @@ public class RandMap{
         File[] fileList1 = file.listFiles();
         ArrayList<File> fileList2 = new ArrayList<>();
 
-        for (File file1 : fileList1) {
-            fileList2.add(file1);
-        }
+        Collections.addAll(fileList2, fileList1);
         Parent mainMap = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
         GridPane grid = (GridPane) mainMap;
         try {
