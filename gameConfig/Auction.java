@@ -7,17 +7,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * Created by findleyck on 10/6/15.
- */
 public class Auction {
 
     public Stage auctionStage;
-    public static int startingBid;
+    private static int startingBid;
     public static int landNotTaken;
     public static int numBids;
     public static Land[] auctionLand;
-    public static Player bidWinner;
     public static int currentLand;
 
     public Auction() {
@@ -26,8 +22,11 @@ public class Auction {
         landNotTaken = 44;
     }
 
+    /**
+     * @return auctionTime the boolean value if it is time to auction or not
+     */
     // AUCTIONING
-    public boolean isAuctionTime() {
+    public static boolean isAuctionTime() {
         boolean auctionTime = false;
         int count = 0;
         for (Land[] item : Controller.landPlots) {
@@ -45,6 +44,9 @@ public class Auction {
         return auctionTime;
     }
 
+    /**
+     * @return none
+     */
     public void startAuction() {
         auctionStage = new Stage();
         try {
@@ -62,6 +64,11 @@ public class Auction {
         }
     }
 
+    /**
+     *
+     * @param p the player to place bid one
+     * @param bidAmount the amount to bid
+     */
     public void placeBid(Player p, int bidAmount) {
         Land plot = getCurrentLandAuction();
         if (bidAmount > startingBid && p.getMoney() > bidAmount) {
@@ -72,16 +79,28 @@ public class Auction {
         }
     }
 
+    /**
+     *
+     * @return Player that was the last bidder
+     */
     public static Player getLastBidder() {
         return Land.latestBidder;
     }
 
+    /**
+     *
+     * @param plot the land plot buy
+     * @param p player that won the bid
+     */
     public static void giveLandToBidder(Land plot, Player p) {
-        bidWinner = p;
-        plot.buyLand(bidWinner);
+        plot.buyLand(p);
     }
 
-    public static Land getCurrentLandAuction() {
+    /**
+     *
+     * @return Land that is currently being auctioned
+     */
+    private static Land getCurrentLandAuction() {
         return auctionLand[currentLand - 1];
     }
 }

@@ -1,40 +1,46 @@
 package gameConfig;
 
-import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
+import java.io.Serializable;
 
-public class Store {
+public class Store implements Serializable {
 
-	public static int foodCost, foodQuantity,
-	energyCost, energyQuantity,
-	smithCost, smithQuantity,
-	crysCost, crysQuantity,
-	muleCost, muleQuantity;
-
+	private int foodCost;
+    private int foodQuantity;
+    private int energyCost;
+    private int energyQuantity;
+    private int smithCost;
+    private int smithQuantity;
+    private int crysCost;
+    private int crysQuantity;
+    private final int muleCost;
+    private final int oreQuantity;
+    public int muleQuantity;
 
     public Store() {
         if (Controller.level.equals("Beginner")) {
-            foodQuantity = 16;
-            foodCost = 30;
-            energyQuantity = 16;
-            energyCost = 25;
-            smithQuantity = 0;
-            smithCost = 50;
-            crysQuantity = 0;
-            crysCost = 100;
-            muleQuantity = 25;
-            muleCost = 100;
+            this.foodQuantity = 16;
+            this.foodCost = 30;
+            this.energyQuantity = 16;
+            this.energyCost = 25;
+            this.smithQuantity = 0;
+            this.smithCost = 50;
+            this.crysQuantity = 0;
+            this.crysCost = 100;
+            this.muleQuantity = 25;
+            this.muleCost = 100;
+            this.oreQuantity = 0;
         } else {
-            foodQuantity = 8;
-            foodCost = 30;
-            energyQuantity = 8;
-            energyCost = 25;
-            smithQuantity = 8;
-            smithCost = 50;
-            crysQuantity = 0;
-            crysCost = 100;
-            muleQuantity = 14;
-            muleCost = 100;
+            this.foodQuantity = 8;
+            this.foodCost = 30;
+            this.energyQuantity = 8;
+            this.energyCost = 25;
+            this.smithQuantity = 8;
+            this.smithCost = 50;
+            this.crysQuantity = 0;
+            this.crysCost = 100;
+            this.muleQuantity = 14;
+            this.muleCost = 100;
+            this.oreQuantity = 8;
         }
     }
 
@@ -58,9 +64,15 @@ public class Store {
     //FOOD: initial q-c = 16-30
     // with each food sold / bought, price changes by $2
     // food sold to the store at $5 less than they cost
+
+    /**
+     *
+     * @param buy boolean if the item is bought
+     * @param customer the player buying or selling
+     */
     public void buySellFood(boolean buy, Player customer) {
         if (buy && foodQuantity == 0) {
-            System.out.println("Not enough Food in the store.");
+            GameController.errorMessageBox("Not enough Food in the store");
         } else {
             if (buy) {
                 foodQuantity--;
@@ -69,8 +81,7 @@ public class Store {
                     customer.addSubFood(1);
                     foodCost += 2;
                 } else {
-                    // make into error message? //TODO
-                    System.out.println("You do not have enough money for this item");
+                    GameController.errorMessageBox("You do not have enough money for this item.");
                 }
             } else {
                 if (customer.getFood() >= 1) {
@@ -79,8 +90,8 @@ public class Store {
                     customer.addSubFood(-1);
                     foodCost -= 2;
                 } else {
-                    // make into error message? //TODO
-                    System.out.println("You do not have any of this item to sell");
+                    GameController.errorMessageBox("You do not have any of this item to sell");
+
                 }
             }
         }
@@ -89,9 +100,15 @@ public class Store {
     // ENERGY: initial q-c = 16-25
     // with each sold / bought, price changes by $2
     // sold to the store at $5 less than they cost
+
+    /**
+     *
+     * @param buy boolean if the item is bought
+     * @param customer the customer buying or selling
+     */
     public void buySellEnergy(boolean buy, Player customer) {
         if (buy && energyQuantity == 0) {
-            System.out.println("Not enough Energy in the store.");
+            GameController.errorMessageBox("Not enough Energy in the store");
         } else {
             if (buy) {
                 energyQuantity--;
@@ -100,7 +117,7 @@ public class Store {
                     customer.addSubEnergy(1);
                     energyCost += 2;
                 } else {
-                    System.out.println("You do not have enough money for this item");
+                    GameController.errorMessageBox("You do not have enough money for this item");
                 }
             } else {
                 if (customer.getEnergy() >= 1) {
@@ -109,7 +126,7 @@ public class Store {
                     customer.addSubEnergy(-1);
                     energyCost -= 2;
                 } else {
-                    System.out.println("You do not have any of this item to sell");
+                    GameController.errorMessageBox("You do not have any of this item to sell");
                 }
             }
         }
@@ -118,22 +135,28 @@ public class Store {
     // Smithore: initial q-c = 0-50
     // with each sold / bought, price changes by $5 (only for greater than 1)
     // sold to the store at $8 less than they cost
+
+    /**
+     *
+     * @param buy boolean if bought
+     * @param customer player buying or selling
+     */
     public void buySellSmithore(boolean buy, Player customer) {
         if (buy && smithQuantity == 0) {
-            System.out.println("Not enough Smithore in the store.");
+            GameController.errorMessageBox("Not enough Smithore in the store");
         } else {
             if (buy) {
-                smithQuantity--;
                 if (customer.getMoney() >= smithCost) {
                     customer.addSubMoney(-smithCost);
                     customer.addSubOre(1);
+                    smithQuantity--;
                     if (smithQuantity == 0) {
                         smithCost = 50;
                     } else {
                         smithCost += 5;
                     }
                 } else {
-                    System.out.println("You do not have enough money for this item");
+                    GameController.errorMessageBox("You do not have enough money for this item");
                 }
             } else {
                 if (customer.getOre() >= 1) {
@@ -146,7 +169,7 @@ public class Store {
                         smithCost -= 5;
                     }
                 } else {
-                    System.out.println("You do not have any of this item to sell");
+                    GameController.errorMessageBox("You do not have any of this item to sell");
                 }
             }
         }
@@ -155,9 +178,15 @@ public class Store {
     // CHRYSTITE: initial q-c = 0-100
     // with each sold / bought, price changes by $10 (only for greater than 1)
     // sold to the store at $15 less than they cost
+
+    /**
+     *
+     * @param buy boolean if bought
+     * @param customer player buying or selling
+     */
     public void buySellChrystite(boolean buy, Player customer) {
         if (buy && crysQuantity == 0) {
-            System.out.println("Not enough Chrystite in the store.");
+            GameController.errorMessageBox("Not enough Crystite in the store.");
         } else {
             if (buy) {
                 crysQuantity--;
@@ -170,7 +199,7 @@ public class Store {
                         crysCost += 10;
                     }
                 } else {
-                    System.out.println("You do not have enough money for this item");
+                    GameController.errorMessageBox("You do not have enough money for this item");
                 }
             } else {
                 if (customer.getCrystite() >= 1) {
@@ -183,63 +212,81 @@ public class Store {
                         crysCost -= 10;
                     }
                 } else {
-                    System.out.println("You do not have enough money for this item");
+                    GameController.errorMessageBox("You do not have enough money for this item");
                 }
             }
         }
     }
 
-    // MULE: initial q-c = 25-100
-    // with each sold / bought, price changes by $0
-    // sold to the store at $15 less than they cost
-    // TODO
-    //public void buySellMule(boolean buy, Player customer) { //TODO unused var
-    //    if (buy && muleQuantity == 0) {
-    //        System.out.println("Not enough Mules in the store.");
-    //    } else {
-    //        if (buy) {
-    //            muleQuantity--;
-    //        } else {
-    //            muleQuantity++;
-    //        }
-    //    }
-    //}
-
-
+    /**
+     *
+     * @return foodCost the cost of food
+     */
     public int getFoodCost() {
         return foodCost;
     }
-
+    /**
+     *
+     * @return foodQuantity the quantity of food
+     */
     public int getFoodQuantity() {
         return foodQuantity;
     }
-
+    /**
+     *
+     * @return energyCost the cost of energy
+     */
     public int getEnergyCost() {
         return energyCost;
     }
-
+    /**
+     *
+     * @return energyQuantity the quantity of energy
+     */
     public int getEnergyQuantity() {
         return energyQuantity;
     }
-
+    /**
+     *
+     * @return smithCost the cost of smithore
+     */
     public int getSmithCost() {
         return smithCost;
     }
-
+    /**
+     *
+     * @return smithQuantity the quantity of smithore
+     */
     public int getSmithQuantity() {
         return smithQuantity;
     }
-
+    /**
+     *
+     * @return crysCost the cost of crystite
+     */
     public int getCrysCost() {
         return crysCost;
     }
-
+    /**
+     *
+     * @return crysQuantity the quantity of crystite
+     */
     public int getCrysQuantity() {
         return crysQuantity;
     }
-
+    /**
+     *
+     * @return muleQuantity the quantity of mule
+     */
     public int getMuleQuantity() {
         return muleQuantity;
-    } //also cost //TODO
+    }
+    /**
+     *
+     * @return muleCost the cost of mule
+     */
+    public int getMuleCost() {
+        return muleCost;
+    }
 
 }

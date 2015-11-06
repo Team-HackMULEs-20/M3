@@ -2,39 +2,24 @@ package gameConfig;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
-import javafx.geometry.Pos;
-import javafx.stage.Stage;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.animation.Timeline;
-import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
-import javafx.scene.layout.VBox;
 import javafx.animation.KeyFrame;
 import javafx.util.Duration;
 
-public class Timer {
-    private int beginTime;// = 50; //TODO unused var
+class Timer {
+
     private static Integer timeLeft;// beginTime;
     private Timeline timeline;
-    //public Label timerLabel = new Label();
-    //private static Button endButton;
 
+    /**
+     *
+     * @param beginTime the int to begin timer at
+     */
     public Timer(int beginTime) {
-        this.beginTime = beginTime;
         timeLeft = beginTime;
     }
 
     public void start() {
-        Stage stage = new Stage();
-        Player p = Turns.getTurn();
-        System.out.print("Round " + Turns.rounds);
-        System.out.print(" | It is " + p.getName() + "'s Turn");
-        System.out.println(" | Money: " + p.getMoney() + "; Food: " + p.getFood()
-                + "; Energy: " + p.getEnergy() + "; Ore: " + p.getOre());
         InfoBar.timerLabel.setText("  " + timeLeft.toString());
         timeline = new Timeline();
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -48,18 +33,17 @@ public class Timer {
                             if (timeLeft <= 0) {
                                 timeline.stop();
                                 Turns.playerTurn++;
+                                GameController.newStage.close();
                                 GameController.beginTurn();
-                                stage.close();
                             }
                         }));
         timeline.playFromStart();
         InfoBar.endButton.setOnAction((ActionEvent e) -> {
             timeline.stop();
-            stage.close();
             Turns.playerTurn++;
+            GameController.newStage.close();
             GameController.beginTurn();
         });
-
     }
 
     //simulates "End Turn" button pressed
@@ -67,6 +51,10 @@ public class Timer {
         InfoBar.endButton.fire();
     }
 
+    /**
+     *
+     * @return timeLeft the int of time left
+     */
     public static int getTimeLeft() {return timeLeft;}
 
     public static void main(String[] args) {
