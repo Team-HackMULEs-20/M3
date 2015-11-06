@@ -1,4 +1,4 @@
-package GameConfig;
+package gameConfig;
 
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;

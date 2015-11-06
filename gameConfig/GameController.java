@@ -1,4 +1,4 @@
-package GameConfig;
+package gameConfig;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -380,7 +380,7 @@ public class GameController implements Initializable {
 		} else if (StoreController.buy) {
 			boolean muleBought = currentP.buyMule(true, mule, selectedLand);//buy mule / return false if mule has been lost
 			if (muleBought) {//if !muleLost
-				Image mulePic =  new Image("GameConfig/UIFiles/Media/aMule.png");
+				Image mulePic =  new Image("gameConfig/UIFiles/Media/aMule.png");
 				ImageView muleView = new ImageView();
 				muleView.setImage(mulePic);
 				muleView.setFitWidth(50);

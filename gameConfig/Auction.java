@@ -1,4 +1,4 @@
-package GameConfig;
+package gameConfig;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

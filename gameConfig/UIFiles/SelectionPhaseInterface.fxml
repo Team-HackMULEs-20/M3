@@ -7,7 +7,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1"
-            xmlns="http://javafx.com/javafx/2.2" fx:controller="GameConfig.GameController">
+            xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
   <ImageView id="auction" fitHeight="400.0000305175781" fitWidth="600.0" layoutX="0.0" layoutY="0.0"
              pickOnBounds="true">
     <Image url="@Media/auction.jpg" preserveRatio="true" smooth="true"/>

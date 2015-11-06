@@ -1,4 +1,4 @@
-package GameConfig;
+package gameConfig;
 
 public enum LandType {
     RIVER, PLAIN, M1, M2, M3, TOWN;

@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="167.0" prefWidth="239.0" xmlns:fx="http://javafx.com/fxml/1"
-            xmlns="http://javafx.com/javafx/2.2" fx:controller="GameConfig.GameController">
+            xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
     <Text layoutX="60.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0"
           text="Ore Shortage! &#10;No mules available" textAlignment="CENTER"/>
     <Button fx:id="oreOkButton" layoutX="99.0" layoutY="122.0" mnemonicParsing="false" onAction="#oreErrorMessage"

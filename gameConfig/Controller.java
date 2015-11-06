@@ -1,4 +1,4 @@
-package GameConfig;
+package gameConfig;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -342,7 +342,7 @@ public class Controller implements Initializable {
 								GridPane.setValignment(color, VPos.TOP);
 								grid.add(color, land.getCol(), land.getRow());
 								if (land.hasMule()) {
-									Image mulePic = new Image("GameConfig/UIFiles/Media/aMule.png");
+									Image mulePic = new Image("gameConfig/UIFiles/Media/aMule.png");
 									ImageView muleView = new ImageView();
 									muleView.setImage(mulePic);
 									muleView.setFitWidth(50);

@@ -1,4 +1,4 @@
-package GameConfig;
+package gameConfig;
 
 import javafx.scene.paint.Color;
 import org.junit.Before;

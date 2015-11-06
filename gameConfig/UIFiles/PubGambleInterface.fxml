@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="GameConfig.GameController">
+            fx:controller="gameConfig.GameController">
   <ImageView fitHeight="433.63277858844873" fitWidth="611.8854370117188" layoutX="1.0" layoutY="-34.0"
              pickOnBounds="true" preserveRatio="true">
     <Image url="@Media/pubBg2.jpg"/>

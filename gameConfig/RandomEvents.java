@@ -1,4 +1,4 @@
-package GameConfig;
+package gameConfig;
 
 import javafx.geometry.Pos;
 import javafx.scene.Group;
