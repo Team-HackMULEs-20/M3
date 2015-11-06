@@ -2,6 +2,7 @@ package gameConfig;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 
 import java.util.Collections;
@@ -59,19 +60,22 @@ public class RandMap{
                     int randNum = rand.nextInt(fileList2.size()) + 1;
                     ImageView pic = new ImageView();
                     Object toAdd = fileList2.get(randNum).toURI().toString();
-                    pic.setImage((javafx.scene.image.Image) toAdd);
+                    //noinspection ConstantConditions
+                    pic.setImage((Image) toAdd);
                     grid.add(pic, i, j);
                 }
             }
             for (int i = 0; i < 5; i++) {
                 Object plainFile = new File("/UIFiles/Media/plain.png");
                 ImageView plain = new ImageView();
-                plain.setImage((javafx.scene.image.Image) plainFile);
+                //noinspection ConstantConditions
+                plain.setImage((Image) plainFile);
                 grid.add(plain, 4, i);
             }
             Object townFile = new File("/UIFiles/Media/town.png");
             ImageView town = new ImageView();
-            town.setImage((javafx.scene.image.Image) townFile);
+            //noinspection ConstantConditions
+            town.setImage((Image) townFile);
             grid.add(town, 4, 2);
         } catch (Exception ex) {
             Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
