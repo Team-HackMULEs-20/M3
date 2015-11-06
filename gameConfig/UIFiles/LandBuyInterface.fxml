@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.GameController">
+  <!-- TODO Add Nodes -->
+  <ImageView id="auction" fitHeight="400.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
+    <Image url="@Media/auction.jpg" preserveRatio="true" smooth="true"/>
+  </ImageView>
+  <ImageView id="menu" fitHeight="343.0" fitWidth="573.37744140625" layoutX="14.0" layoutY="25.0" pickOnBounds="true">
+    <Image url="@Media/menu.jpg" preserveRatio="true" smooth="true"/>
+  </ImageView>
+    <Text layoutX="82.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you do not wish to make a purchase this round, please select Pass." />
+    <Text layoutX="76.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land costs $300 per unit. To purchase, select the land plot on the grid" />
+    <Button fx:id="landBuyButton" layoutX="280.0" layoutY="314.0" mnemonicParsing="false" onAction="#buyLandButtonClicked" text="Buy Land" />
+    <Button id="passButton" fx:id="backButton2" layoutX="82.0" layoutY="60.0" mnemonicParsing="false" onAction="#buyLandButtonClicked" text="Back" />
+    <Text layoutX="148.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You cannot buy land owned by someone else." />
+    <Text layoutX="271.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land Office">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Text>
+  <ImageView id="gavel" fitHeight="141.431640625" fitWidth="206.0" layoutX="189.0" layoutY="86.0" pickOnBounds="true">
+    <Image url="@Media/gavel.png" preserveRatio="true" smooth="true"/>
+  </ImageView>
+</AnchorPane>
