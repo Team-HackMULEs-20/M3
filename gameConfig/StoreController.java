@@ -91,6 +91,7 @@ public class StoreController implements Initializable {
      *
      * @param e the actionevent to check button source
      */
+    @SuppressWarnings("unused")
     @FXML
     public void updateMuleCostLabel(ActionEvent e) {
         if (e.getSource() == muleChoice) {
@@ -120,10 +121,9 @@ public class StoreController implements Initializable {
 
     /**
      *
-     * @param event the actionevent to check button source
      */
     @FXML
-    public void buyMuleButtonClicked(ActionEvent event) {
+    public void buyMuleButtonClicked() {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
         GridPane grid = GameController.grid;
@@ -135,10 +135,9 @@ public class StoreController implements Initializable {
 
     /**
      *
-     * @param event actionevent to check button source
      */
     @FXML
-    public void sellMuleButtonClicked(ActionEvent event) {
+    public void sellMuleButtonClicked() {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
         GridPane grid = GameController.grid;
@@ -167,10 +166,9 @@ public class StoreController implements Initializable {
 
     /**
      *
-     * @param e the actionevent to check button source
      */
     @FXML
-    public void buyFoodButtonClicked(ActionEvent e) {
+    public void buyFoodButtonClicked() {
         Player p = Turns.getTurn();
         store.buySellFood(true, p);
         this.updateStoreLabels();
@@ -178,10 +176,9 @@ public class StoreController implements Initializable {
     }
     /**
      *
-     * @param e the actionevent to check button source
      */
     @FXML
-    public void sellFoodButtonClicked(ActionEvent e) {
+    public void sellFoodButtonClicked() {
         Player p = Turns.getTurn();
         store.buySellFood(false, p);
         this.updateStoreLabels();
@@ -189,10 +186,9 @@ public class StoreController implements Initializable {
     }
     /**
      *
-     * @param e the actionevent to check button source
      */
     @FXML
-    public void buyEnergyButtonClicked(ActionEvent e) {
+    public void buyEnergyButtonClicked() {
         Player p = Turns.getTurn();
         store.buySellEnergy(true, p);
         this.updateStoreLabels();
@@ -200,10 +196,9 @@ public class StoreController implements Initializable {
     }
     /**
      *
-     * @param e the actionevent to check button source
      */
     @FXML
-    public void sellEnergyButtonClicked(ActionEvent e) {
+    public void sellEnergyButtonClicked() {
         Player p = Turns.getTurn();
         store.buySellEnergy(false, p);
         this.updateStoreLabels();
@@ -211,10 +206,9 @@ public class StoreController implements Initializable {
     }
     /**
      *
-     * @param e the actionevent to check button source
      */
     @FXML
-    public void buyOreButtonClicked(ActionEvent e) {
+    public void buyOreButtonClicked() {
         Player p = Turns.getTurn();
         store.buySellSmithore(true, p);
         this.updateStoreLabels();
@@ -222,10 +216,9 @@ public class StoreController implements Initializable {
     }
     /**
      *
-     * @param e the actionevent to check button source
      */
     @FXML
-    public void sellOreButtonClicked(ActionEvent e) {
+    public void sellOreButtonClicked() {
         Player p = Turns.getTurn();
         store.buySellSmithore(false, p);
         this.updateStoreLabels();
@@ -233,10 +226,9 @@ public class StoreController implements Initializable {
     }
     /**
      *
-     * @param e the actionevent to check button source
      */
     @FXML
-    public void buyCrysButtonClicked(ActionEvent e) {
+    public void buyCrysButtonClicked() {
         Player p = Turns.getTurn();
         store.buySellChrystite(true, p);
         this.updateStoreLabels();
@@ -247,7 +239,7 @@ public class StoreController implements Initializable {
      * @param e the actionevent to check button source
      */
     @FXML
-    public void sellCrysButtonClicked(ActionEvent e) {
+    public void sellCrysButtonClicked() {
         Player p = Turns.getTurn();
         store.buySellChrystite(false, p);
         this.updateStoreLabels();
