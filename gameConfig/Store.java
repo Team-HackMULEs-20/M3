@@ -13,7 +13,6 @@ public class Store implements Serializable {
     private int crysCost;
     private int crysQuantity;
     private final int muleCost;
-    private final int oreQuantity;
     public int muleQuantity;
 
     public Store() {
@@ -28,7 +27,6 @@ public class Store implements Serializable {
             this.crysCost = 100;
             this.muleQuantity = 25;
             this.muleCost = 100;
-            this.oreQuantity = 0;
         } else {
             this.foodQuantity = 8;
             this.foodCost = 30;
@@ -40,7 +38,6 @@ public class Store implements Serializable {
             this.crysCost = 100;
             this.muleQuantity = 14;
             this.muleCost = 100;
-            this.oreQuantity = 8;
         }
     }
 

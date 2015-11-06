@@ -103,7 +103,7 @@ public class GameController implements Initializable {
 	/**
 	 *
 	 * @param fxmlFileLocation URL for the file location
-	 * @param resources rousourcebundle to check resources
+	 * @param resources resource bundle to check resources
 	 */
 	// TURNS AND SETUP
 	@Override
@@ -133,7 +133,7 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param event actionevent to check button
+	 * @param event action event to check button
 	 */
 	@FXML
 	public void startButtonClicked(ActionEvent event) {
@@ -199,7 +199,7 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param event actionevent to check button source
+	 * @param event action event to check button source
 	 */
 	@FXML
 	public void bidButtonClicked(ActionEvent event) {
@@ -215,7 +215,7 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param event actionevent to check button source
+	 * @param event action event to check button source
 	 */
 	@FXML
 	public void selectionPhase(ActionEvent event) {
@@ -235,7 +235,7 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	//TOWN BUTTONS
 	@FXML
@@ -262,7 +262,7 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void backButtonClicked(ActionEvent e) {
@@ -277,7 +277,7 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	//LAND OFFICE
 	@FXML
@@ -305,7 +305,7 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void buyLandButtonClicked(ActionEvent e) {
@@ -326,7 +326,7 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void landButtonClicked(ActionEvent e) {
@@ -423,7 +423,7 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void pubButtonClicked(ActionEvent e) {
@@ -449,7 +449,7 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void gambleButtonClicked(ActionEvent e) {
@@ -476,7 +476,7 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void gambleConfirm(ActionEvent e) {
@@ -487,7 +487,7 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void storeButtonClicked(ActionEvent e) {
@@ -514,7 +514,7 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void assayBackButtonClicked(ActionEvent e) {
@@ -536,10 +536,9 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param event actionevent to check button source
 	 */
 	@FXML
-	public void assayOfficeButtonClicked(ActionEvent event) {
+	public void assayOfficeButtonClicked() {
 		newStage = new Stage();
 		if (!assayWinCreated) {
 			try {
@@ -579,7 +578,7 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	public void oreErrorMessage(ActionEvent e) {
 		if(e.getSource() == oreOkButton) {
