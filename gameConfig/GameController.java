@@ -529,10 +529,9 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param event actionevent to check button source
 	 */
 	@FXML
-	public void mineButtonClicked(ActionEvent event) {
+	public void mineButtonClicked() {
 		System.out.println("Mine button clicked");
 	}
 	/**

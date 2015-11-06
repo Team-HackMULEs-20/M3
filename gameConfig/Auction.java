@@ -45,7 +45,7 @@ public class Auction {
     }
 
     /**
-     * @return none
+     *
      */
     public void startAuction() {
         auctionStage = new Stage();
