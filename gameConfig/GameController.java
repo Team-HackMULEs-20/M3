@@ -153,8 +153,8 @@ public class GameController implements Initializable {
 			timer.start();
 			Stage stage = (Stage) startButton.getScene().getWindow();
 			stage.close();
-			if (currentPlayer.landOwned.size() != 0 && currentPlayer.mulesOwned.size() != 0) {
-                currentPlayer.mulesOwned.stream().filter(mule -> mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
+			if (currentPlayer.getLandOwned().size() != 0 && currentPlayer.getMulesOwned().size() != 0) {
+                currentPlayer.getMulesOwned().stream().filter(mule -> mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
                         && mule.getOwner() == currentPlayer).forEach(mule -> {
                     System.out.println("producing");
                     Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
@@ -339,8 +339,8 @@ public class GameController implements Initializable {
 		Land newLand = new Land(col, row);
 		Land selectedLand = Controller.landPlots[col][row];
 		if (Land.landBuyEnable) {
-			if (currentP.landGrants > 0) {//check for land grants
-				currentP.landGrants--;
+			if (currentP.getLandGrants() > 0) {//check for land grants
+				currentP.decLandGrants();
 				Rectangle color =  new Rectangle();
 				color.setFill(Color.valueOf(currentP.getColor()));
 				color.setHeight(25);
@@ -352,7 +352,7 @@ public class GameController implements Initializable {
 				newLand.setOwner(currentP);
 				newLand.setType(selectedLand.getType());
 				selectedLand.setOwner(currentP);
-				currentP.landOwned.add(newLand);
+				currentP.getLandOwned().add(newLand);
 				//landButton.setDisable(true);
 			} else if (currentP.getMoney() >= 300){//if not grants sub money //doesn't allow to buy when at $300 //TODO
 				currentP.addSubMoney(-300);
@@ -367,7 +367,7 @@ public class GameController implements Initializable {
 				newLand.setOwner(currentP);
 				newLand.setType(selectedLand.getType());
 				selectedLand.setOwner(currentP);
-				currentP.landOwned.add(newLand);
+				currentP.getLandOwned().add(newLand);
 				//landButton.setDisable(true);
 			} else {
 				GameController.errorMessageBox("You do not have enough money to buy this land");
@@ -403,14 +403,14 @@ public class GameController implements Initializable {
 						}
 					}
 					int pos = -1;
-					for (Mule m : currentP.mulesOwned) {
+					for (Mule m : currentP.getMulesOwned()) {
 						pos++;
 						if (m.getPosition().equals(newLand)) {
 							break;
 						}
 					}
 					selectedLand.setHasMule(false);
-					currentP.mulesOwned.remove(pos);
+					currentP.getMulesOwned().remove(pos);
 					//landButton.setDisable(true);
 				}
 			} else if (mule.getType() != selectedLand.getMuleType()) {

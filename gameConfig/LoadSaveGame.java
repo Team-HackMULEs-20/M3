@@ -6,6 +6,9 @@ import java.util.List;
 
 public class LoadSaveGame {
 
+    private LoadSaveGame() { //created for checkstyle
+
+    }
 
     public static void save() {
         try {

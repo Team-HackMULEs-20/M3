@@ -324,7 +324,7 @@ public class Controller implements Initializable {
 				level = (String) loadData.get(1);
 				players = (Player[]) loadData.get(3);
 				for (Player player : players) {
-					for (Land land : player.landOwned) {
+					for (Land land : player.getLandOwned()) {
 						landPlots[land.getCol()][land.getRow()].setOwner(player);
 					}
 				}

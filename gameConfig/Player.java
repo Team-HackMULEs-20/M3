@@ -15,15 +15,15 @@ public class Player implements Serializable {
 	private int ore;
 	private int crystite;
 
-	public int landGrants;
-	public final ArrayList<Land> landOwned;
-	public final ArrayList<Mule> mulesOwned;
+	private int landGrants;
+	private final ArrayList<Land> landOwned;
+	private final ArrayList<Mule> mulesOwned;
 
-	public Player (String name, Race race, String color) {
+	public Player (String tName, Race tRace, String tColor) {
 		//this.number = number;
-		this.name = name;
-		this.race = race;
-		this.color = color;
+		name = tName;
+		race = tRace;
+		color = tColor;
 		landOwned = new ArrayList<>();
 		mulesOwned = new ArrayList<>();
 		landGrants = 2;
@@ -54,8 +54,11 @@ public class Player implements Serializable {
 
 	public String getName() {return name;}
 	public Race getRace() {return race;}
-	public int getLandGrants() {return landGrants;}
 
+	public int getLandGrants() {return landGrants;}
+    public void decLandGrants() {landGrants--;}
+    public ArrayList<Land> getLandOwned() {return landOwned;}
+    public ArrayList<Mule> getMulesOwned() {return mulesOwned;}
 
 	public String getColor() {return color;}
 

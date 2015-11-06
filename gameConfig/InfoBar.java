@@ -72,7 +72,7 @@ public class InfoBar {
         crystiteLeft.setText("Crystite: " + p.getCrystite()); //Added
         crystiteLeft.setFont(new Font("American Typewriter", 15)); // added
 
-        numMules.setText("Mules Owned: " + p.mulesOwned.size()); //added
+        numMules.setText("Mules Owned: " + p.getMulesOwned().size()); //added
         numMules.setFont(new Font("American Typewriter", 15)); //added
 
         Label l1 = new Label("                   ");
@@ -186,7 +186,7 @@ public class InfoBar {
         crystiteLeft.setText("Crystite: " + p.getCrystite());
         crystiteLeft.setFont(new Font("American Typewriter", 15));
 
-        numMules.setText("Mules Owned: " + p.mulesOwned.size()); //added
+        numMules.setText("Mules Owned: " + p.getMulesOwned().size()); //added
         numMules.setFont(new Font("American Typewriter", 15)); //added
         
         //System.out.println("INFO BAR UPDATED");
