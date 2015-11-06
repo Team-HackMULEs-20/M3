@@ -28,6 +28,7 @@ public class Player implements Serializable {
 		mulesOwned = new ArrayList<>();
 		landGrants = 2;
 
+        // all numbers as stated in Players section of wiki
 		if (Controller.level.equals("Beginner")){
 			food = 8;
 			energy = 4;
@@ -36,6 +37,7 @@ public class Player implements Serializable {
 			energy = 2;
 		}
 
+        // all numbers as stated in Players section of wiki
 		if (this.race.equals(Race.FLAPPER)) {
 			money = 1600;
 		} else if (this.race.equals(Race.HUMAN)) {
@@ -62,6 +64,7 @@ public class Player implements Serializable {
 
 	public final String getColor() {return color;}
 
+    // all numbers as stated in Score Computation section of wiki
 	public final int getScore() { //TODO score
 		return money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
 	}
@@ -81,6 +84,7 @@ public class Player implements Serializable {
 	public final int getCrystite() {return crystite;}
 	public final void addSubCrystite(int amount) {crystite += amount;}
 
+    // all numbers as stated in The pub section of wiki
 	public final int gamble(int timeLeft) {
 		int r = Turns.rounds;
 
@@ -106,6 +110,7 @@ public class Player implements Serializable {
 			tb = 200;
 		}
 
+        // all numbers as stated in The pub section of wiki
 		//money bonus = round bonus * random(0 to timeBonus)
 		//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
 		int mb = rb * ((int)(Math.random() * (tb+1))); //money bonus
@@ -146,7 +151,7 @@ public class Player implements Serializable {
 		} else {
 			if (this.equals(land.getOwner())) {
 				StoreController.store.muleQuantity++;
-				land.getOwner().addSubMoney(StoreController.store.getMuleCost() - 15);
+				land.getOwner().addSubMoney(StoreController.store.getMuleCost() - 15); //15 = economics price difference for selling mule
 				land.setHasMule(false);
 				land.setMuleType(null);
 				land.setMuleBuyEnable(true);
