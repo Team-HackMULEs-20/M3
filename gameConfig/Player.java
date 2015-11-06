@@ -52,36 +52,36 @@ public class Player implements Serializable {
 		FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN
 	}
 
-	public String getName() {return name;}
-	public Race getRace() {return race;}
+	public final String getName() {return name;}
+	public final Race getRace() {return race;}
 
-	public int getLandGrants() {return landGrants;}
-    public void decLandGrants() {landGrants--;}
-    public ArrayList<Land> getLandOwned() {return landOwned;}
-    public ArrayList<Mule> getMulesOwned() {return mulesOwned;}
+	public final int getLandGrants() {return landGrants;}
+    public final void decLandGrants() {landGrants--;}
+    public final ArrayList<Land> getLandOwned() {return landOwned;}
+    public final ArrayList<Mule> getMulesOwned() {return mulesOwned;}
 
-	public String getColor() {return color;}
+	public final String getColor() {return color;}
 
-	public int getScore() { //TODO score
+	public final int getScore() { //TODO score
 		return money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
 	}
 
-	public int getMoney() {return money;}
-	public void addSubMoney(int amount) {money += amount;}
+	public final int getMoney() {return money;}
+	public final void addSubMoney(int amount) {money += amount;}
 
-	public int getFood() {return food;}
-	public void addSubFood(int amount) {food += amount;}
+	public final int getFood() {return food;}
+	public final void addSubFood(int amount) {food += amount;}
 
-	public int getEnergy() {return energy;}
-	public void addSubEnergy(int amount) {energy += amount;}
+	public final int getEnergy() {return energy;}
+	public final void addSubEnergy(int amount) {energy += amount;}
 
-	public int getOre() {return ore;}
-	public void addSubOre(int amount) {ore += amount;}
+	public final int getOre() {return ore;}
+	public final void addSubOre(int amount) {ore += amount;}
 
-	public int getCrystite() {return crystite;}
-	public void addSubCrystite(int amount) {crystite += amount;}
+	public final int getCrystite() {return crystite;}
+	public final void addSubCrystite(int amount) {crystite += amount;}
 
-	public int gamble(int timeLeft) {
+	public final int gamble(int timeLeft) {
 		int r = Turns.rounds;
 
 		int rb; // round bonus
@@ -116,7 +116,7 @@ public class Player implements Serializable {
 		return mb;
 	}
 
-	public boolean buyMule(boolean buy, Mule mule, Land land) {
+	public final boolean buyMule(boolean buy, Mule mule, Land land) {
 		//Land landPlot = Controller.landPlots[land.getCol()][land.getRow()];
 		if (buy) {
 			if (money >= mule.getCost()) {//check that player has enough money
