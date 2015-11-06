@@ -1,4 +1,4 @@
-package gameConfig;
+package GameConfig;
 
 public class Land {
     private Player owner;

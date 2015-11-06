@@ -1,4 +1,4 @@
-package gameConfig;
+package GameConfig;
 
 public class Turns {
     public static Player[] players;

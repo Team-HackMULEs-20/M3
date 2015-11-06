@@ -1,4 +1,4 @@
-package gameConfig;
+package GameConfig;
 
 <<<<<<< HEAD
 <<<<<<< HEAD

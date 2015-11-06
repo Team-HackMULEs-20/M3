@@ -1,4 +1,4 @@
-package gameConfig;
+package GameConfig;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
