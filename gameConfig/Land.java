@@ -1,4 +1,4 @@
-package GameConfig;
+package gameConfig;
 
 import java.io.Serializable;
 
