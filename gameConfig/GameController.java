@@ -145,9 +145,14 @@ public class GameController implements Initializable {
 		} else {
 			infoBar.updateInfoBar();
 		}
-		RandomEvents randomEvents = new RandomEvents();
-		String message;
-		message = randomEvents.determineRandomEvent(currentPlayer);
+		if (!selectPhase) {
+			RandomEvents randomEvents = new RandomEvents();
+			String message = randomEvents.determineRandomEvent(currentPlayer);
+			if (!(message.equals("NVM"))) {
+				RandomEvents randomMessage = new RandomEvents();
+				RandomEvents.messageBox(message);
+			}
+		}
 		if (event.getSource() == startButton) {
 			Timer timer = new Timer(Turns.timeForTurn(currentPlayer));
 			timer.start();
@@ -188,10 +193,6 @@ public class GameController implements Initializable {
 				}
 			} else {
 				selectPhase = false;
-			}
-			if (!(message.equals("NVM"))) {
-				RandomEvents randomMessage = new RandomEvents();
-				RandomEvents.messageBox(message);
 			}
 		}
 
