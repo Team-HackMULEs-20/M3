@@ -56,16 +56,14 @@ public class Store implements Serializable {
      *
      * @param buy boolean if the item is bought
      * @param customer the player buying or selling
-     * @return 0 if the transaction is successful, 1 if it is not
      */
-    public int buySellFood(boolean buy, Player customer) {
+    public void buySellFood(boolean buy, Player customer) {
         if (buy && foodQuantity == 0) {
             GameController.errorMessageBox("Not enough Food in the store");
-            return 1;
         } else {
             if (buy) {
-                foodQuantity--;
                 if (customer.getMoney() >= foodCost) {
+                    foodQuantity--;
                     customer.addSubMoney(-foodCost);
                     customer.addSubFood(1);
                     if (foodQuantity == 0) {
@@ -73,10 +71,8 @@ public class Store implements Serializable {
                     } else {
                         foodCost += 2;
                     }
-                    return 0;
                 } else {
                     GameController.errorMessageBox("You do not have enough money for this item.");
-                    return 1;
                 }
             } else {
                 if (customer.getFood() >= 1) {
@@ -88,10 +84,8 @@ public class Store implements Serializable {
                     }
                     customer.addSubFood(-1);
                     foodQuantity++;
-                    return 0;
                 } else {
                     GameController.errorMessageBox("You do not have any of this item to sell");
-                    return 1;
                 }
             }
         }
@@ -105,16 +99,14 @@ public class Store implements Serializable {
      *
      * @param buy boolean if the item is bought
      * @param customer the customer buying or selling
-     * @return 0 if the transaction is successful, 1 if it is not
      */
-    public int buySellEnergy(boolean buy, Player customer) {
+    public void buySellEnergy(boolean buy, Player customer) {
         if (buy && energyQuantity == 0) {
             GameController.errorMessageBox("Not enough Energy in the store");
-            return 1;
         } else {
             if (buy) {
-                energyQuantity--;
                 if (customer.getMoney() >= energyCost) {
+                    energyQuantity--;
                     customer.addSubMoney(-energyCost);
                     customer.addSubEnergy(1);
                     if (energyQuantity == 0) {
@@ -122,10 +114,8 @@ public class Store implements Serializable {
                     } else {
                         energyCost += 2;
                     }
-                    return 0;
                 } else {
                     GameController.errorMessageBox("You do not have enough money for this item");
-                    return 1;
                 }
             } else {
                 if (customer.getEnergy() >= 1) {
@@ -137,10 +127,8 @@ public class Store implements Serializable {
                     }
                     customer.addSubEnergy(-1);
                     energyQuantity++;
-                    return 0;
                 } else {
                     GameController.errorMessageBox("You do not have any of this item to sell");
-                    return 1;
                 }
             }
         }
@@ -154,12 +142,10 @@ public class Store implements Serializable {
      *
      * @param buy boolean if bought
      * @param customer player buying or selling
-     * @return 0 if the transaction is successful, 1 if it is not
      */
-    public int buySellSmithore(boolean buy, Player customer) {
+    public void buySellSmithore(boolean buy, Player customer) {
         if (buy && smithQuantity == 0) {
             GameController.errorMessageBox("Not enough Smithore in the store");
-            return 1;
         } else {
             if (buy) {
                 if (customer.getMoney() >= smithCost) {
@@ -171,10 +157,8 @@ public class Store implements Serializable {
                     } else {
                         smithCost += 5;
                     }
-                    return 0;
                 } else {
                     GameController.errorMessageBox("You do not have enough money for this item");
-                    return 1;
                 }
             } else {
                 if (customer.getOre() >= 1) {
@@ -186,10 +170,8 @@ public class Store implements Serializable {
                     }
                     customer.addSubOre(-1);
                     smithQuantity++;
-                    return 0;
                 } else {
                     GameController.errorMessageBox("You do not have any of this item to sell");
-                    return 1;
                 }
             }
         }
@@ -203,12 +185,10 @@ public class Store implements Serializable {
      *
      * @param buy boolean if bought
      * @param customer player buying or selling
-     * @return 0 if the transaction is successful, 1 if it is not
      */
-    public int buySellChrystite(boolean buy, Player customer) {
+    public void buySellChrystite(boolean buy, Player customer) {
         if (buy && crysQuantity == 0) {
             GameController.errorMessageBox("Not enough Crystite in the store.");
-            return 1;
         } else {
             if (buy) {
                 crysQuantity--;
@@ -220,10 +200,8 @@ public class Store implements Serializable {
                     } else {
                         crysCost += 10;
                     }
-                    return 0;
                 } else {
                     GameController.errorMessageBox("You do not have enough money for this item");
-                    return 1;
                 }
             } else {
                 if (customer.getCrystite() >= 1) {
@@ -235,10 +213,8 @@ public class Store implements Serializable {
                     }
                     customer.addSubCrystite(-1);
                     crysQuantity++;
-                    return 0;
                 } else {
                     GameController.errorMessageBox("You do not have enough money for this item");
-                    return 1;
                 }
             }
         }
