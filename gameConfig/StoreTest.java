@@ -6,21 +6,23 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+//make tests for each case
+
 public class StoreTest {
     private Player p;
     private Store s;
-    private int[] Data = new int[7];
-    private int[] DataBuyFood = new int[7];
-    private int[] DataSellFood = new int[7];
-    private int[] DataBuyEnergy = new int[7];
-    private int[] DataSellEnergy = new int[7];
+    //private final int[] Data = new int[7];
+    private final int[] DataBuyFood = new int[7];
+    private final int[] DataSellFood = new int[7];
+    private final int[] DataBuyEnergy = new int[7];
+    private final int[] DataSellEnergy = new int[7];
 
-    private int[] TestData = new int[7];
+    private final int[] TestData = new int[7];
 
     @Before
     public void setUp() throws Exception {
         Controller.level = "Beginner";
-        p = new Player("Jess", Player.Race.BONZOID, Color.BROWN);
+        p = new Player("Jess", Player.Race.BONZOID, Color.BROWN.toString());
         s = new Store();
 
         int pm = p.getMoney();
@@ -31,13 +33,13 @@ public class StoreTest {
         int eq = s.getEnergyQuantity();
         int ec = s.getEnergyCost();
 
-        Data[0] = pm;
-        Data[1] = pf;
-        Data[2] = pe;
-        Data[3] = fq;
-        Data[4] = fc;
-        Data[5] = eq;
-        Data[6] = ec;
+//        Data[0] = pm;
+//        Data[1] = pf;
+//        Data[2] = pe;
+//        Data[3] = fq;
+//        Data[4] = fc;
+//        Data[5] = eq;
+//        Data[6] = ec;
 
         pm -= fc;
         DataBuyFood[0] = pm;

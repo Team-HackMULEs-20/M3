@@ -5,9 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
-/**
- * Created by Abigail on 11/4/15.
- */
+//Abby's JUnit
 public class IsAuctionTimeTest {
 
     private Boolean[] auctionTest;

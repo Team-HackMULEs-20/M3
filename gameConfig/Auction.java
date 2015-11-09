@@ -10,11 +10,10 @@ import java.io.IOException;
 public class Auction {
 
     public Stage auctionStage;
-    public static int startingBid;
+    private static int startingBid;
     public static int landNotTaken;
     public static int numBids;
     public static Land[] auctionLand;
-    public static Player bidWinner;
     public static int currentLand;
 
     public Auction() {
@@ -45,6 +44,9 @@ public class Auction {
         return auctionTime;
     }
 
+    /**
+     *
+     */
     public void startAuction() {
         auctionStage = new Stage();
         try {
@@ -91,15 +93,14 @@ public class Auction {
      * @param p player that won the bid
      */
     public static void giveLandToBidder(Land plot, Player p) {
-        bidWinner = p;
-        plot.buyLand(bidWinner);
+        plot.buyLand(p);
     }
 
     /**
      *
      * @return Land that is currently being auctioned
      */
-    public static Land getCurrentLandAuction() {
+    private static Land getCurrentLandAuction() {
         return auctionLand[currentLand - 1];
     }
 }

@@ -1,16 +1,18 @@
 package gameConfig;
 
-public class Land {
+import java.io.Serializable;
+
+public class Land implements Serializable {
 	private Player owner;
 	private boolean owned;
-	private int row;
-	private int col;
+	private final int row;
+	private final int col;
 	private Mule.Type muleType;
 	public static boolean landBuyEnable = false;
 
 	private boolean hasMule;
 	public static Player latestBidder;
-	public LandType type;
+	private LandType type;
 	private boolean muleBuyEnable;
 
 
@@ -43,17 +45,13 @@ public class Land {
 
 	//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
 	public static int getBuyPrice() {return 300 + (Turns.rounds * (int)(Math.random() * (100 + 1))); }
-	public int getSellPrice() {
+	private int getSellPrice() {
 		return 400 + (int)(Math.random() * (200 + 1));
 	}
 
 	public void setOwner(Player p) {
 		this.owner = p;
 		this.owned = true;
-	}
-
-	public boolean getMuleBuyEnable() {
-		return muleBuyEnable;
 	}
 
 	public void setMuleBuyEnable(boolean newEnable) {

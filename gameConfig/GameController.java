@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -89,22 +90,25 @@ public class GameController implements Initializable {
 	private boolean infoBarCreated, townWinCreated,
 			landBuyIntCreated, pubWinCreated,
 			storeWinCreated, selectWinCreated, assayWinCreated = false;
-    public static InfoBar infoBar;
-	public static Node landButton;
-    public RandomEvents randomEvents;
-    public RandomEvents randomMessage;
-	private Auction auction = new Auction();
-	public static Scene townScene, storeScene,
-			selectScene, landBuyIntScene, pubGambleScene, assayScene;
+	public static InfoBar infoBar;
+	private final Auction auction = new Auction();
+	public static Scene townScene;
+	private static Scene storeScene;
+	private static Scene selectScene;
+	private static Scene landBuyIntScene;
+	private static Scene pubGambleScene;
+	private static Scene assayScene;
+	public static GridPane grid;
 
 	/**
 	 *
 	 * @param fxmlFileLocation URL for the file location
-	 * @param resources rousourcebundle to check resources
+	 * @param resources resource bundle to check resources
 	 */
 	// TURNS AND SETUP
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
+		grid = (GridPane) Controller.gameRoot;
 		assert landBuyButton != null : "fx:id=\"landBuyButton\" was not injected: " +
 				"check your FXML file 'landBuyInterface.fxml'.";
 		assert backButton2 != null : "fx:id=\"passButton\" was not injected: " +
@@ -118,6 +122,7 @@ public class GameController implements Initializable {
 
 	@FXML
 	public static void beginTurn() {
+        grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(true));
 		Launcher.primaryStage.hide();
 		//newStage.hide();
 		Stage start = new Stage();
@@ -128,36 +133,33 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param event actionevent to check button
+	 * @param event action event to check button
 	 */
 	@FXML
 	public void startButtonClicked(ActionEvent event) {
 		Player currentPlayer = Turns.getTurn();
 		newStage = new Stage();
-        if (!infoBarCreated){
-            infoBar = new InfoBar();
-            infoBarCreated = true;
-        } else {
-            infoBar.updateInfoBar();
-        }
-        randomEvents = new RandomEvents();
-        String message;
-        message = randomEvents.determineRandomEvent(currentPlayer);
+		if (!infoBarCreated){
+			infoBar = new InfoBar();
+			infoBarCreated = true;
+		} else {
+			infoBar.updateInfoBar();
+		}
+		RandomEvents randomEvents = new RandomEvents();
+		String message;
+		message = randomEvents.determineRandomEvent(currentPlayer);
 		if (event.getSource() == startButton) {
 			Timer timer = new Timer(Turns.timeForTurn(currentPlayer));
 			timer.start();
 			Stage stage = (Stage) startButton.getScene().getWindow();
 			stage.close();
-			if (currentPlayer.landOwned.size() != 0 && currentPlayer.mulesOwned.size() != 0) {
-				for (Mule mule : currentPlayer.mulesOwned) {
-					System.out.println(mule.getType());
-					if (mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
-							&& mule.getOwner() == currentPlayer) {
-						System.out.println("producing");
-						Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
-						infoBar.updateInfoBar();
-					}
-				}
+			if (currentPlayer.getLandOwned().size() != 0 && currentPlayer.getMulesOwned().size() != 0) {
+                currentPlayer.getMulesOwned().stream().filter(mule -> mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
+                        && mule.getOwner() == currentPlayer).forEach(mule -> {
+                    System.out.println("producing");
+                    Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
+                    infoBar.updateInfoBar();
+                });
 			}
 			//store = new Store();
 			/* boolean auctionTime = auction.isAuctionTime();
@@ -188,8 +190,8 @@ public class GameController implements Initializable {
 				selectPhase = false;
 			}
 			if (!(message.equals("NVM"))) {
-				randomMessage = new RandomEvents();
-				randomMessage.messageBox(message);
+				RandomEvents randomMessage = new RandomEvents();
+				RandomEvents.messageBox(message);
 			}
 		}
 
@@ -197,7 +199,7 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param event actionevent to check button source
+	 * @param event action event to check button source
 	 */
 	@FXML
 	public void bidButtonClicked(ActionEvent event) {
@@ -213,11 +215,12 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param event actionevent to check button source
+	 * @param event action event to check button source
 	 */
 	@FXML
 	public void selectionPhase(ActionEvent event) {
 		if (event.getSource() == selectLand) {
+            grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
 			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
 				Land.landBuyEnable = true;
 			Stage stage = (Stage) selectLand.getScene().getWindow();
@@ -232,7 +235,7 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	//TOWN BUTTONS
 	@FXML
@@ -259,7 +262,7 @@ public class GameController implements Initializable {
 
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void backButtonClicked(ActionEvent e) {
@@ -274,7 +277,7 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	//LAND OFFICE
 	@FXML
@@ -302,13 +305,13 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void buyLandButtonClicked(ActionEvent e) {
 		newStage = new Stage();
-		landButton.setDisable(false);
 		if (e.getSource() == landBuyButton) {
+            grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
 			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
 				Land.landBuyEnable = true;
 			Stage stage = (Stage) landBuyButton.getScene().getWindow();
@@ -323,59 +326,56 @@ public class GameController implements Initializable {
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void landButtonClicked(ActionEvent e) {
 		Mule mule = StoreController.potentialMule;
 		Player currentP = Turns.getTurn();
-		landButton = (Node) e.getSource();
-		GridPane grid = (GridPane) landButton.getParent();
+		Node landButton = (Node) e.getSource();
+		//GridPane grid = (GridPane) landButton.getParent();
 		int col = GridPane.getColumnIndex(landButton);
 		int row = GridPane.getRowIndex(landButton);
 		Land newLand = new Land(col, row);
 		Land selectedLand = Controller.landPlots[col][row];
 		if (Land.landBuyEnable) {
-			if (currentP.landGrants > 0) {//check for land grants
-				currentP.landGrants--;
+			if (currentP.getLandGrants() > 0) {//check for land grants
+				currentP.decLandGrants();
 				Rectangle color =  new Rectangle();
-				color.setFill(currentP.getColor());
+				color.setFill(Color.valueOf(currentP.getColor()));
 				color.setHeight(25);
 				color.setWidth(25);
 				color.setOpacity(1);
 				grid.add(color, col, row);
 				GridPane.setHalignment(color, HPos.LEFT);
 				GridPane.setValignment(color, VPos.TOP);
-				// landButton.setDisable(true);//disable the land button since land is purchased
 				newLand.setOwner(currentP);
-				newLand.setType(Controller.landPlots[col][row].getType());
-				Controller.landPlots[col][row].setOwner(currentP);
-				currentP.landOwned.add(newLand);
-				landButton.setDisable(true);
+				newLand.setType(selectedLand.getType());
+				selectedLand.setOwner(currentP);
+				currentP.getLandOwned().add(newLand);
+				//landButton.setDisable(true);
 			} else if (currentP.getMoney() >= 300){//if not grants sub money //doesn't allow to buy when at $300 //TODO
 				currentP.addSubMoney(-300);
-				Rectangle color =  new Rectangle();
-				color.setFill(currentP.getColor());
+				Rectangle color = new Rectangle();
+				color.setFill(Color.valueOf(currentP.getColor()));
 				color.setHeight(25);
 				color.setWidth(25);
 				color.setOpacity(1);
 				grid.add(color, col, row);
 				GridPane.setHalignment(color, HPos.LEFT);
 				GridPane.setValignment(color, VPos.TOP);
-				// landButton.setDisable(true);//disable the land button since land is purchased
 				newLand.setOwner(currentP);
-				newLand.setType(Controller.landPlots[col][row].getType());
-				Controller.landPlots[col][row].setOwner(currentP);
-				currentP.landOwned.add(newLand);
-				landButton.setDisable(true);
+				newLand.setType(selectedLand.getType());
+				selectedLand.setOwner(currentP);
+				currentP.getLandOwned().add(newLand);
+				//landButton.setDisable(true);
 			} else {
 				GameController.errorMessageBox("You do not have enough money to buy this land");
 			}
-
 			Land.landBuyEnable = false;//disable land buying for next turn
-            if (selectPhase) {
-                Timer.endTurn();
-            }
+			if (selectPhase) {
+				Timer.endTurn();
+			}
 
 		} else if (StoreController.buy) {
 			boolean muleBought = currentP.buyMule(true, mule, selectedLand);//buy mule / return false if mule has been lost
@@ -388,10 +388,11 @@ public class GameController implements Initializable {
 				GridPane.setConstraints(muleView, col, row, 1, 1);
 				muleView.setId(String.valueOf(col) + String.valueOf(row));
 				grid.getChildren().add(muleView);
-				landButton.setDisable(true);
+				selectedLand.setHasMule(true);
+				//landButton.setDisable(true);
 			}
 		} else if (!StoreController.buy) {
-			if (mule.getType() == selectedLand.getMuleType() && !StoreController.buy) {
+			if (mule.getType() == selectedLand.getMuleType() && selectedLand.hasMule()) {
 				boolean muleBought = currentP.buyMule(false, mule, selectedLand);
 				if (!muleBought) {
 					for (Node node : grid.getChildren()) {
@@ -402,31 +403,32 @@ public class GameController implements Initializable {
 						}
 					}
 					int pos = -1;
-					for (Mule m : currentP.mulesOwned) {
+					for (Mule m : currentP.getMulesOwned()) {
 						pos++;
 						if (m.getPosition().equals(newLand)) {
 							break;
 						}
 					}
-					currentP.mulesOwned.remove(pos);
-					landButton.setDisable(true);
+					selectedLand.setHasMule(false);
+					currentP.getMulesOwned().remove(pos);
+					//landButton.setDisable(true);
 				}
 			} else if (mule.getType() != selectedLand.getMuleType()) {
 				errorMessageBox("This land has a " + Controller.landPlots[col][row].getMuleType()
 						+ " mule on it, not a " + mule.getType() + " mule.");
 			}
 		}
+        grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(true));
 		infoBar.updateInfoBar();
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
-	//PUB
 	@FXML
-    public void pubButtonClicked(ActionEvent e) {
-        newStage = new Stage();
-        if (e.getSource() == pubButton) {
+	public void pubButtonClicked(ActionEvent e) {
+		newStage = new Stage();
+		if (e.getSource() == pubButton) {
 			if (!pubWinCreated) {
 				try {
 					Parent pubGamble = FXMLLoader.load(getClass().getResource("UIFiles/PubGambleInterface.fxml"));
@@ -441,23 +443,23 @@ public class GameController implements Initializable {
 				newStage.setScene(pubGambleScene);
 				newStage.show();
 			}
-        }
-        Stage stage = (Stage) pubButton.getScene().getWindow();
-        stage.close();
-    }
+		}
+		Stage stage = (Stage) pubButton.getScene().getWindow();
+		stage.close();
+	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
-    @FXML
-    public void gambleButtonClicked(ActionEvent e) {
-        newStage = new Stage();
-        if (e.getSource() == gambleButton) {
-            int timeLeft = Timer.getTimeLeft();
-            Player p = Turns.getTurn();
-            int moneyWon = p.gamble(timeLeft);
-            infoBar.updateInfoBar();
-            Timer.endTurn();
+	@FXML
+	public void gambleButtonClicked(ActionEvent e) {
+		newStage = new Stage();
+		if (e.getSource() == gambleButton) {
+			int timeLeft = Timer.getTimeLeft();
+			Player p = Turns.getTurn();
+			p.gamble(timeLeft);
+			infoBar.updateInfoBar();
+			Timer.endTurn();
 			try {
 				Parent gambleC = FXMLLoader.load(getClass().getResource("UIFiles/GambleConfirmation.fxml"));
 				Scene gambleConfirm = new Scene(gambleC);
@@ -468,30 +470,29 @@ public class GameController implements Initializable {
 				ex.printStackTrace();
 			}
 
-        }
-        Stage stage = (Stage) backButton.getScene().getWindow();
-        stage.close();
-    }
+		}
+		Stage stage = (Stage) backButton.getScene().getWindow();
+		stage.close();
+	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
-    @FXML
-    public void gambleConfirm(ActionEvent e) {
-        if (e.getSource() == gambleOkButton) {
-        }
-        Stage stage = (Stage) gambleOkButton.getScene().getWindow();
-        stage.close();
-    }
-	/**
-	 *
-	 * @param e actionevent to check button source
-	 */
-	//STORE
 	@FXML
-    public void storeButtonClicked(ActionEvent e) {
-        newStage = new Stage();
-        if (e.getSource() == storeButton) {
+	public void gambleConfirm(ActionEvent e) {
+		if (e.getSource() == gambleOkButton) {
+			Stage stage = (Stage) gambleOkButton.getScene().getWindow();
+			stage.close();
+		}
+	}
+	/**
+	 *
+	 * @param e action event to check button source
+	 */
+	@FXML
+	public void storeButtonClicked(ActionEvent e) {
+		newStage = new Stage();
+		if (e.getSource() == storeButton) {
 			if (!storeWinCreated) {
 				try {
 					Parent storeFile = FXMLLoader.load(getClass().getResource("UIFiles/storeInterface2.fxml"));
@@ -507,13 +508,13 @@ public class GameController implements Initializable {
 				newStage.setScene(storeScene);
 				newStage.show();
 			}
-        }
-        Stage stage = (Stage) storeButton.getScene().getWindow();
-        stage.close();
-    }
+		}
+		Stage stage = (Stage) storeButton.getScene().getWindow();
+		stage.close();
+	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	@FXML
 	public void assayBackButtonClicked(ActionEvent e) {
@@ -525,22 +526,19 @@ public class GameController implements Initializable {
 		}
 		Stage stage = (Stage) assayBackButton.getScene().getWindow();
 		stage.close();
-
 	}
 	/**
 	 *
-	 * @param event actionevent to check button source
 	 */
 	@FXML
-	public void mineButtonClicked(ActionEvent event) {
+	public void mineButtonClicked() {
 		System.out.println("Mine button clicked");
 	}
 	/**
 	 *
-	 * @param event actionevent to check button source
 	 */
 	@FXML
-	public void assayOfficeButtonClicked(ActionEvent event) {
+	public void assayOfficeButtonClicked() {
 		newStage = new Stage();
 		if (!assayWinCreated) {
 			try {
@@ -575,13 +573,12 @@ public class GameController implements Initializable {
 		grid.add(errorButton, 1, 1);
 		Scene errorScene = new Scene(grid);
 		errorStage.setScene(errorScene);
-		newStage.hide();
 		errorStage.show();
 		errorStage.toFront();
 	}
 	/**
 	 *
-	 * @param e actionevent to check button source
+	 * @param e action event to check button source
 	 */
 	public void oreErrorMessage(ActionEvent e) {
 		if(e.getSource() == oreOkButton) {

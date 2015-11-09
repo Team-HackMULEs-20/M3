@@ -1,15 +1,21 @@
 package gameConfig;
 
-public class Turns {
-    public static Player[] players;
+import java.io.Serializable;
+
+public class Turns implements Serializable {
+    private static Player[] players;
     public static int rounds;
-    public static int timeOfTurn;
+    private static int timeOfTurn;
     public static int playerTurn;
 
     public Turns(Player[] players) {
         Turns.players = players;
         rounds = 1;
         playerTurn = 1;
+    }
+
+    public void setRounds(int round) {
+        rounds = round;
     }
 
     /**

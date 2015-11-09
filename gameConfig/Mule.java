@@ -1,10 +1,11 @@
 package gameConfig;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Mule {
+public class Mule implements Serializable {
 
-	private static Type type;
+	private final Type type;
 	private Player owner;
 	private int cost;
 	private Land position;

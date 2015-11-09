@@ -14,7 +14,7 @@ public class Launcher extends Application {
     public static Scene rootScene;
     public static Stage primaryStage;
     public static Scene errorMessage;
-    public static Scene oreErrorScene;
+    private static Scene oreErrorScene;
 
     /**
      *

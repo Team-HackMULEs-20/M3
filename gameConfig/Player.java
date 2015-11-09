@@ -1,15 +1,13 @@
 package gameConfig;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-import javafx.scene.paint.Color;
+public class Player implements Serializable {
 
-public class Player {
-
-	//private int number;//TODO unused var
-	private String name;
-	private Race race;
-	private Color color;
+	private final String name;
+	private final Race race;
+	private final String color;
 
 	private int money;
 	private int food;
@@ -17,22 +15,20 @@ public class Player {
 	private int ore;
 	private int crystite;
 
-	public int landGrants;
-	public ArrayList<Land> landOwned;
-	public ArrayList<Mule> mulesOwned;
+	private int landGrants;
+	private final ArrayList<Land> landOwned;
+	private final ArrayList<Mule> mulesOwned;
 
-	public Player (String name, Race race, Color color) {
+	public Player (String tName, Race tRace, String tColor) {
 		//this.number = number;
-		this.name = name;
-		this.race = race;
-		this.color = color;
-
+		name = tName;
+		race = tRace;
+		color = tColor;
 		landOwned = new ArrayList<>();
 		mulesOwned = new ArrayList<>();
-
-		//turnsTaken = 0; //TODO unused var
 		landGrants = 2;
 
+        // all numbers as stated in Players section of wiki
 		if (Controller.level.equals("Beginner")){
 			food = 8;
 			energy = 4;
@@ -41,6 +37,7 @@ public class Player {
 			energy = 2;
 		}
 
+        // all numbers as stated in Players section of wiki
 		if (this.race.equals(Race.FLAPPER)) {
 			money = 1600;
 		} else if (this.race.equals(Race.HUMAN)) {
@@ -57,38 +54,41 @@ public class Player {
 		FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN
 	}
 
-	//public int getNumber() {return number;} // TODO unused
-	public String getName() {return name;}
-	public Race getRace() {return race;}
-	public int getLandGrants() {return landGrants;}
+	public final String getName() {return name;}
+	public final Race getRace() {return race;}
 
+	public final int getLandGrants() {return landGrants;}
+    public final void decLandGrants() {landGrants--;}
+    public final ArrayList<Land> getLandOwned() {return landOwned;}
+    public final ArrayList<Mule> getMulesOwned() {return mulesOwned;}
 
-	public Color getColor() {return color;}
+	public final String getColor() {return color;}
 
-	public int getScore() { //TODO score
-		int score = money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
-		return score;
+    // all numbers as stated in Score Computation section of wiki
+	public final int getScore() { //TODO score
+		return money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
 	}
 
-	public int getMoney() {return money;}
-	public void addSubMoney(int amount) {money += amount;}
+	public final int getMoney() {return money;}
+	public final void addSubMoney(int amount) {money += amount;}
 
-	public int getFood() {return food;}
-	public void addSubFood(int amount) {food += amount;}
+	public final int getFood() {return food;}
+	public final void addSubFood(int amount) {food += amount;}
 
-	public int getEnergy() {return energy;}
-	public void addSubEnergy(int amount) {energy += amount;}
+	public final int getEnergy() {return energy;}
+	public final void addSubEnergy(int amount) {energy += amount;}
 
-	public int getOre() {return ore;}
-	public void addSubOre(int amount) {ore += amount;}
+	public final int getOre() {return ore;}
+	public final void addSubOre(int amount) {ore += amount;}
 
-	public int getCrystite() {return crystite;}
-	public void addSubCrystite(int amount) {crystite += amount;}
+	public final int getCrystite() {return crystite;}
+	public final void addSubCrystite(int amount) {crystite += amount;}
 
-	public int gamble(int timeLeft) {
+    // all numbers as stated in The pub section of wiki
+	public final int gamble(int timeLeft) {
 		int r = Turns.rounds;
 
-		int rb = 0; // round bonus
+		int rb; // round bonus
 		if (r <= 3) { // rounds 1 - 3
 			rb = 50;
 		} else if (r <= 7) { // rounds 4 - 7
@@ -99,7 +99,7 @@ public class Player {
 			rb = 200;
 		}
 
-		int tb = 0; //time bonus
+		int tb; //time bonus
 		if (timeLeft < 12) { // time left = 0-11 seconds
 			tb = 50;
 		} else if (timeLeft < 25) { // time left = 12-24 seconds
@@ -110,6 +110,7 @@ public class Player {
 			tb = 200;
 		}
 
+        // all numbers as stated in The pub section of wiki
 		//money bonus = round bonus * random(0 to timeBonus)
 		//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
 		int mb = rb * ((int)(Math.random() * (tb+1))); //money bonus
@@ -120,7 +121,7 @@ public class Player {
 		return mb;
 	}
 
-	public boolean buyMule(boolean buy, Mule mule, Land land) {
+	public final boolean buyMule(boolean buy, Mule mule, Land land) {
 		//Land landPlot = Controller.landPlots[land.getCol()][land.getRow()];
 		if (buy) {
 			if (money >= mule.getCost()) {//check that player has enough money
@@ -150,7 +151,7 @@ public class Player {
 		} else {
 			if (this.equals(land.getOwner())) {
 				StoreController.store.muleQuantity++;
-				land.getOwner().addSubMoney(Store.muleCost - 15);
+				land.getOwner().addSubMoney(StoreController.store.getMuleCost() - 15); //15 = economics price difference for selling mule
 				land.setHasMule(false);
 				land.setMuleType(null);
 				land.setMuleBuyEnable(true);
