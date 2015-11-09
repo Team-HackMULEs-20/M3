@@ -25,7 +25,7 @@ public class TurnsTest {
         playersBefore[1] = new Player("Chris", Player.Race.FLAPPER, Color.BLUE.toString());
         playersBefore[2] = new Player("Jess", Player.Race.BONZOID, Color.BROWN.toString());
         playersBefore[3] = new Player("Abby", Player.Race.HUMAN, Color.CRIMSON.toString());
-        playersBefore[3].landOwned.add(new Land(0, 0));
+        playersBefore[3].getLandOwned().add(new Land(0, 0));
         playersBefore[0].addSubFood(3);
         playersBefore[1].addSubEnergy(2);
         playersBefore[1].addSubOre(2);
@@ -59,7 +59,6 @@ public class TurnsTest {
         assertEquals(p4Score, 1440);
         Turns.sortByScore();
         assertArrayEquals(playersByScore, playersBefore);
-
     }
 
     /**
