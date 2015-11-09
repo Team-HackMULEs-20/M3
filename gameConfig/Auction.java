@@ -45,9 +45,6 @@ public class Auction {
         return auctionTime;
     }
 
-    /**
-     * @return none
-     */
     public void startAuction() {
         auctionStage = new Stage();
         try {
