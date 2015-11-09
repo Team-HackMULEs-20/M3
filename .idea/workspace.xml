@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e5d5de5-beb0-4a9f-aaba-1ea8883596ee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/Controller.java" afterPath="$PROJECT_DIR$/gameConfig/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/GameController.java" afterPath="$PROJECT_DIR$/gameConfig/GameController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.idea/workspace.xml" />
     </list>
     <ignored path="M.U.L.E.-Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7408">
+            <state vertical-scroll-proportion="0.0">
               <caret line="163" column="42" selection-start-line="163" selection-start-column="42" selection-end-line="163" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -70,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="113" column="80" selection-start-line="113" selection-start-column="80" selection-end-line="113" selection-end-column="80" />
+            <state vertical-scroll-proportion="0.576">
+              <caret line="154" column="9" selection-start-line="154" selection-start-column="9" selection-end-line="154" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -187,12 +186,12 @@
         <option value="$PROJECT_DIR$/gameConfig/Player.java" />
         <option value="$PROJECT_DIR$/gameConfig/Player.java" />
         <option value="$PROJECT_DIR$/gameConfig/StoreController.java" />
-        <option value="$PROJECT_DIR$/gameConfig/GameController.java" />
         <option value="$PROJECT_DIR$/gameConfig/Launcher.java" />
         <option value="$PROJECT_DIR$/gameConfig/Auction.java" />
         <option value="$PROJECT_DIR$/gameConfig/TurnsTest.java" />
         <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
         <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
+        <option value="$PROJECT_DIR$/gameConfig/GameController.java" />
       </list>
     </option>
   </component>
@@ -625,12 +624,6 @@
       <option name="number" value="Default" />
       <updated>1442528931836</updated>
     </task>
-    <task id="LOCAL-00019" summary="Turn ends after Gamble">
-      <created>1443590411544</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1443590411544</updated>
-    </task>
     <task id="LOCAL-00020" summary="Gamble Confirmation Fixed">
       <created>1443618030942</created>
       <option name="number" value="00020" />
@@ -919,7 +912,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447102327581</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Players can't choose the same color">
+      <created>1447103729052</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1447103729052</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -1001,7 +1000,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made a new folder to hold all the fxml files in. Cleaned up everything. Still works same as before" />
     <MESSAGE value="Updated file tree. Here is the folder of fxml files under UIFiles" />
     <MESSAGE value="Made InfoBar class &amp; changed some stuff" />
     <MESSAGE value="Fixed null pointer infobar error in pub" />
@@ -1026,7 +1024,8 @@
     <MESSAGE value="fixed buy/sell mule bugs again" />
     <MESSAGE value="added javadocs" />
     <MESSAGE value="FIxed TurnsTest JUnit" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIxed TurnsTest JUnit" />
+    <MESSAGE value="Players can't choose the same color" />
+    <option name="LAST_COMMIT_MESSAGE" value="Players can't choose the same color" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1444,20 +1443,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
+    <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="80" selection-start-line="113" selection-start-column="80" selection-end-line="113" selection-end-column="80" />
+          <caret line="163" column="42" selection-start-line="163" selection-start-column="42" selection-end-line="163" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
+    <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7408">
-          <caret line="163" column="42" selection-start-line="163" selection-start-column="42" selection-end-line="163" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.576">
+          <caret line="154" column="9" selection-start-line="154" selection-start-column="9" selection-end-line="154" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
