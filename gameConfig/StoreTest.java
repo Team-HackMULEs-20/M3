@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+//make tests for each case
+
 public class StoreTest {
     private Player p;
     private Store s;
