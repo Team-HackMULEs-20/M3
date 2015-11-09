@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.net.URL;
@@ -76,6 +77,7 @@ public class Controller implements Initializable {
 	public static List<Object> loadData;
 	public static boolean loaded;
 	public static Parent gameRoot = null;
+	private ArrayList<Color> playerColors;
 
 	/**
 	 *
@@ -84,6 +86,7 @@ public class Controller implements Initializable {
 	 */
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
+		this.playerColors = new ArrayList<>();
 		assert nextButton != null : "fx:id=\"nextButton\" was not injected: " +
 				"check your FXML file 'M.U.L.E Game Setup.fxml'.";
 		assert cancelButton != null : "fx:id=\"cancelButton\" was not injected: " +
@@ -101,7 +104,6 @@ public class Controller implements Initializable {
 		try {
 			if (e.getSource() == nextButton) {
 				numPlayer = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
-
 				//initializing players array
 				players = new Player[numPlayer.intValue()];
 				String map = mapType.getSelectionModel().getSelectedItem().toString();
@@ -130,7 +132,7 @@ public class Controller implements Initializable {
 	@FXML
 	private void playerSetup(ActionEvent e) throws NullPointerException {
 		Stage newStage = new Stage();
-		try {
+		//try {
 			if (e.getSource() == nextButton2) {
 
 				String name = playerName.getText();
@@ -154,8 +156,12 @@ public class Controller implements Initializable {
 
 				if (name.equals("")) { // check if player entered a name
 					Launcher.primaryStage.setScene(Launcher.errorMessage);
-					Launcher.primaryStage.setTitle("Error!");
+					Launcher.primaryStage.setTitle("Enter name!");
+				} else if (playerColors.contains(color)) {
+					Launcher.primaryStage.setScene(Launcher.errorMessage);
+					Launcher.primaryStage.setTitle("Choose new color!");
 				} else {
+					playerColors.add(color);
 					if (count == 1) { // if only one player config screen has been shown go to player 2
 						Launcher.primaryStage.setTitle("Player 2 Configuration");
 						Launcher.primaryStage.toFront();
@@ -268,10 +274,10 @@ public class Controller implements Initializable {
 				Launcher.primaryStage.setScene(Launcher.rootScene);
 				Launcher.primaryStage.setTitle("M.U.L.E. Game Setup");
 			}
-		} catch (NullPointerException error) {
+		/*} catch (NullPointerException error) {
 			Launcher.primaryStage.setScene(Launcher.errorMessage);
 			Launcher.primaryStage.setTitle("Error!");
-		}
+		}*/
 	}
 
 	/**
