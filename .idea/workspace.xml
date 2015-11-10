@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e5d5de5-beb0-4a9f-aaba-1ea8883596ee" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.classpath" afterPath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/GameController.java" afterPath="$PROJECT_DIR$/gameConfig/GameController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/LoadSaveGame.java" afterPath="$PROJECT_DIR$/gameConfig/LoadSaveGame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.idea/workspace.xml" />
     </list>
     <ignored path="M.U.L.E.-Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +46,7 @@
             <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="163" column="42" selection-start-line="163" selection-start-column="42" selection-end-line="163" selection-end-column="42" />
+                  <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -50,16 +54,26 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="GameController.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.704">
-                  <caret line="314" column="38" selection-start-line="314" selection-start-column="38" selection-end-line="314" selection-end-column="38" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="337" column="0" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#15639#15640#0" expanded="true" />
-                    <element signature="e#15687#15688#0" expanded="true" />
+                    <element signature="e#15660#15661#0" expanded="true" />
+                    <element signature="e#15708#15709#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="LoadSaveGame.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/gameConfig/LoadSaveGame.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.784">
+                  <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -120,7 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gameConfig/GambleConfirmation.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/MainMap.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/LandBuyInterface.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/SelectionPhaseInterface.fxml" />
@@ -169,8 +182,9 @@
         <option value="$PROJECT_DIR$/gameConfig/TurnsTest.java" />
         <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
         <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
-        <option value="$PROJECT_DIR$/gameConfig/GameController.java" />
         <option value="$PROJECT_DIR$/gameConfig/StoreController.java" />
+        <option value="$PROJECT_DIR$/gameConfig/GameController.java" />
+        <option value="$PROJECT_DIR$/gameConfig/LoadSaveGame.java" />
       </list>
     </option>
   </component>
@@ -736,12 +750,6 @@
       <option name="number" value="Default" />
       <updated>1442528931836</updated>
     </task>
-    <task id="LOCAL-00022" summary="updating player and land functions">
-      <created>1443623616991</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1443623616991</updated>
-    </task>
     <task id="LOCAL-00023" summary="Interfaces updated, selection phase specific screen created">
       <created>1443638460051</created>
       <option name="number" value="00023" />
@@ -1030,7 +1038,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447187935802</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Player cannot buy/sell another mule before placing/selling the first one">
+      <created>1447190786121</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1447190786121</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -1150,14 +1164,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gameConfig/Store.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="183" column="21" selection-start-line="183" selection-start-column="21" selection-end-line="183" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1519,16 +1525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="163" column="42" selection-start-line="163" selection-start-column="42" selection-end-line="163" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/InfoBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.632">
@@ -1555,22 +1551,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.704">
-          <caret line="314" column="38" selection-start-line="314" selection-start-column="38" selection-end-line="314" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15639#15640#0" expanded="true" />
-            <element signature="e#15687#15688#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/StoreController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.648">
           <caret line="150" column="52" selection-start-line="150" selection-start-column="52" selection-end-line="150" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="337" column="0" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#15660#15661#0" expanded="true" />
+            <element signature="e#15708#15709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/LoadSaveGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.784">
+          <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
           <folding />
         </state>
       </provider>

@@ -54,6 +54,6 @@ public class LoadSaveGame {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return null;
+        return new ArrayList<>();
     }
 }

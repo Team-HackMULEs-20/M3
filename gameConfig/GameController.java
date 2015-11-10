@@ -335,7 +335,6 @@ public class GameController implements Initializable {
 		Mule mule = StoreController.potentialMule;
 		Player currentP = Turns.getTurn();
 		Node landButton = (Node) e.getSource();
-		//GridPane grid = (GridPane) landButton.getParent();
 		int col = GridPane.getColumnIndex(landButton);
 		int row = GridPane.getRowIndex(landButton);
 		Land selectedLand = Controller.landPlots[col][row];
@@ -353,7 +352,6 @@ public class GameController implements Initializable {
 					GridPane.setValignment(color, VPos.TOP);
 					selectedLand.setOwner(currentP);
 					currentP.getLandOwned().add(selectedLand);
-					//landButton.setDisable(true);
 				} else if (currentP.getMoney() >= 300){//if not grants sub money //doesn't allow to buy when at $300 //TODO
 					currentP.addSubMoney(-300);
 					Rectangle color = new Rectangle();
@@ -366,7 +364,6 @@ public class GameController implements Initializable {
 					GridPane.setValignment(color, VPos.TOP);
 					selectedLand.setOwner(currentP);
 					currentP.getLandOwned().add(selectedLand);
-					//landButton.setDisable(true);
 				} else {
 					GameController.errorMessageBox("You do not have enough money to buy this land");
 				}
@@ -421,6 +418,7 @@ public class GameController implements Initializable {
 		}
 		grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(true));
 		infoBar.updateInfoBar();
+		landButton.setDisable(false);
 	}
 	/**
 	 *
