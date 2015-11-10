@@ -127,10 +127,16 @@ public class StoreController implements Initializable {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
         GridPane grid = GameController.grid;
-        grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
+        grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
+            if (node.getId().equals("townButton")) {
+                node.setDisable(true);
+            } else {
+                node.setDisable(false);
+            }
+        });
         this.messageBox();
         this.updateStoreLabels();
-        buy  = true;
+        buy = true;
     }
 
     /**
@@ -141,7 +147,13 @@ public class StoreController implements Initializable {
         Stage stage = (Stage) muleChoice.getScene().getWindow();
         stage.close();
         GridPane grid = GameController.grid;
-        grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
+        grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
+            if (node.getId().equals("townButton")) {
+                node.setDisable(true);
+            } else {
+                node.setDisable(false);
+            }
+        });
         this.messageBox();
         this.updateStoreLabels();
         buy = false;
