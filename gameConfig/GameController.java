@@ -335,46 +335,48 @@ public class GameController implements Initializable {
 		Mule mule = StoreController.potentialMule;
 		Player currentP = Turns.getTurn();
 		Node landButton = (Node) e.getSource();
+		//GridPane grid = (GridPane) landButton.getParent();
 		int col = GridPane.getColumnIndex(landButton);
 		int row = GridPane.getRowIndex(landButton);
-		Land newLand = new Land(col, row);
 		Land selectedLand = Controller.landPlots[col][row];
 		if (Land.landBuyEnable) {
-			if (currentP.getLandGrants() > 0) {//check for land grants
-				currentP.decLandGrants();
-				Rectangle color =  new Rectangle();
-				color.setFill(Color.valueOf(currentP.getColor()));
-				color.setHeight(25);
-				color.setWidth(25);
-				color.setOpacity(1);
-				grid.add(color, col, row);
-				GridPane.setHalignment(color, HPos.LEFT);
-				GridPane.setValignment(color, VPos.TOP);
-				newLand.setOwner(currentP);
-				newLand.setType(selectedLand.getType());
-				selectedLand.setOwner(currentP);
-				currentP.getLandOwned().add(newLand);
-			} else if (currentP.getMoney() >= 300){//if not grants sub money //doesn't allow to buy when at $300 //TODO
-				currentP.addSubMoney(-300);
-				Rectangle color = new Rectangle();
-				color.setFill(Color.valueOf(currentP.getColor()));
-				color.setHeight(25);
-				color.setWidth(25);
-				color.setOpacity(1);
-				grid.add(color, col, row);
-				GridPane.setHalignment(color, HPos.LEFT);
-				GridPane.setValignment(color, VPos.TOP);
-				newLand.setOwner(currentP);
-				newLand.setType(selectedLand.getType());
-				selectedLand.setOwner(currentP);
-				currentP.getLandOwned().add(newLand);
+			if (!selectedLand.isOwned()) {
+				if (currentP.getLandGrants() > 0) {//check for land grants
+					currentP.decLandGrants();
+					Rectangle color =  new Rectangle();
+					color.setFill(Color.valueOf(currentP.getColor()));
+					color.setHeight(25);
+					color.setWidth(25);
+					color.setOpacity(1);
+					grid.add(color, col, row);
+					GridPane.setHalignment(color, HPos.LEFT);
+					GridPane.setValignment(color, VPos.TOP);
+					selectedLand.setOwner(currentP);
+					currentP.getLandOwned().add(selectedLand);
+					//landButton.setDisable(true);
+				} else if (currentP.getMoney() >= 300){//if not grants sub money //doesn't allow to buy when at $300 //TODO
+					currentP.addSubMoney(-300);
+					Rectangle color = new Rectangle();
+					color.setFill(Color.valueOf(currentP.getColor()));
+					color.setHeight(25);
+					color.setWidth(25);
+					color.setOpacity(1);
+					grid.add(color, col, row);
+					GridPane.setHalignment(color, HPos.LEFT);
+					GridPane.setValignment(color, VPos.TOP);
+					selectedLand.setOwner(currentP);
+					currentP.getLandOwned().add(selectedLand);
+					//landButton.setDisable(true);
+				} else {
+					GameController.errorMessageBox("You do not have enough money to buy this land");
+				}
 			} else {
-				GameController.errorMessageBox("You do not have enough money to buy this land");
+				GameController.errorMessageBox("This land is already owned. You cannot buy it.");
 			}
 			Land.landBuyEnable = false;//disable land buying for next turn
 			if (selectPhase) {
 				Timer.endTurn();
-			}
+			} 
 
 		} else if (StoreController.buy) {
 			boolean muleBought = currentP.buyMule(true, mule, selectedLand);//buy mule / return false if mule has been lost
@@ -388,8 +390,8 @@ public class GameController implements Initializable {
 				muleView.setId(String.valueOf(col) + String.valueOf(row));
 				grid.getChildren().add(muleView);
 				selectedLand.setHasMule(true);
+				//landButton.setDisable(true);
 			}
-			townButton.setDisable(false);
 		} else if (!StoreController.buy) {
 			if (mule.getType() == selectedLand.getMuleType() && selectedLand.hasMule()) {
 				boolean muleBought = currentP.buyMule(false, mule, selectedLand);
@@ -404,21 +406,21 @@ public class GameController implements Initializable {
 					int pos = -1;
 					for (Mule m : currentP.getMulesOwned()) {
 						pos++;
-						if (m.getPosition().equals(newLand)) {
+						if (m.getPosition().equals(selectedLand)) {
 							break;
 						}
 					}
 					selectedLand.setHasMule(false);
 					currentP.getMulesOwned().remove(pos);
+					//landButton.setDisable(true);
 				}
 			} else if (mule.getType() != selectedLand.getMuleType()) {
 				errorMessageBox("This land has a " + Controller.landPlots[col][row].getMuleType()
 						+ " mule on it, not a " + mule.getType() + " mule.");
 			}
 		}
-        grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(true));
+		grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(true));
 		infoBar.updateInfoBar();
-		townButton.setDisable(false);
 	}
 	/**
 	 *
