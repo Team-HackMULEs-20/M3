@@ -6,23 +6,24 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-//make tests for each case
-
 public class StoreTest {
     private Player p;
+    private Player p2;
     private Store s;
-    //private final int[] Data = new int[7];
-    private final int[] DataBuyFood = new int[7];
-    private final int[] DataSellFood = new int[7];
-    private final int[] DataBuyEnergy = new int[7];
-    private final int[] DataSellEnergy = new int[7];
+    private final int[] DataBuyFood = new int[4];
+    private final int[] DataBuyFood2 = new int[4];
+    private final int[] DataSellFood = new int[4];
+    private final int[] DataSellFood2 = new int[4];
 
-    private final int[] TestData = new int[7];
+    private final int[] TestData = new int[4];
 
     @Before
     public void setUp() throws Exception {
         Controller.level = "Beginner";
         p = new Player("Jess", Player.Race.BONZOID, Color.BROWN.toString());
+        p2 = new Player("Kaley", Player.Race.BONZOID, Color.PURPLE.toString());
+        p2.addSubMoney(-1000);
+        p2.addSubFood(-8);
         s = new Store();
 
         int pm = p.getMoney();
@@ -33,116 +34,109 @@ public class StoreTest {
         int eq = s.getEnergyQuantity();
         int ec = s.getEnergyCost();
 
-//        Data[0] = pm;
-//        Data[1] = pf;
-//        Data[2] = pe;
-//        Data[3] = fq;
-//        Data[4] = fc;
-//        Data[5] = eq;
-//        Data[6] = ec;
-
+        //BUYING
+        //perfect
         pm -= fc;
         DataBuyFood[0] = pm;
         pf++;
         DataBuyFood[1] = pf;
-        DataBuyFood[2] = pe;
         fq--;
-        DataBuyFood[3] = fq;
+        DataBuyFood[2] = fq;
         fc += 2;
-        DataBuyFood[4] = fc;
-        DataBuyFood[5] = eq;
-        DataBuyFood[6] = ec;
+        DataBuyFood[3] = fc;
 
+        //foodQuantity == 0
+        for (int i = 1; i <= 15; i++) {
+            pm -= fc;
+            DataBuyFood2[0] = pm;
+            pf++;
+            DataBuyFood2[1] = pf;
+            fq--;
+            DataBuyFood2[2] = fq;
+            fc += 2;
+            DataBuyFood2[3] = fc;
+        }
+        fc = 30;
+        DataBuyFood2[3] = fc;
+
+        //foodQuantity == 1
         pm += (fc - 5);
         DataSellFood[0] = pm;
         pf--;
         DataSellFood[1] = pf;
-        DataSellFood[2] = pe;
         fq++;
-        DataSellFood[3] = fq;
+        DataSellFood[2] = fq;
+        DataSellFood[3] = fc;
+
+        //perfect
+        pm += (fc - 5);
+        DataSellFood2[0] = pm;
+        pf--;
+        DataSellFood2[1] = pf;
+        fq++;
+        DataSellFood2[2] = fq;
         fc -= 2;
-        DataSellFood[4] = fc;
-        DataSellFood[5] = eq;
-        DataSellFood[6] = ec;
-
-        pm = p.getMoney();
-        pf = p.getFood();
-        pe = p.getEnergy();
-        fq = s.getFoodQuantity();
-        fc = s.getFoodCost();
-        eq = s.getEnergyQuantity();
-        ec = s.getEnergyCost();
-
-        pm -= ec;
-        DataBuyEnergy[0] = pm;
-        DataBuyEnergy[1] = pf;
-        pe++;
-        DataBuyEnergy[2] = pe;
-        DataBuyEnergy[3] = fq;
-        DataBuyEnergy[4] = fc;
-        eq--;
-        DataBuyEnergy[5] = eq;
-        ec += 2;
-        DataBuyEnergy[6] = ec;
-
-        pm += (ec - 5);
-        DataSellEnergy[0] = pm;
-        DataSellEnergy[1] = pf;
-        pe--;
-        DataSellEnergy[2] = pe;
-        DataSellEnergy[3] = fq;
-        DataSellEnergy[4] = fc;
-        eq++;
-        DataSellEnergy[5] = eq;
-        ec -= 2;
-        DataSellEnergy[6] = ec;
+        DataSellFood2[3] = fc;
     }
 
     @Test
     public void testBuySellFood() throws Exception {
+        //BUYING
+        //perfect
         s.buySellFood(true,p);
         TestData[0] = p.getMoney();
         TestData[1] = p.getFood();
-        TestData[2] = p.getEnergy();
-        TestData[3] = s.getFoodQuantity();
-        TestData[4] = s.getFoodCost();
-        TestData[5] = s.getEnergyQuantity();
-        TestData[6] = s.getEnergyCost();
+        TestData[2] = s.getFoodQuantity();
+        TestData[3] = s.getFoodCost();
         assertArrayEquals(TestData, DataBuyFood);
 
+        //not enough money
+        try {
+            s.buySellFood(true, p2);
+        }
+        catch(ExceptionInInitializerError e) {
+        }
+
+        //foodQuantity == 0
+        for (int i = 1; i <= 15; i++) {
+            s.buySellFood(true, p);
+        }
+        TestData[0] = p.getMoney();
+        TestData[1] = p.getFood();
+        TestData[2] = s.getFoodQuantity();
+        TestData[3] = s.getFoodCost();
+        assertArrayEquals(TestData, DataBuyFood2);
+
+        //not enough food
+        try {
+            s.buySellFood(true, p);
+        }
+        catch(NoClassDefFoundError e) {
+        }
+
+        //SELLING
+        //foodQuantity == 1
         s.buySellFood(false,p);
         TestData[0] = p.getMoney();
         TestData[1] = p.getFood();
-        TestData[2] = p.getEnergy();
-        TestData[3] = s.getFoodQuantity();
-        TestData[4] = s.getFoodCost();
-        TestData[5] = s.getEnergyQuantity();
-        TestData[6] = s.getEnergyCost();
+        TestData[2] = s.getFoodQuantity();
+        TestData[3] = s.getFoodCost();
         assertArrayEquals(TestData, DataSellFood);
-    }
 
-    @Test
-    public void testBuySellEnergy() throws Exception {
-        s.buySellEnergy(true, p);
+        //perfect
+        s.buySellFood(false,p);
         TestData[0] = p.getMoney();
         TestData[1] = p.getFood();
-        TestData[2] = p.getEnergy();
-        TestData[3] = s.getFoodQuantity();
-        TestData[4] = s.getFoodCost();
-        TestData[5] = s.getEnergyQuantity();
-        TestData[6] = s.getEnergyCost();
-        assertArrayEquals(TestData, DataBuyEnergy);
+        TestData[2] = s.getFoodQuantity();
+        TestData[3] = s.getFoodCost();
+        assertArrayEquals(TestData, DataSellFood2);
 
-        s.buySellEnergy(false, p);
-        TestData[0] = p.getMoney();
-        TestData[1] = p.getFood();
-        TestData[2] = p.getEnergy();
-        TestData[3] = s.getFoodQuantity();
-        TestData[4] = s.getFoodCost();
-        TestData[5] = s.getEnergyQuantity();
-        TestData[6] = s.getEnergyCost();
-        assertArrayEquals(TestData, DataSellEnergy);
-
+        //none of the item to sell
+        try {
+            s.buySellFood(false,p2);
+        }
+        catch(NoClassDefFoundError e) {
+        }
     }
 
 }
