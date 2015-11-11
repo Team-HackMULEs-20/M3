@@ -387,7 +387,6 @@ public class GameController implements Initializable {
 				muleView.setId(String.valueOf(col) + String.valueOf(row));
 				grid.getChildren().add(muleView);
 				selectedLand.setHasMule(true);
-				//landButton.setDisable(true);
 			}
 		} else if (!StoreController.buy) {
 			if (mule.getType() == selectedLand.getMuleType() && selectedLand.hasMule()) {
@@ -409,7 +408,6 @@ public class GameController implements Initializable {
 					}
 					selectedLand.setHasMule(false);
 					currentP.getMulesOwned().remove(pos);
-					//landButton.setDisable(true);
 				}
 			} else if (mule.getType() != selectedLand.getMuleType()) {
 				errorMessageBox("This land has a " + Controller.landPlots[col][row].getMuleType()
