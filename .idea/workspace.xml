@@ -51,24 +51,24 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="GameController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="389" column="0" selection-start-line="389" selection-start-column="0" selection-end-line="389" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.2848">
+                  <caret line="316" column="40" selection-start-line="316" selection-start-column="40" selection-end-line="316" selection-end-column="40" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#15589#15590#0" expanded="true" />
-                    <element signature="e#15637#15638#0" expanded="true" />
+                    <element signature="e#15624#15625#0" expanded="true" />
+                    <element signature="e#15672#15673#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LoadSaveGame.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="LoadSaveGame.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gameConfig/LoadSaveGame.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.89385474">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
                   <folding />
                 </state>
@@ -92,7 +92,7 @@
           <file leaf-file-name="StoreController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gameConfig/StoreController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.89385474">
+                <state vertical-scroll-proportion="0.768">
                   <caret line="142" column="6" selection-start-line="142" selection-start-column="6" selection-end-line="142" selection-end-column="6" />
                   <folding />
                 </state>
@@ -747,12 +747,6 @@
       <option name="number" value="Default" />
       <updated>1442528931836</updated>
     </task>
-    <task id="LOCAL-00024" summary="updated screen">
-      <created>1443638964800</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1443638964800</updated>
-    </task>
     <task id="LOCAL-00025" summary="updated screen">
       <created>1443639099804</created>
       <option name="number" value="00025" />
@@ -1041,7 +1035,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447191019622</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="cleaned code">
+      <created>1447203335588</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1447203335588</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -1074,8 +1074,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15880893" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37843785" sideWeight="0.4944155" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28162816" sideWeight="0.44992846" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37843785" sideWeight="0.4944155" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28162816" sideWeight="0.44992846" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1123,7 +1123,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Infobar updated when gambling" />
     <MESSAGE value="Fixed issue of updating store labels. Created store controller" />
     <MESSAGE value="deleted a weird extra assay fxml file that we weren't using" />
     <MESSAGE value="Fixed a few bugs so everything should run now" />
@@ -1148,7 +1147,8 @@
     <MESSAGE value="No random events during selection phase" />
     <MESSAGE value="Player cannot buy/sell another mule before placing/selling the first one" />
     <MESSAGE value="fixed master" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed master" />
+    <MESSAGE value="cleaned code" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1560,29 +1560,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/StoreController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89385474">
+        <state vertical-scroll-proportion="0.768">
           <caret line="142" column="6" selection-start-line="142" selection-start-column="6" selection-end-line="142" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/LoadSaveGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="389" column="0" selection-start-line="389" selection-start-column="0" selection-end-line="389" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2848">
+          <caret line="316" column="40" selection-start-line="316" selection-start-column="40" selection-end-line="316" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#15589#15590#0" expanded="true" />
-            <element signature="e#15637#15638#0" expanded="true" />
+            <element signature="e#15624#15625#0" expanded="true" />
+            <element signature="e#15672#15673#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/LoadSaveGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89385474">
-          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>

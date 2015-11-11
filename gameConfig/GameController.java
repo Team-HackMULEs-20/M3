@@ -312,8 +312,13 @@ public class GameController implements Initializable {
 	public void buyLandButtonClicked(ActionEvent e) {
 		newStage = new Stage();
 		if (e.getSource() == landBuyButton) {
-			townButton.setDisable(true);
-            grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
+            grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
+				if (node.getId().equals("townButton")) {
+					node.setDisable(true);
+				} else {
+					node.setDisable(false);
+				}
+			});
 			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
 				Land.landBuyEnable = true;
 			Stage stage = (Stage) landBuyButton.getScene().getWindow();
@@ -416,7 +421,7 @@ public class GameController implements Initializable {
 		}
 		grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(true));
 		infoBar.updateInfoBar();
-		landButton.setDisable(false);
+		townButton.setDisable(false);
 	}
 	/**
 	 *
