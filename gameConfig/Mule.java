@@ -89,52 +89,58 @@ public class Mule implements Serializable {
 	 */
 	public static void produce(Type typeMule, LandType plotType, Player p) {
 		Random randomInt = new Random();
-		if (plotType.equals(LandType.RIVER)) {
-			if (typeMule == Type.FOOD) {
-				p.addSubFood(4);
-			} else if (typeMule == Type.ENERGY) {
-				p.addSubEnergy(2);
+		int energyLeft = p.getEnergy();
+		if (energyLeft >= 1) {
+			if (plotType.equals(LandType.RIVER)) {
+				if (typeMule == Type.FOOD) {
+					p.addSubFood(4);
+				} else if (typeMule == Type.ENERGY) {
+					p.addSubEnergy(2);
+				}
+			} else if (plotType.equals(LandType.PLAIN)) {
+				if (typeMule == Type.FOOD) {
+					p.addSubFood(2);
+				} else if (typeMule == Type.ENERGY) {
+					p.addSubEnergy(3);
+				} else if (typeMule == Type.SMITHORE) {
+					p.addSubOre(1);
+				} else if (typeMule == Type.CRYSTITE) {
+					p.addSubCrystite(randomInt.nextInt(5));
+				}
+			} else if (plotType.equals(LandType.M1)) {
+				if (typeMule == Type.FOOD) {
+					p.addSubFood(1);
+				} else if (typeMule == Type.ENERGY) {
+					p.addSubEnergy(1);
+				} else if (typeMule == Type.SMITHORE) {
+					p.addSubOre(2);
+				} else if (typeMule == Type.CRYSTITE) {
+					p.addSubCrystite(randomInt.nextInt(5));
+				}
+			} else if (plotType.equals(LandType.M2)) {
+				if (typeMule == Type.FOOD) {
+					p.addSubFood(1);
+				} else if (typeMule == Type.ENERGY) {
+					p.addSubEnergy(1);
+				} else if (typeMule == Type.SMITHORE) {
+					p.addSubOre(3);
+				} else if (typeMule == Type.CRYSTITE) {
+					p.addSubCrystite(randomInt.nextInt(5));
+				}
+			} else if (plotType.equals(LandType.M3)) {
+				if (typeMule == Type.FOOD) {
+					p.addSubFood(1);
+				} else if (typeMule == Type.ENERGY) {
+					p.addSubEnergy(1);
+				} else if (typeMule == Type.SMITHORE) {
+					p.addSubOre(4);
+				} else if (typeMule == Type.CRYSTITE) {
+					p.addSubCrystite(randomInt.nextInt(5));
+				}
 			}
-		} else if (plotType.equals(LandType.PLAIN)) {
-			if (typeMule == Type.FOOD) {
-				p.addSubFood(2);
-			} else if (typeMule == Type.ENERGY) {
-				p.addSubEnergy(3);
-			} else if (typeMule == Type.SMITHORE) {
-				p.addSubOre(1);
-			} else if (typeMule == Type.CRYSTITE) {
-				p.addSubCrystite(randomInt.nextInt(5));
-			}
-		} else if (plotType.equals(LandType.M1)) {
-			if (typeMule == Type.FOOD) {
-				p.addSubFood(1);
-			} else if (typeMule == Type.ENERGY) {
-				p.addSubEnergy(1);
-			} else if (typeMule == Type.SMITHORE) {
-				p.addSubOre(2);
-			} else if (typeMule == Type.CRYSTITE) {
-				p.addSubCrystite(randomInt.nextInt(5));
-			}
-		} else if (plotType.equals(LandType.M2)) {
-			if (typeMule == Type.FOOD) {
-				p.addSubFood(1);
-			} else if (typeMule == Type.ENERGY) {
-				p.addSubEnergy(1);
-			} else if (typeMule == Type.SMITHORE) {
-				p.addSubOre(3);
-			} else if (typeMule == Type.CRYSTITE) {
-				p.addSubCrystite(randomInt.nextInt(5));
-			}
-		} else if (plotType.equals(LandType.M3)) {
-			if (typeMule == Type.FOOD) {
-				p.addSubFood(1);
-			} else if (typeMule == Type.ENERGY) {
-				p.addSubEnergy(1);
-			} else if (typeMule == Type.SMITHORE) {
-				p.addSubOre(4);
-			} else if (typeMule == Type.CRYSTITE) {
-				p.addSubCrystite(randomInt.nextInt(5));
-			}
+		} else {
+			System.out.println(p.getName() + "does not have enough" 
+					+ "energy to produce");
 		}
  	}
 }
