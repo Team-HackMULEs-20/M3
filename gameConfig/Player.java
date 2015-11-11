@@ -65,8 +65,8 @@ public class Player implements Serializable {
 	public final String getColor() {return color;}
 
     // all numbers as stated in Score Computation section of wiki
-	public final int getScore() { //TODO score
-		return money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore);
+	public final int getScore() {
+		return money + (500 * landOwned.size()) + (30 * food) + (25 * energy) + (50 * ore) + (mulesOwned.size() * 100);
 	}
 
 	public final int getMoney() {return money;}
