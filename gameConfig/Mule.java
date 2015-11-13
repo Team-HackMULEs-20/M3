@@ -138,6 +138,7 @@ public class Mule implements Serializable {
 					p.addSubCrystite(randomInt.nextInt(5));
 				}
 			}
+			p.addSubEnergy(-1);
 		} else {
 			System.out.println(p.getName() + "does not have enough" 
 					+ "energy to produce");
