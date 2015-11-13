@@ -28,6 +28,7 @@ public class InfoBar {
     private final Label currPlayer = new Label();
     private final Label crystiteLeft = new Label(); //added
     private final Label numMules = new Label(); //added
+    private final Label score = new Label();
     public static final Label timerLabel = new Label();
     public static final Button endButton = new Button("End Turn");
 
@@ -39,7 +40,7 @@ public class InfoBar {
         infoStage.setTitle("Information Bar");
         infoStage.setAlwaysOnTop(true);
         Group t2 = new Group();
-        Scene scene2 = new Scene(t2, 600, 140);
+        Scene scene2 = new Scene(t2, 700, 140);
 
         timerLabel.setFont(new Font("American Typewriter Bold", 30));
 
@@ -75,12 +76,18 @@ public class InfoBar {
         numMules.setText("Mules Owned: " + p.getMulesOwned().size()); //added
         numMules.setFont(new Font("American Typewriter", 15)); //added
 
+        score.setText(String.valueOf(p.getScore()) + " points");
+        score.setFont(new Font("American Typewriter", 15));
+        score.setAlignment(Pos.CENTER);
+
         Label l1 = new Label("                   ");
         Button saveGame = new Button("Save Game");
         Button endGame = new Button(" End Game");
         Label l5 = new Label("                   ");
         Label l4 = new Label(" Timer");
         l4.setFont(new Font("American Typewriter Bold", 18));
+        Label scoreLabel = new Label("Total Score");
+        scoreLabel.setFont(new Font("American Typewriter Bold", 18));
 
         saveGame.setOnAction((ActionEvent e) -> {
             LoadSaveGame.save();
@@ -141,9 +148,11 @@ public class InfoBar {
         grid2.add(l5, 1,3);
         grid2.add(crystiteLeft, 2, 3);
         grid2.add(numMules,4, 3);
-        grid2.add(timerLabel, 5, 1);
-        grid2.add(endButton, 5, 2);
-        grid2.add(l4, 5, 0);
+        grid2.add(scoreLabel, 5, 0);
+        grid2.add(score, 5, 1);
+        grid2.add(timerLabel, 6, 1);
+        grid2.add(endButton, 6, 2);
+        grid2.add(l4, 6, 0);
         t2.getChildren().add(grid2);
 
         infoStage.setScene(scene2);
@@ -188,6 +197,10 @@ public class InfoBar {
 
         numMules.setText("Mules Owned: " + p.getMulesOwned().size()); //added
         numMules.setFont(new Font("American Typewriter", 15)); //added
+
+        score.setText(String.valueOf(p.getScore()) + " points");
+        score.setFont(new Font("American Typewriter", 15));
+        score.setAlignment(Pos.CENTER);
         
         //System.out.println("INFO BAR UPDATED");
 
