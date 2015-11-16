@@ -2,6 +2,8 @@ package gameConfig;
 
 import java.io.Serializable;
 
+import javafx.scene.shape.Rectangle;
+
 public class Land implements Serializable {
 	private Player owner;
 	private boolean owned;
@@ -9,11 +11,14 @@ public class Land implements Serializable {
 	private final int col;
 	private Mule.Type muleType;
 	public static boolean landBuyEnable = false;
+	public static boolean landSellEnable = false;
 
 	private boolean hasMule;
 	public static Player latestBidder;
 	private LandType type;
 	private boolean muleBuyEnable;
+	
+	private Rectangle color;
 
 
 
@@ -45,10 +50,17 @@ public class Land implements Serializable {
 
 	//randomNum = Min + (int)(Math.random() * ((Max - Min) + 1));
 	public static int getBuyPrice() {return 300 + (Turns.rounds * (int)(Math.random() * (100 + 1))); }
+	
 	private int getSellPrice() {
 		return 400 + (int)(Math.random() * (200 + 1));
 	}
 
+	public void setRectangle(Rectangle rec) {
+		color = rec;
+	}
+	
+	public Rectangle getRectangle() {return color;}
+	
 	public void setOwner(Player p) {
 		this.owner = p;
 		this.owned = true;
@@ -79,14 +91,10 @@ public class Land implements Serializable {
 		}
 	}
 
-	 public void sellLand() { //TODO unused method
-	 	if (isOwned()) {
+	 public void sellLand() {
 	 		owner.addSubMoney(getSellPrice());
 	 		owner = null;
 	 		owned = false;
-	 	} else {
-			GameController.errorMessageBox("This land is not owned to sell");
-	 	}
 	 }
 
 	public boolean hasMule() {return hasMule;}
@@ -94,7 +102,7 @@ public class Land implements Serializable {
 	public void setHasMule(boolean mule) {hasMule = mule;}
 	
 	public boolean isOwned() {return owned;}
-	
+		
 	public boolean equals(Land land) {
 		return (land.getRow() == this.row && land.getCol() == this.getCol()); 
 	}
