@@ -35,6 +35,9 @@ public class GameController implements Initializable {
 
 	@FXML
 	private Button landBuyButton;
+	
+	@FXML
+	private Button landSellButton;
 
 	@FXML
 	private Button backButton2;
@@ -333,6 +336,35 @@ public class GameController implements Initializable {
 			newStage.show();
 		}
 	}
+	
+	/**
+	 *
+	 * @param e action event to check button source
+	 */
+	@FXML
+	public void sellLandButtonClicked(ActionEvent e) {
+		newStage = new Stage();
+		if (e.getSource() == landSellButton) {
+           grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
+				if (node.getId().equals("townButton")) {
+					node.setDisable(true);
+				} else {
+					node.setDisable(false);
+				}
+			});
+			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
+				Land.landSellEnable = true;
+			Stage stage = (Stage) landSellButton.getScene().getWindow();
+			stage.close();
+		} else if (e.getSource() == backButton2) {
+			Stage stage = (Stage) backButton2.getScene().getWindow();
+			stage.close();
+			newStage.setScene(townScene);
+			newStage.setTitle(Turns.getTurn().getName());
+			newStage.show();
+		}
+	}
+	
 	/**
 	 *
 	 * @param e action event to check button source
@@ -345,28 +377,25 @@ public class GameController implements Initializable {
 		int col = GridPane.getColumnIndex(landButton);
 		int row = GridPane.getRowIndex(landButton);
 		Land selectedLand = Controller.landPlots[col][row];
+		Rectangle color = new Rectangle();
+		color.setFill(Color.valueOf(currentP.getColor()));
+		color.setHeight(25);
+		color.setWidth(25);
+		color.setOpacity(1);
 		if (Land.landBuyEnable) {
 			if (!selectedLand.isOwned()) {
 				if (currentP.getLandGrants() > 0) {//check for land grants
 					currentP.decLandGrants();
-					Rectangle color =  new Rectangle();
-					color.setFill(Color.valueOf(currentP.getColor()));
-					color.setHeight(25);
-					color.setWidth(25);
-					color.setOpacity(1);
 					grid.add(color, col, row);
+					selectedLand.setRectangle(color);
 					GridPane.setHalignment(color, HPos.LEFT);
 					GridPane.setValignment(color, VPos.TOP);
 					selectedLand.setOwner(currentP);
 					currentP.getLandOwned().add(selectedLand);
 				} else if (currentP.getMoney() >= 300){//if not grants sub money //doesn't allow to buy when at $300 //TODO
 					currentP.addSubMoney(-300);
-					Rectangle color = new Rectangle();
-					color.setFill(Color.valueOf(currentP.getColor()));
-					color.setHeight(25);
-					color.setWidth(25);
-					color.setOpacity(1);
 					grid.add(color, col, row);
+					selectedLand.setRectangle(color);
 					GridPane.setHalignment(color, HPos.LEFT);
 					GridPane.setValignment(color, VPos.TOP);
 					selectedLand.setOwner(currentP);
@@ -382,6 +411,18 @@ public class GameController implements Initializable {
 				Timer.endTurn();
 			} 
 
+		} else if (Land.landSellEnable) {
+			if (selectedLand.getOwner() == currentP) {
+				selectedLand.sellLand();
+				int index = currentP.getLandOwned().indexOf(selectedLand);
+				System.out.println (index);
+				currentP.getLandOwned().remove(index);
+				selectedLand.getRectangle().setVisible(false);
+				selectedLand.setRectangle(null);
+			} else {
+				GameController.errorMessageBox("You are not the owner of this land. You cannot buy it.");
+			}
+			Land.landSellEnable = false;
 		} else if (StoreController.buy) {
 			boolean muleBought = currentP.buyMule(true, mule, selectedLand);//buy mule / return false if mule has been lost
 			if (muleBought) {//if !muleLost
