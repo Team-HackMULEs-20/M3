@@ -151,7 +151,7 @@ public class GameController implements Initializable {
 	public void startButtonClicked(ActionEvent event) {
 		Player currentPlayer = Turns.getTurn();
 		grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
-			if (node.getId() != "townButton") {
+			if (!node.getId().equals("townButton")) {
 				node.setDisable(true);
 			} else {
 				node.setDisable(false);
@@ -438,6 +438,34 @@ public class GameController implements Initializable {
 			}
 			Land.landSellEnable = false;
 		} else if (assayTest) { //TODO
+			if (currentP.getMoney() >= 100) {
+				Stage infoStage = new Stage();
+				infoStage.setTitle("Assay Test Results:");
+				infoStage.setAlwaysOnTop(true);
+				Group t = new Group();
+				GridPane grid = new GridPane();
+				grid.setAlignment(Pos.CENTER);
+				grid.setVgap(10);
+				grid.setHgap(10);
+				Label resultsLabel = new Label("There is " + selectedLand.getCrystite() + " Crystite under this " + selectedLand.getType().toString());
+				resultsLabel.setFont(new Font("American Typewriter", 15));
+				Button infoButton = new Button("Ok");
+				infoButton.setFont(new Font("American Typewriter", 17));
+				GridPane grid2 = new GridPane();
+				grid2.setAlignment(Pos.CENTER);
+				grid2.add(infoButton, 0, 0);
+				grid.add(resultsLabel, 1, 0);
+				grid.add(grid2, 1, 1);
+				t.getChildren().add(grid);
+				Scene errorScene = new Scene(t);
+				infoStage.setScene(errorScene);
+				infoStage.show();
+				infoStage.toFront();
+				infoButton.setOnAction((ActionEvent x) -> infoStage.close());
+				currentP.addSubMoney(-100);
+			} else {
+				GameController.errorMessageBox("You do not have enough money for an Assay Test.");
+			}
 			System.out.println("There is " + selectedLand.getCrystite() + " Crystite under this plot.");
 			System.out.println(selectedLand.getType().toString());
 			assayTest = false;
