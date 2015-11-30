@@ -101,11 +101,27 @@ public class RandomEvents {
 					p.addSubFood(-(f/2));
 					return "MISCHIEVOUS UGA STUDENTS BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD.";
 
-				} else {
+				} else if (chooseRE == 7){
 					int m = 6 * calculateM();
 					System.out.println("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN. IT COST YOU $" + m + " TO CLEAN IT UP.");
 					p.addSubMoney(-m);
 					return "YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN. IT COST YOU $" + m + " TO CLEAN IT UP.";
+				} else if (chooseRE == 8){
+					int m = 6 * calculateM();
+					System.out.println("YOU FOUND UGA'S BULLDOG IN THE STREET. YOU SOLD IT FOR $" + m + " TO A ANIMAL SHELTER");
+					p.addSubMoney(m);
+					return "YOU FOUND UGA'S BULLDOG IN THE STREET. YOU SOLD IT FOR $" + m + " TO A ANIMAL SHELTER";
+				}else if (chooseRE == 9){
+					System.out.println("WALKING AROUND THE TOWN, YOU MET UP WITH MICHAEL JORDAN AND HE OFFERED SOME OF MICHAEL'S "
+							+ "SECRET STUFF. IT GAVE YOU ENERGY");
+					p.addSubEnergy(4);
+					return "WALKING AROUND THE TOWN, YOU MET UP WITH MICHAEL JORDAN AND HE OFFERED SOME OF MICHAEL'S "
+							+ "SECRET STUFF. IT GAVE YOU ENERGY";
+				}else {
+					int m = 6 * calculateM();
+					System.out.println("YOU MADE A BET THAT GEORGIA TECH WOULD WIN THE GAME. THEY LOST SO YOU LOST $" + m);
+					p.addSubMoney(-m);
+					return "YOU MADE A BET THAT GEORGIA TECH WOULD WIN THE GAME. THEY LOST SO YOU LOST $" + m;
 				}
 			}
 		}
