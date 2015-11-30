@@ -67,7 +67,7 @@ public class Land implements Serializable {
 		this.crystite = c;
 	}
 
-	public int getcrystite() {return crystite;}
+	public int getCrystite() {return crystite;}
 
 	public static int[] getCPlots() {
 		int[] cPlots = new int[3];
@@ -75,7 +75,7 @@ public class Land implements Serializable {
 		cPlots[1] = cPlots[0] + (int)(Math.random() * (44 - cPlots[0]));
 		cPlots[2] = cPlots[1] + (int)(Math.random() * (45 - cPlots[1]));
 		for (int i = 0; i < 3; i++) {
-			if (cPlots[i] == 4 || cPlots[i] == 13 || cPlots[i] == 22 || cPlots[i] == 31 || cPlots[i] == 40)
+			while (cPlots[i] > 19 && cPlots[i] < 25)
 				cPlots[i]++;
 		}
 		if (cPlots[0] == cPlots[1]) {
@@ -87,27 +87,27 @@ public class Land implements Serializable {
 		if (cPlots[1] == cPlots[2])
 			cPlots[2]++;
 		
-		int[] retPlots = new int[44];
+		int[] retPlots = new int[45];
 		retPlots[cPlots[0]] = 3;
 		retPlots[cPlots[1]] = 3;
 		retPlots[cPlots[2]] = 3;
 		
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 45; j++) {
-				if (j == cPlots[i] - 10 || j == cPlots[i] - 9 || j == cPlots[i] - 8 ||
-					j == cPlots[i] - 1  ||                       j == cPlots[i] + 1 ||
-					j == cPlots[i] + 8  || j == cPlots[i] + 9 || j == cPlots[i] + 10) {
+				if (j == cPlots[i] - 6 || j == cPlots[i] - 1 || j == cPlots[i] + 4 ||
+					j == cPlots[i] - 5 ||                       j == cPlots[i] + 5 ||
+					j == cPlots[i] - 4 || j == cPlots[i] + 1 || j == cPlots[i] + 6) {
 					if (retPlots[j] < 2) 
 						retPlots[j] = 2;
 				}
 			}
 		}
 		
-		retPlots[4] = 0;
-		retPlots[13] = 0;
+		retPlots[20] = 0;
+		retPlots[21] = 0;
 		retPlots[22] = 0;
-		retPlots[31] = 0;
-		retPlots[40] = 0;
+		retPlots[23] = 0;
+		retPlots[24] = 0;
 		
 		return retPlots;	
 	}

@@ -261,7 +261,7 @@ public class Controller implements Initializable {
 				newLand.setCrystite(cPlots[count]);
 				landPlots[i][j] = newLand;
 				count++;
-			}
+			}			
 		}
 	}
 	

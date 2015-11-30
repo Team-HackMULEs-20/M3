@@ -35,7 +35,7 @@ public class GameController implements Initializable {
 
 	@FXML
 	private Button landBuyButton;
-	
+
 	@FXML
 	private Button landSellButton;
 
@@ -87,14 +87,21 @@ public class GameController implements Initializable {
 	@FXML
 	private Button oreOkButton;
 
+	@FXML
+	private Button testButton;
+
+	@FXML
+	private Button assayOfficeButton;
+
 	public static Mule.Type currentMuleType;
 	public static int numPasses = 0;
 	public static Stage newStage;
 	private static boolean selectPhase = true;
+	private static boolean assayTest = false;
 
 	private boolean infoBarCreated, townWinCreated,
-			landBuyIntCreated, pubWinCreated,
-			storeWinCreated, selectWinCreated, assayWinCreated = false;
+	landBuyIntCreated, pubWinCreated,
+	storeWinCreated, selectWinCreated, assayWinCreated = false;
 	public static InfoBar infoBar;
 	private final Auction auction = new Auction();
 	public static Scene townScene;
@@ -127,7 +134,7 @@ public class GameController implements Initializable {
 
 	@FXML
 	public static void beginTurn() {
-        grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(true));
+		grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(true));
 		Launcher.primaryStage.hide();
 		//newStage.hide();
 		Stage start = new Stage();
@@ -143,6 +150,13 @@ public class GameController implements Initializable {
 	@FXML
 	public void startButtonClicked(ActionEvent event) {
 		Player currentPlayer = Turns.getTurn();
+		grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
+			if (node.getId() != "townButton") {
+				node.setDisable(true);
+			} else {
+				node.setDisable(false);
+			}
+		});
 		newStage = new Stage();
 		if (!infoBarCreated){
 			infoBar = new InfoBar();
@@ -164,12 +178,12 @@ public class GameController implements Initializable {
 			Stage stage = (Stage) startButton.getScene().getWindow();
 			stage.close();
 			if (currentPlayer.getLandOwned().size() != 0 && currentPlayer.getMulesOwned().size() != 0) {
-                currentPlayer.getMulesOwned().stream().filter(mule -> mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
-                        && mule.getOwner() == currentPlayer).forEach(mule -> {
-                    System.out.println("producing");
-                    Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
-                    infoBar.updateInfoBar();
-                });
+				currentPlayer.getMulesOwned().stream().filter(mule -> mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
+						&& mule.getOwner() == currentPlayer).forEach(mule -> {
+							System.out.println("producing");
+							Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
+							infoBar.updateInfoBar();
+						});
 			}
 			//store = new Store();
 			/* boolean auctionTime = auction.isAuctionTime();
@@ -226,7 +240,7 @@ public class GameController implements Initializable {
 	@FXML
 	public void selectionPhase(ActionEvent event) {
 		if (event.getSource() == selectLand) {
-            grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
+			grid.getChildren().stream().filter(node -> node.getId() != null && !node.getId().equals("townButton")).forEach(node -> node.setDisable(false));
 			if (Turns.getTurn().getLandGrants() > 0 || Turns.getTurn().getMoney() > 300)//make sure player can buy land
 				Land.landBuyEnable = true;
 			Stage stage = (Stage) selectLand.getScene().getWindow();
@@ -317,7 +331,7 @@ public class GameController implements Initializable {
 	public void buyLandButtonClicked(ActionEvent e) {
 		newStage = new Stage();
 		if (e.getSource() == landBuyButton) {
-            grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
+			grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
 				if (node.getId().equals("townButton")) {
 					node.setDisable(true);
 				} else {
@@ -336,7 +350,7 @@ public class GameController implements Initializable {
 			newStage.show();
 		}
 	}
-	
+
 	/**
 	 *
 	 * @param e action event to check button source
@@ -345,7 +359,7 @@ public class GameController implements Initializable {
 	public void sellLandButtonClicked(ActionEvent e) {
 		newStage = new Stage();
 		if (e.getSource() == landSellButton) {
-           grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
+			grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
 				if (node.getId().equals("townButton")) {
 					node.setDisable(true);
 				} else {
@@ -364,7 +378,7 @@ public class GameController implements Initializable {
 			newStage.show();
 		}
 	}
-	
+
 	/**
 	 *
 	 * @param e action event to check button source
@@ -423,6 +437,10 @@ public class GameController implements Initializable {
 				GameController.errorMessageBox("You are not the owner of this land. You cannot buy it.");
 			}
 			Land.landSellEnable = false;
+		} else if (assayTest) { //TODO
+			System.out.println("There is " + selectedLand.getCrystite() + " Crystite under this plot.");
+			System.out.println(selectedLand.getType().toString());
+			assayTest = false;
 		} else if (StoreController.buy) {
 			boolean muleBought = currentP.buyMule(true, mule, selectedLand);//buy mule / return false if mule has been lost
 			if (muleBought) {//if !muleLost
@@ -572,13 +590,24 @@ public class GameController implements Initializable {
 		Stage stage = (Stage) assayBackButton.getScene().getWindow();
 		stage.close();
 	}
-	/**
-	 *
-	 */
+
 	@FXML
-	public void mineButtonClicked() {
-		System.out.println("Mine button clicked");
+	public void testButtonClicked(ActionEvent e) {
+		newStage = new Stage();
+		if (e.getSource() == testButton) {
+			grid.getChildren().stream().filter(node -> node.getId() != null).forEach(node -> {
+				if (node.getId().equals("townButton")) {
+					node.setDisable(true);
+				} else {
+					node.setDisable(false);
+				}
+			});
+			assayTest = true;
+			Stage stage = (Stage) testButton.getScene().getWindow();
+			stage.close();
+		}
 	}
+
 	/**
 	 *
 	 */
@@ -593,6 +622,7 @@ public class GameController implements Initializable {
 				newStage.setTitle("Assay Office");
 				newStage.show();
 				assayWinCreated = true;
+
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -600,6 +630,8 @@ public class GameController implements Initializable {
 			newStage.setScene(assayScene);
 			newStage.show();
 		}
+		Stage stage = (Stage) assayOfficeButton.getScene().getWindow();
+		stage.close();
 	}
 	/**
 	 *
