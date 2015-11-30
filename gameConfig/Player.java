@@ -40,18 +40,25 @@ public class Player implements Serializable {
         // all numbers as stated in Players section of wiki
 		if (this.race.equals(Race.FLAPPER)) {
 			money = 1600;
+			ore = 0;
+			crystite = 0;
 		} else if (this.race.equals(Race.HUMAN)) {
 			money = 600;
+			ore = 0;
+			crystite = 0;
+		} else if (this.race.equals(Race.YELLOWJACKET)){
+			money = 450;
+			ore = 1;
+			crystite = 1;
 		} else {
 			money = 1000;
+			ore = 0;
+			crystite = 0;
 		}
-
-		ore = 0;
-		crystite = 0;
 	}
 
 	public enum Race {
-		FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN
+		FLAPPER, BONZOID, UGAITE, BUZZITE, HUMAN, YELLOWJACKET
 	}
 
 	public final String getName() {return name;}
