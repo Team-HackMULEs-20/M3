@@ -33,6 +33,7 @@
           <String fx:value="Ugaite"/>
           <String fx:value="Buzzite"/>
           <String fx:value="Human (hardest)"/>
+          <String fx:value="YellowJacket (impossible)"/>
         </FXCollections>
       </items>
     </ChoiceBox>
