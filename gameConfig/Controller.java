@@ -184,17 +184,7 @@ public class Controller implements Initializable {
 							newStage.setTitle("Game Screen");
 							newStage.show();
 							GameController.beginTurn();
-							//creates land array
-							landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
-							int count = 0;
-							for (int i = 0; i < landPlots.length; i++) {
-								for (int j = 0; j < landPlots[0].length; j++) {
-									Land newLand = new Land(i,j);
-									newLand.setType(landTypes[count]);
-									landPlots[i][j] = newLand;
-									count++;
-								}
-							}
+							createLandArray();
 						} else { // if user selected more than 2 players, go on to player 3 config
 							Launcher.primaryStage.setTitle("Player 3 Configuration");
 							Launcher.primaryStage.toFront();
@@ -219,17 +209,7 @@ public class Controller implements Initializable {
 							newStage.setTitle("Game Screen");
 							newStage.show();
 							GameController.beginTurn();
-							//creates land array
-							landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
-							int count = 0;
-							for (int i = 0; i < landPlots.length; i++) {
-								for (int j = 0; j < landPlots[0].length; j++) {
-									Land newLand = new Land(i,j);
-									newLand.setType(landTypes[count]);
-									landPlots[i][j] = newLand;
-									count++;
-								}
-							}
+							createLandArray();
 						} else {
 							Launcher.primaryStage.setTitle("Player 4 Configuration");
 							Launcher.primaryStage.toFront();
@@ -254,17 +234,7 @@ public class Controller implements Initializable {
 						newStage.setTitle("Game Screen");
 						newStage.show();
 						GameController.beginTurn();
-						//creates land array
-						landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
-						int count = 0;
-						for (int i = 0; i < landPlots.length; i++) {
-							for (int j = 0; j < landPlots[0].length; j++) {
-								Land newLand = new Land(i,j);
-								newLand.setType(landTypes[count]);
-								landPlots[i][j] = newLand;
-								count++;
-							}
-						}
+						createLandArray();
 					}
 				}
 			} else if (e.getSource() == backButton) {
@@ -280,6 +250,21 @@ public class Controller implements Initializable {
 		}*/
 	}
 
+	private void createLandArray() {
+		landPlots = new Land[9][5];//5 rows, 9 columns, col = i, row = j
+		int count = 0;
+		int[] cPlots = Land.getCPlots();
+		for (int i = 0; i < landPlots.length; i++) {
+			for (int j = 0; j < landPlots[0].length; j++) {
+				Land newLand = new Land(i,j);
+				newLand.setType(landTypes[count]);
+				newLand.setCrystite(cPlots[count]);
+				landPlots[i][j] = newLand;
+				count++;
+			}			
+		}
+	}
+	
 	/**
 	 *
 	 * @param event action event to check button
