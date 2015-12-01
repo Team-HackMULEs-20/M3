@@ -127,6 +127,12 @@ public class GameController implements Initializable {
 				"check your FXML file 'landBuyInterface.fxml'.";
 		assert townButton != null : "fx:id=\"townButton\" was not injected: " +
 				"check your FXML file 'MainMap.fxml'.";
+//		assert townButton != null : "fx:id=\"townButton\" was not injected: " +
+//				"check your FXML file 'RandMap1.fxml'.";
+//		assert townButton != null : "fx:id=\"townButton\" was not injected: " +
+//				"check your FXML file 'RandMap2.fxml'.";
+//		assert townButton != null : "fx:id=\"townButton\" was not injected: " +
+//				"check your FXML file 'RandMap3.fxml'.";
 		assert landOfficeButton != null : "fx:id=\"landOfficeButton\" was not injected: " +
 				"check your FXML file 'TownMap.fxml'.";
 	}

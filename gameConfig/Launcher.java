@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import java.io.*;
+import sun.audio.*;
+
 public class Launcher extends Application {
 
     public static Scene nextScene;
@@ -36,6 +39,10 @@ public class Launcher extends Application {
             primaryStage.setTitle("M.U.L.E. Game Setup");
             primaryStage.setScene(rootScene);
             primaryStage.show();
+
+            InputStream inputStream = getClass().getResourceAsStream("UIFiles/Media/itAlwaysTakes.wav");
+		    AudioStream audioStream = new AudioStream(inputStream);
+		    AudioPlayer.player.start(audioStream);
         } catch (Exception ex) {
             Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
         }
