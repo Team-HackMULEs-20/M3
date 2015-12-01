@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
+
 public class Controller implements Initializable {
 
 	@FXML
@@ -101,7 +102,7 @@ public class Controller implements Initializable {
 	}
 
 	@FXML
-	private void gameSetup(ActionEvent e) throws NullPointerException {
+	private void gameSetup(ActionEvent e) throws NullPointerException, Exception {
 		try {
 			if (e.getSource() == nextButton) {
 				numPlayer = Integer.parseInt(numPlayers.getSelectionModel().getSelectedItem().toString());
@@ -126,7 +127,7 @@ public class Controller implements Initializable {
 	private void playerSetup(ActionEvent e) throws NullPointerException {
 		Stage newStage = new Stage();
 		//try {
-			if (e.getSource() == nextButton2) {
+		if (e.getSource() == nextButton2) {
 				String name = playerName.getText();
 				String race = raceChoice.getSelectionModel().getSelectedItem().toString();
 				rand = random.nextInt(100);
