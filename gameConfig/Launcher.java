@@ -42,7 +42,7 @@ public class Launcher extends Application {
 
             InputStream inputStream = getClass().getResourceAsStream("UIFiles/Media/itAlwaysTakes.wav");
 		    AudioStream audioStream = new AudioStream(inputStream);
-		    AudioPlayer.player.start(audioStream);
+	//	    AudioPlayer.player.start(audioStream);
         } catch (Exception ex) {
             Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
         }
