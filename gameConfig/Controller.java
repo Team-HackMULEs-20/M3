@@ -168,18 +168,17 @@ public class Controller implements Initializable {
 							Launcher.primaryStage.hide();
 							try {
 								//random map selected
-								if (map == "Random") {
-									System.out.println(rand);
-									if(rand < 33) {
-										gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap1.fxml"));
-									} else if(rand > 33 && rand < 67) {
-										gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap2.fxml"));
-									}
-									gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap3.fxml"));
+//								if (map.equals("Random")) {
+//									if(rand < 33) {
+//										gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap1.fxml"));
+//									} else if(rand > 33 && rand < 67) {
+//										gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap2.fxml"));
+//									}
+//									gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap3.fxml"));
 								//standard map selected
-								} else {
+//								} else {
 									gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
-								}
+//								}
 								gameScene = new Scene(gameRoot);
 								Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
 								startScene = new Scene(startWindow);
@@ -215,17 +214,17 @@ public class Controller implements Initializable {
 							Launcher.primaryStage.hide();
 							try {
 								//random map selected
-								if (map == "Random") {
-									if(rand < 33) {
-										gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap1.fxml"));
-									} else if(rand > 33 && rand < 67) {
-										gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap2.fxml"));
-									}
-									gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap3.fxml"));
+//								if (map.equals("Random")) {
+//									if(rand < 33) {
+//										gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap1.fxml"));
+//									} else if(rand > 33 && rand < 67) {
+//										gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap2.fxml"));
+//									}
+//									gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap3.fxml"));
 								//standard map selected
-								} else {
+//								} else {
 									gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
-								}
+//								}
 								gameScene = new Scene(gameRoot);
 								Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
 								startScene = new Scene(startWindow);
@@ -260,17 +259,17 @@ public class Controller implements Initializable {
 						Launcher.primaryStage.hide();
 						try {
 							//random map selected
-							if (map.equals("Random")) {
-								if(rand < 33) {
-									gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap1.fxml"));
-								} else if(rand > 33 && rand < 67) {
-									gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap2.fxml"));
-								}
-								gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap3.fxml"));
+//							if (map.equals("Random")) {
+//								if(rand < 33) {
+//									gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap1.fxml"));
+//								} else if(rand > 33 && rand < 67) {
+//									gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap2.fxml"));
+//								}
+//								gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/RandMap3.fxml"));
 							//standard map selected
-							} else {
+//							} else {
 								gameRoot = FXMLLoader.load(getClass().getResource("UIFiles/MainMap.fxml"));
-							}
+//							}
 							gameScene = new Scene(gameRoot);
 							Parent startWindow = FXMLLoader.load(getClass().getResource("UIFiles/playerStart.fxml"));
 							startScene = new Scene(startWindow);
