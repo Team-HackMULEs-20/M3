@@ -204,17 +204,17 @@
   <Button fx:id="46" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="7" GridPane.rowIndex="4" />
   <Button fx:id="47" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="8" GridPane.rowIndex="4" />
   <Button fx:id="48" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#landButtonClicked" opacity="0.0" text="Land" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-  <ImageView id="volcano" fitHeight="86.87486267089844" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+  <ImageView id="volcano" fitHeight="43.0000114440918" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
     <image>
       <Image url="@Media/volcano.gif" preserveRatio="true" smooth="true" />
     </image>
   </ImageView>
-  <ImageView id="volcano" fitHeight="90.56256103515625" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
+  <ImageView id="volcano" fitHeight="43.000030517578125" fitWidth="66.0" pickOnBounds="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
     <image>
       <Image url="@Media/volcano.gif" preserveRatio="true" smooth="true" />
     </image>
   </ImageView>
-  <ImageView id="volcano" fitHeight="78.0" fitWidth="67.0001220703125" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+  <ImageView id="volcano" fitHeight="43.0" fitWidth="67.0001220703125" pickOnBounds="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
     <image>
       <Image url="@Media/volcano.gif" preserveRatio="true" smooth="true" />
     </image>
