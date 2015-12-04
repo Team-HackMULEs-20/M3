@@ -3,142 +3,99 @@
 <?import java.lang.*?>
 <?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="gameConfig.StoreController">
-    <ImageView id="store" fitHeight="400.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
-        <Image preserveRatio="true" smooth="true" url="@Media/store.JPG"/>
-    </ImageView>
-    <ImageView id="menu" fitHeight="338.0" fitWidth="448.0" layoutX="81.0" layoutY="37.0" pickOnBounds="true">
-        <Image preserveRatio="true" smooth="true" url="@Media/menu.jpg"/>
-    </ImageView>
-    <Text layoutX="125.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Store!">
-        <font>
-            <Font name="Bradley Hand Bold" size="35.0"/>
-        </font>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gameConfig.StoreController">
+  <ImageView id="store" fitHeight="400.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true">
+    <Image url="@Media/store.JPG" preserveRatio="true" smooth="true" />
+  </ImageView>
+  <ImageView id="menu" fitHeight="375.0" fitWidth="445.0" layoutX="81.0" layoutY="11.0" pickOnBounds="true">
+    <Image url="@Media/menu.jpg" preserveRatio="true" smooth="true" />
+  </ImageView>
+  <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
+  <GridPane gridLinesVisible="true" layoutX="148.0" layoutY="164.0" prefHeight="190.0" prefWidth="305.0">
+    <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="75.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="60.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="50.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="55.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="55.0" />
+    </columnConstraints>
+    <rowConstraints>
+      <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="53.0" minHeight="4.0" prefHeight="45.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <font>
+        <Font name="Bradley Hand Bold" size="20.0" />
+      </font>
     </Text>
-    <Text layoutX="174.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0"
-          text="What would you like to purchase?">
-        <font>
-            <Font name="Bradley Hand Bold" size="18.0"/>
-        </font>
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Food" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <font>
+        <Font name="Bradley Hand Bold" size="15.0" fx:id="x1" />
+      </font>
     </Text>
-    <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonClicked"
-            text="Back"/>
-    <GridPane gridLinesVisible="true" layoutX="148.0" layoutY="138.0" prefHeight="190.0"
-              prefWidth="305.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="75.0"/>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="60.0"/>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="50.0"/>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="55.0"/>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="55.0"/>
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES"/>
-            <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES"/>
-            <RowConstraints maxHeight="53.0" minHeight="4.0" prefHeight="45.0" vgrow="SOMETIMES"/>
-            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES"/>
-            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES"/>
-            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES"/>
-        </rowConstraints>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item" GridPane.halignment="CENTER"
-              GridPane.valignment="CENTER">
-            <font>
-                <Font name="Bradley Hand Bold" size="20.0"/>
-            </font>
-        </Text>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Food" GridPane.halignment="CENTER" GridPane.rowIndex="1"
-              GridPane.valignment="CENTER">
-            <font>
-                <Font name="Bradley Hand Bold" size="15.0" fx:id="x1"/>
-            </font>
-        </Text>
-        <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Energy" GridPane.halignment="CENTER"
-              GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
-        <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Smithore&#10;(Ore)" textAlignment="CENTER"
-              GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
-        <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Crystite" GridPane.halignment="CENTER"
-              GridPane.rowIndex="4" GridPane.valignment="CENTER"/>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" GridPane.columnIndex="1"
-              GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-            <font>
-                <Font name="Bradley Hand Bold" size="14.0"/>
-            </font>
-        </Text>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" GridPane.columnIndex="2"
-              GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-        <Button fx:id="buyFoodButton" mnemonicParsing="false" onAction="#buyFoodButtonClicked" prefHeight="11.0"
-                prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER"
-                GridPane.rowIndex="1" GridPane.valignment="CENTER">
-            <font>
-                <Font name="Bradley Hand Bold" size="13.0" fx:id="x3"/>
-            </font>
-        </Button>
-        <Button fx:id="buyEnergyButton" font="$x3" mnemonicParsing="false" onAction="#buyEnergyButtonClicked"
-                prefHeight="12.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER"
-                GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
-        <Button fx:id="sellFoodButton" font="$x3" mnemonicParsing="false" onAction="#sellFoodButtonClicked"
-                prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER"
-                GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-        <Button fx:id="buyOreButton" font="$x3" mnemonicParsing="false" onAction="#buyOreButtonClicked"
-                prefHeight="27.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER"
-                GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
-        <Button fx:id="buyCrysButton" font="$x3" mnemonicParsing="false" onAction="#buyCrysButtonClicked"
-                prefHeight="27.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER"
-                GridPane.rowIndex="4" GridPane.valignment="CENTER"/>
-        <Button fx:id="sellEnergyButton" font="$x3" mnemonicParsing="false" onAction="#sellEnergyButtonClicked"
-                prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER"
-                GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
-        <Button fx:id="sellOreButton" font="$x3" mnemonicParsing="false" onAction="#sellOreButtonClicked"
-                prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER"
-                GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
-        <Button fx:id="sellCrysButton" font="$x3" mnemonicParsing="false" onAction="#sellCrysButtonClicked"
-                prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER"
-                GridPane.rowIndex="4" GridPane.valignment="CENTER"/>
-        <Label fx:id="foodCostLabel" font="$x3" text="\$food" GridPane.columnIndex="2" GridPane.halignment="CENTER"
-               GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-        <Label fx:id="energyCostLabel" font="$x3" text="\$energy" GridPane.columnIndex="2"
-               GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
-        <Label fx:id="smithoreCostLabel" font="$x3" text="\$ore" GridPane.columnIndex="2"
-               GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
-        <Label fx:id="crystiteCostLabel" font="$x3" text="\$crys" GridPane.columnIndex="2"
-               GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER"/>
-        <Label fx:id="foodQuantityLabel" font="$x3" text="foodQ" GridPane.columnIndex="1"
-               GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-        <Label fx:id="energyQuantityLabel" font="$x3" text="energyQ" GridPane.columnIndex="1"
-               GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
-        <Label fx:id="smithoreQuantityLabel" font="$x3" text="oreQ" GridPane.columnIndex="1"
-               GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
-        <Label fx:id="crystiteQuantityLabel" font="$x3" text="crysQ" GridPane.columnIndex="1"
-               GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER"/>
-        <ComboBox fx:id="muleChoice" onAction="#updateMuleCostLabel" promptText="Mule" GridPane.rowIndex="5">
-            <items>
-                <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="Food Mule"/>
-                    <String fx:value="Energy Mule"/>
-                    <String fx:value="Smithore Mule"/>
-                    <String fx:value="Crystite Mule"/>
-                </FXCollections>
-            </items>
-        </ComboBox>
-        <Button fx:id="buyMuleButton" font="$x3" mnemonicParsing="false" onAction="#buyMuleButtonClicked"
-                prefHeight="11.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER"
-                GridPane.rowIndex="5" GridPane.valignment="CENTER"/>
-        <Button fx:id="sellMuleButton" font="$x3" mnemonicParsing="false" onAction="#sellMuleButtonClicked"
-                prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER"
-                GridPane.rowIndex="5" GridPane.valignment="CENTER"/>
-        <Label fx:id="muleQuantityLabel" font="$x3" text="muleQ" GridPane.columnIndex="1"
-               GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER"/>
-        <Label fx:id="muleCostLabel" font="$x3" textAlignment="CENTER" GridPane.columnIndex="2"
-               GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
-            <font>
-                <Font name="Bradley Hand Bold" size="10.0"/>
-            </font>
-        </Label>
-    </GridPane>
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Energy" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Smithore&#10;(Ore)" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Crystite" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <font>
+        <Font name="Bradley Hand Bold" size="14.0" />
+      </font>
+    </Text>
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+    <Button fx:id="buyFoodButton" mnemonicParsing="false" onAction="#buyFoodButtonClicked" prefHeight="11.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <font>
+        <Font name="Bradley Hand Bold" size="13.0" fx:id="x3" />
+      </font>
+    </Button>
+    <Button fx:id="buyEnergyButton" font="$x3" mnemonicParsing="false" onAction="#buyEnergyButtonClicked" prefHeight="12.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+    <Button fx:id="sellFoodButton" font="$x3" mnemonicParsing="false" onAction="#sellFoodButtonClicked" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+    <Button fx:id="buyOreButton" font="$x3" mnemonicParsing="false" onAction="#buyOreButtonClicked" prefHeight="27.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+    <Button fx:id="buyCrysButton" font="$x3" mnemonicParsing="false" onAction="#buyCrysButtonClicked" prefHeight="27.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+    <Button fx:id="sellEnergyButton" font="$x3" mnemonicParsing="false" onAction="#sellEnergyButtonClicked" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+    <Button fx:id="sellOreButton" font="$x3" mnemonicParsing="false" onAction="#sellOreButtonClicked" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+    <Button fx:id="sellCrysButton" font="$x3" mnemonicParsing="false" onAction="#sellCrysButtonClicked" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+    <Label fx:id="foodCostLabel" font="$x3" text="\$food" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+    <Label fx:id="energyCostLabel" font="$x3" text="\$energy" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+    <Label fx:id="smithoreCostLabel" font="$x3" text="\$ore" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+    <Label fx:id="crystiteCostLabel" font="$x3" text="\$crys" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+    <Label fx:id="foodQuantityLabel" font="$x3" text="foodQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+    <Label fx:id="energyQuantityLabel" font="$x3" text="energyQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+    <Label fx:id="smithoreQuantityLabel" font="$x3" text="oreQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+    <Label fx:id="crystiteQuantityLabel" font="$x3" text="crysQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+    <ComboBox fx:id="muleChoice" onAction="#updateMuleCostLabel" promptText="Mule" GridPane.rowIndex="5">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Food Mule" />
+          <String fx:value="Energy Mule" />
+          <String fx:value="Smithore Mule" />
+          <String fx:value="Crystite Mule" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Button fx:id="buyMuleButton" font="$x3" mnemonicParsing="false" onAction="#buyMuleButtonClicked" prefHeight="11.0" prefWidth="46.0" text="Buy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+    <Button fx:id="sellMuleButton" font="$x3" mnemonicParsing="false" onAction="#sellMuleButtonClicked" prefHeight="27.0" prefWidth="46.0" text="Sell" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+    <Label fx:id="muleQuantityLabel" font="$x3" text="muleQ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+    <Label fx:id="muleCostLabel" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+      <font>
+        <Font name="Bradley Hand Bold" size="10.0" />
+      </font>
+    </Label>
+  </GridPane>
+  <ImageView id="storeSign" fitHeight="123.1820068359375" fitWidth="147.0" layoutX="227.0" layoutY="35.0" pickOnBounds="true">
+    <effect>
+      <InnerShadow />
+    </effect>
+    <image>
+      <Image url="@Media/storeSign.jpg" preserveRatio="true" smooth="true" />
+    </image>
+  </ImageView>
 </AnchorPane>
