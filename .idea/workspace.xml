@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e5d5de5-beb0-4a9f-aaba-1ea8883596ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/Media/mallet.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/Media/mining.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/Media/storeSign.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/Media/mallet.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/Media/mining.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/Media/storeSign.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/AssayInterface.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/AssayInterface.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/LandBuyInterface.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/LandBuyInterface.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml" afterPath="$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/M.U.L.E.-Project/.idea/workspace.xml" />
     </list>
     <ignored path="M.U.L.E.-Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,14 +53,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16108453" vertical-offset="739" max-vertical-offset="5865">
+            <state vertical-scroll-proportion="0.0" vertical-offset="739" max-vertical-offset="5865">
               <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssayInterface.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/AssayInterface.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.82236844" vertical-offset="240" max-vertical-offset="840">
+              <caret line="41" column="14" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,7 +135,6 @@
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/storeInterface2.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/oreShortageError.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/MainMap.fxml" />
-        <option value="$PROJECT_DIR$/gameConfig/UIFiles/AssayInterface.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/playerSetup.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/UIFiles/M.U.L.E Game Setup.fxml" />
         <option value="$PROJECT_DIR$/gameConfig/Store.java" />
@@ -140,6 +150,7 @@
         <option value="$PROJECT_DIR$/gameConfig/Launcher.java" />
         <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
         <option value="$PROJECT_DIR$/gameConfig/Controller.java" />
+        <option value="$PROJECT_DIR$/gameConfig/UIFiles/AssayInterface.fxml" />
       </list>
     </option>
   </component>
@@ -154,7 +165,7 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="81" />
+    <option name="x" value="84" />
     <option name="y" value="23" />
     <option name="width" value="1108" />
     <option name="height" value="773" />
@@ -650,12 +661,6 @@
       <option name="number" value="Default" />
       <updated>1442528931836</updated>
     </task>
-    <task id="LOCAL-00031" summary="Updated store methods&#10;">
-      <created>1443973961071</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1443973961071</updated>
-    </task>
     <task id="LOCAL-00032" summary="Update Store Purchases">
       <created>1443990705772</created>
       <option name="number" value="00032" />
@@ -944,7 +949,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449028441068</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="added original art">
+      <created>1449190998946</created>
+      <option name="number" value="00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1449190998974</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -957,7 +968,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="81" y="23" width="1108" height="773" extended-state="0" />
+    <frame x="84" y="23" width="1108" height="773" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -967,22 +978,22 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284091" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24953096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="1.0" sideWeight="0.50558454" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18292683" sideWeight="0.50097847" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13907285" sideWeight="0.4745098" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32213742" sideWeight="0.4881475" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3231788" sideWeight="0.49427754" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24953096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875606" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18292683" sideWeight="0.49902153" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21984732" sideWeight="0.44992846" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21984732" sideWeight="0.44992846" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31603053" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32213742" sideWeight="0.4881475" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847682" sideWeight="0.47356665" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37748346" sideWeight="0.4944155" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1029,7 +1040,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="All pop ups close when timer runs out and mule cost label is updated in store" />
     <MESSAGE value="Added a generic error box to pop up for any type of error that happens. Deleted some print statements" />
     <MESSAGE value="making unnecessary fields into local variables &amp; public variables to private" />
     <MESSAGE value="removing print statements" />
@@ -1054,7 +1064,8 @@
     <MESSAGE value="randMap init" />
     <MESSAGE value="music added" />
     <MESSAGE value="additional tile &amp; animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="additional tile &amp; animation" />
+    <MESSAGE value="added original art" />
+    <option name="LAST_COMMIT_MESSAGE" value="added original art" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1067,13 +1078,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -1249,16 +1253,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/AssayInterface.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1549,13 +1543,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/Media/mallet.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gameConfig/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16108453" vertical-offset="739" max-vertical-offset="5865">
+        <state vertical-scroll-proportion="0.0" vertical-offset="739" max-vertical-offset="5865">
           <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameConfig/UIFiles/AssayInterface.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82236844" vertical-offset="240" max-vertical-offset="840">
+          <caret line="41" column="14" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

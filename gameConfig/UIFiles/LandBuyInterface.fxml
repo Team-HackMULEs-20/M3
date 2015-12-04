@@ -26,12 +26,12 @@
     </font>
   </Text>
   <Button id="sellLandButton" fx:id="landSellButton" layoutX="359.0" layoutY="314.0" mnemonicParsing="false" onAction="#sellLandButtonClicked" text="Sell Land" />
-  <ImageView id="mallet" fitHeight="146.0" fitWidth="157.0" layoutX="232.0" layoutY="81.0" pickOnBounds="true">
+  <ImageView id="mallet" fitHeight="149.0" fitWidth="158.0" layoutX="236.0" layoutY="81.0" pickOnBounds="true">
     <effect>
       <InnerShadow />
     </effect>
     <image>
-      <Image url="@Media/mallet.jpg" preserveRatio="true" smooth="true" />
+      <Image url="@Media/mallet.png" preserveRatio="true" smooth="true" />
     </image>
   </ImageView>
 </AnchorPane>

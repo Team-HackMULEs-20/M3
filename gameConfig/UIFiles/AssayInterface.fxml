@@ -38,12 +38,12 @@
       </font>
     </Text>
     <Text font="$x1" layoutX="203.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="the Crystite content of a plot of land!" textAlignment="CENTER" />
-    <ImageView id="mining" fitHeight="101.498046875" fitWidth="135.61328125" layoutX="240.0" layoutY="107.0" pickOnBounds="true">
+    <ImageView id="mining" fitHeight="105.0" fitWidth="117.61328125" layoutX="243.0" layoutY="103.0" pickOnBounds="true">
       <effect>
         <InnerShadow />
       </effect>
       <image>
-        <Image url="@Media/mining.jpg" preserveRatio="true" smooth="true" />
+        <Image url="@Media/mining.png" preserveRatio="true" smooth="true" />
       </image>
     </ImageView>
   </children>

@@ -90,12 +90,12 @@
       </font>
     </Label>
   </GridPane>
-  <ImageView id="storeSign" fitHeight="120.0" fitWidth="115.0" layoutX="232.0" layoutY="39.0" pickOnBounds="true">
+  <ImageView id="storeSign" fitHeight="120.75701904296875" fitWidth="169.1099853515625" layoutX="217.0" layoutY="38.0" pickOnBounds="true">
     <effect>
       <InnerShadow />
     </effect>
     <image>
-      <Image url="@Media/storeSign.jpg" preserveRatio="true" smooth="true" />
+      <Image url="@Media/storeSign.png" preserveRatio="true" smooth="true" />
     </image>
   </ImageView>
 </AnchorPane>
