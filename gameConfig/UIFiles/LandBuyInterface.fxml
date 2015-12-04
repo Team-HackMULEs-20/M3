@@ -2,6 +2,7 @@
 
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -24,8 +25,13 @@
       <Font size="16.0" />
     </font>
   </Text>
-  <ImageView id="gavel" fitHeight="141.431640625" fitWidth="206.0" layoutX="189.0" layoutY="86.0" pickOnBounds="true">
-    <Image url="@Media/gavel.png" preserveRatio="true" smooth="true" />
-  </ImageView>
   <Button id="sellLandButton" fx:id="landSellButton" layoutX="359.0" layoutY="314.0" mnemonicParsing="false" onAction="#sellLandButtonClicked" text="Sell Land" />
+  <ImageView id="mallet" fitHeight="146.0" fitWidth="157.0" layoutX="232.0" layoutY="81.0" pickOnBounds="true">
+    <effect>
+      <InnerShadow />
+    </effect>
+    <image>
+      <Image url="@Media/mallet.jpg" preserveRatio="true" smooth="true" />
+    </image>
+  </ImageView>
 </AnchorPane>
