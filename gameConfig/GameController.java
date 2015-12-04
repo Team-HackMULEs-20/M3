@@ -177,6 +177,11 @@ public class GameController implements Initializable {
 				RandomEvents randomMessage = new RandomEvents();
 				RandomEvents.messageBox(message);
 			}
+			int subF = (int) (Turns.getTurn().getFood()/2);
+			Turns.getTurn().addSubFood(-subF);
+			Turns.getTurn().addSubEnergy(-1);
+			int subE = Turns.getTurn().getMulesOwned().size();
+			Turns.getTurn().addSubEnergy(-subE);
 		}
 		if (event.getSource() == startButton) {
 			Timer timer = new Timer(Turns.timeForTurn(currentPlayer));
@@ -186,10 +191,10 @@ public class GameController implements Initializable {
 			if (currentPlayer.getLandOwned().size() != 0 && currentPlayer.getMulesOwned().size() != 0) {
 				currentPlayer.getMulesOwned().stream().filter(mule -> mule.getPosition().getOwner() == currentPlayer && currentPlayer.getEnergy() >= 1
 						&& mule.getOwner() == currentPlayer).forEach(mule -> {
-							System.out.println("producing");
-							Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
-							infoBar.updateInfoBar();
-						});
+					System.out.println("producing");
+					Mule.produce(mule.getType(), mule.getPosition().getType(), currentPlayer);
+					infoBar.updateInfoBar();
+				});
 			}
 			//store = new Store();
 			/* boolean auctionTime = auction.isAuctionTime();
